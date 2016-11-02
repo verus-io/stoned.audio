@@ -1,0 +1,97 @@
+doctype html
+doctype html
+html(lang='en')
+  meta(charset='utf-8')
+  meta(http-equiv='x-ua-compatible', content='ie=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  meta(name='description', content='')
+
+  head
+    title Templates!
+    link(rel='stylesheet', href='css/app.css', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,300,100,100italic,300italic,400italic,700,700italic', rel='stylesheet', type='text/css')
+
+    block style
+
+    <!--[if lt IE 9]>
+    script(src='js/polyfill/html5-shiv.js')
+    <![endif]-->
+
+  body(style='overflow:hidden')
+    // Header
+    header
+      nav
+        // ul
+        //   li
+        //     a(href='#') Product
+        //   li
+        //     a(href='#') Our Story
+        //   li
+        //     a(href='#') User Stories
+        //   li
+        //     a(href='#') Specs
+        // |
+        a(href='#')
+          img.logo(src='./img/logo.png', alt='Company Logo')
+        a.button.call-to-action(href='#cta') PRE-ORDER NOW
+
+    block content
+
+    footer
+      nav
+        ul
+          li
+            a(href='#') About
+          li
+            a(href='#') Press
+          li
+            a(href='#') FAQ
+          li
+            a(href='#') Privacy
+      nav
+        ul
+          li
+            a(href='#')
+              i.fa.fa-facebook-square(aria-hidden='true')
+          li
+            a(href='#')
+              i.fa.fa-twitter-square(aria-hidden='true')
+          li
+            a(href='#')
+              i.fa.fa-youtube-square(aria-hidden='true')
+          li
+            a(href='#')
+              i.fa.fa-hacker-news(aria-hidden='true')
+      a(href='#')
+        img.logo(src='./img/logo.png', alt='Company Logo')
+      small.copyright &copy; Stoned Audio, LLC 2016
+    .loader
+
+
+    <!--[if IE]>
+    .browserupgrade
+    p
+      | You are using an strong outdated  browser. Please
+      | a(href='http://browsehappy.com/') upgrade your browser to improve
+      | your experience and security.
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\\/script>')
+    script(src='js/polyfill/ie-love.js')
+    <![endif]-->
+
+    <!--[if gt IE 8]><!-->
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\\/script>')
+    <!--<![endif]-->
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.1/es6-shim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/layzr.js/2.0.2/layzr.min.js')
+    script(src='js/app.js')
+
+    block script
