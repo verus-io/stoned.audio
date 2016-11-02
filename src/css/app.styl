@@ -5,12 +5,13 @@ h1
   color: white
 
 section
-  center: 980px
+  clearfix()
+  center(980px)
   background: tomato
   padding: 10px
 
 figure
-  column: 1/3
+  column(1/3)
   background: darken(tomato, 10%)
   height: 100px
   text-align: center
@@ -18,4 +19,4 @@ figure
   color: white
 
   +below(700px)
-    column: 1
+    column(1)
