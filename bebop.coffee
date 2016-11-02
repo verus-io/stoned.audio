@@ -1,5 +1,6 @@
-fs   = require 'fs'
-path = require 'path'
+fs       = require 'fs'
+path     = require 'path'
+debounce = require 'debounce'
 
 writeFile = (dst, content) ->
   fs.writeFile dst, content, 'utf8', (err) ->
@@ -95,6 +96,5 @@ module.exports =
 
   compilers:
     pug:    compilePug
-    coffee: compileCoffee
-    styl:   compileStylus
-    css: -> false
+    coffee: debounce compileCoffee, 10
+    styl:   debounce compileStylus, 10

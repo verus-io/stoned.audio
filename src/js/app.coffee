@@ -1,4 +1,3 @@
-window.JQuery = window.$ = $ = require 'jquery'
 window.Layzr = require 'layzr.js'
 
 require './framework'
