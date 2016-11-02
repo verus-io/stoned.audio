@@ -1,2 +1,2 @@
-# stonedaudio
-stoned audio website
+# stoned.audio
+Website for Stoned Audio.
