@@ -59,6 +59,10 @@ compileStylus = ->
 
   style = stylus fs.readFileSync src, 'utf8'
     .set 'filename', src
+    .set 'paths', [
+      __dirname + '/src/css'
+      __dirname + '/node_modules'
+    ]
     .set 'include css', true
     .set 'sourcemap',
       basePath:   ''
@@ -93,3 +97,4 @@ module.exports =
     pug:    compilePug
     coffee: compileCoffee
     styl:   compileStylus
+    css: -> false
