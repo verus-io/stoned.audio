@@ -1,25 +1,12 @@
 {
-  "name": "stonedaudio",
-  "version": "1.0.0",
+  "name": "stoned.audio",
+  "version": "0.1.0",
   "private": true,
-  "description": "stoned audio website",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/verus-io/stonedaudio.git"
-  },
+  "description": "Website for Stoned Audio",
   "author": "Verus Media LLC",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/verus-io/stonedaudio/issues"
-  },
-  "homepage": "https://github.com/verus-io/stonedaudio#readme",
   "dependencies": {
     "autoprefixer": "6.5.1",
-    "bebop": "1.10.0",
+    "bebop": "1.10.1",
     "cake-publish": "0.1.5",
     "cake-test": "0.1.0",
     "cake-version": "0.1.9",
@@ -34,9 +21,11 @@
     "postcss-discard-comments": "2.0.4",
     "poststylus": "0.2.3",
     "pug": "2.0.0-beta6",
+    "reeeset": "0.0.7",
     "requisite": "1.19.1",
     "rucksack-css": "0.8.6",
     "rupture": "0.6.2",
-    "shortcake": "1.1.18"
+    "shortcake": "1.1.18",
+    "stylus": "0.54.5"
   }
 }
