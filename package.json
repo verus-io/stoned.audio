@@ -19,7 +19,7 @@
   "homepage": "https://github.com/verus-io/stonedaudio#readme",
   "dependencies": {
     "autoprefixer": "6.5.1",
-    "bebop": "1.10.0",
+    "bebop": "1.10.1",
     "cake-publish": "0.1.5",
     "cake-test": "0.1.0",
     "cake-version": "0.1.9",
