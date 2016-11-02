@@ -1,6 +1,7 @@
 {
   "name": "stonedaudio",
   "version": "1.0.0",
+  "private": true,
   "description": "stoned audio website",
   "main": "index.js",
   "scripts": {
