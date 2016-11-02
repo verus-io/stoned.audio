@@ -41,6 +41,21 @@ footer
   height: 120vh
   overflow: hidden
 
+  .summary-down
+    margin-top: -5px
+    bottom: auto
+    top: 87.5vh
+
+    img
+      animation 2s ease 0s bob
+      animation-iteration-count infinite
+
+      &:hover
+        animation-iteration-count 1
+
+    &:after
+      content: none
+
   &.parallax
     .foreground
       background-size: cover
