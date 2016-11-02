@@ -8,14 +8,14 @@ use 'cake-publish',
     refspec: 'master:master'
   npm: false
 
-task 'mkdir', '', ->
+task 'build:pre', '', ->
   exec '''
        mkdir -p public/css
        mkdir -p public/js
        '''
 
-task 'build', 'build project', ['mkdir'], ->
-  exec 'bebop compile --work-dir .'
+task 'build', 'build project', ['build:pre'], ->
+  exec 'bebop compile'
 
-task 'watch', 'watch for changes and recompile project', ['mkdir'], ->
+task 'watch', 'watch for changes and recompile project', ['build:pre'], ->
   exec 'bebop'

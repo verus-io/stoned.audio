@@ -1,20 +1,21 @@
 fs   = require 'fs'
 path = require 'path'
 
+writeFile = (dst, content) ->
+  fs.writeFile dst, content, 'utf8', (err) ->
+    console.error err if err?
+
 compilePug = (src, dst) ->
-  filename = path.basename src
-  return if filename.charAt(0) == '_'
+  return if (path.basename src).charAt(0) == '_'
 
   pug = require 'pug'
 
   opts =
+    basedir:  'src/'
     pretty: true
 
-  html = pug.renderFile src,
-    basedir:  'src/'
-    pretty:   true
-
-  fs.writeFile dst, html, 'utf8'
+  html = pug.renderFile src, opts
+  writeFile dst, html
 
 compileCoffee = ->
   requisite  = require 'requisite'
@@ -34,20 +35,18 @@ compileCoffee = ->
   requisite.bundle opts, (err, bundle) ->
     return console.error err if err?
     {code, map} = bundle.toString opts
-    fs.writeFile dst, code, 'utf8'
-    fs.writeFile dst + '.map', map, 'utf8'
+    writeFile dst, code
+    writeFile dst + '.map', map
 
   true
 
 compileStylus = ->
   stylus       = require 'stylus'
-
   postcss      = require 'poststylus'
   autoprefixer = require 'autoprefixer'
   comments     = require 'postcss-discard-comments'
   lost         = require 'lost-stylus'
   rupture      = require 'rupture'
-
   CleanCSS     = require 'clean-css'
 
   src = 'src/css/app.styl'
@@ -57,7 +56,7 @@ compileStylus = ->
     .set 'filename', src
     .set 'include css', true
     .set 'sourcemap',
-      basePath: ''
+      basePath:   ''
       sourceRoot: '../'
     .use lost()
     .use rupture()
@@ -73,16 +72,17 @@ compileStylus = ->
     return console.error err if err
     if process.env.PRODUCTION
       minified = (new CleanCSS semanticMerging: false).minify css
-      fs.writeFile dst, minified.styles, 'utf8'
+      writeFile dst, minified.styles
     else
       sourceMapURL = (path.basename dst) + '.map'
       css = css + "/*# sourceMappingURL=#{sourceMapURL} */"
-      fs.writeFile dst, css, 'utf8'
-      fs.writeFile dst + '.map', JSON.stringify style.sourcemap, 'utf8'
+      writeFile dst, css
+      writeFile dst + '.map', JSON.stringify style.sourcemap
   true
 
 module.exports =
-  workDir: 'public/'
+  workDir:   __dirname + '/src'
+  staticDir: __dirname + '/public'
 
   compilers:
     pug:    compilePug
