@@ -1,6 +1,7 @@
 {
   "name": "stonedaudio",
   "version": "1.0.0",
+  "private": true,
   "description": "stoned audio website",
   "main": "index.js",
   "scripts": {
@@ -17,6 +18,21 @@
   },
   "homepage": "https://github.com/verus-io/stonedaudio#readme",
   "dependencies": {
-    "bebop": "1.9.4"
+    "autoprefixer": "6.5.1",
+    "bebop": "1.10.0",
+    "cake-publish": "0.1.5",
+    "cake-test": "0.1.0",
+    "cake-version": "0.1.9",
+    "clean-css": "3.4.20",
+    "coffee-script": "1.11.1",
+    "css-mqpacker": "5.0.1",
+    "lost": "7.1.0",
+    "lost-stylus": "0.1.2",
+    "postcss-discard-comments": "2.0.4",
+    "poststylus": "0.2.3",
+    "pug": "2.0.0-beta6",
+    "requisite": "1.19.1",
+    "rupture": "0.6.2",
+    "shortcake": "1.1.18"
   }
 }

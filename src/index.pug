@@ -1,0 +1,268 @@
+doctype html
+html(lang='en')
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  head
+    title Templates!
+    link(rel='stylesheet', href='css/normalize.css')
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', rel='stylesheet', integrity='sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1', crossorigin='anonymous')
+    link(rel='stylesheet', href='css/framework.css')
+    link(rel='stylesheet', href='css/loader.css')
+    link(rel='stylesheet', href='css/header.css')
+    link(rel='stylesheet', href='css/hero.css')
+    link(rel='stylesheet', href='css/hero-video.css')
+    link(rel='stylesheet', href='css/hero-parallax.css')
+    link(rel='stylesheet', href='css/parallax.css')
+    link(rel='stylesheet', href='css/footer.css')
+    link(rel='stylesheet', href='css/list.css')
+    link(rel='stylesheet', href='css/lazyify.css')
+    link(rel='stylesheet', href='css/fonts.css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,300,100,100italic,300italic,400italic,700,700italic', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='css/placeholders.css')
+    link(rel='stylesheet', href='css/demo.css')
+  body(style='overflow:hidden')
+    header
+      nav
+        ul
+          li
+            a(href='#') Product
+          li
+            a(href='#') Our Story
+          li
+            a(href='#') User Stories
+          li
+            a(href='#') Specs
+        |
+        a(href='#')
+          img.logo(src='./img/logo.png', alt='Company Logo')
+        |
+        a.button.call-to-action(href='#cta') TRY NOW!
+        ul.page-links
+          li
+            a(href='/') ANOTHER PAGE
+    section.demo-gallery
+      section.hero.static(data-lazy='./img/hero.jpeg')
+        .content
+          h2 HANZO E&amp;#8209COMMERCE TEMPLATES
+          h4 Cool Websites For Cool Ideas
+          |
+          a.button.call-to-action(href='#cta') TRY NOW!
+        a.button.summary-down.next-section(href='#')
+      section.hero.video(data-src='https://www.youtube.com/embed/qYodWEKCuGg', data-lazy='./img/hero-video.jpeg')
+        a.play.button(href='#')
+        .content
+          h2 HANZO: E&amp;#8209COMMERCE SIMPLIFIED
+          h4 So Quick, You&apos;ll Have To Find Another Excuse To Skip Leg Day
+        a.button.summary-down.next-section(href='#')
+        .video-modal.modal.hidden
+          iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen='')
+          |
+          a.button.call-to-action.modal-close(href='#cta') TRY NOW!
+          .modal-close.modal-close-position  &#x2715;
+      section.hero.informatic.list.right
+        .content
+          .image(data-lazy='./img/hero-informatic.jpg')
+          .info
+            h2 HANZO WEB TEMPLATES 2.0
+            h4 Beautiful Enough That You Missed The Photoshopped Pixels
+            |
+            a.button.call-to-action(href='#cta') TRY NOW!
+            p
+        a.button.summary-down.next-section(href='#')
+      section.hero.parallax
+        .foreground(data-lazy='./img/hero-parallax-background.jpg')
+        .content
+          h2 HANZO WEB TEMPLATES 2.0
+          h4 Beautiful Enough That You Missed The Photoshopped Pixels
+          |
+          a.button.call-to-action(href='#cta') TRY NOW!
+          p
+        a.button.summary-down.next-section(href='#')
+    section.demo-gallery
+      section.list.bottom
+        .image(data-lazy='./img/list2.jpg')
+        .content.title
+          h3
+            | Building The New E&amp;#8209Conomy
+            span.modal-open(data-modal-selector='#helpful') ?
+          p
+            | HANZO&apos;s block based templates allow you to easily configure, update, and grow your website. It&apos;s developer first simplicity allows for rapid iteration and flexibility.
+        .info
+          ul.content
+            li
+              i.fa.fa-bolt(aria-hidden='true')
+              p  Pick the look you want.
+            li
+              i.fa.fa-mobile(aria-hidden='true')
+              p  Mobile Optimized.
+            li
+              i.fa.fa-bed(aria-hidden='true')
+              p  Developer friendly, developer first.
+        #helpful.modal.hidden
+          .content
+            | This is helpful!
+            .modal-close.modal-close-position  &#x2715;
+      section.list.right
+        .image(data-lazy='./img/list1.jpg')
+        .info
+          h3 Building The New E&amp;#8209Conomy
+          p
+            | HANZO&apos;s block based templates allow you to easily configure, update, and grow your website. It&apos;s developer first simplicity allows for rapid iteration and flexibility.
+          ul
+            li
+              i.fa.fa-bolt(aria-hidden='true')
+              p  Pick the look you want. Extend it as your business grows.
+            li
+              i.fa.fa-server(aria-hidden='true')
+              p  Single page paradigm allows for the lowest cost hosting.
+            li
+              i.fa.fa-mobile(aria-hidden='true')
+              p  Built on open standards and tools allows for a truely customizeable experience.
+            li
+              i.fa.fa-globe(aria-hidden='true')
+              p  Responsive mobile optimized layouts work with the largest variety of devices.
+            li
+              i.fa.fa-bed(aria-hidden='true')
+              p
+                | Developer friendly, developer first. Free your engineers to use the tools they want.
+      section.list.left
+        .image(data-lazy='./img/list3.jpg')
+        .info
+          h3 Building The New E&amp;#8209Conomy
+          p
+            | HANZO&apos;s block based templates allow you to easily configure, update, and grow your website. It&apos;s developer first simplicity allows for rapid iteration and flexibility.
+          ul
+            li
+              i.fa.fa-bolt(aria-hidden='true')
+              p  Pick the look you want. Extend it as your business grows.
+            li
+              i.fa.fa-server(aria-hidden='true')
+              p  Single page paradigm allows for the lowest cost hosting.
+            li
+              i.fa.fa-mobile(aria-hidden='true')
+              p  Built on open standards and tools allows for a truely customizeable experience.
+            li
+              i.fa.fa-globe(aria-hidden='true')
+              p  Responsive mobile optimized layouts work with the largest variety of devices.
+            li
+              i.fa.fa-bed(aria-hidden='true')
+              p
+                | Developer friendly, developer first. Free your engineers to use the tools they want.
+    section.demo-gallery
+      section.quote.parallax(data-lazy='./img/quote.jpg')
+        .content.centered
+          blockquote
+            | Orange the color is named after the fruit.
+            span.attribution -Someone
+          blockquote
+            | The color pink is only about 400 years old.
+            span.attribution -Someone
+          blockquote
+            | Many languages treat blue and green as shades of the same color.
+            br
+            br
+            |  According to Brent Berlin and Paul Kay&apos;s 1969 study &apos;Basic Color Terms: Their Universality and Evolution&apos;, distinct terms for brown, purple, pink, orange and grey will not emerge in a language until the language has made a distinction between green and blue. In their account of the development of color terms the first terms to emerge are those for white/black (or light/dark), red and green/yellow.
+            span.attribution -Wikipedia
+    section.gallery(data-autoplay='5000')
+      section.full.image1(data-lazy='./img/gallery1.jpg')
+      section.full.image2(data-lazy='./img/gallery2.jpg')
+      section.full.image3(data-lazy='./img/gallery3.jpg')
+      section.full.image4(data-lazy='./img/gallery4.jpg')
+      section.full.image5(data-lazy='./img/gallery5.jpg')
+      section.full.image6(data-lazy='./img/gallery6.jpg')
+    section.grid(data-autoplay='5000')
+      .item.image1(data-lazy='./img/grid1.jpg')
+      .item.image2(data-lazy='./img/grid2.jpg')
+      .item.image3(data-lazy='./img/grid3.jpg')
+      .item.image4(data-lazy='./img/grid4.jpg')
+      .item.image5(data-lazy='./img/grid5.jpg')
+      .item.image6(data-lazy='./img/grid6.jpg')
+      .item.image7(data-lazy='./img/grid7.jpg')
+      .item.image8(data-lazy='./img/grid8.jpg')
+    section#call-to-action.signup.parallax(data-lazy='./img/signup.jpg')
+      .content.narrow
+        h3 Be one of the first to use HANZO
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+        form
+          input(name='email', type='text', placeholder='Enter Your Email Address...')
+          |
+          button.button(type='submit') Sign Me Up!
+    section.grid.hover-more-example
+      .item.hover-more.hover-image1(data-lazy='./img/hovermore1.jpg')
+        .content.centered
+          h4 Hover Shows More Info
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin pellentesque sem sed vehicula.
+      .item.hover-more.hover-image2(data-lazy='./img/hovermore2.jpg')
+        .content.centered
+          h4 Hover Shows More Info
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin pellentesque sem sed vehicula.
+      .item.hover-more.hover-image3(data-lazy='./img/hovermore3.jpg')
+        .content.centered
+          h4 Hover Shows More Info
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin pellentesque sem sed vehicula.
+      .item.hover-more.hover-image4(data-lazy='./img/hovermore4.jpg')
+        .content.centered
+          h4 Hover Shows More Info
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin pellentesque sem sed vehicula.
+    footer
+      nav
+        ul
+          li
+            a(href='#') Product
+          li
+            a(href='#') Team
+          li
+            a(href='#') FAQ
+          li
+            a(href='#') Press
+          li |
+          li
+            a(href='#') Terms
+          li
+            a(href='#') Privacy
+          li |
+          li
+            a(href='#') About Us
+          li
+            a(href='#') Contact Us
+          li
+            a(href='#') Affiliate Marketing
+      nav
+        ul
+          li
+            a(href='#')
+              i.fa.fa-facebook-square(aria-hidden='true')
+          li
+            a(href='#')
+              i.fa.fa-twitter-square(aria-hidden='true')
+          li
+            a(href='#')
+              i.fa.fa-youtube-square(aria-hidden='true')
+          li
+            a(href='#')
+              i.fa.fa-hacker-news(aria-hidden='true')
+      |
+      a(href='#')
+        img.logo(src='./img/logo.png', alt='Company Logo')
+      |
+      small.copyright &copy; HANZO, LLC 2016
+    .loader
+      .sk-folding-cube
+        .sk-cube1.sk-cube
+        .sk-cube2.sk-cube
+        .sk-cube4.sk-cube
+        .sk-cube3.sk-cube
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.1/es6-shim.min.js')
+    script(src='https://code.jquery.com/jquery-1.12.4.min.js', integrity='sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=', crossorigin='anonymous')
+    script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/layzr.js/2.0.2/layzr.min.js')
+    script(src='js/framework.js')
+    script(src='js/hero-video.js')
+    script(src='js/parallax.js')
+    script(src='js/lazyify.js')
+    script(src='js/scroll-to.js')
