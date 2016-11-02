@@ -11,8 +11,11 @@ compilePug = (src, dst) ->
   pug = require 'pug'
 
   opts =
-    basedir:  'src/'
-    pretty: true
+    basedir: 'src/'
+    pretty:  true
+
+    title:     'Stoned Audio'
+    copyright: '© Stoned Audio, LLC'
 
   html = pug.renderFile src, opts
   writeFile dst, html
