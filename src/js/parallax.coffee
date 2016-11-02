@@ -1,7 +1,17 @@
 $(document).ready ->
   scheduled = false
 
-  $(window).on 'scroll touchmove mousewheel', ->
+  isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1
+
+  if isFirefox
+    $els = $('.parallax .foreground')
+    $els.each ->
+      $el = $(this)
+      yRatioStr = $el.attr 'data-ratio'
+      if yRatioStr != ''
+        $el.attr 'data-ratio', parseInt(yRatioStr, 10) - 100
+
+  parallaxFn = ->
     if !scheduled
       requestAnimationFrame ->
         $els = $('.parallax .foreground')
@@ -24,3 +34,8 @@ $(document).ready ->
           $el.css 'background-position', '50% ' + yOffset + '%'
         scheduled = false
       scheduled = true
+    return true
+
+  parallaxFn()
+
+  $(window).on 'scroll touchmove mousewheel', parallaxFn

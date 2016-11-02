@@ -1,5 +1,4 @@
 doctype html
-doctype html
 html(lang='en')
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible', content='ie=edge')
@@ -9,6 +8,7 @@ html(lang='en')
   head
     title Templates!
     link(rel='stylesheet', href='css/app.css', type='text/css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type='text/css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Lato:400,300,100,100italic,300italic,400italic,700,700italic', rel='stylesheet', type='text/css')
 
@@ -32,7 +32,7 @@ html(lang='en')
         //   li
         //     a(href='#') Specs
         // |
-        a(href='#')
+        a(href='/')
           img.logo(src='./img/logo.png', alt='Company Logo')
         a.button.call-to-action(href='#cta') PRE-ORDER NOW
 
@@ -89,8 +89,6 @@ html(lang='en')
       window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\\/script>')
     <!--<![endif]-->
 
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.1/es6-shim.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/layzr.js/2.0.2/layzr.min.js')
     script(src='js/app.js')
 
     block script

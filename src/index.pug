@@ -1,8 +1,21 @@
 extends _layout.pug
 
 block content
-  section.hero.parallax(data-lazy="img/hero-bg.jpg")
-    .foreground(data-lazy="img/hero-fg.png", data-initial-y="5", data-ratio="140")
+  section.hero.parallax.video(style='background-image: url(img/hero-bg.jpg)', data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
+    .foreground.product.fadeInUp(style='background-image: url(img/hero-prod.png);', data-initial-y='40', data-ratio='60')
+    .foreground(style='background-image: url(img/hero-overlay.png)', data-initial-y='5', data-ratio='100')
+    .watch.button
+      a.play(href='#')
+      h3 WATCH VIDEO
+    .content
+      h1 Gems for your ears.
+      p Crystal clear audio without any wires.
+
+    a.button.summary-down.next-section(href='#')
+    .video-modal.modal.hidden
+      iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen)
+      .modal-close.modal-close-position
+        | &#10005;
 
   // section
   //   h1= title
@@ -11,3 +24,6 @@ block content
   //   figure 1
   //   figure 2
   //   figure 3
+  //   figure 4
+  //   figure 5
+  //   figure 6
