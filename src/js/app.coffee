@@ -6,3 +6,4 @@ require './parallax'
 require './lazyify'
 # require 'scroll-to.js'
 
+require './stonedaudio'

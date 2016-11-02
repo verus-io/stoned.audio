@@ -48,10 +48,14 @@ $(document).ready ->
   intervalId = setInterval(->
     if window.loads == 0
       clearInterval intervalId
-      $('.loader').fadeTo 1000, 0, ->
-        $(this).hide()
+      $loader = $('loader')
+      if $loader[0]
+        $('.loader').fadeTo 1000, 0, ->
+          $(this).hide()
+          $('body').css 'overflow', ''
+          return
+      else
         $('body').css 'overflow', ''
-        return
 
       $('.ui-loader').remove()
   , 16)
