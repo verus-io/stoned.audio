@@ -17,6 +17,8 @@ compilePug = (src, dst) ->
   html = pug.renderFile src, opts
   writeFile dst, html
 
+  true
+
 compileCoffee = ->
   requisite  = require 'requisite'
 
