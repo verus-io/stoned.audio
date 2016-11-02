@@ -14,23 +14,31 @@
 
 @require "stonedaudio"
 
-// h1
-//   font-size: 2em
-//   color: white
+// Shared variables
+$gutter = 16px
 
-// section
-//   clearfix()
-//   center(980px)
-//   background: tomato
-//   padding: 10px
+// Configure lost
+lost(gutter: $gutter)
 
-// figure
-//   column(1/3)
-//   background: darken(tomato, 10%)
-//   height: 100px
-//   text-align: center
-//   line-height: 100px
-//   color: white
+h1
+  font-size: 2em
+  color: white
 
-//   +below(700px)
-//     column(1)
+section
+  clearfix()
+  center(980px)
+  background: tomato
+  padding: $gutter
+  margin-bottom: $gutter
+
+figure
+  column(1/3)
+  background: darken(tomato, 10%)
+  height: 100px
+  text-align: center
+  line-height: 100px
+  color: white
+
+  +below(700px)
+    column(1)
+    row(1/3)

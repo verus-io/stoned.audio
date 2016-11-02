@@ -7,16 +7,22 @@ writeFile = (dst, content) ->
     console.error err if err?
 
 compilePug = (src, dst) ->
-  return if (path.basename src).charAt(0) == '_'
+  filename = path.basename src
+  return if filename.charAt(0) == '_'
 
   pug = require 'pug'
 
   opts =
-    basedir: 'src/'
+    basedir: __dirname + '/src'
     pretty:  true
 
     title:     'Stoned Audio'
     copyright: '© Stoned Audio, LLC'
+
+  src = path.join 'src',    filename
+  dst = path.join 'public', filename.replace '.pug', '.html'
+
+  console.log src, dst
 
   html = pug.renderFile src, opts
   writeFile dst, html
