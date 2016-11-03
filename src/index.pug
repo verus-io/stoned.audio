@@ -2,7 +2,8 @@ extends _layout.pug
 
 block content
   section.hero.parallax.video(data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
-    .foreground.product(style='background-image: url(img/hero-prod.png);', data-ratio='-60')
+    .foreground.product(data-ratio='-60')
+      div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
     .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
     .watch.button
       a.play(href='#')
@@ -17,6 +18,16 @@ block content
       iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen)
       .modal-close.modal-close-position
         | &#10005;
+
+  section.progress(data-percent="42%")
+    .bar
+
+  section.press-strip
+    .content
+      img(src="img/press-strip/verge.svg")
+      img(src="img/press-strip/tnw.svg")
+      img(src="img/press-strip/techcrunch.svg")
+      img(src="img/press-strip/forbes.svg")
 
   // section
   //   h1= title
