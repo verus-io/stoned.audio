@@ -22,8 +22,6 @@ compilePug = (src, dst) ->
   src = path.join 'src',    filename
   dst = path.join 'public', filename.replace '.pug', '.html'
 
-  console.log src, dst
-
   html = pug.renderFile src, opts
   writeFile dst, html
 
@@ -97,8 +95,8 @@ compileStylus = ->
   true
 
 module.exports =
-  workDir:   __dirname + '/src'
-  staticDir: __dirname + '/public'
+  assetDir: __dirname + '/src'
+  buildDir: __dirname + '/public'
 
   compilers:
     pug:    compilePug
