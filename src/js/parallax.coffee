@@ -1,41 +1,36 @@
+{requestTick} = require './utils'
+
+translateY = ($el, val) ->
+  translate = "translate3d(0px, -#{val}px, 0)"
+
+  el = $el[0]
+  el.style.transform = translate
+
+  for prefix in ['webkit', 'moz', 'ms', 'o']
+    el.style["-#{prefix}-transform"] = translate
+
+  return
+
+updatePosition = ($el) ->
+  offset = window.pageYOffset
+  val = offset - (offset * $el.ratio)
+  val = 0 if val < 0
+  translateY($el, val)
+  return
+
+parallax = (selector) ->
+  $els = ($(el) for el in $(selector))
+
+  for $el in $els
+    $el.ratio = (parseInt ($el.attr 'data-ratio'), 10) * 0.01
+
+  ->
+    requestTick ->
+      updatePosition $el for $el in $els
+      return
+    true
+
 $(document).ready ->
-  scheduled = false
-
-  isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1
-
-  if isFirefox
-    $els = $('.parallax .foreground')
-    $els.each ->
-      $el = $(this)
-      yRatioStr = $el.attr 'data-ratio'
-      if yRatioStr != ''
-        $el.attr 'data-ratio', parseInt(yRatioStr, 10) - 100
-
-  parallaxFn = ->
-    if !scheduled
-      requestAnimationFrame ->
-        $els = $('.parallax .foreground')
-        scrollTop = $(this).scrollTop()
-        $els.each ->
-          $el = $(this)
-          offset = $el.offset()
-          yRatioStr = $el.attr 'data-ratio'
-          if yRatioStr == ''
-            yRatio = 100
-          else
-            yRatio = parseInt yRatioStr, 10
-
-          yInitialStr = $el.attr 'data-initial-y'
-          if yInitialStr == ''
-            yInitial = 50
-          else
-            yInitial = parseInt yInitialStr, 10
-          yOffset = yInitial + yRatio * (scrollTop - (offset.top)) / $el.height()
-          $el.css 'background-position', '50% ' + yOffset + '%'
-        scheduled = false
-      scheduled = true
-    return true
-
-  parallaxFn()
-
-  $(window).on 'scroll touchmove mousewheel', parallaxFn
+  fn = parallax '.parallax .foreground'
+  $(window).on 'scroll touchmove mousewheel', fn
+  fn()
