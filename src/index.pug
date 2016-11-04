@@ -7,7 +7,7 @@ block content
     .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
     .call-to-action.watch.button
       a.play(href='#')
-      h3 WATCH VIDEO
+      h3 WATCH&nbsp;VIDEO
     .content
       h1 Gems for your ears.
       p Crystal clear audio without any wires.
@@ -19,10 +19,10 @@ block content
       .modal-close.modal-close-position
         | &#10005;
 
-  section.progress(data-percent="42%")
+  section.progress(data-percent="42%", data-skip="true")
     .bar
 
-  section.press-strip
+  section.press-strip( data-skip="true")
     .content
       img(src="img/press-strip/verge.svg")
       img(src="img/press-strip/tnw.svg")
@@ -117,7 +117,7 @@ block content
             div
               | CHARGE VIA&nbsp;USB
 
-  section#comfy.full.list.right(data-lazy='img/rockinglow.jpg')
+  section#rocking.full.list.right(data-lazy='img/rockinglow.jpg')
     .image
     .info
       h1 Keep on rocking.

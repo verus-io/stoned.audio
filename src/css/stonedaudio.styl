@@ -5,7 +5,10 @@ footer
   background-color: #000
 
 section.full
- height: 110vh
+  height: 110vh
+
+  +below(400px)
+    height: 105vh
 
 a, a:visited
   color: #FFF
@@ -22,6 +25,14 @@ a, a:visited
   &:hover
     animation: ripple-white 1.5s infinite
 
++below(400px)
+  .logo
+    height: 16px
+
+  .button, button
+    height: 36px
+    border-radius: 18px
+
 header
   .logo
     left: 48px
@@ -35,11 +46,26 @@ header
     border: 4px solid #FFF
     border-radius: 28px
     margin: 0
-    font-size: 16px
+    font-size: 1em
     font-weight: bold
     font-family: 'Lato', sans-serif
     padding-left: 49px
     padding-right: 49px
+
+  +below(600px)
+    .call-to-action
+      padding-left: 24px
+      padding-right: 24px
+
+      .extra
+        display: none
+
+  +below(400px)
+    .call-to-action
+      font-size: 0.8em
+      line-height: 0.4em
+      top: 16px
+      right: 16px
 
 footer
   .logo
@@ -51,8 +77,11 @@ section
     background-color: #3DF2B6
 
     h3
-      line-height: 32px
+      line-height: 2.6em
       color: #FFF
+
+      +below(400px)
+        line-height: 1.3em
 
     &:hover
       animation: ripple-green 1.5s infinite
@@ -142,6 +171,43 @@ section
     margin-top: 55vh
     transform: translateY(-50%)
 
+  +below(400px)
+    height: 110vh
+
+    .content.content
+      margin-top: 45vh
+
+    .summary-down.summary-down
+      top: 70vh
+
+    .call-to-action
+      top: 60vh
+
+    .watch
+      padding-left: 60px
+      padding-right: 20px
+
+      .play
+        width: 32px
+        height: 32px
+        border-radius: 32px
+        margin-top: -16px
+        left: 42px
+
+        &:before
+          content: ''
+          display: block
+          position: absolute
+          top: 7px
+          left: 8px
+          width: 0
+          height: 18px
+          border-left: 1px solid #fff
+
+        &:after
+          top: 6px
+          left: -2px
+
 .progress
   margin-top: calc(-20vh - 40px)
   margin-bottom: 20vh
@@ -164,6 +230,7 @@ section
       font-weight: bold
       line-height: 3.2em
       padding-right: 20px
+      width: 10%
 
     &:after
       content: ''
@@ -176,6 +243,23 @@ section
       height: 28px
       top: 6px
       transform: rotate(45deg)
+      left: 10%
+
+  +below(800px)
+    .bar
+      &:before
+        width: 20%
+
+      &:after
+        left: 20%
+        content: none
+
+  +below(400px)
+    margin-top: 0
+    margin-bottom: 0
+
+    .bar
+      top: 0 !important
 
 .emphasis
   // color: rgb(242, 36, 105)
@@ -198,6 +282,15 @@ section
       height: 20px
       margin-top: 10vh
       transform: translateY(-50%)
+
+  +below(400px)
+    margin-top: 0
+    height:40vh
+
+    .content
+      img
+        margin-top: 12vh
+        column 1/2 2 20px
 
 section
   h1
@@ -227,8 +320,17 @@ section
     transform: translateY(-50%)
     color: rgba(51,51,51,.9)
 
+  +below(400px)
+    h2
+      display: none
+
+    .content
+      margin-top: 40vh
+
 .list
   .info
+    padding: 20px
+
     p
       font-size: 1.25em
       line-height: 1.6em
@@ -263,18 +365,54 @@ section
             font-family: 'Lato', sans-serif
             font-weight: bold
 
+  +below(800px)
+    .info
+      ul
+        margin-top: 0
+        li
+          margin-top: 50px
+          column 1/2 2 20px
+    .image
+      display: none
+
+  +below(400px)
+    .info
+      p
+        font-size: 1em
+
 #comfy
 #ditch
+#rocking
   .info
     padding-top: 25vh
 
     & > *
       text-align: left
 
+  +below(800px)
+    .info > *
+      text-align: center
+
+  +below(400px)
+    .info
+      padding-top: 15vh
+
+#comfy
+  +below(800px)
+    background-position-x: 0%
+
+#ditch
+  +below(800px)
+    background-position-x: 90%
+
 #chargeup
   .content
     height: 100%
     display: table
+    padding: 20px 0
+
+    .info
+      padding: 0 0
 
     h1
       color: rgba(0,0,0,.9)
@@ -282,6 +420,11 @@ section
     .info
       top: 0
       color: rgba(51,51,51,.9)
+
+      h1
+      p
+        padding-left: 20px
+        padding-right: 20px
 
     ul
       width: 66%
@@ -296,6 +439,40 @@ section
         div
           border-color: rgba(0,0,0,.9)
 
+  +below(800px)
+    .content
+      ul
+        padding: 0 20px
+
+  +below(600px)
+    .content
+      p
+        font-size: .8em
+
+      ul
+        width: 100%
+        margin: 0
+
+  +below(600px)
+    .content
+      p
+        font-size: 1em
+
+#rocking
+  +below(800px)
+    .info.info.info
+      padding-top: 30vh
+
+      ul
+        margin-left: -20px
+        margin-right: -20px
+        li
+          column 1/3 3 20px
+
+  +below(400px)
+    .info.info.info
+      padding-top: 40vh
+
 #share
   background-color: #FFF
   color: rgba(0,0,0,.9)
@@ -303,9 +480,11 @@ section
   .content
     margin-top: 50px
     margin-bottom: 20px
+    padding: 20px 0
 
     p
       font-size: 1em
+      padding: 0 20px
 
     i.fa
       font-size: 3em
@@ -328,9 +507,11 @@ section
 
   .content
     margin-top: 75vh
+    padding: 20px 0
 
     p
       font-size: 1em
+      padding: 0 20px
 
     ul
       width: 300px
@@ -378,6 +559,19 @@ section
         left: 20px
         margin-right: 20px
 
+  +below(800px)
+    .foreground
+      background-size: contain
+      background-repeat: no-repeat
+
+  +below(400px)
+    .content
+      h1
+        img
+          height: 20px
+          left: 10px
+          margin-right: 10px
+
 #getnews
   .content
     margin-top: 60px
@@ -399,6 +593,13 @@ section
         color: #55CDAA
         position: relative
         left: -2px
+
+  +below(400px)
+    .content
+      form
+        input
+          padding-left: 10px
+          padding-right: 10px
 
 footer
   background-color: #333

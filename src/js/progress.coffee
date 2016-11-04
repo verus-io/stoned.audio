@@ -19,16 +19,14 @@ $(document).ready ->
       percent += '%'
 
     $style.html("""
-      <style>
-        .progress .bar:before {
-          content: '#{percent} RESERVED';
-          width: #{percent};
-        }
+      .progress .bar:before {
+        content: '#{percent} RESERVED';
+        width: #{percent};
+      }
 
-        .progress .bar:after {
-          left: #{percent};
-        }
-      </style>""")
+      .progress .bar:after {
+        left: #{percent};
+      }""")
 
     $(window).off 'scroll touchmove mousewheel', fn
 
