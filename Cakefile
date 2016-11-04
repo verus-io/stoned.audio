@@ -3,9 +3,7 @@ require 'shortcake'
 use 'cake-test'
 use 'cake-version'
 use 'cake-publish',
-  deploy:
-    remote:  'origin'
-    refspec: 'master:master'
+  deploy: false
   npm: false
 
 task 'build:pre', '', ->
