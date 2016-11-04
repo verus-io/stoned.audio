@@ -7,10 +7,8 @@ html(lang='en')
 
   head
     title Templates!
-    link(rel='stylesheet', href='css/app.css', type='text/css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css')
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type='text/css')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:400,300,100,100italic,300italic,400italic,700,700italic,900', type='text/css')
+    link(rel='stylesheet', href='css/appfold.css', type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900', type='text/css')
 
     block style
 
@@ -35,6 +33,12 @@ html(lang='en')
         a(href='/')
           img.logo(src='./img/logo.png', alt='Company Logo')
         a.button.call-to-action(href='#cta') PRE-ORDER NOW
+
+    block foldcontent
+
+    link(rel='stylesheet', href='css/app.css', type='text/css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css')
 
     block content
 

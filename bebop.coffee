@@ -59,40 +59,44 @@ compileStylus = ->
   rupture      = require 'rupture'
   CleanCSS     = require 'clean-css'
 
-  src = 'src/css/app.styl'
-  dst = 'public/css/app.css'
+  srcs = ['src/css/app.styl', 'src/css/appfold.styl']
+  dsts = ['public/css/app.css', 'public/css/appfold.css']
 
-  style = stylus fs.readFileSync src, 'utf8'
-    .set 'filename', src
-    .set 'paths', [
-      __dirname + '/src/css'
-      __dirname + '/node_modules'
-    ]
-    .set 'include css', true
-    .set 'sourcemap',
-      basePath:   ''
-      sourceRoot: '../'
-    .use lost()
-    .use rupture()
-    .use postcss [
-      autoprefixer browsers: '> 1%'
-      'lost'
-      'rucksack-css'
-      'css-mqpacker'
-      comments removeAll: true
-    ]
+  for i in [0...2]
+    src = srcs[i]
+    dst = dsts[i]
+    console.log src, dst
+    style = stylus fs.readFileSync src, 'utf8'
+      .set 'filename', src
+      .set 'paths', [
+        __dirname + '/src/css'
+        __dirname + '/node_modules'
+      ]
+      .set 'include css', true
+      .set 'sourcemap',
+        basePath:   ''
+        sourceRoot: '../'
+      .use lost()
+      .use rupture()
+      .use postcss [
+        autoprefixer browsers: '> 1%'
+        'lost'
+        'rucksack-css'
+        'css-mqpacker'
+        comments removeAll: true
+      ]
 
-  style.render (err, css) ->
-    return console.error err if err
-    if process.env.PRODUCTION
-      minified = (new CleanCSS semanticMerging: false).minify css
-      writeFile dst, minified.styles
-    else
-      sourceMapURL = (path.basename dst) + '.map'
-      css = css + "/*# sourceMappingURL=#{sourceMapURL} */"
-      writeFile dst, css
-      writeFile dst + '.map', JSON.stringify style.sourcemap
-  true
+    style.render (err, css) ->
+      return console.error err if err
+      if process.env.PRODUCTION
+        minified = (new CleanCSS semanticMerging: false).minify css
+        writeFile dst, minified.styles
+      else
+        sourceMapURL = (path.basename dst) + '.map'
+        css = css + "/*# sourceMappingURL=#{sourceMapURL} */"
+        writeFile dst, css
+        writeFile dst + '.map', JSON.stringify style.sourcemap
+    true
 
 module.exports =
   assetDir: __dirname + '/src'

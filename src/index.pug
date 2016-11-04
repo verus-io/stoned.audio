@@ -1,6 +1,6 @@
 extends _layout.pug
 
-block content
+block foldcontent
   section.hero.parallax.video(data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
     .foreground.product(data-ratio='-60')
       div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
@@ -19,6 +19,7 @@ block content
       .modal-close.modal-close-position
         | &#10005;
 
+block content
   section.progress(data-percent="42%")
     .bar
 
