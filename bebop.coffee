@@ -93,17 +93,17 @@ compileStylus = ->
 
     if process.env.PRODUCTION
       try
-        {minified} = csso.minify css,
+        {css} = csso.minify css,
           restructure: true
           debug: true
+        writeFile dst, css
       catch err
-        console.log err
+        console.error err, err.parseError
         lines = css.split '\n'
-        console.log lines[err.parseError.line-1]
-        console.log lines[err.parseError.line]
-        console.log lines[err.parseError.line+1]
+        lineno = err.parseError.line-1
+        for n in [lineno..lineno+2]
+          console.error n, lines[n]
         return
-      writeFile dst, minified
     else
       sourceMapURL = (path.basename dst) + '.map'
       css = css + "/*# sourceMappingURL=#{sourceMapURL} */"
