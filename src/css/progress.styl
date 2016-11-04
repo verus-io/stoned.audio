@@ -1,0 +1,33 @@
+.progress
+  .bar
+    width: 100%
+    height: 16px
+    display: block
+    position: relative
+
+    &:before
+      content: ''
+      display: block
+      height: 100%
+      width: 10%
+      transition: width 1.6s ease-in-out
+
+    &:after
+      left: 10%
+      transition: left 1.6s ease-in-out
+
+  .message
+    text-transform: uppercase
+    font-size: 16px
+
+  .percent
+    font-size: 17px
+    font-weight: bold
+
++below(800px)
+  .progress
+    width: 100%
+    .bar
+      width: 90%
+      margin-left: auto
+      margin-right: auto

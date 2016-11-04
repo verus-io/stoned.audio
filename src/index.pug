@@ -2,9 +2,10 @@ extends _layout.pug
 
 block content
   section.hero.parallax.video(data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
-    .foreground.product(style='background-image: url(img/hero-prod.png);', data-ratio='-60')
+    .foreground.product(data-ratio='-60')
+      div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
     .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
-    .watch.button
+    .call-to-action.watch.button
       a.play(href='#')
       h3 WATCH VIDEO
     .content
@@ -17,6 +18,177 @@ block content
       iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen)
       .modal-close.modal-close-position
         | &#10005;
+
+  section.progress(data-percent="42%")
+    .bar
+
+  section.press-strip
+    .content
+      img(src="img/press-strip/verge.svg")
+      img(src="img/press-strip/tnw.svg")
+      img(src="img/press-strip/techcrunch.svg")
+      img(src="img/press-strip/forbes.svg")
+
+  section#nowires.full(data-lazy='img/nowires.jpg')
+    h2 TRULY WIRELESS
+    .content
+      h1 No wires. No boundaries.
+      p The era of wires are over. Wireless is the new black and Stoned Audio is truly embracing it. We might have lost the wires and all the hassle they brought, but we kept what's important: the radiant sound.
+
+  section#comfy.full.list.right(data-lazy='img/comfy.jpg')
+    .image
+    .info
+      h1 Get comfy.
+      p
+        | The small, light
+        strong.emphasis &nbsp;Stoned Earphones&nbsp;
+        | leave the tangly wires behind, so you can finally feel truly free — and the snug silicone earbuds keep them right where they belong.
+      ul
+        li
+          div
+            img(data-lazy='img/icons/earbuds-light.svg')
+          div SECURE SILICON EARBUDS
+        li
+          div
+            img(data-lazy='img/icons/isolation-light.svg')
+          div
+            | SOUND
+            br
+            | ISOLATION
+        li
+          div
+            img(data-lazy='img/icons/small-light.svg')
+          div COMPACT ENGINEERING
+        li
+          div
+            img(data-lazy='img/icons/feather-light.svg')
+          div LIGHTWEIGHT PORTABLE
+
+  section#ditch.full.list.left(data-lazy='img/ditch.jpg')
+    .image
+    .info
+      h1 Ditch the wires.
+      p
+        | You can connect the
+        strong.emphasis &nbsp;Stoned Earphones&nbsp;
+        | using modern Bluetooth technology to your phone or tablet of choice — be it an iPhone, iPad or an Android device.
+      ul
+        li
+          div
+            img(data-lazy='img/icons/bluetooth-light.svg')
+          div BLUETOOTH 4.0
+        li
+          div
+            img(data-lazy='img/icons/apple-light.svg')
+          div IOS
+        li
+          div
+            img(data-lazy='img/icons/android-light.svg')
+          div ANDROID
+        li
+          div
+            img(data-lazy='img/icons/range2-light.svg')
+          div 10 METER RADIUS
+
+  section#chargeup.full.list.bottom(data-lazy='img/chargeup.jpg')
+    .content
+      .image
+      .info
+        h1
+          | Charge up.
+        p
+          | With one charge, the Stoned Audio earphones last up to 90 minutes of playback—so they're the perfect companion on your morning commute.
+        p
+          | And since the carrying case doubles as an extra battery you can charge them with, they'll be ready for you during the evening as well.
+        ul
+          li
+            div
+              img(data-lazy='img/icons/battery-dark.svg')
+            div
+              | 90&nbsp;MINUTE PLAYBACK
+          li
+            div
+              img(data-lazy='img/icons/flash-dark.svg')
+            div
+              | 3X&nbsp;CHARGE WITH&nbsp;CASE
+          li
+            div
+              img(data-lazy='img/icons/usb-dark.svg')
+            div
+              | CHARGE VIA&nbsp;USB
+
+  section#comfy.full.list.right(data-lazy='img/rocking.jpg')
+    .image
+    .info
+      h1 Keep on rocking.
+      p
+        | They might be small, but they're mighty. You can enjoy crystal clear sound whether you're listening to music or watching a movie.
+      ul
+        li
+          div
+            img(data-lazy='img/icons/freq-light.svg')
+          div 5-24,000 HZ&nbsp;FREQUENCY
+        li
+          div
+            img(data-lazy='img/icons/speaker2-light.svg')
+          div HIGH&nbsp;QUALITY 9MM&nbsp;DRIVERS
+        li
+          div
+            img(data-lazy='img/icons/speaker-light.svg')
+          div DEEP&nbsp;BASS CLEAR&nbsp;TREBLE
+
+  section#share
+    .content
+      h1 Share the word.
+      p Let your friends know that you found some gems.
+      ul.shares
+        li
+          a(href='https://www.facebook.com/Stoned-Audio-1098749990193907/', target='_blank')
+            i.fa.fa-facebook-square
+        li
+          a(href='http://instagram.com/stonedaudio/', target='_blank')
+            i.fa.fa-instagram
+        li
+          a(href='https://twitter.com/stoned_audio', target='_blank')
+            i.fa.fa-twitter
+
+  section#lovethem.full(data-lazy='img/lovethem2.jpg')
+    .content
+      h1 Your phone will love them.
+      p
+        | Or your tablet, for that matter — with the iOS and Android app, you can pair and customize your
+        strong.emphasis &nbsp;Stoned Earphones&nbsp;
+        | so they'll rock the way you want.
+      br
+      h2 COMING SOON
+      ul.applinks
+        li
+          // a(href='', target='_blank')
+          img(data-lazy='img/appstore.png')
+        li
+          // a(href='', target='_blank')
+          img(data-lazy='img/androidstore.png')
+
+  section#othersrock.full(data-lazy='img/othersrock.jpg')
+    h1 See how others rock.
+
+  section#getstoned.full.parallax(data-lazy='img/getstoned-bg.jpg')
+    .foreground(data-lazy='img/getstoned-fg.png', data-ratio='-60')
+    .content
+      p They can be yours soon.
+      h1 Get
+        img(data-lazy='img/logo-dark.png')
+      #call-to-action.call-to-action.button
+        h3 PRE-ORDER NOW
+
+  section#getnews(data-lazy='img/lovethem.jpg')
+    .content
+      h1 Get the latest news.
+      p Sign up for our newsletter to stay up to date.
+
+      form
+        input(name='email', placeholder='YOUR E-MAIL ADDRESS')
+        button(type='submit') SIGN UP
 
   // section
   //   h1= title
