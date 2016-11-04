@@ -13,7 +13,7 @@
     "clean-css": "3.4.20",
     "coffee-script": "1.11.1",
     "css-mqpacker": "5.0.1",
-    "debounce": "1.0.0",
+    "csso": "2.3.0",
     "ie-love": "0.0.3",
     "jquery": "3.1.1",
     "layzr.js": "2.2.1",
