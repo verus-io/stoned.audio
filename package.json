@@ -1,6 +1,6 @@
 {
   "name": "stoned.audio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "Website for Stoned Audio",
   "author": "Verus Media LLC",
@@ -14,6 +14,7 @@
     "coffee-script": "1.11.1",
     "css-mqpacker": "5.0.1",
     "csso": "2.3.0",
+    "esmangle": "1.0.1",
     "ie-love": "0.0.3",
     "jquery": "3.1.1",
     "layzr.js": "2.2.1",
