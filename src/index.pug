@@ -7,7 +7,7 @@ block content
     .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
     .call-to-action.watch.button
       a.play(href='#')
-      h3 WATCH VIDEO
+      h3 WATCH&nbsp;VIDEO
     .content
       h1 Gems for your ears.
       p Crystal clear audio without any wires.
@@ -19,23 +19,22 @@ block content
       .modal-close.modal-close-position
         | &#10005;
 
-  section.progress(data-percent="42%")
-    .bar
+  include _progress.pug
 
-  section.press-strip
+  section.press-strip( data-skip='true')
     .content
-      img(src="img/press-strip/verge.svg")
-      img(src="img/press-strip/tnw.svg")
-      img(src="img/press-strip/techcrunch.svg")
-      img(src="img/press-strip/forbes.svg")
+      img(src='img/press-strip/verge.svg')
+      img(src='img/press-strip/tnw.svg')
+      img(src='img/press-strip/techcrunch.svg')
+      img(src='img/press-strip/forbes.svg')
 
-  section#nowires.full(data-lazy='img/nowires.jpg')
+  section#nowires.full(data-lazy='img/nowireslow.jpg')
     h2 TRULY WIRELESS
     .content
       h1 No wires. No boundaries.
       p The era of wires are over. Wireless is the new black and Stoned Audio is truly embracing it. We might have lost the wires and all the hassle they brought, but we kept what's important: the radiant sound.
 
-  section#comfy.full.list.right(data-lazy='img/comfy.jpg')
+  section#comfy.full.list.right(data-lazy='img/comfylow.jpg')
     .image
     .info
       h1 Get comfy.
@@ -64,7 +63,7 @@ block content
             img(data-lazy='img/icons/feather-light.svg')
           div LIGHTWEIGHT PORTABLE
 
-  section#ditch.full.list.left(data-lazy='img/ditch.jpg')
+  section#ditch.full.list.left(data-lazy='img/ditchlow.jpg')
     .image
     .info
       h1 Ditch the wires.
@@ -90,7 +89,7 @@ block content
             img(data-lazy='img/icons/range2-light.svg')
           div 10 METER RADIUS
 
-  section#chargeup.full.list.bottom(data-lazy='img/chargeup.jpg')
+  section#chargeup.full.list.bottom(data-lazy='img/chargeuplow.jpg')
     .content
       .image
       .info
@@ -117,7 +116,7 @@ block content
             div
               | CHARGE VIA&nbsp;USB
 
-  section#comfy.full.list.right(data-lazy='img/rocking.jpg')
+  section#rocking.full.list.right(data-lazy='img/rockinglow.jpg')
     .image
     .info
       h1 Keep on rocking.
@@ -143,7 +142,7 @@ block content
       p Let your friends know that you found some gems.
       ul.shares
         li
-          a(href='https://www.facebook.com/Stoned-Audio-1098749990193907/', target='_blank')
+          a(href='https://www.facebook.com/StonedEarbuds', target='_blank')
             i.fa.fa-facebook-square
         li
           a(href='http://instagram.com/stonedaudio/', target='_blank')
@@ -152,7 +151,7 @@ block content
           a(href='https://twitter.com/stoned_audio', target='_blank')
             i.fa.fa-twitter
 
-  section#lovethem.full(data-lazy='img/lovethem2.jpg')
+  section#lovethem.full(data-lazy='img/lovethem2low.jpg')
     .content
       h1 Your phone will love them.
       p
@@ -161,34 +160,27 @@ block content
         | so they'll rock the way you want.
       br
       h2 COMING SOON
-      ul.applinks
-        li
-          // a(href='', target='_blank')
-          img(data-lazy='img/appstore.png')
-        li
-          // a(href='', target='_blank')
-          img(data-lazy='img/androidstore.png')
+      // ul.applinks
+      //   li
+      //     // a(href='', target='_blank')
+      //     img(data-lazy='img/appstore.png')
+      //   li
+      //     // a(href='', target='_blank')
+      //     img(data-lazy='img/androidstore.png')
 
-  section#othersrock.full(data-lazy='img/othersrock.jpg')
+  section#othersrock.full(data-lazy='img/othersrocklow.jpg')
     h1 See how others rock.
 
-  section#getstoned.full.parallax(data-lazy='img/getstoned-bg.jpg')
+  section#getstoned.full.parallax(data-lazy='img/getstoned-bglow.jpg')
     .foreground(data-lazy='img/getstoned-fg.png', data-ratio='-60')
     .content
       p They can be yours soon.
-      h1 Get
+      h1
         img(data-lazy='img/logo-dark.png')
-      #call-to-action.call-to-action.button
-        h3 PRE-ORDER NOW
-
-  section#getnews(data-lazy='img/lovethem.jpg')
-    .content
-      h1 Get the latest news.
-      p Sign up for our newsletter to stay up to date.
-
-      form
-        input(name='email', placeholder='YOUR E-MAIL ADDRESS')
-        button(type='submit') SIGN UP
+        | Launches In
+      .clock
+      // #call-to-action.call-to-action.button
+      //   h3 PRE-ORDER NOW
 
   // section
   //   h1= title

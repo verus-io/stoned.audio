@@ -27,6 +27,8 @@ $(document).ready ->
   $('.next-section').on 'click', (e) ->
     $section = $($(this).parents('section, .block').last())
     $nextSection = $($section).next()
+    $nextSection = $nextSection.next() while $nextSection.attr('data-skip')
+
     if $nextSection.length != 0
       offset = ($(window).height() - $nextSection.height()) / 2
       $('html, body').animate { scrollTop: $nextSection.offset().top - offset }, 500

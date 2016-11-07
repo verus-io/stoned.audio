@@ -33,26 +33,51 @@ html(lang='en')
         //     a(href='#') Specs
         // |
         a(href='/')
-          img.logo(src='./img/logo.png', alt='Company Logo')
-        a.button.call-to-action(href='#cta') PRE-ORDER NOW
+          img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
+        a.button.call-to-action(href='#cta')
+          // | PRE-ORDER
+          | RESERVE
+          span.extra &nbsp;NOW
 
     block content
+
+    section#getnews(data-lazy='img/lovethemlow.jpg')
+      .content
+        // h1 Get the latest news.
+        // p Sign up for our newsletter to stay up to date.
+
+        h1 Claim your spot on the waiting list now.
+        p
+          | Be the first to know when
+          // | Stoned
+          img(src='./img/logo.png', alt='Stoned Audio Logo')
+          | &nbsp;is available.
+          | Then get bonus discounts, special offers, and the latest updates and with our newsletter.
+
+        form#call-to-action
+          script(src='//api.crowdstart.com/mailinglist/aD8u9KDZsv/js')
+          input(name='email', placeholder='YOUR E-MAIL ADDRESS')
+          button(type='submit') SIGN UP
 
     footer
       nav
         ul
+          // li
+          //   a(href='about') ABOUT
+          // li
+          //   a(href='press') PRESS
+          // li
+          //   a(href='faq') FAQ
           li
-            a(href='#') ABOUT
+            a(href='/') HOME
           li
-            a(href='#') PRESS
+            | |
           li
-            a(href='#') FAQ
-          li
-            a(href='#') PRIVACY
+            a(href='privacy') PRIVACY POLICY
       nav
         ul
           li
-            a(href='https://www.facebook.com/Stoned-Audio-1098749990193907/', target='_blank')
+            a(href='https://www.facebook.com/StonedEarbuds', target='_blank')
               i.fa.fa-facebook-square
           li
             a(href='http://instagram.com/stonedaudio/', target='_blank')
@@ -61,7 +86,7 @@ html(lang='en')
             a(href='https://twitter.com/stoned_audio', target='_blank')
               i.fa.fa-twitter
       a(href='#')
-        img.logo(src='./img/logo.png', alt='Company Logo')
+        img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
       small.copyright &copy; Stoned Audio, LLC 2016
     // .loader
 
@@ -87,5 +112,7 @@ html(lang='en')
     <!--<![endif]-->
 
     script(src='js/app.js')
+    script
+      | !function(t,e,a){var r,n,c,i,o,s,l,u;if(null==t.analytics){for(r=[],r.methods=["ab","alias","group","identify","off","on","once","page","pageview","ready","track","trackClick","trackForm","trackLink","trackSubmit"],l=r.methods,c=function(t){r[t]=function(){var e;return e=Array.prototype.slice.call(arguments),e.unshift(t),r.push(e),r}},i=0,o=l.length;o>i;i++)s=l[i],c(s);return u=e.createElement("script"),u.async=!0,u.type="text/javascript",u.src=a,n=e.getElementsByTagName("script")[0],n.parentNode.insertBefore(u,n),t.analytics=r}}(window,document,"//cdn.crowdstart.com/a/stoned.js");
 
     block script
