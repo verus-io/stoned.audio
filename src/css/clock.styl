@@ -4,6 +4,7 @@
   margin-right: auto
   width: auto
   transform: scale(.8, .8);
+  margin-top: -25px
 
   .inn
   .flip-clock-dot
@@ -17,3 +18,19 @@
     margin-bottom: 10px;
     font-family: 'Helvetica', 'Arial', sans-serif;
     font-weight: 100;
+
+  +below(600px)
+
+    .minutes
+      clear: left
+      width: 0
+      margin-top: 30px
+
+      .flip-clock-dot
+        display: none
+
+      & ~ .flip
+        margin-top: 30px
+
+    .seconds
+      margin-top: 30px

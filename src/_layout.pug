@@ -33,7 +33,7 @@ html(lang='en')
         //     a(href='#') Specs
         // |
         a(href='/')
-          img.logo(src='./img/logo.png', alt='Company Logo')
+          img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
         a.button.call-to-action(href='#cta')
           // | PRE-ORDER
           | RESERVE
@@ -41,17 +41,39 @@ html(lang='en')
 
     block content
 
+    section#getnews(data-lazy='img/lovethemlow.jpg')
+      .content
+        // h1 Get the latest news.
+        // p Sign up for our newsletter to stay up to date.
+
+        h1 Claim your spot on the waiting list now.
+        p
+          | Be the first to know when
+          // | Stoned
+          img(src='./img/logo.png', alt='Stoned Audio Logo')
+          | &nbsp;is available.
+          | Then get bonus discounts, special offers, and the latest updates and with our newsletter.
+
+        form#call-to-action
+          script(src='//api.crowdstart.com/mailinglist/aD8u9KDZsv/js')
+          input(name='email', placeholder='YOUR E-MAIL ADDRESS')
+          button(type='submit') SIGN UP
+
     footer
       nav
         ul
+          // li
+          //   a(href='about') ABOUT
+          // li
+          //   a(href='press') PRESS
+          // li
+          //   a(href='faq') FAQ
           li
-            a(href='about') ABOUT
+            a(href='/') HOME
           li
-            a(href='press') PRESS
+            | |
           li
-            a(href='faq') FAQ
-          li
-            a(href='privacy') PRIVACY
+            a(href='privacy') PRIVACY POLICY
       nav
         ul
           li
@@ -64,7 +86,7 @@ html(lang='en')
             a(href='https://twitter.com/stoned_audio', target='_blank')
               i.fa.fa-twitter
       a(href='#')
-        img.logo(src='./img/logo.png', alt='Company Logo')
+        img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
       small.copyright &copy; Stoned Audio, LLC 2016
     // .loader
 

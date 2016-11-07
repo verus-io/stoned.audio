@@ -19,15 +19,14 @@ block content
       .modal-close.modal-close-position
         | &#10005;
 
-  section.progress(data-percent="42%", data-skip="true")
-    .bar
+  include _progress.pug
 
-  section.press-strip( data-skip="true")
+  section.press-strip( data-skip='true')
     .content
-      img(src="img/press-strip/verge.svg")
-      img(src="img/press-strip/tnw.svg")
-      img(src="img/press-strip/techcrunch.svg")
-      img(src="img/press-strip/forbes.svg")
+      img(src='img/press-strip/verge.svg')
+      img(src='img/press-strip/tnw.svg')
+      img(src='img/press-strip/techcrunch.svg')
+      img(src='img/press-strip/forbes.svg')
 
   section#nowires.full(data-lazy='img/nowireslow.jpg')
     h2 TRULY WIRELESS
@@ -182,15 +181,6 @@ block content
       .clock
       // #call-to-action.call-to-action.button
       //   h3 PRE-ORDER NOW
-
-  section#getnews(data-lazy='img/lovethemlow.jpg')
-    .content
-      h1 Get the latest news.
-      p Sign up for our newsletter to stay up to date.
-
-      form#call-to-action
-        input(name='email', placeholder='YOUR E-MAIL ADDRESS')
-        button(type='submit') SIGN UP
 
   // section
   //   h1= title
