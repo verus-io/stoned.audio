@@ -1,23 +1,26 @@
 extends _layout.pug
 
 block content
-  section.hero.parallax.video(data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
+  section.hero.parallax.video
+    // (data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
     .foreground.product(data-ratio='-60')
       div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
     .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
     .call-to-action.watch.button
-      a.play(href='#')
-      h3 WATCH&nbsp;VIDEO
+      h3 GET STONED
+    // .call-to-action.watch.button
+      // a.play(href='#')
+      // h3 WATCH&nbsp;VIDEO
     .content
       h1 Gems for your ears.
       p Crystal clear audio without any wires.
 
     a.button.summary-down.next-section(href='#')
       img(src='img/down-icon.svg')
-    .video-modal.modal.hidden
-      iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen)
-      .modal-close.modal-close-position
-        | &#10005;
+    // .video-modal.modal.hidden
+    //   iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen)
+    //   .modal-close.modal-close-position
+    //     | &#10005;
 
   include _progress.pug
 
