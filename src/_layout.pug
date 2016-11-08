@@ -49,9 +49,9 @@ html(lang='en')
         //   li
         //     a(href='#') Specs
         // |
-        a(href='/')
+        a#home(href='/')
           img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
-        a.button.call-to-action(href='#cta')
+        a#preorder.button.call-to-action(href='#cta')
           // | PRE-ORDER
           | RESERVE
           span.extra &nbsp;NOW
@@ -86,23 +86,23 @@ html(lang='en')
           // li
           //   a(href='faq') FAQ
           li
-            a(href='/') HOME
+            a#home(href='/') HOME
           li
             | |
           li
-            a(href='privacy') PRIVACY POLICY
+            a#privacy(href='privacy') PRIVACY POLICY
       nav
         ul
           li
-            a(href='https://www.facebook.com/StonedEarbuds', target='_blank')
+            a#social-facebook(href='https://www.facebook.com/StonedEarbuds', target='_blank')
               i.fa.fa-facebook-square
           li
-            a(href='http://instagram.com/stonedaudio/', target='_blank')
+            a#social-instagram(href='http://instagram.com/stonedaudio/', target='_blank')
               i.fa.fa-instagram
           li
-            a(href='https://twitter.com/stoned_audio', target='_blank')
+            a#social-twitter(href='https://twitter.com/stoned_audio', target='_blank')
               i.fa.fa-twitter
-      a(href='#')
+      a#home(href='#')
         img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
       small.copyright &copy; Stoned Audio, LLC 2016
     // .loader
