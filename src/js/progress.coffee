@@ -2,6 +2,9 @@
 
 $(document).ready ->
   $progress = $('.progress')
+  if !$progress[0]
+    return
+
   $style = $('<style></style>')
   $progress.append $style
 

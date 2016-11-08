@@ -10,21 +10,22 @@ $(document).ready ->
 
   $progress = $('.progress')
   sticky = false
-  progressFn = ->
-    offset = $progress.offset()
-    bottom = $(window).height() + $(window).scrollTop()
-    if offset.top <= bottom && offset.top + 40 >= bottom
-      $progress.find('.bar').css
-        top: -40 + (bottom - $progress.offset().top)
-      sticky = true
-    else if (offset.top > bottom || offset.top + 40 < bottom) && sticky
-      $progress.find('.bar').css
-        top: ''
-      sticky = false
+  if $progress[0]
+    progressFn = ->
+      offset = $progress.offset()
+      bottom = $(window).height() + $(window).scrollTop()
+      if offset.top <= bottom && offset.top + 40 >= bottom
+        $progress.find('.bar').css
+          top: -40 + (bottom - $progress.offset().top)
+        sticky = true
+      else if (offset.top > bottom || offset.top + 40 < bottom) && sticky
+        $progress.find('.bar').css
+          top: ''
+        sticky = false
 
-  fn = ->
-    requestTick progressFn
-  $(window).on 'scroll touchmove mousewheel', fn
+    fn = ->
+      requestTick progressFn
+    $(window).on 'scroll touchmove mousewheel', fn
 
-  fn()
+    fn()
 
