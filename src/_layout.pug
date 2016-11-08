@@ -70,9 +70,9 @@ html(lang='en')
         //   li
         //     a(href='#') Specs
         // |
-        a(href='/')
+        a#home(href='/')
           img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
-        a.button.call-to-action(href='#cta')
+        a#preorder.button.call-to-action(href='#cta')
           // | PRE-ORDER
           | RESERVE
           span.extra &nbsp;NOW
@@ -108,23 +108,23 @@ html(lang='en')
           // li
           //   a(href='faq') FAQ
           li
-            a(href='/') HOME
+            a#home(href='/') HOME
           li
             | |
           li
-            a(href='privacy') PRIVACY POLICY
+            a#privacy(href='privacy') PRIVACY POLICY
       nav
         ul
           li
-            a(href='https://www.facebook.com/StonedEarbuds', target='_blank')
+            a#social-facebook(href='https://www.facebook.com/StonedEarbuds', target='_blank')
               i.fa.fa-facebook-square
           li
-            a(href='http://instagram.com/stonedaudio/', target='_blank')
+            a#social-instagram(href='http://instagram.com/stonedaudio/', target='_blank')
               i.fa.fa-instagram
           li
-            a(href='https://twitter.com/stoned_audio', target='_blank')
+            a#social-twitter(href='https://twitter.com/stoned_audio', target='_blank')
               i.fa.fa-twitter
-      a(href='#')
+      a#home(href='#')
         img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
       small.copyright &copy; Stoned Audio, LLC 2016
     // .loader
@@ -153,5 +153,10 @@ html(lang='en')
     script(src='js/app.js')
     script
       | !function(t,e,a){var r,n,c,i,o,s,l,u;if(null==t.analytics){for(r=[],r.methods=["ab","alias","group","identify","off","on","once","page","pageview","ready","track","trackClick","trackForm","trackLink","trackSubmit"],l=r.methods,c=function(t){r[t]=function(){var e;return e=Array.prototype.slice.call(arguments),e.unshift(t),r.push(e),r}},i=0,o=l.length;o>i;i++)s=l[i],c(s);return u=e.createElement("script"),u.async=!0,u.type="text/javascript",u.src=a,n=e.getElementsByTagName("script")[0],n.parentNode.insertBefore(u,n),t.analytics=r}}(window,document,"//cdn.crowdstart.com/a/stoned.js");
+    script
+      | setTimeout(function(){var a=document.createElement("script");
+      | var b=document.getElementsByTagName("script")[0];
+      | a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0057/6651.js?"+Math.floor(new Date().getTime()/3600000);
+      | a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
     block script
