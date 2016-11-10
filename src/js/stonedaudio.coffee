@@ -1,6 +1,8 @@
 {requestTick} = require './utils'
 
 $(document).ready ->
+  emailRe = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+
   setTimeout ->
     $('.hero .foreground.product').addClass('animated')
   , 300
@@ -29,3 +31,17 @@ $(document).ready ->
 
     fn()
 
+  $('form#call-to-action').on 'submit', ->
+    $form = $(this)
+
+    $email = $form.find('#email')
+    $error = $form.find('.error')
+    $error.text ''
+
+    email = $email.val()
+
+    if emailRe.test email
+      return true
+
+    $error.text 'Enter a valid email.'
+    return false
