@@ -28,7 +28,8 @@
     "requisite": "1.19.1",
     "rucksack-css": "0.8.6",
     "rupture": "0.6.2",
-    "shop.js": "1.0.65",
+    "selectize": "0.12.4",
+    "shop.js": "1.0.66",
     "shortcake": "1.1.18",
     "stylus": "0.54.5"
   }

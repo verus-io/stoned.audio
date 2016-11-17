@@ -14,11 +14,11 @@
           | { renderCurrency(data.get('order.currency'), data.get('order.total'))} { data.get('order.currency').toUpperCase() }
       lineitems(if='{ !isEmpty() }')
         .animated.slideInRight
-          .product-image-container(if="{ data.get('productSlug').indexOf('SC') != 0 }")
-            img(src="/images/products/kits/{data.get('productSlug')}.png", alt="{ data.get('productName') }")
-          .product-image-container(if="{ data.get('productSlug').indexOf('SC') == 0 }")
-            img(src="/images/products/scent-backgrounds/{data.get('productSlug').replace('-S','')}-bg.png", alt="{ data.get('productName') }")
-            img(src="/images/products/scent-candles/{data.get('productSlug').replace('-S','')}.png", alt="{ data.get('productName') }")
+          // .product-image-container(if="{ data.get('productSlug').indexOf('SC') != 0 }")
+          //   img(src="/images/products/kits/{data.get('productSlug')}.png", alt="{ data.get('productName') }")
+          // .product-image-container(if="{ data.get('productSlug').indexOf('SC') == 0 }")
+          //   img(src="/images/products/scent-backgrounds/{data.get('productSlug').replace('-S','')}-bg.png", alt="{ data.get('productName') }")
+          //   img(src="/images/products/scent-candles/{data.get('productSlug').replace('-S','')}.png", alt="{ data.get('productName') }")
           .product-text-container
             span.product-description
               span.product-name { data.get('productName') }
@@ -35,7 +35,7 @@
       .promo
         .promo-row
           promocode.input(placeholder='Coupon Code')
-          button.applying(class='{ loading: }', onclick='{ applyPromoCode }') Apply
+          button.applying(class='{ loading: applying }', onclick='{ applyPromoCode }') Apply
           .promo-message(if="{ data.get('order.promoCode') && !promoMessage && !applying }")
             | Don't forget to apply your code!
           .promo-message(if='{ promoMessage }')
@@ -151,7 +151,7 @@
                 i.fa.fa-twitter
               a(href='mailto:?Subject=I%20found%20this%20cool%20thing.&body=Hey,%20I%20want%20you%20to%20get%20Stoned,%20check%20it%20out%20here%3A%20https%3A%2F%2Fstoned.audio')
                 i.fa.fa-instagram
-      button.loading.checkedOut(class='{ loading: || }', type='submit')
+      button.loading.checkedOut(class='{ loading: loading || checkedOut }', type='submit')
         span Pre-order
         span Complete Checkout
       .error(if='{ errorMessage }')
