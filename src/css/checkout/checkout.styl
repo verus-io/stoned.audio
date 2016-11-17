@@ -1,0 +1,732 @@
+.checkout-container
+  position: absolute
+  width: 100vw
+  display: table;
+  top: -500vh
+  left: 0
+  transition: top 500ms ease
+  overflow-y: scroll
+  font-size: 1rem
+  z-index: 100000
+
+  .parts
+    display: table
+    width: 220%
+    height: 100%
+    position: relative
+    top: 0
+    left: 0
+    transition: transform 200ms ease-in, height 200ms ease-in
+
+    .part
+      width: 45.45%
+      margin-right: 4.55%
+      float: left
+      overflow: hidden
+
+      &:last-child
+        height:1px
+
+        & > *
+          display: none
+
+  h1
+    .modal-open
+      margin-top: 10px
+
+  input,
+  select,
+  button,
+  select > input[type="button"],
+  textarea
+    -moz-appearance: none !important
+    line-height: 1em !important
+    vertical-align: middle
+    color: #525252 !important
+
+  .selectize-input.focus
+  input:focus
+    border-color: #ed8d48
+
+  input,
+  select,
+  button,
+  select > input[type="button"],
+  textarea,
+  .selectize-input
+    border: 2px solid #c9c9c9
+
+    &:focus
+      outline-width: 0
+
+  a
+    color: #ed8d48
+    text-decoration: underline
+
+  h1
+    font-size: 20px
+    text-align: left
+    font-family: proxima-nova
+    text-shadow: none
+
+    .invoice-amount
+      display: none
+
+  .checkout
+    border-radius: 3px
+    position: absolute
+    padding: 30px
+    margin: 10vh 0 30vh 0
+    width: 90%
+    display: table
+    max-width: 1000px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: white
+    color: #525252
+
+    > *:not(.continue-shopping)
+
+      h1:first-child
+        // border-bottom: 2px solid #c9c9c9
+        width: 100%
+        margin-top: -.5em
+        line-height: 2em
+        color: #9BA0A4
+
+    input[type=text]
+    textarea
+      width: 100%
+
+    input[type=text]
+    button
+    textarea
+      color: #525252
+      height: 32px
+      line-height: 1em
+      font-size: 16px
+
+    textarea
+      height: 96px
+
+    button
+      background-color: #ed8d48
+      border: 2px solid #ed8d48
+      font-size: 1em
+      color: white !important
+
+    .error
+    .promo-message
+      color: #ed8d48
+      font-size: 14px
+      padding: 8px 0
+      line-height: 1em
+      text-align: left
+
+#cart-collapsed
+  display: none
+
+checkout
+  overflow: hidden
+
+  button[type=submit]
+    span:first-child
+      display: block
+    span:last-child
+      display: none
+
+  &.step-2
+    .parts
+      transform: translateX(-50%)
+
+      .part
+        &:first-child
+          height: 1px
+
+          & > *
+            display: none
+
+        &:last-child
+          height: auto
+
+          & > *
+            display: block
+
+    button[type=submit]
+      span:first-child
+        display: none
+      span:last-child
+        display: block
+
+cart
+  padding-bottom: 40px
+
+cart
+checkout
+lineitems
+lineitem
+  width: 100%
+  position: relative
+  display: block
+
+lineitem
+  display: inline
+
+  & > div
+    width: 100%
+
+quantity-select-control
+.promo
+.promo-row
+.invoice-line
+.input
+  width: 100%
+  display: table
+  position: relative
+
+.promo-row
+  button
+    padding: 0
+
+.selectize-control.single .selectize-input::after
+  top: 12px
+  right: 8px
+  margin-top: 0px
+
+.selectize-input
+  border-radius: 0 !important
+  height: 32px !important
+  max-width: 60px
+
+  input
+    position: absolute !important
+
+.selectize-dropdown.single
+  border-radius: 0 !important
+
+lineitem
+  & > * > *
+    float: left;
+
+.product-quantity-container
+  width: 45px !important
+  display: inline-block
+  margin-top: 5px
+  float: right !important
+
+.product-description
+  line-height: 1.25em
+  padding-top: 3px
+  padding-left: 6px
+  display: inline-block
+  vertical-align: top
+  width: 90%
+
+  .product-name
+    color: #525252
+    font-weight: bold
+    display: block
+
+  > *:last-child
+    font-size: 10px
+    line-height: 1rem
+    margin-top: 0
+
+.product-image-container
+  width: 30%
+  position: relative
+  // top: -20px
+
+  img:nth-child(n+2)
+    position: absolute
+    width: 100%
+    top: 0;
+    left: 0;
+
+.product-text-container
+  width: 45%
+
+.product-price-container
+  line-height: 1.25em
+  width: 25%
+  text-align: right
+  float: right !important
+  margin-top: 3px
+
+.product-list-price
+  color: #aaa
+  font-size: .9em
+
+.product-slug
+  display: none
+
+.product-delete
+  cursor: pointer
+  width: 25%
+  float: right !important
+  text-align: right
+  color: #e4aa47
+
+.product-currency
+  display: inline
+
+.product-list-price
+  text-decoration: line-through;
+
+lineitems
+  padding-bottom: 20px
+
+lineitem
+  & > *
+    float: left;
+
+.promo-row
+  padding-bottom: 20px
+
+  & > *
+    float: left;
+  promocode
+    width: 75%
+
+    input
+      border-right: 0
+  button
+    width: 25%
+  .promo-message
+    width: 40%
+    padding: 5px 0 5px 16px
+    text-align: right
+
+.invoice-line
+  & > *
+    float: left
+
+  div:first-child
+    width:70%
+    padding-right:5%
+
+  div:last-child
+    width: 30%
+
+.invoice-label
+  color: #999
+
+.invoice-total
+  font-weight: bold
+  font-size: 1.1em
+  border-top: 2px solid #c9c9c9
+  margin-top: 4px
+  padding-top: 4px
+
+  .invoice-label
+    color: #525252
+
+.invoice-discount
+  .invoice-amount
+    color: #ed8d48
+
+.invoice-amount
+  text-align: right
+  font-weight: bold
+
+checkout
+  .input
+    padding-bottom: 16px
+    line-height: 2em
+
+  .selectize-input
+    max-width: 100%
+
+    .item
+      font-size: 16px
+
+    input
+      width: 100% !important
+      margin-top: -6px !important
+      margin-left: 16px !important
+      left: 0
+
+  .fields
+    width: 100%
+    display: table
+
+    & > *
+      float: left
+
+.contact-information
+.shipping-information
+.payment-information
+.confirmation
+.gift-options
+cart
+  margin-bottom: 30px
+  position: relative
+  padding: 16px
+  border: 2px solid #C9C9C9
+
+cart
+  line-height: 1.8em
+
+shippingaddress-line1
+  width: 55% !important
+  margin-right: 5%
+
+shippingaddress-line2
+  width: 40% !important
+
+shippingaddress-city
+  width: 65% !important
+  margin-right: 5%
+
+shippingaddress-postalcode
+  width: 30% !important
+
+shippingaddress-state
+  width: 40% !important
+  margin-right: 5%
+
+shippingaddress-country
+  width: 55% !important
+
+card-number
+  width: 52% !important
+  margin-right: 4%
+
+card-expiry
+  width: 23% !important
+  margin-right: 4%
+
+card-cvc
+  width: 17% !important
+
+gift-message
+  width: 100%
+
+cart
+checkout
+  float: right
+  width: 48%
+
+checkout
+  margin-right: 4%
+
+.stripe-logo
+  width: 100px
+
+.continue-shopping
+  cursor: pointer
+  margin-top: -10px
+  text-align: right
+
+  h1
+    font-size: 1em !important
+
+  i
+    margin-bottom: -8px
+
+.lock,
+.arrow-left,
+.shopping-bag
+  height: 26px !important
+  width: 26px !important
+  background-size: cover !important
+  display:inline-block;
+
+.lock
+  background: url(/images/icons/lock.svg)
+  position: absolute
+  top: 9px
+  right: 12px
+
+.arrow-left
+  margin-right: 8px
+  background: url(/images/icons/arrow-left.svg)
+  color: black
+
+.shopping-bag
+  margin-left: 8px
+  background: url(/images/icons/shopping-bag.svg)
+
+.special-offer
+  margin-top: 4px
+  padding-top: 10px
+  border-top: 2px solid #c9c9c9
+
+  h1
+    margin-bottom: 4px
+    border-bottom: 0 !important
+
+.checkbox
+terms
+gift-toggle
+  font-family: helvetica
+  margin-bottom: 20px
+  display: block
+
+  label
+    padding-top: 2px;
+    font-size: 16px !important
+    line-height: 1.2rem;
+    display: inline-block;
+    color: #9ba0a4
+
+  /* Base for label styling */
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+  }
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label {
+    position: relative;
+    text-indent: 25px;
+    cursor: pointer;
+  }
+
+  /* checkbox aspect */
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before {
+    content: ''
+    position: absolute
+    left:0
+    top: -1px
+    width: 17px; height: 17px;
+    border: 2px solid #aaa;
+    background: #f8f8f8;
+  }
+  /* checked mark aspect */
+  [type="checkbox"]:not(:checked) + label:after,
+  [type="checkbox"]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    font-size: 18px;
+    line-height: 0.8;
+    color: #09ad7e;
+    transition: all .2s;
+    text-indent: 0;
+  }
+  /* checked mark aspect changes */
+  [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+  [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  /* disabled checkbox */
+  [type="checkbox"]:disabled:not(:checked) + label:before,
+  [type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+  [type="checkbox"]:disabled:checked + label:after {
+    color: #999;
+  }
+  [type="checkbox"]:disabled + label {
+    color: #aaa;
+  }
+  /* accessibility */
+  [type="checkbox"]:checked:focus + label:before,
+  [type="checkbox"]:not(:checked):focus + label:before {
+    border: 2px dotted blue;
+  }
+
+  /* hover style just for information */
+  label:hover:before {
+    border: 2px solid #ed8d48!important;
+  }
+
+button[type=submit]
+  width: 100%;
+  font-size: 20px !important;
+  padding: 20px;
+  line-height: 2px !important;
+
+.thankyou
+  position: absolute
+  top: 35vh
+  max-width: 600px
+  width: 80vw
+  padding: 40px
+  opacity: 0
+  transition: opacity 500ms ease
+  left: 50%
+  transform: translateX(-50%)
+  display:none
+  text-align: center
+
+  .social
+    text-align: center
+
+    > *
+      margin-top: 0
+
+@media screen and (max-width: 980px)
+  cart
+  checkout
+    width: 100%
+    margin-right: 0
+
+  cart
+    h1
+      display: inline-block
+
+      label
+        float: left
+        cursor: pointer
+
+      .invoice-amount
+        float: right
+        font-size: 16px
+        color: #525252
+        margin-top: -12px;
+
+    .expand-summary
+      margin-right: 20px
+      transform: rotate(225deg)
+      display: block
+      position: relative
+      top: 15px
+      left: 8px
+      z-index: 2
+      width: 12px
+      height: 12px
+      border-bottom: 2px solid #9ba0a4
+      border-right: 2px solid #9ba0a4
+
+  #cart-collapsed[type="checkbox"]:checked + cart
+    h1
+      .invoice-amount
+        display: inline-block !important
+
+    .expand-summary
+      transform: rotate(45deg)
+      top: 10px
+
+    lineitems
+    .invoice-discount
+    .invoice-line
+      display: block
+      height: 0
+      padding-top: 0
+      padding-bottom: 0
+      margin-top: 0
+      margin-bottom: 0
+      overflow: hidden
+      border: 0
+
+    .special-offer
+      border: 0
+
+    .promo-row
+      padding-bottom: 0
+
+@media screen and (max-width: 600px)
+  .promo-row
+    padding-bottom: 20px
+
+    & > *
+      float: left;
+    promocode
+      width: 60% !important
+    button
+      width: 40%
+    .promo-message
+      width: 100%
+      padding: 5px
+
+@media screen and (max-width: 500px)
+  .checkout
+    font-size: 80%
+    padding: 20px
+
+    // .product-description
+    //   margin-top: -54px
+    //   margin-left: 55px
+
+    input,
+    select,
+    button,
+    select > input[type="button"],
+    textarea
+      font-size: 70%
+
+      // Makes iOS checkbox appear correctly but skews desktop
+    [type="checkbox"]:not(:checked) + label:after,
+    [type="checkbox"]:checked + label:after
+      top: 6px
+      left: 2px
+      font-size: 14px
+      line-height: 0.8
+
+    .product-image-container
+      width: 30%
+
+    .product-text-container
+      width: 50%
+
+    .product-description-container
+      width: 100%
+
+    .product-price-container
+      width: 100%
+
+  .input
+    width: 100% !important
+
+  .invoice-line
+    & > *
+      float: left
+
+    div:first-child
+      width:50%
+      text-align: left
+
+    div:last-child
+      width: 50%
+      text-align: right
+
+@media screen and (max-width: 400px)
+  .product-image-container
+    width: 30%
+
+  .product-text-container
+    width: 40%
+
+  .product-price-container
+    width: 30%
+
+  .checkout
+    .product-image-container
+      width: 30%
+
+    .product-text-container
+      width: 70%
+
+    .product-price-container
+      width: 100%
+
+// Generic Modal Effects
+.checkout-modal
+  position: fixed
+  opacity: 0
+  width: 100vw
+  height: 500vh
+  top: -600vh
+  left: 0
+  z-index: 999
+  background-color: rgba(0, 0, 0, 0.75)
+  transition: opacity 500ms ease
+  z-index: 3000
+
+  &.hidden
+    display: block !important
+
+  &.is-open
+    top: 0
+    opacity: 1
+    transition: opacity 500ms ease

@@ -6,7 +6,7 @@ block content
     .foreground.product(data-ratio='-60')
       div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
     .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
-    .call-to-action.watch.button
+    .pre-order-button.watch.button
       h3 GET STONED
     // .call-to-action.watch.button
       // a.play(href='#')
@@ -178,11 +178,15 @@ block content
   section#getstoned.full.parallax(data-lazy='img/getstoned-bglow.jpg')
     .foreground(data-lazy='img/getstoned-fg.png', data-ratio='-60')
     .content
+      p Shipping in December
       h1
-        | Available soon.
-      .clock
-      // #call-to-action.call-to-action.button
-      //   h3 PRE-ORDER NOW
+        | Get&nbsp;
+        img(data-lazy='img/logo-dark.png')
+      // h1
+      //   | Available soon.
+      // .clock
+      #call-to-action.pre-order-button.button
+        h3 PRE-ORDER NOW
 
 
   section#share

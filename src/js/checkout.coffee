@@ -3,7 +3,11 @@ $ ->
   window.selectize = require 'selectize'
 
   settings =
-    key: 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzYsImp0aSI6ImZnWGRlQ0p0Ml93Iiwic3ViIjoiNE5UeFhsUXJ0YiJ9.fU7jcJN4NtvrX4nLAarWwkfposl35-cM-uMFvMUaPvIW90WoCh5HIvabYMnoJW4GSqbrHA1jGNGRlEVxPpHDAA'
+    # prod live
+    key: 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzIsImp0aSI6ImZBcnVLbXhLUXE0Iiwic3ViIjoiNE5UeFhsUXJ0YiJ9.fOUs-H-ALpW2LtZfwT7D1sAn3Ipq7NYvnTclRZGXwRK7XvIBBovQgjB8xmezllH65LYR6hl_Wz8tr6wREJV_OQ'
+
+    # prod test
+    # key: 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzYsImp0aSI6InN6TFRXSnBhMms0Iiwic3ViIjoiNE5UeFhsUXJ0YiJ9.LeAFqqbKsxKCDJXHIoYJ3Ltt7qcN9K9lVmhDlQK-dimCn0MElregH6qm01sVrYE7We6Gm-4qh7dvMXO8WxAk0w'
     endpoint: 'https://api.crowdstart.com'
     order:
       metadata: batch: 'preorder'
@@ -74,6 +78,9 @@ $ ->
     $('.checkout-container').css 'top', ''
     $('.thankyou').css('top', '').hide()
     false
+
+  $('.pre-order-button').on 'click', window.openCheckout
+
   $('button[type=submit]').on 'click', ->
     if step == 2
       return true

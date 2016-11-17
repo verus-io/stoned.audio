@@ -9,7 +9,7 @@ $(document).ready ->
     $('body').addClass 'modal-lock'
     $modal.removeClass 'hidden'
 
-  $('.modal').on 'scroll touchmove mousewheel', (e) ->
+  $('.modal:not(.checkout-modal)').on 'scroll touchmove mousewheel', (e) ->
     e.preventDefault()
     e.stopPropagation()
     false
