@@ -31,6 +31,8 @@
           display: none
 
   h1
+    margin: 0
+
     .modal-open
       margin-top: 10px
 
@@ -42,11 +44,14 @@
     -moz-appearance: none !important
     line-height: 1em !important
     vertical-align: middle
-    color: #525252 !important
+    color: #000 !important
 
   .selectize-input.focus
   input:focus
-    border-color: #ed8d48
+    border-color: #3DF2B6
+
+  .selectize-input.full
+    min-height: 0 !important
 
   input,
   select,
@@ -60,13 +65,12 @@
       outline-width: 0
 
   a
-    color: #ed8d48
+    color: #3DF2B6
     text-decoration: underline
 
   h1
     font-size: 20px
     text-align: left
-    font-family: proxima-nova
     text-shadow: none
 
     .invoice-amount
@@ -75,24 +79,22 @@
   .checkout
     border-radius: 3px
     position: absolute
-    padding: 30px
     margin: 10vh 0 30vh 0
     width: 90%
     display: table
-    max-width: 1000px
+    max-width: 480px
     left: 50%
     transform: translateX(-50%)
-    background-color: white
-    color: #525252
+    background-color: #FFF
+    color: #000
 
     > *:not(.continue-shopping)
 
       h1:first-child
         // border-bottom: 2px solid #c9c9c9
         width: 100%
-        margin-top: -.5em
         line-height: 2em
-        color: #9BA0A4
+        color: #000
 
     input[type=text]
     textarea
@@ -101,7 +103,7 @@
     input[type=text]
     button
     textarea
-      color: #525252
+      color: #000
       height: 32px
       line-height: 1em
       font-size: 16px
@@ -110,14 +112,14 @@
       height: 96px
 
     button
-      background-color: #ed8d48
-      border: 2px solid #ed8d48
+      background-color: #3DF2B6
+      border: 2px solid #3DF2B6
       font-size: 1em
       color: white !important
 
     .error
     .promo-message
-      color: #ed8d48
+      color: #F22469
       font-size: 14px
       padding: 8px 0
       line-height: 1em
@@ -128,6 +130,33 @@
 
 checkout
   overflow: hidden
+
+  input
+    padding: 0
+    border-radius: 0
+    border-width: 0 !important
+    border-bottom: 2px solid #000 !important
+    transition: color .4s ease-in, border-color .4s ease-in
+
+    &.invalid
+      color: #F22469 !important
+      border-color: #F22469 !important
+
+    &.valid
+      // color: #3DF2B6 !important
+      border-color: #3DF2B6 !important
+
+    &:-moz-placeholder
+      color: #BBB
+
+    &::-moz-placeholder
+      color: #BBB
+
+    &:-ms-input-placeholder
+      color: #BBB
+
+    &::-webkit-input-placeholder
+      color: #BBB
 
   button[type=submit]
     span:first-child
@@ -157,9 +186,6 @@ checkout
         display: none
       span:last-child
         display: block
-
-cart
-  padding-bottom: 40px
 
 cart
 checkout
@@ -203,6 +229,7 @@ quantity-select-control
 
 .selectize-dropdown.single
   border-radius: 0 !important
+  z-index: 100001
 
 lineitem
   & > * > *
@@ -280,46 +307,63 @@ lineitem
   & > *
     float: left;
 
-.promo-row
-  padding-bottom: 20px
+.promo
+  height: 40px
 
   & > *
-    float: left;
-  promocode
-    width: 75%
+    vertical-align: middle
+    display: table-cell
 
-    input
-      border-right: 0
-  button
-    width: 25%
-  .promo-message
+  & > div:first-child
     width: 40%
-    padding: 5px 0 5px 16px
-    text-align: right
+
+  & > div:last-child
+    width: 60%
+
+  .promo-row
+
+    & > *
+      float: left;
+
+    promocode
+      width: 75%
+
+      input
+        border-right: 0
+        border-radius: 22px 0 0 22px
+        background-color: transparent
+        border-color: #000
+
+    button
+      width: 25%
+      border-radius: 0 22px 22px 0
+      background-color: #000
+      border-width: 0
 
 .invoice-line
-  & > *
-    float: left
+  height: 40px
 
-  div:first-child
+  & > *
+    vertical-align: middle
+    display: table-cell
+
+  & > div:first-child
     width:70%
     padding-right:5%
 
-  div:last-child
+  & > div:last-child
     width: 30%
 
 .invoice-label
-  color: #999
+  color: #000
 
 .invoice-total
   font-weight: bold
   font-size: 1.1em
-  border-top: 2px solid #c9c9c9
-  margin-top: 4px
-  padding-top: 4px
 
   .invoice-label
-    color: #525252
+    color: #000
+    font-size: 1.25em
 
 .invoice-discount
   .invoice-amount
@@ -346,6 +390,9 @@ checkout
       margin-left: 16px !important
       left: 0
 
+    input, button
+      height: 44px !important
+
   .fields
     width: 100%
     display: table
@@ -359,13 +406,12 @@ checkout
 .confirmation
 .gift-options
 cart
-  margin-bottom: 30px
   position: relative
-  padding: 16px
-  border: 2px solid #C9C9C9
+  // border: 2px solid #C9C9C9
 
 cart
   line-height: 1.8em
+  background-color: #EEE
 
 shippingaddress-line1
   width: 55% !important
@@ -405,17 +451,19 @@ gift-message
 cart
 checkout
   float: right
-  width: 48%
+  // width: 48%
+  width: 100%
+  padding: 30px
 
-checkout
-  margin-right: 4%
+// checkout
+//   margin-right: 4%
 
 .stripe-logo
   width: 100px
 
 .continue-shopping
   cursor: pointer
-  margin-top: -10px
+  margin-top: 10px
   text-align: right
 
   h1
@@ -598,7 +646,7 @@ button[type=submit]
       border-bottom: 2px solid #9ba0a4
       border-right: 2px solid #9ba0a4
 
-  #cart-collapsed[type="checkbox"]:checked + cart
+  #cart-collapsed[type="checkbox"]:checked ~ cart
     h1
       .invoice-amount
         display: inline-block !important
@@ -627,23 +675,13 @@ button[type=submit]
 
 @media screen and (max-width: 600px)
   .promo-row
-    padding-bottom: 20px
 
-    & > *
-      float: left;
-    promocode
-      width: 60% !important
-    button
-      width: 40%
     .promo-message
       width: 100%
       padding: 5px
 
 @media screen and (max-width: 500px)
   .checkout
-    font-size: 80%
-    padding: 20px
-
     // .product-description
     //   margin-top: -54px
     //   margin-left: 55px
@@ -677,6 +715,10 @@ button[type=submit]
 
   .input
     width: 100% !important
+
+  .promo-row
+    .input
+      width: 75% !important
 
   .invoice-line
     & > *
