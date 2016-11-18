@@ -17,34 +17,27 @@
         .part
           .contact-information
             h1
-              | Contact Information
+              | Contact
             .fields
               user-name.input(placeholder='Name')
               user-email.input(placeholder='Email')
           .payment-information
             h1
-              | Payment Information
-              i.lock
+              | Payment&#128274;
+              a.stripe-link(href='//www.stripe.com', target='_blank')
+                img.stripe-logo(src='img/stripelogo.svg')
             .fields
+              card-name.input(placeholder='Name on Card')
               card-number.input(name='number', placeholder='Card Number')
+                img.card-logo.amex-logo(src='img/card-logos/amex.svg')
+                img.card-logo.discover-logo(src='img/card-logos/discover.svg')
+                img.card-logo.jcb-logo(src='img/card-logos/jcb.svg')
+                // img.card-logo.maestro-logo(src='img/card-logos/maestro.svg')
+                img.card-logo.mastercard-logo(src='img/card-logos/mastercard.svg')
+                img.card-logo.visa-logo(src='img/card-logos/visa.svg')
               card-expiry.input(name='expiry', placeholder='MM / YY')
               card-cvc.input(name='cvc', placeholder='CVC')
-            // <div class="card-types">
-            // <div>
-            // <img src="/img/card-icons/visa.png">
-            // </div>
-            // <div>
-            // <img src="/img/card-icons/mastercard.png">
-            // </div>
-            // <div>
-            // <img src="/img/card-icons/discover.png">
-            // </div>
-            // <div>
-            // <img src="/img/card-icons/amex.png">
-            // </div>
-            // </div>
-            a(href='//www.stripe.com', target='_blank')
-              img.stripe-logo(src='/images/stripelogo.png')
+                // img.security-code(src='img/card-logos/security-code.svg')
           // <div class="confirmation">
           // <h1>
           // Almost Done
@@ -56,8 +49,9 @@
         .part
           .shipping-information
             h1
-              | Shipping Information
+              | Shipping
             .fields
+              shippingaddress-name.input(placeholder='Recipient')
               shippingaddress-line1.input(placeholder='Address')
               shippingaddress-line2.input(placeholder='Suite')
             .fields
@@ -82,14 +76,14 @@
                 i.fa.fa-twitter
               a(href='mailto:?Subject=I%20found%20this%20cool%20thing.&body=Hey,%20I%20want%20you%20to%20get%20Stoned,%20check%20it%20out%20here%3A%20https%3A%2F%2Fstoned.audio')
                 i.fa.fa-instagram
-      button.loading.checkedOut(class='{ loading: loading || checkedOut }', type='submit')
-        span Pre-order
-        span Complete Checkout
+      button.loading.checked-out(class='{ loading: loading || checkedOut }', type='submit')
+        span Continue &#8594;
+        span Checkout
       .error(if='{ errorMessage }')
         | { errorMessage }
       br
-      p
-        | By placing this pre-order, you agree to Stoned's&nbsp;
+      p.legal
+        | By placing this order, you agree to Stoned's&nbsp;
         a(href='/legal', target='_blank') terms of service
         | .  Payments will be processed
         |         immediately.
@@ -98,10 +92,13 @@
       h1
         label(for='cart-collapsed') Details
         label.expand-summary(for='cart-collapsed')
+          img(src='img/info-black.svg')
         .invoice-amount
           | { renderCurrency(data.get('order.currency'), data.get('order.total'))} { data.get('order.currency').toUpperCase() }
       lineitems(if='{ !isEmpty() }')
         .animated.slideInRight
+          .product-image-container
+            img(src="img/products/earphone.jpg", alt="{ data.get('productName') }")
           // .product-image-container(if="{ data.get('productSlug').indexOf('SC') != 0 }")
           //   img(src="/images/products/kits/{data.get('productSlug')}.png", alt="{ data.get('productName') }")
           // .product-image-container(if="{ data.get('productSlug').indexOf('SC') == 0 }")

@@ -11,7 +11,7 @@
 
   .parts
     display: table
-    width: 220%
+    width: calc(300% + 90px)
     height: 100%
     position: relative
     top: 0
@@ -19,8 +19,8 @@
     transition: transform 200ms ease-in, height 200ms ease-in
 
     .part
-      width: 45.45%
-      margin-right: 4.55%
+      width: calc(1/3 * 100% - 30px)
+      margin-right: 30px
       float: left
       overflow: hidden
 
@@ -77,7 +77,6 @@
       display: none
 
   .checkout
-    border-radius: 3px
     position: absolute
     margin: 10vh 0 30vh 0
     width: 90%
@@ -112,8 +111,6 @@
       height: 96px
 
     button
-      background-color: #3DF2B6
-      border: 2px solid #3DF2B6
       font-size: 1em
       color: white !important
 
@@ -125,632 +122,695 @@
       line-height: 1em
       text-align: left
 
-#cart-collapsed
-  display: none
+  #cart-collapsed
+    display: none
 
-checkout
-  overflow: hidden
+  cart
+    h1
+      .expand-summary
+        display: block;
+        position: relative;
+        top: 1px;
+        left: 4px;
+        z-index: 2;
+        width: 16px;
+        height: 16px;
+        display: none
 
-  input
-    padding: 0
-    border-radius: 0
-    border-width: 0 !important
-    border-bottom: 2px solid #000 !important
-    transition: color .4s ease-in, border-color .4s ease-in
 
-    &.invalid
-      color: #F22469 !important
-      border-color: #F22469 !important
+  checkout
+    overflow: hidden
 
-    &.valid
-      // color: #3DF2B6 !important
-      border-color: #3DF2B6 !important
+    input
+      padding: 0
+      border-radius: 0
+      border-width: 0 !important
+      border-bottom: 2px solid #000 !important
+      transition: color .4s ease-in, border-color .4s ease-in
 
-    &:-moz-placeholder
-      color: #BBB
+      &.invalid
+        color: #F22469 !important
+        border-color: #F22469 !important
 
-    &::-moz-placeholder
-      color: #BBB
+      // &.valid
+      //   // color: #3DF2B6 !important
+      //   border-color: #3DF2B6 !important
 
-    &:-ms-input-placeholder
-      color: #BBB
+      &:-moz-placeholder
+        color: #BBB
 
-    &::-webkit-input-placeholder
-      color: #BBB
+      &::-moz-placeholder
+        color: #BBB
 
-  button[type=submit]
-    span:first-child
-      display: block
-    span:last-child
-      display: none
+      &:-ms-input-placeholder
+        color: #BBB
 
-  &.step-2
-    .parts
-      transform: translateX(-50%)
-
-      .part
-        &:first-child
-          height: 1px
-
-          & > *
-            display: none
-
-        &:last-child
-          height: auto
-
-          & > *
-            display: block
+      &::-webkit-input-placeholder
+        color: #BBB
 
     button[type=submit]
       span:first-child
-        display: none
-      span:last-child
         display: block
+      span:last-child
+        display: none
 
-cart
-checkout
-lineitems
-lineitem
-  width: 100%
-  position: relative
-  display: block
+    &.step-2
+      .parts
+        transform: translateX(-1/3 * 100%)
 
-lineitem
-  display: inline
+        .part
+          &:first-child
+            height: 1px
 
-  & > div
+            & > *
+              display: none
+
+          &:last-child
+            height: auto
+
+            & > *
+              display: block
+
+      button[type=submit]
+        span:first-child
+          display: none
+        span:last-child
+          display: block
+
+  cart
+  checkout
+  lineitems
+  lineitem
+    width: 100%
+    position: relative
+    display: block
+
+  lineitem
+    display: inline
+
+    & > div
+      width: 100%
+
+  quantity-select-control
+  .promo
+  .promo-row
+  .invoice-line
+  .input
+    width: 100%
+    display: table
+    position: relative
+
+  .promo-row
+    button
+      padding: 0
+
+  .selectize-control.single .selectize-input::after
+    top: 12px
+    right: 8px
+    margin-top: 0px
+
+  .selectize-input
+    border-radius: 0 !important
+    height: 32px !important
+    max-width: 60px
+
+    input
+      position: absolute !important
+
+  lineitem
+    & > * > *
+      float: left;
+
+  .product-quantity-container
+    width: 45px !important
+    display: inline-block
+    margin-top: -3px
+    float: right !important
+    margin-left: 20px
+
+    .item
+      left: 9px
+
+  .product-description
+    line-height: 1.25em
+    padding-top: 3px
+    padding-left: 6px
+    display: inline-block
+    vertical-align: top
+    width: 90%
+
+    .product-name
+      color: #525252
+      font-weight: bold
+      display: block
+
+    > *:last-child
+      font-size: 10px
+      line-height: 1rem
+      margin-top: 0
+
+  .product-image-container
+    width: 15%
+    position: relative
+    // top: -20px
+
+    img:nth-child(n+2)
+      position: absolute
+      width: 100%
+      top: 0;
+      left: 0;
+
+  .product-text-container
+    width: 40%
+
+  .product-price-container
+    line-height: 1.25em
+    width: 25%
+    text-align: right
+    float: right !important
+    margin-top: 3px
+
+  .product-list-price
+    color: #aaa
+    font-size: .9em
+
+  .product-slug
+    display: none
+
+  .product-delete
+    cursor: pointer
+    width: 25%
+    float: right !important
+    text-align: right
+    color: #e4aa47
+
+  .product-currency
+    display: inline
+
+  .product-list-price
+    text-decoration: line-through;
+
+  lineitems
+    padding-bottom: 20px
+
+  lineitem
+    & > *
+      float: left;
+
+  .promo
+    height: 40px
+
+    & > *
+      vertical-align: middle
+      display: table-cell
+
+    & > div:first-child
+      width: 40%
+
+    & > div:last-child
+      width: 60%
+
+    .promo-row
+
+      & > *
+        float: left;
+
+      promocode
+        width: 75%
+
+        input
+          border-right: 0
+          border-radius: 22px 0 0 22px
+          background-color: transparent
+          border-color: #000
+
+      button
+        width: 25%
+        border-radius: 0 22px 22px 0
+        background-color: #000
+        border-width: 0
+
+  .invoice-line
+    height: 40px
+
+    & > *
+      vertical-align: middle
+      display: table-cell
+
+    & > div:first-child
+      width:70%
+      padding-right:5%
+
+    & > div:last-child
+      width: 30%
+
+  .invoice-label
+    color: #000
+
+  .invoice-total
+    font-weight: bold
+    font-size: 1.1em
+
+    .invoice-label
+      color: #000
+      font-size: 1.25em
+
+  .invoice-discount
+    .invoice-amount
+      color: #000
+
+  .invoice-amount
+    text-align: right
+    font-weight: bold
+
+  checkout
+    .input
+      padding-bottom: 16px
+      line-height: 2em
+
+    .selectize-input
+      max-width: 100%
+
+      .item
+        font-size: 16px
+
+      input
+        width: 100% !important
+        margin-top: -6px !important
+        left: 0
+        height: 32px !important
+
+    .fields
+      width: 100%
+      display: table
+
+      & > *
+        float: left
+
+  .contact-information
+  .shipping-information
+  .payment-information
+  .confirmation
+  .gift-options
+  cart
+    position: relative
+    // border: 2px solid #C9C9C9
+
+  cart
+    line-height: 1.8em
+    background-color: #EEE
+
+  shippingaddress-line1
+    width: 55% !important
+    margin-right: 5%
+
+  shippingaddress-line2
+    width: 40% !important
+
+  shippingaddress-city
+    width: 65% !important
+    margin-right: 5%
+
+  shippingaddress-postalcode
+    width: 30% !important
+
+  shippingaddress-state
+    width: 40% !important
+    margin-right: 5%
+
+  shippingaddress-country
+    width: 55% !important
+
+  card-number
+    width: 52% !important
+    margin-right: 4%
+
+  card-expiry
+    width: 23% !important
+    margin-right: 4%
+
+  card-cvc
+    width: 17% !important
+
+  gift-message
     width: 100%
 
-quantity-select-control
-.promo
-.promo-row
-.invoice-line
-.input
-  width: 100%
-  display: table
-  position: relative
+  cart
+  checkout
+    float: right
+    // width: 48%
+    width: 100%
+    padding: 30px
 
-.promo-row
-  button
-    padding: 0
+  // checkout
+  //   margin-right: 4%
 
-.selectize-control.single .selectize-input::after
-  top: 12px
-  right: 8px
-  margin-top: 0px
+  .card-logo
+  .security-code
+    position: absolute;
+    height: 16px;
+    margin-left: -30px;
+    margin-top: 8px;
 
+  .card-logo
+    opacity: 0
+    transition: opacity .4s ease-in-out
+
+  .amex ~ .amex-logo
+    opacity: 1
+
+  .discover ~ .discover-logo
+    opacity: 1
+
+  .jcb ~ .jcb-logo
+    opacity: 1
+
+  .mastercard ~ .mastercard-logo
+    opacity: 1
+
+  .visa ~ .visa-logo
+    opacity: 1
+
+  .stripe-link
+    float: right
+
+    .stripe-logo
+      height: 16px
+      margin-right: 2px
+
+  .continue-shopping
+    cursor: pointer
+    margin-top: 10px
+    text-align: right
+
+    h1
+      font-size: 1em !important
+
+    i
+      margin-bottom: -8px
+
+  .lock,
+  .arrow-left,
+  .shopping-bag
+    height: 26px !important
+    width: 26px !important
+    background-size: cover !important
+    display:inline-block;
+
+  .lock
+    background: url(/images/icons/lock.svg)
+    position: absolute
+    top: 9px
+    right: 12px
+
+  .arrow-left
+    margin-right: 8px
+    background: url(/images/icons/arrow-left.svg)
+    color: black
+
+  .shopping-bag
+    margin-left: 8px
+    background: url(/images/icons/shopping-bag.svg)
+
+  .special-offer
+    margin-top: 4px
+    padding-top: 10px
+    border-top: 2px solid #c9c9c9
+
+    h1
+      margin-bottom: 4px
+      border-bottom: 0 !important
+
+  .checkbox
+  terms
+  gift-toggle
+    font-family: helvetica
+    margin-bottom: 20px
+    display: block
+
+    label
+      padding-top: 2px;
+      font-size: 16px !important
+      line-height: 1.2rem;
+      display: inline-block;
+      color: #9ba0a4
+
+    /* Base for label styling */
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+      position: absolute;
+      left: -9999px;
+    }
+    [type="checkbox"]:not(:checked) + label,
+    [type="checkbox"]:checked + label {
+      position: relative;
+      text-indent: 25px;
+      cursor: pointer;
+    }
+
+    /* checkbox aspect */
+    [type="checkbox"]:not(:checked) + label:before,
+    [type="checkbox"]:checked + label:before {
+      content: ''
+      position: absolute
+      left:0
+      top: -1px
+      width: 17px; height: 17px;
+      border: 2px solid #aaa;
+      background: #f8f8f8;
+    }
+    /* checked mark aspect */
+    [type="checkbox"]:not(:checked) + label:after,
+    [type="checkbox"]:checked + label:after {
+      content: '✔';
+      position: absolute;
+      top: 3px;
+      left: 2px;
+      font-size: 18px;
+      line-height: 0.8;
+      color: #09ad7e;
+      transition: all .2s;
+      text-indent: 0;
+    }
+    /* checked mark aspect changes */
+    [type="checkbox"]:not(:checked) + label:after {
+      opacity: 0;
+      transform: scale(0);
+    }
+    [type="checkbox"]:checked + label:after {
+      opacity: 1;
+      transform: scale(1);
+    }
+    /* disabled checkbox */
+    [type="checkbox"]:disabled:not(:checked) + label:before,
+    [type="checkbox"]:disabled:checked + label:before {
+      box-shadow: none;
+      border-color: #bbb;
+      background-color: #ddd;
+    }
+    [type="checkbox"]:disabled:checked + label:after {
+      color: #999;
+    }
+    [type="checkbox"]:disabled + label {
+      color: #aaa;
+    }
+    /* accessibility */
+    [type="checkbox"]:checked:focus + label:before,
+    [type="checkbox"]:not(:checked):focus + label:before {
+      border: 2px dotted blue;
+    }
+
+    /* hover style just for information */
+    label:hover:before {
+      border: 2px solid #3df2b6 !important;
+    }
+
+  button[type=submit]
+    width: 100%;
+    font-size: 20px !important;
+    padding: 20px;
+    line-height: 2px !important;
+    margin: 10px 0;
+    background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0));
+    background-color: #3df2b6;
+    border: 0
+
+    &:hover
+      animation: ripple-green 1.5s infinite
+
+  .legal
+    font-size: .625em
+
+  .thankyou
+    position: absolute
+    top: 35vh
+    max-width: 600px
+    width: 80vw
+    padding: 40px
+    opacity: 0
+    transition: opacity 500ms ease
+    left: 50%
+    transform: translateX(-50%)
+    display: none
+    text-align: center
+
+    .social
+      text-align: center
+
+      > *
+        margin-top: 0
+
+  @media screen and (max-width: 980px)
+    cart
+    checkout
+      width: 100%
+      margin-right: 0
+
+    cart
+      h1
+        display: inline-block
+
+        label
+          float: left
+          cursor: pointer
+
+        .invoice-amount
+          float: right
+          font-size: 1rem
+          color: #000
+
+    #cart-collapsed[type="checkbox"]:checked ~ cart
+      h1
+        .invoice-amount
+          display: inline-block !important
+
+        .expand-summary
+          display: block
+
+      lineitems
+      .invoice-discount
+      .invoice-line
+        display: block
+        height: 0
+        padding-top: 0
+        padding-bottom: 0
+        margin-top: 0
+        margin-bottom: 0
+        overflow: hidden
+        border: 0
+
+      .special-offer
+        border: 0
+
+      .promo-row
+        padding-bottom: 0
+
+  @media screen and (max-width: 600px)
+    .promo-row
+
+      .promo-message
+        width: 100%
+        padding: 5px
+
+  @media screen and (max-width: 500px)
+    .checkout
+      // .product-description
+      //   margin-top: -54px
+      //   margin-left: 55px
+
+      input,
+      select,
+      button,
+      select > input[type="button"],
+      textarea
+        font-size: 70%
+
+        // Makes iOS checkbox appear correctly but skews desktop
+      [type="checkbox"]:not(:checked) + label:after,
+      [type="checkbox"]:checked + label:after
+        top: 6px
+        left: 2px
+        font-size: 14px
+        line-height: 0.8
+
+      .product-image-container
+        width: 30%
+
+      .product-text-container
+        width: 50%
+
+      .product-description-container
+        width: 100%
+
+      .product-price-container
+        width: 100%
+
+    .input
+      width: 100% !important
+
+    .promo-row
+      .input
+        width: 75% !important
+
+    .invoice-line
+      & > *
+        float: left
+
+      div:first-child
+        width:50%
+        text-align: left
+
+      div:last-child
+        width: 50%
+        text-align: right
+
+  @media screen and (max-width: 400px)
+    .product-image-container
+      width: 15%
+
+    .product-text-container
+      width: 30%
+
+    .product-price-container
+      width: 30%
+
+    .checkout
+      .product-image-container
+        width: 30%
+
+      .product-text-container
+        width: 70%
+
+      .product-price-container
+        width: 100%
+
+// Selectize
 .selectize-input
-  border-radius: 0 !important
-  height: 32px !important
-  max-width: 60px
+  background-color: transparent !important
+  font-weight: bold !important
+  color: #000 !important
+  font-size: 1rem !important
+  line-height: 1rem !important
+  padding: 8px 0 !important
+  box-shadow: none !important
+  border: 0 !important
+  border-bottom: 2px solid #000 !important
 
-  input
+  .item
     position: absolute !important
 
 .selectize-dropdown.single
   border-radius: 0 !important
   z-index: 100001
 
-lineitem
-  & > * > *
-    float: left;
-
-.product-quantity-container
-  width: 45px !important
-  display: inline-block
-  margin-top: 5px
-  float: right !important
-
-.product-description
-  line-height: 1.25em
-  padding-top: 3px
-  padding-left: 6px
-  display: inline-block
-  vertical-align: top
-  width: 90%
-
-  .product-name
-    color: #525252
-    font-weight: bold
-    display: block
-
-  > *:last-child
-    font-size: 10px
-    line-height: 1rem
-    margin-top: 0
-
-.product-image-container
-  width: 30%
-  position: relative
-  // top: -20px
-
-  img:nth-child(n+2)
-    position: absolute
-    width: 100%
-    top: 0;
-    left: 0;
-
-.product-text-container
-  width: 45%
-
-.product-price-container
-  line-height: 1.25em
-  width: 25%
-  text-align: right
-  float: right !important
-  margin-top: 3px
-
-.product-list-price
-  color: #aaa
-  font-size: .9em
-
-.product-slug
-  display: none
-
-.product-delete
-  cursor: pointer
-  width: 25%
-  float: right !important
-  text-align: right
-  color: #e4aa47
-
-.product-currency
-  display: inline
-
-.product-list-price
-  text-decoration: line-through;
-
-lineitems
-  padding-bottom: 20px
-
-lineitem
-  & > *
-    float: left;
-
-.promo
-  height: 40px
-
-  & > *
-    vertical-align: middle
-    display: table-cell
-
-  & > div:first-child
-    width: 40%
-
-  & > div:last-child
-    width: 60%
-
-  .promo-row
-
-    & > *
-      float: left;
-
-    promocode
-      width: 75%
-
-      input
-        border-right: 0
-        border-radius: 22px 0 0 22px
-        background-color: transparent
-        border-color: #000
-
-    button
-      width: 25%
-      border-radius: 0 22px 22px 0
-      background-color: #000
-      border-width: 0
-
-.invoice-line
-  height: 40px
-
-  & > *
-    vertical-align: middle
-    display: table-cell
-
-  & > div:first-child
-    width:70%
-    padding-right:5%
-
-  & > div:last-child
-    width: 30%
-
-.invoice-label
-  color: #000
-
-.invoice-total
-  font-weight: bold
-  font-size: 1.1em
-
-  .invoice-label
-    color: #000
-    font-size: 1.25em
-
-.invoice-discount
-  .invoice-amount
-    color: #ed8d48
-
-.invoice-amount
-  text-align: right
-  font-weight: bold
-
-checkout
-  .input
-    padding-bottom: 16px
-    line-height: 2em
-
-  .selectize-input
-    max-width: 100%
-
-    .item
-      font-size: 16px
-
-    input
-      width: 100% !important
-      margin-top: -6px !important
-      margin-left: 16px !important
-      left: 0
-
-    input, button
-      height: 44px !important
-
-  .fields
-    width: 100%
-    display: table
-
-    & > *
-      float: left
-
-.contact-information
-.shipping-information
-.payment-information
-.confirmation
-.gift-options
-cart
-  position: relative
-  // border: 2px solid #C9C9C9
-
-cart
-  line-height: 1.8em
-  background-color: #EEE
-
-shippingaddress-line1
-  width: 55% !important
-  margin-right: 5%
-
-shippingaddress-line2
-  width: 40% !important
-
-shippingaddress-city
-  width: 65% !important
-  margin-right: 5%
-
-shippingaddress-postalcode
-  width: 30% !important
-
-shippingaddress-state
-  width: 40% !important
-  margin-right: 5%
-
-shippingaddress-country
-  width: 55% !important
-
-card-number
-  width: 52% !important
-  margin-right: 4%
-
-card-expiry
-  width: 23% !important
-  margin-right: 4%
-
-card-cvc
-  width: 17% !important
-
-gift-message
-  width: 100%
-
-cart
-checkout
-  float: right
-  // width: 48%
-  width: 100%
-  padding: 30px
-
-// checkout
-//   margin-right: 4%
-
-.stripe-logo
-  width: 100px
-
-.continue-shopping
-  cursor: pointer
-  margin-top: 10px
-  text-align: right
-
-  h1
-    font-size: 1em !important
-
-  i
-    margin-bottom: -8px
-
-.lock,
-.arrow-left,
-.shopping-bag
-  height: 26px !important
-  width: 26px !important
-  background-size: cover !important
-  display:inline-block;
-
-.lock
-  background: url(/images/icons/lock.svg)
-  position: absolute
-  top: 9px
-  right: 12px
-
-.arrow-left
-  margin-right: 8px
-  background: url(/images/icons/arrow-left.svg)
-  color: black
-
-.shopping-bag
-  margin-left: 8px
-  background: url(/images/icons/shopping-bag.svg)
-
-.special-offer
-  margin-top: 4px
-  padding-top: 10px
-  border-top: 2px solid #c9c9c9
-
-  h1
-    margin-bottom: 4px
-    border-bottom: 0 !important
-
-.checkbox
-terms
-gift-toggle
-  font-family: helvetica
-  margin-bottom: 20px
-  display: block
-
-  label
-    padding-top: 2px;
-    font-size: 16px !important
-    line-height: 1.2rem;
-    display: inline-block;
-    color: #9ba0a4
-
-  /* Base for label styling */
-  [type="checkbox"]:not(:checked),
-  [type="checkbox"]:checked {
-    position: absolute;
-    left: -9999px;
-  }
-  [type="checkbox"]:not(:checked) + label,
-  [type="checkbox"]:checked + label {
-    position: relative;
-    text-indent: 25px;
-    cursor: pointer;
-  }
-
-  /* checkbox aspect */
-  [type="checkbox"]:not(:checked) + label:before,
-  [type="checkbox"]:checked + label:before {
-    content: ''
-    position: absolute
-    left:0
-    top: -1px
-    width: 17px; height: 17px;
-    border: 2px solid #aaa;
-    background: #f8f8f8;
-  }
-  /* checked mark aspect */
-  [type="checkbox"]:not(:checked) + label:after,
-  [type="checkbox"]:checked + label:after {
-    content: '✔';
-    position: absolute;
-    top: 3px;
-    left: 2px;
-    font-size: 18px;
-    line-height: 0.8;
-    color: #09ad7e;
-    transition: all .2s;
-    text-indent: 0;
-  }
-  /* checked mark aspect changes */
-  [type="checkbox"]:not(:checked) + label:after {
-    opacity: 0;
-    transform: scale(0);
-  }
-  [type="checkbox"]:checked + label:after {
-    opacity: 1;
-    transform: scale(1);
-  }
-  /* disabled checkbox */
-  [type="checkbox"]:disabled:not(:checked) + label:before,
-  [type="checkbox"]:disabled:checked + label:before {
-    box-shadow: none;
-    border-color: #bbb;
-    background-color: #ddd;
-  }
-  [type="checkbox"]:disabled:checked + label:after {
-    color: #999;
-  }
-  [type="checkbox"]:disabled + label {
-    color: #aaa;
-  }
-  /* accessibility */
-  [type="checkbox"]:checked:focus + label:before,
-  [type="checkbox"]:not(:checked):focus + label:before {
-    border: 2px dotted blue;
-  }
-
-  /* hover style just for information */
-  label:hover:before {
-    border: 2px solid #ed8d48!important;
-  }
-
-button[type=submit]
-  width: 100%;
-  font-size: 20px !important;
-  padding: 20px;
-  line-height: 2px !important;
-
-.thankyou
-  position: absolute
-  top: 35vh
-  max-width: 600px
-  width: 80vw
-  padding: 40px
-  opacity: 0
-  transition: opacity 500ms ease
-  left: 50%
-  transform: translateX(-50%)
-  display:none
-  text-align: center
-
-  .social
-    text-align: center
-
-    > *
-      margin-top: 0
-
-@media screen and (max-width: 980px)
-  cart
-  checkout
-    width: 100%
-    margin-right: 0
-
-  cart
-    h1
-      display: inline-block
-
-      label
-        float: left
-        cursor: pointer
-
-      .invoice-amount
-        float: right
-        font-size: 16px
-        color: #525252
-        margin-top: -12px;
-
-    .expand-summary
-      margin-right: 20px
-      transform: rotate(225deg)
-      display: block
-      position: relative
-      top: 15px
-      left: 8px
-      z-index: 2
-      width: 12px
-      height: 12px
-      border-bottom: 2px solid #9ba0a4
-      border-right: 2px solid #9ba0a4
-
-  #cart-collapsed[type="checkbox"]:checked ~ cart
-    h1
-      .invoice-amount
-        display: inline-block !important
-
-    .expand-summary
-      transform: rotate(45deg)
-      top: 10px
-
-    lineitems
-    .invoice-discount
-    .invoice-line
-      display: block
-      height: 0
-      padding-top: 0
-      padding-bottom: 0
-      margin-top: 0
-      margin-bottom: 0
-      overflow: hidden
-      border: 0
-
-    .special-offer
-      border: 0
-
-    .promo-row
-      padding-bottom: 0
-
-@media screen and (max-width: 600px)
-  .promo-row
-
-    .promo-message
-      width: 100%
-      padding: 5px
-
-@media screen and (max-width: 500px)
-  .checkout
-    // .product-description
-    //   margin-top: -54px
-    //   margin-left: 55px
-
-    input,
-    select,
-    button,
-    select > input[type="button"],
-    textarea
-      font-size: 70%
-
-      // Makes iOS checkbox appear correctly but skews desktop
-    [type="checkbox"]:not(:checked) + label:after,
-    [type="checkbox"]:checked + label:after
-      top: 6px
-      left: 2px
-      font-size: 14px
-      line-height: 0.8
-
-    .product-image-container
-      width: 30%
-
-    .product-text-container
-      width: 50%
-
-    .product-description-container
-      width: 100%
-
-    .product-price-container
-      width: 100%
-
-  .input
-    width: 100% !important
-
-  .promo-row
-    .input
-      width: 75% !important
-
-  .invoice-line
-    & > *
-      float: left
-
-    div:first-child
-      width:50%
-      text-align: left
-
-    div:last-child
-      width: 50%
-      text-align: right
-
-@media screen and (max-width: 400px)
-  .product-image-container
-    width: 30%
-
-  .product-text-container
-    width: 40%
-
-  .product-price-container
-    width: 30%
-
-  .checkout
-    .product-image-container
-      width: 30%
-
-    .product-text-container
-      width: 70%
-
-    .product-price-container
-      width: 100%
+  .selectize-dropdown-content
+    font-weight: bold !important
+    color: #000 !important
+    font-size: 1rem !important
+    line-height: 1rem !important
+
+.selectize-control.single .selectize-input:after
+  border-color: #000 transparent transparent !important
 
 // Generic Modal Effects
 .checkout-modal
