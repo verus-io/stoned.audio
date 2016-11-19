@@ -9,6 +9,179 @@
   font-size: 1rem
   z-index: 100000
 
+  .checkout
+    position: absolute
+    margin: 10vh 0 30vh 0
+    width: 90%
+    display: table
+    max-width: 480px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: #FFF
+    color: #000
+
+    h1:first-child
+      // border-bottom: 2px solid #c9c9c9
+      width: 100%
+      line-height: 2em
+      color: #000
+
+    input[type=text]
+    button
+    textarea
+      color: #000
+      height: 32px
+      line-height: 1em
+      font-size: 16px
+
+    input[type=text]
+    textarea
+      width: 100%
+
+    textarea
+      height: 96px
+
+    button
+      font-size: 1em
+      color: white !important
+
+    .error
+    .promo-message
+      color: #F22469
+      font-size: 14px
+      padding: 8px 0
+      line-height: 1em
+      text-align: left
+
+    // Step Counter
+    ul.steps
+      width: 100%
+      display: table
+      background-color: #666
+      margin: 0
+      transition: all .4s ease-in-out
+
+      li
+        column 1/3 3 0px
+        display: table
+        height: 56px
+        background-color: #666
+        color: #AAA
+        font-size: .675rem
+        font-weight: bold
+        float: right
+        transition: all .4s ease-in-out
+
+        & > *
+          display: table-cell
+          vertical-align: middle
+
+        .step-number
+          text-align: center
+          padding: 0 10px
+          width: 52px
+
+          .step-circle
+            width: 24px
+            height: 24px
+            border-radius: 12px
+            background-color: #AAA
+            color: #666
+            line-height: 2.3em
+            transition: all .4s ease-in-out
+
+        .step-description
+          padding-right: 10px
+
+        &:first-child
+          color: #FFF
+          background-color: #3DF2B6
+
+          .step-circle
+            background-color: #FFF
+            color: #3DF2B6
+
+    // Continue Shopping
+    .continue-shopping
+      text-align: right
+      position: absolute
+      top: 86px
+      right: 30px
+      cursor: pointer
+      z-index: 1
+
+    &.step-2
+      ul.steps
+        li
+          &:nth-child(2)
+            color: #FFF
+            background-color: #3DF2B6
+
+            .step-circle
+              background-color: #FFF
+              color: #3DF2B6
+
+      .parts
+        transform: translateX(-1/3 * 100%)
+
+        .part
+          &:first-child
+          &:nth-child(n+3)
+            height: 1px
+
+            & > *
+              display: none
+
+          &:nth-child(2)
+            height: auto
+
+            & > *
+              display: block
+
+      button[type=submit]
+        span:first-child
+          display: none
+        span:last-child
+          display: block
+
+    &.step-3
+      ul.steps
+        background-color: #3DF2B6
+
+        li
+          &:nth-child(n+2)
+            color: #FFF
+            background-color: #3DF2B6
+
+            .step-circle
+              background-color: #FFF
+              color: #3DF2B6
+
+      .continue-shopping
+        display: none
+
+      .parts
+        transform: translateX(-2/3 * 100%)
+
+        .part
+          &:nth-child(n+1)
+            height: 1px
+
+            & > *
+              display: none
+
+          &:nth-child(3)
+            height: auto
+
+            & > *
+              display: block
+
+      button[type=submit]
+      .error
+      .legal
+      .promo
+        display: none
+
   .parts
     display: table
     width: calc(300% + 90px)
@@ -24,7 +197,7 @@
       float: left
       overflow: hidden
 
-      &:last-child
+      &:nth-child(2+)
         height:1px
 
         & > *
@@ -32,6 +205,7 @@
 
   h1
     margin: 0
+    font-weight: 900
 
     .modal-open
       margin-top: 10px
@@ -76,51 +250,6 @@
     .invoice-amount
       display: none
 
-  .checkout
-    position: absolute
-    margin: 10vh 0 30vh 0
-    width: 90%
-    display: table
-    max-width: 480px
-    left: 50%
-    transform: translateX(-50%)
-    background-color: #FFF
-    color: #000
-
-    > *:not(.continue-shopping)
-
-      h1:first-child
-        // border-bottom: 2px solid #c9c9c9
-        width: 100%
-        line-height: 2em
-        color: #000
-
-    input[type=text]
-    textarea
-      width: 100%
-
-    input[type=text]
-    button
-    textarea
-      color: #000
-      height: 32px
-      line-height: 1em
-      font-size: 16px
-
-    textarea
-      height: 96px
-
-    button
-      font-size: 1em
-      color: white !important
-
-    .error
-    .promo-message
-      color: #F22469
-      font-size: 14px
-      padding: 8px 0
-      line-height: 1em
-      text-align: left
 
   #cart-collapsed
     display: none
@@ -173,29 +302,6 @@
         display: block
       span:last-child
         display: none
-
-    &.step-2
-      .parts
-        transform: translateX(-1/3 * 100%)
-
-        .part
-          &:first-child
-            height: 1px
-
-            & > *
-              display: none
-
-          &:last-child
-            height: auto
-
-            & > *
-              display: block
-
-      button[type=submit]
-        span:first-child
-          display: none
-        span:last-child
-          display: block
 
   cart
   checkout
@@ -409,6 +515,7 @@
 
   .contact-information
   .shipping-information
+  .thankyou
   .payment-information
   .confirmation
   .gift-options
@@ -497,40 +604,6 @@
     .stripe-logo
       height: 16px
       margin-right: 2px
-
-  .continue-shopping
-    cursor: pointer
-    margin-top: 10px
-    text-align: right
-
-    h1
-      font-size: 1em !important
-
-    i
-      margin-bottom: -8px
-
-  .lock,
-  .arrow-left,
-  .shopping-bag
-    height: 26px !important
-    width: 26px !important
-    background-size: cover !important
-    display:inline-block;
-
-  .lock
-    background: url(/images/icons/lock.svg)
-    position: absolute
-    top: 9px
-    right: 12px
-
-  .arrow-left
-    margin-right: 8px
-    background: url(/images/icons/arrow-left.svg)
-    color: black
-
-  .shopping-bag
-    margin-left: 8px
-    background: url(/images/icons/shopping-bag.svg)
 
   .special-offer
     margin-top: 4px
@@ -642,23 +715,18 @@
     font-size: .625em
 
   .thankyou
-    position: absolute
-    top: 35vh
-    max-width: 600px
-    width: 80vw
-    padding: 40px
-    opacity: 0
-    transition: opacity 500ms ease
-    left: 50%
-    transform: translateX(-50%)
-    display: none
     text-align: center
 
-    .social
-      text-align: center
+    ul.social
+      width: 300px
+      margin: 16px auto
+      display: table
 
-      > *
-        margin-top: 0
+      li
+        column 1/3 3 20px
+        list-style: none
+        text-align: center
+        font-size: 3rem
 
   @media screen and (max-width: 980px)
     cart
@@ -765,6 +833,14 @@
         text-align: right
 
   @media screen and (max-width: 400px)
+    .checkout
+      ul.steps
+        li
+          width: 100%
+
+      .continue-shopping
+        top: 198px
+
     .product-image-container
       width: 15%
 
@@ -832,3 +908,6 @@
     top: 0
     opacity: 1
     transition: opacity 500ms ease
+
+  .modal-close
+    font-weight: 900

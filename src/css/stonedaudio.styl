@@ -21,9 +21,18 @@ a, a:visited
 .button, button
   height: 56px
   border-radius: 28px
+  transition: opacity .4s ease-in-out
 
   &:hover
     animation: ripple-white 1.5s infinite
+
+  &.loading
+    opacity: .5
+    cursor: default
+
+    &:hover
+      animation: none !important
+
 
 +below(400px)
   .logo
@@ -660,6 +669,12 @@ footer
 
 .lazy-loaded
   transition: opacity .5s ease-in-out
+
+.modal-close:not(.call-to-action)
+  right: 40px
+  top: 41px !important
+  left: auto !important
+  text-align: right
 
 @keyframes ripple-white
   0%

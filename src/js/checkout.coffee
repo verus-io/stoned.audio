@@ -53,17 +53,14 @@ $ ->
   Shop.setItem('earphone', 1)
 
   $modal = $('.checkout-modal.modal')
-  $thankyou = $('.thankyou')
   $checkoutContainer = $('checkout-container')
 
   window.openCheckout = (e) ->
     $modal.addClass 'is-open'
     $modal.removeClass 'hidden'
     Shop.initCart()
-    $('.thankyou').hide()
     $('.checkout-container').css 'opacity', 1
     $('.checkout-container').css 'top', $(window).scrollTop() + 50
-    $('.thankyou').css 'top', $(window).scrollTop() + 100
     Shop.analytics.track 'Viewed Checkout Step', step: 1
     Shop.analytics.track 'Completed Checkout Step', step: 1
     Shop.analytics.track 'Viewed Checkout Step', step: 2
@@ -76,7 +73,6 @@ $ ->
     $closestModal.removeClass 'hidden'
     $closestModal.removeClass 'is-open'
     $('.checkout-container').css 'top', ''
-    $('.thankyou').css('top', '').hide()
     false
 
   $('.pre-order-button').on 'click', window.openCheckout
@@ -99,7 +95,7 @@ $ ->
             step = 2
             Shop.analytics.track 'Completed Checkout Step', step: 2
             Shop.analytics.track 'Viewed Checkout Step', step: 3
-            $('checkout').addClass 'step-2'
+            $('.checkout').addClass 'step-2'
           else
             validateFn()
           return
@@ -114,7 +110,7 @@ $ ->
   $('.continue-shopping').on 'click', (e) ->
     if step == 2
       step = 1
-      $('checkout').removeClass 'step-2'
+      $('.checkout').removeClass 'step-2'
       return false
     $modal.removeClass 'hidden'
     $modal.removeClass 'is-open'
@@ -126,44 +122,19 @@ $ ->
     requestAnimationFrame ->
       Shop.cart.invoice()
       Shop.riot.update()
-      return
-    return
   enable = false
 
   m.on 'change-success', ->
     enable = true
     $('.email-form .form-submit').removeClass 'disabled'
-    return
-
-  m.on 'submit', ->
-    $('.loader').show()
-    setTimeout (->
-      $('.loader').fadeTo 500, 0.8
-      return
-    ), 1
-    return
-
-  m.on 'submit-failed', ->
-    $('.loader').fadeTo 500, 0, ->
-      $(this).hide()
-      return
-    return
 
   m.on 'submit-success', ->
-    $('.loader').fadeTo 500, 0, ->
-      $(this).hide()
-      return
-    Shop.analytics.track 'Completed Checkout Step', step: 3
+    $('.checkout').removeClass 'step-2'
+    $('.checkout').addClass 'step-3'
     $('.thankyou strong').text @data.get('order.number')
-    $('.checkout-container').fadeTo 500, 0
-    $('.thankyou').show()
-    setTimeout (->
-      $('.thankyou').fadeTo 500, 1, ->
-      $('.loader').fadeTo 500, 0, ->
-        $(this).hide()
-        return
-      return
-    ), 100
+    $('quantity-select-control .items').prop('disabled', true)
+
+    Shop.analytics.track 'Completed Checkout Step', step: 3
 
     $('.modal-close').on 'click', (e) ->
       window.location.reload()
