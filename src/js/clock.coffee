@@ -1,9 +1,11 @@
 require 'flipclock/compiled/flipclock.min.js'
 
-targetDate = new Date '11/21/2016'
-nowDate = new Date()
+moment = require 'moment-timezone'
 
-diff = Math.max (targetDate.getTime() - nowDate.getTime()) / 1000, 0
+targetDate = moment.tz '2016-11-21', 'America/Los_Angeles'
+nowDate = moment new Date(), moment.tz.guess()
+
+diff = Math.max targetDate.unix() - nowDate.unix(), 0
 
 clock = $('.clock').FlipClock diff,
   clockFace: 'DailyCounter'
