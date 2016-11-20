@@ -21,6 +21,7 @@
     "layzr.js": "2.2.1",
     "lost": "7.1.0",
     "lost-stylus": "0.1.3",
+    "moment-timezone": "0.5.9",
     "postcss-discard-comments": "2.0.4",
     "poststylus": "0.2.3",
     "pug": "2.0.0-beta6",
