@@ -8,8 +8,5 @@ require './lazyify'
 require './progress'
 # require 'scroll-to.js'
 
-# Vendorish
-require './clock'
-
 # Project
 require './stonedaudio'
