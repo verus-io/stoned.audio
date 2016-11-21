@@ -133,6 +133,12 @@ $ ->
     requestAnimationFrame ->
       Shop.cart.invoice()
       Shop.riot.update()
+
+  $('promocode input').keypress (e)->
+    if e.which == 13
+      requestAnimationFrame ->
+        $('.promo-row button').click()
+
   enable = false
 
   m.on 'change-success', ->
