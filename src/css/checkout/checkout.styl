@@ -206,7 +206,7 @@
 
   h1
     margin: 0
-    letter-spacing: .05rem
+    font-weight: 900
 
     .modal-open
       margin-top: 10px
@@ -329,10 +329,6 @@
     display: table
     position: relative
 
-  .promo-label
-    font-family: 'Lato', sans-serif
-    font-weight: normal
-
   .promo-row
     input
       transition: border-color 420ms ease-in-out, color 420ms ease-in-out
@@ -401,8 +397,8 @@
 
   .product-description
     line-height: 1.25em
-    padding-top: 2px
-    padding-left: 10px
+    padding-top: 3px
+    padding-left: 8px
     display: inline-block
     vertical-align: top
     width: 90%
@@ -411,7 +407,6 @@
       color: #525252
       font-weight: bold
       display: block
-      font-family: 'Lato', sans-serif
 
     > *:last-child
       font-size: 12px
@@ -515,20 +510,14 @@
 
   .invoice-label
     color: #000
-    font-family: 'Lato', sans-serif
-    font-weight: normal
-
-  .invoice-amount
-    font-family: 'Lato', sans-serif
 
   .invoice-total
+    font-weight: bold
     font-size: 1.1em
 
     .invoice-label
-      font-weight: bold
       color: #000
-      font-size: 1.2em
-      letter-spacing: 0.05rem
+      font-size: 1.25em
 
   .invoice-discount
     .invoice-amount
@@ -671,7 +660,7 @@
   .checkbox
   terms
   gift-toggle
-    font-family: Helvetica, sans-serif
+    font-family: helvetica
     margin-bottom: 20px
     display: block
 
@@ -775,6 +764,9 @@
   .thankyou
     text-align: center
 
+    strong
+      font-weight: 700
+
     ul.social
       width: 300px
       margin: 16px auto
@@ -793,7 +785,7 @@
     bottom: 0
     color: #eee
     font-size: .9em
-    transform: translateY(calc(100% + 20px))
+    transform: translateY(100%) translateY(20px)
 
     .tax-notice
       display: none
