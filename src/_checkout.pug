@@ -11,11 +11,11 @@
       li
         .step-number
           .step-circle 1
-        .step-description PAYMENT INFO
+        .step-description PAYMENT
       li
         .step-number
           .step-circle 2
-        .step-description SHIPPING INFO
+        .step-description SHIPPING
       li
         .step-number
           .step-circle 3
@@ -76,17 +76,24 @@
               | Your order number is&nbsp;
               strong
               | .
-            p(style='text-align:center') Tell your friends to get Stoned!
+            p(style='text-align:center') Tell your friends you just got Stoned!
             ul.social
               li
-                a(href='https://www.facebook.com/sharer/sharer.php?u=https%3A//stoned.audio', target='_blank')
+                a#social-facebook(href='https://www.facebook.com/sharer/sharer.php?u=https%3A//stoned.audio', target='_blank')
                   i.fa.fa-facebook-square
               li
-                a(href='https://twitter.com/intent/tweet?url=https%3A%2F%2Fstoned.audio&text=I+just+to+got+Stoned!+at&hashtags=GetStoned,StonedAudio&via=StonedHQ&original_referer=https%3A%2F%2Fstoned.audio', target='_blank')
+                a#social-twitter(href='https://twitter.com/intent/tweet?url=https%3A%2F%2Fstoned.audio&text=I+just+got+Stoned+Earphones!&hashtags=GetStoned,StonedAudio&via=StonedHQ&original_referer=https%3A%2F%2Fstoned.audio', target='_blank')
                   i.fa.fa-twitter
               li
-                a(href='mailto:?Subject=I%20found%20this%20cool%20thing.&body=Hey,%20I%20want%20you%20to%20get%20Stoned,%20check%20it%20out%20here%3A%20https%3A%2F%2Fstoned.audio')
-                  i.fa.fa-instagram
+                a#social-email(href='mailto:?Subject=I just got Stoned!&body=You should get Stoned too: https://stoned.audio')
+                  i.fa.fa-envelope
+
+            p.ambassador
+              | Want to be part of the revolution?
+              br
+              a(href='mailto:ambassadors@stoned.audio?Subject=I want to tell everyone to get Stoned.')
+                | &nbsp;Tell us why you'd be a great ambassador.
+
       button(class='{ loading: loading || checkedOut }', __disabled='{ loading || checkedOut }', type='submit')
         span Continue &#8594;
         span Checkout
@@ -94,9 +101,9 @@
         | { errorMessage }
       br
       p.legal
-        | You agree to our&nbsp;
+        | By placing an order with us, you agree to our&nbsp;
         a(href='terms', target='_blank') terms of service
-        | &nbsp;by placing this order. Payment processed immediately.
+        | .
 
     cart
       h1
