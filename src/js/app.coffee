@@ -10,7 +10,7 @@ require './contentfill'
 # require 'scroll-to.js'
 
 # Vendorish
-require './clock'
+# require './clock'
 
 # Project
 require './stonedaudio'
