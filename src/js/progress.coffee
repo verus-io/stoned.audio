@@ -42,6 +42,13 @@ $(document).ready ->
     requestTick progressFn
   $(window).on 'scroll touchmove mousewheel', fn
 
+  $.ajax(
+    url: 'https://api.crowdstart.com/campaign/earphones/progress?token=' + 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzIsImp0aSI6ImZBcnVLbXhLUXE0Iiwic3ViIjoiNE5UeFhsUXJ0YiJ9.fOUs-H-ALpW2LtZfwT7D1sAn3Ipq7NYvnTclRZGXwRK7XvIBBovQgjB8xmezllH65LYR6hl_Wz8tr6wREJV_OQ'
+  ).done (data)->
+    nowPercent = parseInt(data.progress * 10, 10) / 10
+    $progress.attr 'data-percent', '' + nowPercent + '%'
+    fn()
+
   fn()
 
   # deltaPercent = parseFloat(percent) / 100
