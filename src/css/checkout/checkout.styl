@@ -624,8 +624,12 @@
     float: right
 
     .stripe-logo
-      height: 16px
-      margin-right: 2px
+      height: 20px
+      margin: 4px 0px -4px 0px
+
+      +below(400px)
+        height: 16px
+        margin: 2px 0px -2px 0px
 
   .special-offer
     margin-top: 4px
