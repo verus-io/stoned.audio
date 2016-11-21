@@ -1,3 +1,5 @@
+# Polyfills
+require './polyfill'
 window.Layzr = require 'layzk.js'
 
 #Framework
@@ -11,6 +13,7 @@ require './contentfill'
 
 # Vendorish
 # require './clock'
+
 # Project
 require './stonedaudio'
 require './checkout'
