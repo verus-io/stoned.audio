@@ -1,4 +1,4 @@
-window.Layzr = require 'layzr.js'
+window.Layzr = require 'layzk.js'
 
 #Framework
 require './framework'
