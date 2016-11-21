@@ -130,12 +130,12 @@
       .promo
         .promo-label
           | Coupon
-        .promo-row
+        .promo-row(class='{ green: promoMessage.indexOf("Applied") >= 0 }')
           promocode.input(placeholder='Coupon')
           button.applying(class='{ loading: applying }', onclick='{ applyPromoCode }') &#10003;
       .promo-message(if="{ data.get('order.promoCode') && !promoMessage && !applying }")
         | Don't forget to apply your code!
-      .promo-message(if='{ promoMessage }')
+      .promo-message(if='{ promoMessage }', class='{ green: promoMessage.indexOf("Applied") >= 0 }')
         | { promoMessage }
       .invoice-discount.invoice-line.animated.fadeInUp(if="{ data.get('order.discount') > 0 }")
         .invoice-label
@@ -175,4 +175,8 @@
       // </div>
       // </div>
       // </div>
-    span.shipping-date Shipping December 2016
+    span.notes
+      p
+        | Shipping December 2016
+        br
+        span.tax-notice Customers will be responsible for any VAT or customs and import duties.
