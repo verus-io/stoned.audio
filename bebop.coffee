@@ -85,7 +85,10 @@ compileStylus = ->
   style.render (err, css) ->
     return console.error err if err
     if process.env.PRODUCTION
-      minified = (new CleanCSS semanticMerging: false).minify css
+      minifier = new CleanCSS
+        aggressiveMerging: false
+        semanticMerging:   false
+      minified = minifier.minify css
       writeFile dst, minified.styles
     else
       sourceMapURL = (path.basename dst) + '.map'

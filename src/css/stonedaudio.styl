@@ -21,13 +21,22 @@ a, a:visited
 .button, button
   height: 56px
   border-radius: 28px
+  transition: opacity .4s ease-in-out
 
   &:hover
     animation: ripple-white 1.5s infinite
 
+  &.loading
+    opacity: .5
+    cursor: default
+
+    &:hover
+      animation: none !important
+
+
 +below(400px)
   .logo
-    height: 16px
+    height: 18px
 
   .button, button
     height: 36px
@@ -40,6 +49,7 @@ header
     margin: 0
 
   .call-to-action
+  .pre-order-button
     position: absolute
     right: 32px
     top: 32px
@@ -48,14 +58,15 @@ header
     margin: 0
     font-size: 1em
     font-weight: bold
-    font-family: 'Roboto', sans-serif
+    font-family: 'Lato', sans-serif
     padding-left: 49px
     padding-right: 49px
+    letter-spacing: .1em
 
   +below(600px)
     .call-to-action
-      padding-left: 24px
-      padding-right: 24px
+    .pre-order-button
+      padding: 12px 24px 12px 24px
 
       .extra
         display: none
@@ -63,13 +74,16 @@ header
   +below(400px)
     .logo
       left: 32px
-      top: 28px
+      top: 24px
 
     .call-to-action
-      font-size: 0.8em
-      line-height: 0.4em
-      top: 16px
+    .pre-order-button
+      border: 3px solid #FFF
+      font-size: 1.2em
+      line-height: 9px
+      top: 14px
       right: 16px
+      height: 40px
 
 footer
   .logo
@@ -77,21 +91,25 @@ footer
 
 section
   .call-to-action
+  .pre-order-button
     background: radial-gradient(at top left, rgba(0, 212, 255,.50), rgba(0,212,255,0))
     background-color: #3DF2B6
 
     h3
-      line-height: 2.6em
+      line-height: 2.3em
+      font-size: .9em
+      letter-spacing: .1em
       color: #FFF
 
       +below(400px)
-        line-height: 1.3em
+        line-height: 1em
 
     &:hover
       animation: ripple-green 1.5s infinite
 
 .hero
-  height: calc(121vh + 40px)
+  // height: calc(121vh + 40px)
+  height: calc(110vh + 40px)
   overflow: hidden
   padding: 0
 
@@ -186,6 +204,7 @@ section
       top: 70vh
 
     .call-to-action
+    .pre-order-button
       top: 60vh
 
     .watch
@@ -215,8 +234,8 @@ section
           left: -2px
 
 .progress
-  margin-top: calc(-20vh - 40px)
-  margin-bottom: 20vh
+  // margin-top: calc(-20vh - 40px)
+  // margin-bottom: 20vh
   z-index: 10
 
   .bar
@@ -367,7 +386,7 @@ section
             text-align: center
             font-size: .75em
             line-height: 2em
-            font-family: 'Roboto', sans-serif
+            font-family: 'Lato', sans-serif
             font-weight: bold
 
   +below(800px)
@@ -566,23 +585,19 @@ section
     text-align: center
 
     p
-      text-shadow: 0 1px 1px rgba(111,111,111,0.2)
       font-size: 1em
       letter-spacing: .05em
 
     h1
-      text-shadow: 0 1px 1px rgba(111,111,111,0.4)
       letter-spacing: .01em
       margin-bottom: 50px
 
       img
-        height: 36px
+        height: 34px
         position: relative
-        top: 1px
+        top: 2px
         // left: 20px
         // margin-right: 20px
-        left: -20px
-        margin-left: 20px
 
   +below(800px)
     .foreground
@@ -612,9 +627,9 @@ section
 
     h1
       img
-        height: 36px
+        height: 34px
         position: relative
-        padding: 0px 8px
+        padding: 0px 2px 0 8px
         top: 2px
 
     form
@@ -623,6 +638,7 @@ section
       input
         column: 3/5 0 0
         border-radius: 0
+        border-right: 0
 
       button
         border-radius: 0
@@ -630,6 +646,7 @@ section
         background-color: #FFF
         color: #55CDAA
         position: relative
+        height: 60px
 
   +below(400px)
     .content
@@ -655,6 +672,12 @@ footer
 
 .lazy-loaded
   transition: opacity .5s ease-in-out
+
+.modal-close:not(.call-to-action)
+  right: 40px
+  top: 41px !important
+  left: auto !important
+  text-align: right
 
 @keyframes ripple-white
   0%
