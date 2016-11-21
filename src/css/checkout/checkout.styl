@@ -390,10 +390,12 @@
     display: inline-block
     margin-top: -3px
     float: right !important
-    margin-left: 20px
 
     .item
       left: 9px
+
+  .product-price-container
+    margin-right: 20px
 
   .product-description
     line-height: 1.25em
@@ -402,6 +404,9 @@
     display: inline-block
     vertical-align: top
     width: 90%
+
+    +below(400px)
+      font-size: 12px
 
     .product-name
       color: #000
@@ -412,6 +417,9 @@
       font-size: 12px
       line-height: 1.2rem
       margin-top: 0
+
+      +below(400px)
+        font-size: 9px
 
   .product-image-container
     width: 15%
@@ -895,12 +903,25 @@
         width: 50%
         text-align: right
 
-  @media screen and (max-width: 448px)
+  @media screen and (max-width: 500px)
     .checkout
       ul.steps
         li
           .step-number
             padding: 0 0 0 13px
+
+    .product-image-container
+      width: 30%
+
+    .product-text-container
+      width: 20%
+
+    .product-quantity-container
+      width: 30%
+
+    .product-price-container
+      display: none
+
 
   @media screen and (max-width: 400px)
     .checkout
@@ -927,9 +948,6 @@
       width: 15%
 
     .product-text-container
-      width: 30%
-
-    .product-price-container
       width: 30%
 
     .checkout
