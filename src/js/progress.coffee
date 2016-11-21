@@ -18,12 +18,17 @@ $(document).ready ->
     if percent == ''
       percent = '0%'
 
+    percentNumber = parseFloat percent
+    percentString = percent
+    if percentNumber < 10
+      percent = "10"
+
     if percent.indexOf('%') < 0
       percent += '%'
 
     $style.html("""
       .progress .bar:before {
-        content: '#{percent} RESERVED';
+        content: '#{percentString} RESERVED';
         width: #{percent};
       }
 
