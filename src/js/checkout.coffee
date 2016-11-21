@@ -37,10 +37,10 @@ $ ->
     ]
     shippingRates: [
       {
-        shippingRate: 1000
+        shippingRate: 500
         country: 'us'
       }
-      { shippingRate: 2500 }
+      { shippingRate: 1500 }
     ]
     config: hashReferrer: true
 
