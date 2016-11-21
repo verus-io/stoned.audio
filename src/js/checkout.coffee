@@ -76,7 +76,7 @@ $ ->
 
   $('.pre-order-button').on 'click', window.openCheckout
 
-  $('button[type=submit]').on 'click', ->
+  $('.checkout button[type=submit]').on 'click', ->
     if step == 2
       return true
     $inputs = $('user-name, user-email, card-number, card-expiry, card-cvc')
