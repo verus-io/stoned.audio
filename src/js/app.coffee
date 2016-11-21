@@ -1,3 +1,4 @@
+require './polyfill'
 window.Layzr = require 'layzr.js'
 
 #Framework
