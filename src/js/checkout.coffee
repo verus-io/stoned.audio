@@ -123,6 +123,12 @@ $ ->
       if !@data.get 'order.shippingAddress.name'
         @data.set 'order.shippingAddress.name', v
 
+    if k == 'order.shippingAddress.country'
+      if v == 'us'
+        $('.tax-notice').hide()
+      else
+        $('.tax-notice').show()
+
     @data.set 'user.passwordConfirm', @data.get('user.password') or ''
     requestAnimationFrame ->
       Shop.cart.invoice()
