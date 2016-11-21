@@ -141,7 +141,7 @@
       //   | { promoMessage }
       .invoice-discount.invoice-line.animated.fadeInUp(if="{ data.get('order.discount') > 0 }")
         .invoice-label
-          | Discount:
+          | Discount
         .invoice-amount
           | { renderCurrency(data.get('order.currency'), data.get('order.discount'))} { data.get('order.currency').toUpperCase() }
       .invoice-line
