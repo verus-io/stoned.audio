@@ -82,7 +82,7 @@
 
         .step-number
           text-align: center
-          padding: 0 10px
+          padding: 0 16px
           width: 52px
 
           .step-circle
@@ -851,6 +851,13 @@
       div:last-child
         width: 50%
         text-align: right
+
+  @media screen and (max-width: 448px)
+    .checkout
+      ul.steps
+        li
+          .step-number
+            padding: 0 0 0 13px
 
   @media screen and (max-width: 400px)
     .checkout
