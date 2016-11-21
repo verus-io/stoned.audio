@@ -133,10 +133,10 @@
         .promo-row
           promocode.input(placeholder='Coupon')
           button.applying(class='{ loading: applying }', onclick='{ applyPromoCode }') &#10003;
-          .promo-message(if="{ data.get('order.promoCode') && !promoMessage && !applying }")
-            | Don't forget to apply your code!
-          .promo-message(if='{ promoMessage }')
-            | { promoMessage }
+      .promo-message(if="{ data.get('order.promoCode') && !promoMessage && !applying }")
+        | Don't forget to apply your code!
+      .promo-message(if='{ promoMessage }')
+        | { promoMessage }
       .invoice-discount.invoice-line.animated.fadeInUp(if="{ data.get('order.discount') > 0 }")
         .invoice-label
           | Discount:
@@ -175,4 +175,4 @@
       // </div>
       // </div>
       // </div>
-
+    span.shipping-date Expected to ship December 2016

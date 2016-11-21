@@ -117,7 +117,13 @@ $ ->
     $('.checkout-container').css 'top', ''
     false
 
-  m.on 'change', ->
+  m.on 'change', (k, v) ->
+    if k == 'user.name'
+      if !@data.get 'payment.account.name'
+        @data.set 'payment.account.name', v
+      if !@data.get 'order.shippingAddress.name'
+        @data.set 'order.shippingAddress.name', v
+
     @data.set 'user.passwordConfirm', @data.get('user.password') or ''
     requestAnimationFrame ->
       Shop.cart.invoice()

@@ -52,6 +52,10 @@
       padding: 8px 0
       line-height: 1em
       text-align: left
+      width: 100%
+
+    .promo-message
+      text-align: right
 
     // Step Counter
     ul.steps
@@ -436,7 +440,7 @@
     & > div:first-child
       width: 40%
 
-    & > div:last-child
+    & > div:nth-child(2)
       width: 60%
 
     .promo-row
@@ -732,6 +736,13 @@
         text-align: center
         font-size: 3rem
 
+  .shipping-date
+    position: absolute
+    width: 100%
+    text-align: center
+    bottom: -3em
+    color: #FFF
+
   @media screen and (max-width: 980px)
     cart
     checkout
@@ -916,3 +927,5 @@
 
   .modal-close
     font-weight: 900
+
+
