@@ -337,6 +337,9 @@
       padding: 0
       transition: background-color 420ms ease-in-out
 
+      span:last-child
+        display: none
+
     &.green
       input
         border-color: #3DF2B6 !important
@@ -344,6 +347,20 @@
 
       button
         background-color: #3DF2B6 !important
+
+    &.red
+      input
+        border-color: #F22469 !important
+        color: #F22469 !important
+
+      button
+        background-color: #F22469 !important
+
+        span:first-child
+          display: none
+
+        span:last-child
+          display: block
 
   .promo-message
     text-align: right !important
