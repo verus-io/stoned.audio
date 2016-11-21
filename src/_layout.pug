@@ -93,24 +93,6 @@ html(lang='en')
     footer
       nav
         ul
-          // li
-          //   a(href='about') ABOUT
-          // li
-          //   a(href='press') PRESS
-          // li
-          //   a(href='faq') FAQ
-          li
-            a#home(href='/') HOME
-          li
-            | |
-          li
-            a#privacy(href='privacy') PRIVACY
-          li
-            | |
-          li
-            a#terms(href='terms') TERMS
-      nav
-        ul
           li
             a#social-facebook(href='https://www.facebook.com/StonedHQ', target='_blank')
               i.fa.fa-facebook-square
@@ -120,6 +102,22 @@ html(lang='en')
           li
             a#social-instagram(href='http://instagram.com/StonedHQ/', target='_blank')
               i.fa.fa-instagram
+      nav
+        ul
+          // li
+          //   a(href='about') ABOUT
+          // li
+          //   a(href='press') PRESS
+          // li
+          //   a(href='faq') FAQ
+          li
+            a#home(href='/') HOME
+          li
+            a#home(href='faq') FAQ
+          li
+            a#privacy(href='privacy') PRIVACY
+          li
+            a#terms(href='terms') TERMS
       a#home(href='#')
         img.logo(src='./img/logo.png', alt='Stoned Audio Logo')
       small.copyright &copy; Stoned Audio, LLC 2016
@@ -148,6 +146,8 @@ html(lang='en')
       window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\\/script>')
     <!--<![endif]-->
 
+    block script
+
     script(src='https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js')
     script(src='js/app.js')
     script.
@@ -164,5 +164,4 @@ html(lang='en')
       twq('init','nvqog');
       twq('track','PageView');
 
-    block script
 

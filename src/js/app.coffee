@@ -6,6 +6,7 @@ require './hero-video'
 require './parallax'
 require './lazyify'
 require './progress'
+require './contentfill'
 # require 'scroll-to.js'
 
 # Vendorish
