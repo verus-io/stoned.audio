@@ -10,7 +10,7 @@ $ ->
     endpoint: 'https://api.crowdstart.com'
     order:
       metadata: batch: 'preorder'
-      shippingRate: 1000
+      shippingRate: 500
     taxRates: [
       {
         taxRate: 0.0275
