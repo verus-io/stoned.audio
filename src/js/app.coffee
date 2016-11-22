@@ -7,7 +7,7 @@ require './framework'
 require './hero-video'
 require './parallax'
 require './lazyify'
-require './progress'
+# require './progress'
 require './contentfill'
 # require 'scroll-to.js'
 
