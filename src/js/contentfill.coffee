@@ -43,29 +43,20 @@ $(document).ready ->
             $field = $(this)
             field = $field.attr('data-contentful-field')
             $field.prepend item.fields[field]
-            return
           $template.find('[data-contentful-src]').each (j) ->
             $field = $(this)
             field = $field.attr('data-contentful-src')
             if !item.fields[field] or !item.fields[field].fields or !item.fields[field].fields.file
               return
             $field.attr 'src', item.fields[field].fields.file.url
-            return
-          $template.find('[data-contentful-href]').each (i) ->
+          $template.find('[data-contentful-href]').each (j) ->
             $field = $(this)
             field = $field.attr('data-contentful-href')
             $field.attr 'href', item.fields[field]
-            return
-          return
-          $template.find('[data-contentful-increment]').each (i) ->
+          $template.find('[data-contentful-increment]').each (j) ->
             $field = $(this)
             attr = $field.attr('data-contentful-increment')
             $field.attr attr, $field.attr(attr) + i
-            return
-          return
         $el.append $template
         i++
       # window.loads--
-      return
-    return
-  return
