@@ -646,6 +646,10 @@
     top: -1px
     float: right
 
+    +below(400px)
+      span
+        display: none
+
   .card-logo
   .security-code
     position: absolute;
@@ -690,6 +694,7 @@
       margin: 4px 0px -4px 0px
       position: relative
       top: 8px
+      margin-bottom: 2px
 
   .special-offer
     margin-top: 4px
@@ -800,11 +805,14 @@
     font-size: .7em
     text-align: center
 
-  .legal
     a
       padding: 16px
       text-decoration: none
       color: #25d2b1
+
+    +below(400)
+      a
+        padding: 6px
 
   .thankyou
     text-align: center

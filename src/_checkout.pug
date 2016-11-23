@@ -35,7 +35,8 @@
             h1
               | Payment
               span.secured-text
-                | SSL Secure Checkout
+                | SSL Secure
+                span Checkout
                 img.lock-icon(src='img/lock-icon.svg')
             .fields
               card-name.input(placeholder='Name on Card')
@@ -81,7 +82,7 @@
           terms
             label(for='terms')
               | I agree to Stoned Audio's&nbsp;
-              a(href='/terms', target='_blank')
+              a(href='terms', target='_blank')
                 | terms of service
         .part
           .thankyou
@@ -107,9 +108,9 @@
         | { errorMessage }
       br
       p.legal
-        a(href='/returns', target='_blank') Return Policy
-        a(href='/privacy', target='_blank') Privacy Policy
-        a(href='/terms', target='_blank') Terms of Service
+        a(href='returns', target='_blank') Return&nbsp;Policy
+        a(href='privacy', target='_blank') Privacy&nbsp;Policy
+        a(href='terms', target='_blank') Terms&nbsp;of&nbsp;Service
 
     cart
       h1
