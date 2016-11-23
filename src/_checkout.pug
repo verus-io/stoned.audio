@@ -33,9 +33,10 @@
               user-email.input(placeholder='Email')
           .payment-information
             h1
-              | Payment  &#128274;
-              a.stripe-link(href='//www.stripe.com', target='_blank')
-                img.stripe-logo(src='img/stripelogo.svg')
+              | Payment
+              span.secured-text
+                img.lock-icon(src='img/lock-icon.svg')
+                | SSL Secure Checkout
             .fields
               card-name.input(placeholder='Name on Card')
               card-number.input(name='number', placeholder='Card Number')
@@ -47,7 +48,18 @@
                 img.card-logo.visa-logo(src='img/card-logos/visa.svg')
               card-expiry.input(name='expiry', placeholder='MM / YY')
               card-cvc.input(name='cvc', placeholder='CVC')
-                // img.security-code(src='img/card-logos/security-code.svg')
+            p.cards-accepted
+              // img.card-logo.maestro-logo(src='img/card-logos/maestro.svg')
+              img.card-logo.visa-logo(src='img/card-logos/visa.svg')
+              img.card-logo.mastercard-logo(src='img/card-logos/mastercard.svg')
+              img.card-logo.discover-logo(src='img/card-logos/discover.svg')
+              img.card-logo.amex-logo(src='img/card-logos/amex.svg')
+              img.card-logo.jcb-logo(src='img/card-logos/jcb.svg')
+              a.stripe-link(href='//www.stripe.com', target='_blank')
+                img.stripe-logo(src='img/stripelogo.svg')
+            // p.legal
+            //   | Transactions are always encrypted.  Credit card information is never stored.
+          // img.security-code(src='img/card-logos/security-code.svg')
           // <div class="confirmation">
           // <h1>
           // Almost Done

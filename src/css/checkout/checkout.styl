@@ -578,6 +578,10 @@
     position: relative
     // border: 2px solid #C9C9C9
 
+  .payment-information
+    .fields
+      margin-bottom: -15px
+
   cart
     line-height: 1.8em
     background-color: #EEE
@@ -628,6 +632,19 @@
   // checkout
     // margin-right: 4%
 
+  .lock-icon
+    width: 16px
+    height: 16px
+    position: relative
+    top: 1px
+    margin-left: 4px
+
+  .secured-text
+    font-size: .6em
+    position: relative
+    top: -1px
+    float: right
+
   .card-logo
   .security-code
     position: absolute;
@@ -654,16 +671,24 @@
   .visa ~ .visa-logo
     opacity: 1
 
+  .cards-accepted
+    .card-logo
+      opacity: 1
+      position: relative
+      height: 20px
+      top: 4px
+      margin-left: 0px
+      margin-right: 8px
+
   .stripe-link
     float: right
 
     .stripe-logo
+      width: 90px
       height: 20px
       margin: 4px 0px -4px 0px
-
-      +below(400px)
-        height: 16px
-        margin: 2px 0px -2px 0px
+      position: relative
+      top: 8px
 
   .special-offer
     margin-top: 4px
@@ -776,7 +801,7 @@
 
   .legal
     font-size: .625em
-    text-align: center
+    text-align: left
 
   .thankyou
     text-align: center
