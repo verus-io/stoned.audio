@@ -309,30 +309,22 @@ section
     padding: 0 20px
     margin: 0 auto
 
-    img
-      column 1/4 4 120px
-      max-height: 120px
-      margin-top: 60px
-      transform: translateY(-50%)
-
-  +below(800px)
-    .content
-      img
-        column 1/4 4 80px
+    & > div
+      column 1/4 4 60px
+      height: 60px
+      margin: 30px 0
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center
 
   +below(600px)
-    .content
-      img
-        column 1/4 4 20px
-
-  +below(400px)
     margin-top: 0
     height:240px
     background: #000
 
     .content
-      img
-        column 1/2 2 100px
+      & > div
+        column 1/2 2 60px
 
 section
   h1
