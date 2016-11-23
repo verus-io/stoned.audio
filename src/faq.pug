@@ -8,13 +8,16 @@ block content
 
     include _progress.pug
 
-    section.faq
+    section.body
       .content
+        h2.contentful-loading LOADING ...
         .contentful(data-contentful-space='75maui21vjrq', data-contentful-model='faq', data-contentful-token='a6912c52811f23bb07e3694e0edc67f45a56177f84364d28c2982965caf4cbc0', data-contentful-order='rank')
-          .animated.fadeInUp
-            h2(data-contentful-field='question')
-            p(data-contentful-field='answer')
-
+          .accordion.animated.fadeInUp
+            input(type='checkbox', id='toggle', data-contentful-increment='id', checked)
+            label.accordion-toggle(for='toggle', data-contentful-increment='for')
+              h2(data-contentful-field='question')
+                i
+            p.accordion-content(data-contentful-field='answer')
 
 block script
   script(src='https://npmcdn.com/contentful@3.3.5/browser-dist/contentful.js')

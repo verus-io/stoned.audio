@@ -11,6 +11,8 @@ $(document).ready ->
     token = $el.attr('data-contentful-token')
     model = $el.attr('data-contentful-model')
     order = $el.attr('data-contentful-order')
+    $el.html('')
+
     if !space or space == ''
       console.error 'No Contentful Space Specified'
       return
@@ -30,6 +32,9 @@ $(document).ready ->
         items.sort (a, b) ->
           new Date(a.sys.createdAt).getTime() - new Date(b.sys.createdAt).getTime()
       i = 0
+
+      $el.siblings('.contentful-loading').remove()
+
       while i < len
         item = items[i]
         $template = $(template)
@@ -50,6 +55,12 @@ $(document).ready ->
             $field = $(this)
             field = $field.attr('data-contentful-href')
             $field.attr 'href', item.fields[field]
+            return
+          return
+          $template.find('[data-contentful-increment]').each (i) ->
+            $field = $(this)
+            attr = $field.attr('data-contentful-increment')
+            $field.attr attr, $field.attr(attr) + i
             return
           return
         $el.append $template
