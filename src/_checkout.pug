@@ -132,7 +132,7 @@
           | Coupon
         .promo-row(class='{ green: promoMessage.indexOf("Applied") >= 0, red: promoMessage && promoMessage.indexOf("Applied") < 0 }')
           promocode.input(placeholder='Coupon')
-          button.applying(class='{ loading: applying, notify: !applying && data.get("order.promoCode") && !promoMessage }', onclick='{ applyPromoCode }')
+          button(class='{ loading: applying, notify: !applying && data.get("order.promoCode") && !promoMessage }', onclick='{ applyPromoCode }')
             span &#10003;
             span &#10005;
       // .promo-message(if="{ data.get('order.promoCode') && !promoMessage && !applying }")
