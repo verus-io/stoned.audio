@@ -421,10 +421,6 @@ section
     .info
       padding-top: 15vh
 
-  // minify tax
-  ul li:nth-child(4n)
-    margin-right: 0 !important
-
 #comfy
   +below(800px)
     background-position-x: 0%
@@ -502,12 +498,20 @@ section
 
     li
       column 1/4 4 20px
-
+      // minify tax
       +between(800px, 836px)
         column 1/4 4 10px
 
       +below(800px)
         column 1/2 2 20px
+
+        // minify tax
+        &:nth-child(2n)
+          margin-right: 0 !important
+
+      // minify tax
+      &:nth-child(4n)
+        margin-right: 0 !important
 
   .info.info.info
     +below(800px)
