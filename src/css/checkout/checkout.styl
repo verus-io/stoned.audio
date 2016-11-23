@@ -243,7 +243,7 @@
       outline-width: 0
 
   a
-    color: #3DF2B6
+    color: #25d2b1
     text-decoration: underline
 
   h1
@@ -345,11 +345,11 @@
 
     &.green
       input
-        border-color: #3DF2B6 !important
-        color: #3DF2B6 !important
+        border-color: #25d2b1 !important
+        color: #25d2b1 !important
 
       button
-        background-color: #3DF2B6 !important
+        background-color: #25d2b1 !important
 
     &.red
       input
@@ -578,8 +578,9 @@
     position: relative
     // border: 2px solid #C9C9C9
 
+  .shipping-information
   .payment-information
-    .fields
+    .fields:last-child
       margin-bottom: -15px
 
   cart
@@ -627,7 +628,7 @@
     width: 50%
     // width: 100%
     padding: 30px
-    min-height: 450px
+    min-height: 460px
 
   // checkout
     // margin-right: 4%
@@ -702,16 +703,13 @@
   .checkbox
   terms
   gift-toggle
-    font-family: helvetica
-    margin-bottom: 20px
     display: block
 
     label
       padding-top: 2px;
-      font-size: 16px !important
       line-height: 1.2rem;
       display: inline-block;
-      color: #9ba0a4
+      color: #000
 
     /* Base for label styling */
     [type="checkbox"]:not(:checked),
@@ -732,7 +730,7 @@
       content: ''
       position: absolute
       left:0
-      top: -1px
+      top: 2px
       width: 17px; height: 17px;
       border: 2px solid #aaa;
       background: #f8f8f8;

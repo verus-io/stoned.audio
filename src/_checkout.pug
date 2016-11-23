@@ -64,10 +64,6 @@
           // <h1>
           // Almost Done
           // </h1>
-          // <terms>
-          // <label for="terms">I agree to Stoned's <a href="/legal" target="_blank">terms of service</a>.</label>
-          // </terms>
-          // </div>
         .part
           .shipping-information
             h1
@@ -82,6 +78,11 @@
             .fields
               shippingaddress-state.input(placeholder='State')
               shippingaddress-country.input(placeholder='Country')
+          terms
+            label(for='terms')
+              | I agree to Stoned Audio's&nbsp;
+              a(href='/terms', target='_blank')
+                | terms of service
         .part
           .thankyou
             p
