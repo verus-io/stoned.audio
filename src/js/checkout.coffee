@@ -11,6 +11,7 @@ $ ->
     order:
       metadata: batch: 'preorder'
       shippingRate: 500
+    terms: true
     taxRates: [
       {
         taxRate: 0.0275
