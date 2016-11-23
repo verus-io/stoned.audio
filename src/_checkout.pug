@@ -35,8 +35,8 @@
             h1
               | Payment
               span.secured-text
-                img.lock-icon(src='img/lock-icon.svg')
                 | SSL Secure Checkout
+                img.lock-icon(src='img/lock-icon.svg')
             .fields
               card-name.input(placeholder='Name on Card')
               card-number.input(name='number', placeholder='Card Number')
@@ -106,9 +106,9 @@
         | { errorMessage }
       br
       p.legal
-        | You agree to our&nbsp;
-        a(href='terms', target='_blank') terms of service
-        | &nbsp;by placing this order. Payment processed immediately.
+        a(href='/returns', target='_blank') Refund Policy
+        a(href='/privacy', target='_blank') Privacy Policy
+        a(href='/terms', target='_blank') Terms of Service
 
     cart
       h1
