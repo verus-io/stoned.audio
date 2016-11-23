@@ -1,4 +1,4 @@
-body
+bodo
 section
 footer
   color: #FFF
@@ -109,7 +109,7 @@ section
 
 .hero
   // height: calc(121vh + 40px)
-  height: calc(110vh + 40px)
+  height: calc(105vh + 100px)
   overflow: hidden
   padding: 0
 
@@ -300,29 +300,39 @@ section
   max-width: 900px
 
 .press-strip
-  margin-top: -20vh
-  height: 20vh
+  margin-top: -120px
+  height: 120px
   background-color: rgba(51,51,51,.4)
   display: block
 
   .content
-    padding: 0
+    padding: 0 20px
     margin: 0 auto
 
     img
-      column 1/4 4 60px
-      height: 20px
-      margin-top: 10vh
+      column 1/4 4 120px
+      max-height: 120px
+      margin-top: 60px
       transform: translateY(-50%)
+
+  +below(800px)
+    .content
+      img
+        column 1/4 4 80px
+
+  +below(600px)
+    .content
+      img
+        column 1/4 4 20px
 
   +below(400px)
     margin-top: 0
-    height:40vh
+    height:240px
+    background: #000
 
     .content
       img
-        margin-top: 12vh
-        column 1/2 2 20px
+        column 1/2 2 100px
 
 section
   h1
