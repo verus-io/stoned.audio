@@ -444,14 +444,15 @@ section
   background: -ms-linear-gradient(225deg, rgb(217, 217, 217) 0%, rgb(238, 238, 238) 100%);
   background: -moz-linear-gradient(225deg, rgb(217, 217, 217) 0%, rgb(238, 238, 238) 100%);
   background: linear-gradient(225deg, rgb(217, 217, 217) 0%, rgb(238, 238, 238) 100%);
+  height: auto !important
 
   .content
-    height: 100%
     display: table
     padding: 20px 0
 
     .info
       padding: 0 0
+      position: relative
 
     h1
       color: rgba(0,0,0,.9)
@@ -468,27 +469,29 @@ section
     ul
       width: 66%
       margin: 0 16.5%
-      bottom: 1vh
       position: absolute
+      bottom: 0
 
       li
         color rgba(0,0,0,.9)
         column 1/4 4 20px
-
-        +below(800px)
-          column 1/2 2 20px
 
         div
           border-color rgba(0,0,0,.9)
 
   +below(800px)
     .content
+
+      .info
+        padding-bottom: 200px
+
       ul
         padding: 0 20px
 
-  +below(600px)
-    height: 120vh
+        li
+          column 1/2 2 20px
 
+  +below(600px)
     .content
       p
         font-size: 1em
@@ -496,9 +499,6 @@ section
       ul
         width: 100%
         margin: 0
-
-  +below(400px)
-    height: 160vh
 
 #rocking
   ul
