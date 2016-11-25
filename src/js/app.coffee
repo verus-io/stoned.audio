@@ -16,4 +16,8 @@ require './contentfill'
 
 # Project
 require './stonedaudio'
+require './shop'
 require './checkout'
+require './login'
+require './register'
+require './account'
