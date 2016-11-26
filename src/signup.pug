@@ -1,0 +1,32 @@
+extends _layout.pug
+
+block content
+  #page-signup.page
+    section.body(data-lazy='img/comfy.jpg')
+      .content
+        div
+          input(type='radio',name='mode',id='register',checked)
+          input(type='radio',name='mode',id='login')
+          h1
+            label(for='register') Register
+            span &nbsp;|&nbsp;
+            label(for='login') Login
+          register
+            user-name(placeholder='Name')
+            user-email(placeholder='Email')
+            user-password(placeholder='Password')
+            .error(if='{ errorMessage }')
+              | { errorMessage }
+
+            button(type='submit')
+              | Register
+          login
+            user-email(placeholder='Email')
+            user-password(placeholder='Password')
+            .error(if='{ errorMessage }')
+              | { errorMessage }
+
+            button(type='submit')
+              | Login
+
+block signup
