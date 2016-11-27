@@ -28,6 +28,7 @@ compilePug = (src, dst) ->
     contactEmail:    'hi@stoned.audio'
     pressEmail:      'press@stoned.audio'
     supportEmail:    'support@stoned.audio'
+    legalEmail:      'legal@stoned.audio'
 
   src = path.join 'src',    filename
   dst = path.join 'public', filename.replace '.pug', '.html'
