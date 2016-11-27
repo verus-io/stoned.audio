@@ -16,13 +16,14 @@ compilePug = (src, dst) ->
     basedir: __dirname + '/src'
     pretty:  true
 
-    title:           'Stoned Audio'
+    siteTitle:       'Stoned Audio'
+    siteName:        'stoned.audio'
+
     copyright:       '© Stoned Audio 2016'
 
     legalName:       'Stoned Audio, LLC'
     legalAddress:    '244 Madison Avenue, 10016-2417 New York City, New York'
     legalState:      'Missouri'
-    siteName:        'stoned.audio'
 
     contactEmail:    'hi@stoned.audio'
     pressEmail:      'press@stoned.audio'
