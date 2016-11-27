@@ -16,8 +16,17 @@ compilePug = (src, dst) ->
     basedir: __dirname + '/src'
     pretty:  true
 
-    title:     'Stoned Audio'
-    copyright: '© Stoned Audio, LLC'
+    title:           'Stoned Audio'
+    copyright:       '© Stoned Audio 2016'
+
+    legalName:       'Stoned Audio, LLC'
+    legalAddress:    '244 Madison Avenue, 10016-2417 New York City, New York'
+    legalState:      'Missouri'
+    siteName:        'stoned.audio'
+
+    contactEmail:    'hi@stoned.audio'
+    pressEmail:      'press@stoned.audio'
+    supportEmail:    'support@stoned.audio'
 
   src = path.join 'src',    filename
   dst = path.join 'public', filename.replace '.pug', '.html'
