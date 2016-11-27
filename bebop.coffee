@@ -13,22 +13,23 @@ compilePug = (src, dst) ->
   pug = require 'pug'
 
   opts =
-    basedir: __dirname + '/src'
-    pretty:  true
+    basedir:      __dirname + '/src'
+    pretty:       true
+    production:   if process.env.PRODUCTION then true else false
 
-    siteTitle:       'Stoned Audio'
-    siteName:        'stoned.audio'
+    siteTitle:    'Stoned Audio'
+    siteName:     'stoned.audio'
 
-    copyright:       '© Stoned Audio 2016'
+    copyright:    '© Stoned Audio 2016'
 
-    legalName:       'Stoned Audio, LLC'
-    legalAddress:    '244 Madison Avenue, 10016-2417 New York City, New York'
-    legalState:      'Missouri'
+    legalName:    'Stoned Audio, LLC'
+    legalAddress: '244 Madison Avenue, 10016-2417 New York City, New York'
+    legalState:   'Missouri'
 
-    contactEmail:    'hi@stoned.audio'
-    pressEmail:      'press@stoned.audio'
-    supportEmail:    'support@stoned.audio'
-    legalEmail:      'legal@stoned.audio'
+    contactEmail: 'hi@stoned.audio'
+    pressEmail:   'press@stoned.audio'
+    supportEmail: 'support@stoned.audio'
+    legalEmail:   'legal@stoned.audio'
 
   src = path.join 'src',    filename
   dst = path.join 'public', filename.replace '.pug', '.html'
