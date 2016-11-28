@@ -1,5 +1,11 @@
 url = 'https://stoned.audio'
 
+description = """
+  Stoned Earphones – Audiophile quality sound, on the go charging,
+  single button control, active noise cancellation and in-ear mic.
+  Experience true wireless earphones designed without compromise.
+  """
+
 email =
   subject: 'I want you to get Stoned!'
   body: """
@@ -21,23 +27,17 @@ module.exports =
       copyright: '© Stoned Audio 2016'
 
     meta:
-      description: ''
+      description: description
 
       facebook:
-        title: 'Get Stoned.'
-        description: """
-          Crystal clear audio without any wires. We may have lost the wires but
-          we kept what's important: the radiant sound.
-          """
-        image: 'https://stoned.audio/img/twittershare.jpg'
+        description: description
+        image:       'https://stoned.audio/img/twittershare.jpg'
+        title:       'Get Stoned.'
 
       twitter:
-        title: 'Get Stoned'
-        description: """
-          Crystal clear audio without any wires. We may have lost the wires but
-          we kept what's important: the radiant sound.
-          """
-        image: 'https://stoned.audio/img/twittershare.jpg'
+        description: description
+        image:       'https://stoned.audio/img/twittershare.jpg'
+        title:       'Get Stoned'
 
     social:
       email:
