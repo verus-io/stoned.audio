@@ -20,7 +20,7 @@ block content
             You may return the product within 14 days of receiving it for a
             full refund, provided you remain in good standing with the <a
             href="/terms">Terms</a> of your purchase and purchased it on the
-            #{siteName} website.  If you purchased through a retailer, please
+            #{site.name} website.  If you purchased through a retailer, please
             contact the retailer instead.
 
             Returns are only accepted in their original condition, including
@@ -28,10 +28,15 @@ block content
             Return shipping is your responsibility, and the product must arrive
             back to us in its original, unused condition.
 
-            To initiate a return, email #{contactEmail}. We will send you a
+            To initiate a return, email #{contact.email}. We will send you a
             full refund, less all shipping and handling charges, within 10 days
             of our receipt of the product, if you comply with all the
             associated <a href="/terms">Terms</a> and any return instructions.
+
+            Refunds are available for purchases made through the #{site.name}
+            website within 30 days of the product shipping. If you purchased
+            through a retailer, please contact the retailer instead. To
+            request a refund, email #{contact.email}.
 
         .accordion
           input(type='checkbox', id='toggle2', checked)
@@ -44,7 +49,7 @@ block content
             shipping. Please note that occasionally the lag time between us
             seeing your request and you submitting it means that it may have
             already shipped. You may request an order cancellation by emailing
-            #{contactEmail}. If your order cannot be cancelled, you will get an
+            #{contact.email}. If your order cannot be cancelled, you will get an
             email when the order ships.
 
         .accordion
@@ -64,7 +69,7 @@ block content
               | One-year consumer warranty
               i
           p.accordion-content.
-            #{legalName} (“Us”, “Our”, “We”) offers you a one-year warranty
+            #{legal.name} (“Us”, “Our”, “We”) offers you a one-year warranty
             (“Warranty”) against defects.  The Warranty can not be assigned or
             transferred to any subsequent purchaser or user, and coverage
             begins on the date of shipment of the covered product. We agree to
@@ -75,7 +80,7 @@ block content
             maintenance, or storage. The Warranty does not cover damage caused
             by resale, third-party devices, or personal modifications meant to
             alter or extend the functionality of the product. Under this
-            Warranty, #{legalName} does not assume any liability to any damage or
+            Warranty, #{legal.name} does not assume any liability to any damage or
             loss resulting from the use of the covered product; including, but
             not limited to: loss of profits or revenue, loss of use of the
             product or any associated equipment, cost of any replacement goods,
@@ -91,5 +96,5 @@ block content
             at your cost.  Replacement devices will have the remaining warranty
             period from the original device, or 90 days, whichever is longer.
             To initiate a Warranty claim, obtain an RMA, or ask questions,
-            email us at #{contactEmail}.
+            email us at #{contact.email}.
 

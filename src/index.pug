@@ -206,34 +206,19 @@ block content
   section#share
     .content
       h1 Show us love
-      // p
-      //   | Tell your friends to get
-      //   img(src='./img/logo-dark.png', alt='Stoned Audio Logo')
-      //   | .
       ul.shares
         li
-          a#social-facebook(href='https://www.facebook.com/sharer/sharer.php?u=https%3A//stoned.audio', target='_blank')
+          a#social-facebook(href=social.facebook.shareLink, target='_blank')
             i.fa.fa-facebook-square
         li
-          a#social-twitter(href='https://twitter.com/intent/tweet?url=https%3A%2F%2Fstoned.audio&text=I+want+to+get+Stoned+at&hashtags=GetStoned,StonedAudio&via=StonedHQ&original_referer=https%3A%2F%2Fstoned.audio', target='_blank')
+          a#social-twitter(href=social.twitter.shareLink, target='_blank')
             i.fa.fa-twitter
         li
-          a#social-email(href='mailto:?Subject=I%20found%20this%20cool%20thing.&body=Hey,%20I%20want%20you%20to%20get%20Stoned,%20check%20it%20out%20here%3A%20https%3A%2F%2Fstoned.audio')
+          a#social-email(href=social.email.shareLink)
             i.fa.fa-envelope
+
       p.ambassador
         | Want to be part of the the revolution?
         br
         a(href='https://stonedhq.typeform.com/to/NYO9Yp')
           | &nbsp;Tell us why you'd be a great ambassador.
-
-
-  // section
-  //   h1= siteTitle
-
-  // section
-  //   figure 1
-  //   figure 2
-  //   figure 3
-  //   figure 4
-  //   figure 5
-  //   figure 6
