@@ -41,7 +41,7 @@ module.exports =
 
     social:
       email:
-        shareLink: "mailto:?subject=#{encodeURIComponent email.subject}&body=#{encodeURIComponent}"
+        shareLink: "mailto:?subject=#{encodeURIComponent email.subject}&body=#{encodeURIComponent email.body}"
       twitter:
         username:  "@#{twitter.username}"
         shareLink: "https://twitter.com/intent/tweet?url=#{encodeURIComponent url}&text=#{encodeURIComponent twitter.text}&hashtags=#{twitter.hashtags}&via=#{twitter.username}&original_referer=#{encodeURIComponent url}"
