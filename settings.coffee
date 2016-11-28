@@ -7,7 +7,7 @@ description = """
   """
 
 email =
-  subject: 'I want you to get Stoned!'
+  subject: "I'm getting Stoned!"
   body: """
     Audiophile quality sound, on the go charging, single button control, active
     noise cancellation and in-ear mic... Who wouldn't want to get Stoned
@@ -17,7 +17,7 @@ email =
 twitter =
   username: 'StonedHQ'
   hashtags: 'GetStoned,StonedAudio'
-  text:     "I'm getting Stoned. True wireless earphones with audiophile quality sound."
+  text:     "I'm getting Stoned! True wireless earphones with audiophile quality sound."
 
 module.exports =
     site:
