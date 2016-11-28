@@ -17,10 +17,10 @@ block content
               | What is your refund policy?
               i
           p.accordion-content.
-            Refunds are available for purchases made through the #{siteName}
+            Refunds are available for purchases made through the #{site.name}
             website within 30 days of the product shipping. If you purchased
             through a retailer, please contact the retailer instead. To
-            request a refund, email #{contactEmail}.
+            request a refund, email #{contact.email}.
 
         .accordion
           input(type='checkbox', id='toggle2', checked)
@@ -33,7 +33,7 @@ block content
             shipping. Please note that occasionally the lag time between us
             seeing your request and you submitting it means that it may have
             already shipped. You may request an order cancellation by emailing
-            #{contactEmail}. If your order cannot be cancelled, you will get an
+            #{contact.email}. If your order cannot be cancelled, you will get an
             email when the order ships.
 
         .accordion
@@ -80,5 +80,5 @@ block content
             at your cost.  Replacement devices will have the remaining warranty
             period from the original device, or 90 days, whichever is longer.
             To initiate a Warranty claim, obtain an RMA, or ask questions,
-            email us at #{contactEmail}.
+            email us at #{contact.email}.
 
