@@ -27,7 +27,12 @@ compilePug = (src, dst) ->
     legalState:   'Missouri'
 
     contactEmail: 'hi@stoned.audio'
+    contactPhone: '(650) 318-1319'
+
+    pressName:    'Zach Kelling'
     pressEmail:   'press@stoned.audio'
+    pressPhone:   '(650) 318-1319'
+
     supportEmail: 'support@stoned.audio'
     legalEmail:   'legal@stoned.audio'
 
