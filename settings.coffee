@@ -1,8 +1,23 @@
+url = 'https://stoned.audio'
+
+email =
+  subject: 'I want you to get Stoned!'
+  body: """
+    Audiophile quality sound, on the go charging, single button control, active
+    noise cancellation and in-ear mic... Who wouldn't want to get Stoned
+    Earphones? Grab your pair at #{url}.
+    """
+
+twitter =
+  username: 'StonedHQ'
+  hashtags: 'GetStoned,StonedAudio'
+  text:     "I'm getting Stoned. True wireless earphones with audiophile quality sound."
+
 module.exports =
     site:
       title:     'Stoned Audio'
       name:      'stoned.audio'
-      url:       'https://stoned.audio'
+      url:       url
       copyright: '© Stoned Audio 2016'
 
     meta:
@@ -26,13 +41,13 @@ module.exports =
 
     social:
       email:
-        shareLink: 'mailto:?Subject=I%20found%20this%20cool%20thing.&body=Hey,%20I%20want%20you%20to%20get%20Stoned,%20check%20it%20out%20here%3A%20https%3A%2F%2Fstoned.audio'
+        shareLink: "mailto:?subject=#{encodeURIComponent email.subject}&body=#{encodeURIComponent}"
       twitter:
-        username: '@StonedHQ'
-        shareLink: 'https://twitter.com/intent/tweet?url=https%3A%2F%2Fstoned.audio&text=I+just+to+got+Stoned!+at&hashtags=GetStoned,StonedAudio&via=StonedHQ&original_referer=https%3A%2F%2Fstoned.audio'
+        username:  "@#{twitter.username}"
+        shareLink: "https://twitter.com/intent/tweet?url=#{encodeURIComponent url}&text=#{encodeURIComponent twitter.text}&hashtags=#{twitter.hashtags}&via=#{twitter.username}&original_referer=#{encodeURIComponent url}"
       facebook:
-        username: 'StonedHQ'
-        shareLink: 'https://www.facebook.com/sharer/sharer.php?u=https%3A//stoned.audio'
+        username:  'StonedHQ'
+        shareLink: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent url
 
     legal:
       email:   'legal@stoned.audio'
