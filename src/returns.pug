@@ -14,13 +14,24 @@ block content
           input(type='checkbox', id='toggle1', checked)
           label.accordion-toggle(for='toggle1')
             h2(data-contentful-field='question')
-              | What is your refund policy?
+              | What is your refund and return policy?
               i
           p.accordion-content.
-            Refunds are available for purchases made through the #{siteName}
-            website within 30 days of the product shipping. If you purchased
-            through a retailer, please contact the retailer instead. To
-            request a refund, email #{contactEmail}.
+            You may return the product within 14 days of receiving it for a
+            full refund, provided you remain in good standing with the <a
+            href="/terms">Terms</a> of your purchase and purchased it on the
+            #{siteName} website.  If you purchased through a retailer, please
+            contact the retailer instead.
+
+            Returns are only accepted in their original condition, including
+            any boxes, packaging, and documentation originally shipped to you.
+            Return shipping is your responsibility, and the product must arrive
+            back to us in its original, unused condition.
+
+            To initiate a return, email #{contactEmail}. We will send you a
+            full refund, less all shipping and handling charges, within 10 days
+            of our receipt of the product, if you comply with all the
+            associated <a href="/terms">Terms</a> and any return instructions.
 
         .accordion
           input(type='checkbox', id='toggle2', checked)
