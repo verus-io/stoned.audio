@@ -14,12 +14,12 @@ block content
           input(type='checkbox', id='toggle1', checked)
           label.accordion-toggle(for='toggle1')
             h2(data-contentful-field='question')
-              | What is your refund and return policy?
+              | What is your return policy?
               i
           p.accordion-content.
             You may return the product within 14 days of receiving it for a
             full refund, provided you remain in good standing with the <a
-            href="/terms">Terms</a> of your purchase and purchased it on the
+            href="/terms">terms</a> of your purchase and purchased it on the
             #{site.name} website.  If you purchased through a retailer, please
             contact the retailer instead.
 
@@ -31,12 +31,7 @@ block content
             To initiate a return, email #{contact.email}. We will send you a
             full refund, less all shipping and handling charges, within 10 days
             of our receipt of the product, if you comply with all the
-            associated <a href="/terms">Terms</a> and any return instructions.
-
-            Refunds are available for purchases made through the #{site.name}
-            website within 30 days of the product shipping. If you purchased
-            through a retailer, please contact the retailer instead. To
-            request a refund, email #{contact.email}.
+            associated <a href="/terms">terms</a> and any return instructions.
 
         .accordion
           input(type='checkbox', id='toggle2', checked)
@@ -45,12 +40,16 @@ block content
               | How can I cancel my order?
               i
           p.accordion-content.
+            Refunds are available for purchases made through the #{site.name}.
+            If you purchased through a retailer, please contact the retailer
+            instead. To request a refund, cancel your order by emailing #{contact.email}.
+
             You may submit a request to cancel your order at any time prior to
             shipping. Please note that occasionally the lag time between us
             seeing your request and you submitting it means that it may have
-            already shipped. You may request an order cancellation by emailing
-            #{contact.email}. If your order cannot be cancelled, you will get an
+            already shipped. If your order cannot be cancelled, you will get an
             email when the order ships.
+
 
         .accordion
           input(type='checkbox', id='toggle3', checked)
