@@ -1,17 +1,18 @@
 url = 'https://stoned.audio'
 
 description = """
-  Stoned Earphones – Audiophile quality sound, on the go charging,
-  single button control, active noise cancellation and in-ear mic.
-  Experience true wireless earphones designed without compromise.
+  Stoned Earphones – Audiophile sound, noise isolation, in-ear mic, all-day battery, on the go charging, single button control and perfect fit.
+
+  Wireless earphones designed without compromise.
   """
 
 email =
   subject: "I'm getting Stoned!"
   body: """
-    Audiophile quality sound, on the go charging, single button control, active
-    noise cancellation and in-ear mic... Who wouldn't want to get Stoned
-    Earphones? Grab your pair at #{url}.
+    Stoned Earphones – Audiophile sound, noise isolation, in-ear mic, all-day
+    battery, on the go charging, single button control and perfect fit.
+
+    Who wouldn't want to get Stoned? Grab your pair at #{url}.
     """
 
 twitter =
