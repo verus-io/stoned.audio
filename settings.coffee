@@ -17,7 +17,7 @@ email =
 
 twitter =
   username: 'StonedHQ'
-  hashtags: 'GetStoned,StonedAudio'
+  hashtags: 'GetStoned,StonedLife'
   text:     "I'm getting Stoned! True wireless earphones with audiophile quality sound."
 
 module.exports =
