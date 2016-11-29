@@ -31,6 +31,7 @@ module.exports =
       description: description
 
       facebook:
+        appid:       '1648878842071733'
         description: description
         image:       'https://stoned.audio/img/twittershare.jpg'
         title:       'Get Stoned.'
