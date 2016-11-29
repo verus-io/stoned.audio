@@ -1,0 +1,35 @@
+extends _layout.pug
+
+block content
+  #page-account.page
+    section.hero.short
+      .content
+        h1
+          | Stoned
+
+    include _progress.pug
+
+    section.body
+      .content
+        h2 Orders
+        p You will your orders when we get close to shipping
+
+        h2 Referral Program
+        p
+          | You have&nbsp;
+          strong 0
+          | &nbsp;points.
+
+        p Help get your friends Stoned by using your unique referral link.
+        .referal-code-wrap
+          .share-field
+            p.ref-text.ref-link ...
+            span.copied(style='display:none') Copied!
+
+        ul
+          li Gain 10 points for everyone who signs up for the referral program.
+          li Gain 420 for every&nbsp;
+            strong Stoned Earphone
+            | &nbsp;sold
+
+block signup

@@ -90,12 +90,6 @@ $(document).ready ->
       requestAnimationFrame ->
         $('.promo-row button').click()
 
-  enable = false
-
-  m.on 'change-success', ->
-    enable = true
-    $('.email-form .form-submit').removeClass 'disabled'
-
   m.on 'submit-success', ->
     $('.checkout').removeClass 'step-2'
     $('.checkout').addClass 'step-3'

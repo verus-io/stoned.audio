@@ -1,9 +1,13 @@
-store = require 'shop.js/src/utils/store'
-if store.get 'register'
-  document.getElementById('login').checked=true
+if location.pathname.indexOf('signup') >= 0
+  store = require 'shop.js/src/utils/store'
 
-$(document).ready ->
-  if location.pathname.indexOf('signup') >= 0
+  if store.get 'register'
+    document.getElementById('login').checked=true
+
+  $(document).ready ->
+    if window.client.client.customerToken
+      window.location.replace 'account'
+
     m.on 'change', (k, v) ->
       if k == 'user.password'
         @data.set 'user.passwordConfirm', @data.get 'user.password'
