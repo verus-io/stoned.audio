@@ -9,8 +9,9 @@ $ ->
     # key: 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzYsImp0aSI6InN6TFRXSnBhMms0Iiwic3ViIjoiNE5UeFhsUXJ0YiJ9.LeAFqqbKsxKCDJXHIoYJ3Ltt7qcN9K9lVmhDlQK-dimCn0MElregH6qm01sVrYE7We6Gm-4qh7dvMXO8WxAk0w'
     endpoint: 'https://api.crowdstart.com'
     order:
-      metadata: batch: 'preorder'
-      shippingRate: 500
+      metadata:
+        batch: 'preorder'
+      shippingRate: 0
     terms: true
     taxRates: [
       {
@@ -37,11 +38,10 @@ $ ->
       }
     ]
     shippingRates: [
-      {
-        shippingRate: 500
+        shippingRate: 0
         country: 'us'
-      }
-      { shippingRate: 1500 }
+      ,
+        shippingRate: 1500
     ]
     config: hashReferrer: true
 
