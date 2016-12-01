@@ -2,22 +2,22 @@ url = 'https://stoned.audio'
 
 description = """
   Huge sound, noise isolation, in-ear mic, on the go charging, single button control and secure, customizable fit. Zero wires.
-
-  Wireless earphones designed without compromise.
   """
 
 email =
-  subject: "I'm getting Stoned!"
+  subject: "You need to get Stoned"
   body: """
-    Stoned Earphones – Huge sound, noise isolation, in-ear mic, on the go charging, single button control and secure, customizable fit. Zero wires.
+    Stoned Earphones – Huge sound, noise isolation, in-ear mic, on the go
+    charging, single button control and secure, customizable fit. Zero wires.
 
-    You should get stoned too: #{url}.
-    """
+    Only $99 for a limited time: https://stoned.audio
+
+    I'm getting Stoned. Are you?"""
 
 twitter =
   username: 'StonedHQ'
-  hashtags: 'stoned,getstoned'
-  text:     "Get Stoned Earphones for only $99 with free shipping in the US!"
+  hashtags: 'stoned,getstoned,stonedlife'
+  text:     "I'm getting Stoned. Are you?"
 
 module.exports =
     site:
