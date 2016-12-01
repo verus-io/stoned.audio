@@ -45,3 +45,6 @@ $(document).ready ->
 
     $error.text 'Enter a valid email.'
     return false
+
+  if window.client.client.customerToken
+    $('[href=signup]').attr 'href', 'account'

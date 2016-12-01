@@ -15,6 +15,8 @@ $(document).ready ->
       metadata: batch: 'preorder'
       shippingRate: 500
     terms: true
+    referralProgram:
+      id: 'Vm4tdRX5uO'
     taxRates: [
       {
         taxRate: 0.0275

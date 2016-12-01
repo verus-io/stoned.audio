@@ -11,25 +11,39 @@ block content
 
     section.body
       .content
+        profile
+          div
+            h2 Contact Information
+            user-email(placeholder='Email')
+            user-name(placeholder='Name')
+          div
+            h2 Change Password
+            user-current-password(placeholder='Current Password')
+            user-password(placeholder='Password')
+            user-password-confirm(placeholder='Confirm Password')
+
         h2 Orders
         p You will your orders when we get close to shipping
 
         h2 Referral Program
         p
           | You have&nbsp;
-          strong 0
-          | &nbsp;points.
+          strong.points 0
+          | &nbsp;Points.
 
-        p Help get your friends Stoned by using your unique referral link.
-        .referal-code-wrap
-          .share-field
-            p.ref-text.ref-link ...
-            span.copied(style='display:none') Copied!
+        p Help get your friends Stoned by using your unique referral link:
+        .share-field
+          span.ref-text.ref-link Loading...
+          span.copied Copied!
 
         ul
-          li Gain 10 points for everyone who signs up for the referral program.
-          li Gain 420 for every&nbsp;
-            strong Stoned Earphone
-            | &nbsp;sold
+          li Gain
+            strong &nbsp;10&nbsp;
+            | points for everyone who signs up for the referral program.
+          li Gain
+            strong &nbsp;420&nbsp;
+            | for every
+            strong &nbsp;Stoned Earphone&nbsp;
+            | sold.
 
 block signup

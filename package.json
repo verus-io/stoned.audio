@@ -11,6 +11,7 @@
     "cake-test": "0.1.0",
     "cake-version": "0.1.9",
     "clean-css": "3.4.20",
+    "clipboard": "1.5.15",
     "coffee-script": "1.11.1",
     "css-mqpacker": "5.0.1",
     "debounce": "1.0.0",
@@ -34,7 +35,7 @@
     "rucksack-css": "0.8.6",
     "rupture": "0.6.2",
     "selectize": "0.12.4",
-    "shop.js": "1.0.75",
+    "shop.js": "1.0.77",
     "shortcake": "1.1.18",
     "stylus": "0.54.5"
   }
