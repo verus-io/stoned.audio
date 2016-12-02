@@ -13,11 +13,12 @@ compilePug = (src, dst) ->
   pug = require 'pug'
 
   opts =
-    basedir: __dirname + '/src'
-    pretty:  true
+    basedir:      __dirname + '/src'
+    pretty:       true
+    production:   if process.env.PRODUCTION then true else false
 
-    title:     'Stoned Audio'
-    copyright: '© Stoned Audio, LLC'
+  for k,v of require './settings'
+    opts[k] = v
 
   src = path.join 'src',    filename
   dst = path.join 'public', filename.replace '.pug', '.html'

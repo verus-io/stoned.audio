@@ -58,3 +58,13 @@ if location.pathname.indexOf('account') >= 0
         window.client.account.logout()
         window.location.replace '/'
 
+    $button = $('#page-account button[type=submit]')
+    m.on 'profile-update', (data)->
+      $button.prop('disabled', true).find('span').text('Updating...')
+
+    m.on 'profile-update-success', (data)->
+      $button.prop('disabled', false).find('span').text('Updated!')
+
+    m.on 'profile-update-failed', (err)->
+      $button.prop('disabled', false).find('span').text('Failed, Try Again.')
+

@@ -21,6 +21,11 @@ block content
             user-current-password(placeholder='Current Password')
             user-password(placeholder='Password')
             user-password-confirm(placeholder='Confirm Password')
+          div.button-container
+            button(type='submit')
+              span Update
+            .error(if='{ errorMessage }')
+              | { errorMessage }
 
         h2 Orders
         p You will your orders when we get close to shipping

@@ -14,10 +14,24 @@ block content
           input(type='checkbox', id='toggle1', checked)
           label.accordion-toggle(for='toggle1')
             h2(data-contentful-field='question')
-              | What is your refund policy?
+              | What is your return policy?
               i
-          p.accordion-content
-            | Refunds are available for purchases made through the Stoned website within 30 days of the product shipping. If you purchased through a retailer, please contact the retailer instead. To request a refund, email hi@stoned.audio.
+          p.accordion-content.
+            You may return the product within 14 days of receiving it for a
+            full refund, provided you remain in good standing with the <a
+            href="/terms">terms</a> of your purchase and purchased it on the
+            #{site.name} website.  If you purchased through a retailer, please
+            contact the retailer instead.
+
+            Returns are only accepted in their original condition, including
+            any boxes, packaging, and documentation originally shipped to you.
+            Return shipping is your responsibility, and the product must arrive
+            back to us in its original, unused condition.
+
+            To initiate a return, email #{contact.email}. We will send you a
+            full refund, less all shipping and handling charges, within 10 days
+            of our receipt of the product, if you comply with all the
+            associated <a href="/terms">terms</a> and any return instructions.
 
         .accordion
           input(type='checkbox', id='toggle2', checked)
@@ -25,8 +39,17 @@ block content
             h2(data-contentful-field='question')
               | How can I cancel my order?
               i
-          p.accordion-content
-            | You may submit a request to cancel your order at any time prior to shipping. Please note that occasionally the lag time between us seeing your request and you submitting it means that it may have already shipped. You may request an order cancellation by emailing hi@stoned.audio. If your order cannot be cancelled, you will get an email when the order ships.
+          p.accordion-content.
+            Refunds are available for purchases made through the #{site.name}.
+            If you purchased through a retailer, please contact the retailer
+            instead. To request a refund, cancel your order by emailing #{contact.email}.
+
+            You may submit a request to cancel your order at any time prior to
+            shipping. Please note that occasionally the lag time between us
+            seeing your request and you submitting it means that it may have
+            already shipped. If your order cannot be cancelled, you will get an
+            email when the order ships.
+
 
         .accordion
           input(type='checkbox', id='toggle3', checked)
@@ -34,8 +57,9 @@ block content
             h2(data-contentful-field='question')
               | When will refunds appear on my credit card?
               i
-          p.accordion-content
-            | This depends heavily upon your credit card, but generally it does not take longer than 5 business days.
+          p.accordion-content.
+            This depends heavily upon your credit card, but generally it does
+            not take longer than 5 business days.
 
         .accordion
           input(type='checkbox', id='toggle4', checked)
@@ -43,10 +67,33 @@ block content
             h2(data-contentful-field='question')
               | One-year consumer warranty
               i
-          p.accordion-content
-            | Stoned Audio (“Us”, “Our”, “We”) offers you a one-year warranty (“Warranty”) against defects.
-            | The Warranty can not be assigned or transferred to any subsequent purchaser or user, and coverage begins on the date of shipment of the covered product. We agree to repair or replace covered products within the Warranty period at Our sole discretion. The Warranty covers faults in material and workmanship, but not parts failure due to normal wear, depreciation, abuse, accidental damage, negligence, improper use, maintenance, or storage. The Warranty does not cover damage caused by resale, third-party devices, or personal modifications meant to alter or extend the functionality of the product. Under this Warranty, Stoned does not assume any liability to any damage or loss resulting from the use of the covered product; including, but not limited to: loss of profits or revenue, loss of use of the product or any associated equipment, cost of any replacement goods, claims of third parties, or any other damages arising from this Warranty or the use of the product, regardless of the form of action.
-            | To make a claim under this Warranty, you must obtain a Return Material Authorization (“RMA”) from Us, and return that with proof of purchase to the address provided. You will bear the cost of shipping the product back to Us. We may not return the original device to you, and by shipping the product back to Us, you relinquish ownership of the original device to Us. Products sent without proper documentation may be rejected and returned to you, at your cost.
-            | Replacement devices will have the remaining warranty period from the original device, or 90 days, whichever is longer.
-            | To initiate a Warranty claim, obtain an RMA, or ask questions, email us at hi@stoned.audio.
+          p.accordion-content.
+            #{legal.name} (“Us”, “Our”, “We”) offers you a one-year warranty
+            (“Warranty”) against defects.  The Warranty can not be assigned or
+            transferred to any subsequent purchaser or user, and coverage
+            begins on the date of shipment of the covered product. We agree to
+            repair or replace covered products within the Warranty period at
+            Our sole discretion. The Warranty covers faults in material and
+            workmanship, but not parts failure due to normal wear,
+            depreciation, abuse, accidental damage, negligence, improper use,
+            maintenance, or storage. The Warranty does not cover damage caused
+            by resale, third-party devices, or personal modifications meant to
+            alter or extend the functionality of the product. Under this
+            Warranty, #{legal.name} does not assume any liability to any damage or
+            loss resulting from the use of the covered product; including, but
+            not limited to: loss of profits or revenue, loss of use of the
+            product or any associated equipment, cost of any replacement goods,
+            claims of third parties, or any other damages arising from this
+            Warranty or the use of the product, regardless of the form of
+            action.  To make a claim under this Warranty, you must obtain a
+            Return Material Authorization (“RMA”) from Us, and return that with
+            proof of purchase to the address provided. You will bear the cost
+            of shipping the product back to Us. We may not return the original
+            device to you, and by shipping the product back to Us, you
+            relinquish ownership of the original device to Us. Products sent
+            without proper documentation may be rejected and returned to you,
+            at your cost.  Replacement devices will have the remaining warranty
+            period from the original device, or 90 days, whichever is longer.
+            To initiate a Warranty claim, obtain an RMA, or ask questions,
+            email us at #{contact.email}.
 

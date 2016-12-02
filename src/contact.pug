@@ -13,18 +13,15 @@ block content
       .content
         div
           h2 Media Contact
-          p
-            | Zack Kelling
-            br
-            | press@stoned.audio
-            br
-            | +1 (650) 318-1319
+          p.
+            #{press.name}
+            #{press.email}
+            #{press.phone}
 
         div
           h2 Other Inquiries
-          p
-            | hi@stoned.audio
-            br
-            | +1 (646) 776-2426
+          p.
+            #{contact.email}
+            #{contact.phone}
 
 block signup

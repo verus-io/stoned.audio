@@ -20,9 +20,6 @@
     background-color: #FFF
     color: #000
 
-    h1
-      letter-spacing: 0.0375em
-
     h1:first-child
       // border-bottom: 2px solid #c9c9c9
       width: 100%
@@ -247,7 +244,8 @@
     text-decoration: underline
 
   h1
-    font-size: 20px
+    font-size: 1.4em
+    letter-spacing: 0.05em
     text-align: left
     text-shadow: none
 
@@ -397,9 +395,6 @@
     .item
       left: 9px
 
-  .product-price-container
-    margin-right: 20px
-
   .product-description
     line-height: 1.25em
     padding-top: 3px
@@ -447,10 +442,13 @@
     text-align: right
     float: right !important
     margin-top: 3px
+    margin-right: 20px
+    font-weight: bold
 
   .product-list-price
-    color: #F22469
+    color: #aaa
     font-size: .9em
+    font-weight: normal
 
   .product-slug
     display: none
@@ -525,6 +523,10 @@
     & > div:last-child
       width: 30%
 
+  .invoice-line.estimated-delivery
+    font-size: .9em
+    margin-top: -4px
+
   .invoice-label
     color: #000
 
@@ -542,7 +544,6 @@
 
   .invoice-amount
     text-align: right
-    font-weight: bold
 
   checkout
     .input
@@ -711,90 +712,89 @@
     display: block
 
     label
-      padding-top: 2px;
-      line-height: 1.2rem;
-      display: inline-block;
+      font-size: .9em
+      padding-top: 2px
+      line-height: 1.2rem
+      display: inline-block
       color: #000
 
-    /* Base for label styling */
+    // Base for label styling
     [type="checkbox"]:not(:checked),
-    [type="checkbox"]:checked {
-      position: absolute;
-      left: -9999px;
-    }
-    [type="checkbox"]:not(:checked) + label,
-    [type="checkbox"]:checked + label {
-      position: relative;
-      text-indent: 25px;
-      cursor: pointer;
-    }
+    [type="checkbox"]:checked
+      position: absolute
+      left: -9999px
 
-    /* checkbox aspect */
+    [type="checkbox"]:not(:checked) + label,
+    [type="checkbox"]:checked + label
+      position: relative
+      text-indent: 25px
+      cursor: pointer
+
+    // checkbox aspect
     [type="checkbox"]:not(:checked) + label:before,
-    [type="checkbox"]:checked + label:before {
+    [type="checkbox"]:checked + label:before
       content: ''
       position: absolute
       left:0
       top: 2px
-      width: 17px; height: 17px;
-      border: 2px solid #aaa;
-      background: #f8f8f8;
-    }
-    /* checked mark aspect */
-    [type="checkbox"]:not(:checked) + label:after,
-    [type="checkbox"]:checked + label:after {
-      content: '✔';
-      position: absolute;
-      top: 3px;
-      left: 2px;
-      font-size: 18px;
-      line-height: 0.8;
-      color: #09ad7e;
-      transition: all .2s;
-      text-indent: 0;
-    }
-    /* checked mark aspect changes */
-    [type="checkbox"]:not(:checked) + label:after {
-      opacity: 0;
-      transform: scale(0);
-    }
-    [type="checkbox"]:checked + label:after {
-      opacity: 1;
-      transform: scale(1);
-    }
-    /* disabled checkbox */
-    [type="checkbox"]:disabled:not(:checked) + label:before,
-    [type="checkbox"]:disabled:checked + label:before {
-      box-shadow: none;
-      border-color: #bbb;
-      background-color: #ddd;
-    }
-    [type="checkbox"]:disabled:checked + label:after {
-      color: #999;
-    }
-    [type="checkbox"]:disabled + label {
-      color: #aaa;
-    }
-    /* accessibility */
-    [type="checkbox"]:checked:focus + label:before,
-    [type="checkbox"]:not(:checked):focus + label:before {
-      border: 2px dotted blue;
-    }
+      width: 17px
+      height: 17px
+      border: 2px solid #aaa
+      background: #f8f8f8
 
-    /* hover style just for information */
-    label:hover:before {
-      border: 2px solid #3df2b6 !important;
-    }
+    // checked mark aspect
+    [type="checkbox"]:not(:checked) + label:after,
+    [type="checkbox"]:checked + label:after
+      content: '✔'
+      position: absolute
+      top: 4px
+      left: 4px
+      font-size: 16px
+      line-height: 0.8
+      color: #09ad7e
+      transition: all .2s
+      text-indent: 0
+
+    /* checked mark aspect changes */
+    [type="checkbox"]:not(:checked) + label:after
+      opacity: 0
+      transform: scale(0)
+
+    [type="checkbox"]:checked + label:after
+      opacity: 1
+      transform: scale(1)
+
+    // disabled checkbox
+    [type="checkbox"]:disabled:not(:checked) + label:before,
+    [type="checkbox"]:disabled:checked + label:before
+      box-shadow: none
+      border-color: #bbb
+      background-color: #ddd
+
+    [type="checkbox"]:disabled:checked + label:after
+      color: #999
+
+    [type="checkbox"]:disabled + label
+      color: #aaa
+
+    // accessibility
+    [type="checkbox"]:checked:focus + label:before,
+    [type="checkbox"]:not(:checked):focus + label:before
+      border: 2px dotted blue
+
+    // hover style just for information
+    label:hover:before
+      border: 2px solid #3df2b6 !important
 
   button[type=submit]
-    width: 100%;
-    font-size: 16px !important;
-    padding: 22px;
-    line-height: 0px !important;
-    letter-spacing: .05rem;
-    margin: 16px 0;
-    background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0));
-    background-color: #3df2b6;
+    width: 100%
+    font-size: 16px !important
+    padding: 22px
+    line-height: 0px !important
+    letter-spacing: .05rem
+    margin: 16px 0
+    background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0))
+    background-color: #3df2b6
     border: 0
     text-transform: uppercase
 

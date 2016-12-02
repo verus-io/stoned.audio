@@ -1,4 +1,7 @@
 $(document).ready ->
+  window.Shop = Shop = require 'shop.js'
+  window.selectize = require 'selectize'
+
   step = 1
 
   Shop.setItem('earphone', 1)
@@ -100,6 +103,3 @@ $(document).ready ->
 
     $('.modal-close').on 'click', (e) ->
       window.location.reload()
-      return
-    return
-  return
