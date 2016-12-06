@@ -11,44 +11,52 @@ block content
 
     section.body
       .content
-        profile
-          div
-            h2 Contact Information
-            user-email(placeholder='Email')
-            user-name(placeholder='Name')
-          div
-            h2 Change Password
-            user-current-password(placeholder='Current Password')
-            user-password(placeholder='Password')
-            user-password-confirm(placeholder='Confirm Password')
-          div.button-container
-            button(type='submit')
-              span Update
-            .error(if='{ errorMessage }')
-              | { errorMessage }
+        ul.menu
+          li
+            h2 ACCOUNT
+          li
+            h2 ORDERS
+          li
+            h2 REFERRALS
+        .page
+          profile
+            div
+              h2 Contact Information
+              user-email(placeholder='Email')
+              user-name(placeholder='Name')
+            div
+              h2 Change Password
+              user-current-password(placeholder='Current Password')
+              user-password(placeholder='Password')
+              user-password-confirm(placeholder='Confirm Password')
+            div.button-container
+              button(type='submit')
+                span Update
+              .error(if='{ errorMessage }')
+                | { errorMessage }
 
-        h2 Orders
-        p You will your orders when we get close to shipping
+          h2 Orders
+          p You will your orders when we get close to shipping
 
-        h2 Referral Program
-        p
-          | You have&nbsp;
-          strong.points 0
-          | &nbsp;Points.
+          h2 Referral Program
+          p
+            | You have&nbsp;
+            strong.points 0
+            | &nbsp;Points.
 
-        p Help get your friends Stoned by using your unique referral link:
-        .share-field
-          span.ref-text.ref-link Loading...
-          span.copied Copied!
+          p Help get your friends Stoned by using your unique referral link:
+          .share-field
+            span.ref-text.ref-link Loading...
+            span.copied Copied!
 
-        ul
-          li Gain
-            strong &nbsp;10&nbsp;
-            | points for everyone who signs up for the referral program.
-          li Gain
-            strong &nbsp;420&nbsp;
-            | for every
-            strong &nbsp;Stoned Earphone&nbsp;
-            | sold.
+          ul
+            li Gain
+              strong &nbsp;10&nbsp;
+              | points for everyone who signs up for the referral program.
+            li Gain
+              strong &nbsp;420&nbsp;
+              | for every
+              strong &nbsp;Stoned Earphone&nbsp;
+              | sold.
 
-block signup
+  block signup

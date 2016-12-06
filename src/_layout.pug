@@ -47,6 +47,7 @@ html(lang='en')
 
   body(style='overflow:hidden')
     // Header
+    input#open.menu-open(type='checkbox')
     header
       nav
         // ul
@@ -63,8 +64,34 @@ html(lang='en')
           img.logo(src='./img/logo.png', alt=site.name)
         a#preorder.button.pre-order-button(href='#cta')
           | GET STONED
+        label.menu-button(for='open')
+          | &#8801;
 
-    block content
+    menu
+      ul
+        li
+          a(href='/') HOME
+        li
+          a(href='faq') FAQ
+        li
+          a(href='returns') RETURNS & WARRANTY
+        li
+          hr
+        li
+          a(href='signup') ACCOUNT
+        li
+          hr
+        li
+          a(href='contact') CONTACT US
+        li
+          a(href='privacy') PRIVACY
+        li
+          a(href='terms') TERMS
+        li.logo
+          img(src='./img/diamond-logo.svg')
+
+    main
+      block content
 
     block signup
       section#getnews(data-lazy='img/lovethemlow.jpg')
@@ -104,22 +131,22 @@ html(lang='en')
           // li
           //   a(href='faq') FAQ
           li
-            a#home(href='/') HOME
+            a(href='/') HOME
           li
-            a#home(href='faq') FAQ
+            a(href='faq') FAQ
           li
-            a#returns(href='returns') RETURNS & WARRANTY
+            a(href='returns') RETURNS & WARRANTY
           li |
           li
-            a#account(href='signup') ACCOUNT
+            a(href='signup') ACCOUNT
           li |
           li
-            a#home(href='contact') CONTACT US
+            a(href='contact') CONTACT US
           li
-            a#privacy(href='privacy') PRIVACY
+            a(href='privacy') PRIVACY
           li
-            a#termsandconditions(href='terms') TERMS
-      a#home(href='#')
+            a(href='terms') TERMS
+      a(href='#')
         img.logo(src='./img/logo.png', alt=site.name)
       small.copyright= site.copyright
     // .loader

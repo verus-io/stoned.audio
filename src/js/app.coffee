@@ -5,6 +5,7 @@ window.Layzr = require 'layzk.js'
 #Framework
 require './framework'
 require './hero-video'
+require './menu'
 require './parallax'
 require './lazyify'
 # require './progress'

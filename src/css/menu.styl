@@ -1,0 +1,52 @@
+body
+  & > menu
+    width: 300px
+    position: fixed
+    top: 0
+    right: -300px
+    z-index: 1000
+    transition: background-color 420ms ease-in-out, right 420ms ease-in-out
+
+    li
+    menuitem
+      // text-align: center
+      padding: 0 0 20px 0
+      list-style-type: none
+
+      a
+        // transition: all 420ms ease-in-out
+
+        &:hover
+          color: #fff
+          // color: #25d2b1
+
+        &.active
+          font-weight: bold
+          // color: #3df2b6
+
+  & >
+    & header
+      width: 100vw
+      transition: all 420ms ease-in-out
+    & main
+    & footer
+      position: relative
+      left: 0
+      transition: all 420ms ease-in-out
+
+  input.menu-open
+    display: none
+
+    &:checked
+      & ~ menu
+        right: 0
+      & ~ header
+        width: calc(100vw - 300px)
+
+        +below(800px)
+          left: -300px
+          width: 100vw
+
+      & ~ main
+      & ~ footer
+        left: -300px
