@@ -53,7 +53,7 @@ module.exports =
     legal:
       email:   'legal@stoned.audio'
       name:    'Stoned Audio, LLC'
-      address: '405 Southwest Blvd, Kansas City, MO 64108'
+      address: '405 Southwest Blvd #200, Kansas City, MO 64108'
       state:   'Missouri'
 
     contact:
