@@ -1,5 +1,8 @@
 extends _layout.pug
 
+block title
+  | #{site.title} - Get Stoned
+
 block content
   section.hero.parallax.video
     // (data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
@@ -7,13 +10,13 @@ block content
       div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
     .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
     .pre-order-button.watch.button
-      h3 BUY NOW
+      h3 GET STONED
     // .call-to-action.watch.button
       // a.play(href='#')
       // h3 WATCH&nbsp;VIDEO
     .content
       h1 Gems for your ears
-      p #[strong $99] with #[strong FREE] shipping to US for a limited time
+      p #[strong 33%] off with #[strong FREE] shipping to US for a limited time
 
     a#scroll-down.button.summary-down.next-section(href='#')
       img(src='img/down-icon.svg')
@@ -38,7 +41,7 @@ block content
     .content
       h1 Stoned Earphones
       p.
-        Huge sound, noise isolation, in-ear mic, on the go charging, single
+        Audiophile sound, noise isolation, in-ear mic, on the go charging, single
         button control and secure, customizable fit. Zero wires.
 
       p.
@@ -47,7 +50,7 @@ block content
   section#rocking.full.list.right(data-lazy='img/rockinglow.jpg')
     .image
     .info
-      h1 Huge sound
+      h1 Audiophile sound
       p
         strong.emphasis Stoned Earphones
         | have large 7mm drivers capable of producing rich sound, full dynamic
@@ -171,7 +174,7 @@ block content
     .content
       h1 Your phone will love them
       p
-        | The built-in HD microphone and ambient noise suppression ensures
+        | The built-in HD microphone and active noise cancellation ensures
         | you'll be heard loud and clear on calls.
       p
         | And with our iOS and Android app, you'll be able to configure EQ,
@@ -193,7 +196,7 @@ block content
       h2 The era of wires is over
       h1 Get Stoned
       #call-to-action.pre-order-button.button
-        h3 BUY NOW FOR $99
+        h3 BUY NOW
 
   section#share
     .content

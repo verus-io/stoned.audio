@@ -53,18 +53,17 @@ module.exports =
     legal:
       email:   'legal@stoned.audio'
       name:    'Stoned Audio, LLC'
-      address: '244 Madison Avenue, 10016-2417 New York City, New York'
+      address: '405 Southwest Blvd, Kansas City, MO 64108'
       state:   'Missouri'
 
     contact:
       email: 'hi@stoned.audio'
-      phone: '(650) 318-1319'
+      phone: '(816) 542-0559'
 
     press:
-      name:    'Zach Kelling'
-      email:   'press@stoned.audio'
-      phone:   '(650) 318-1319'
+      name:  'Zach Kelling'
+      email: 'press@stoned.audio'
+      phone: '(816) 542-0559'
 
     support:
       email: 'support@stoned.audio'
-
