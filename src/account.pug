@@ -45,7 +45,7 @@ block content
             h2 LOGOUT
         .page
           // h2 Hello, { data.get('user.firstName') }.
-          input.tab-radio(type='radio',name='account-tabs',id='profile-tab')
+          input.tab-radio(type='radio',name='account-tabs',id='profile-tab',checked)
           .profile
             div
               h2 Contact Information
@@ -62,7 +62,7 @@ block content
               .error(if='{ errorMessage }')
                 | { errorMessage }
 
-          input.tab-radio(type='radio',name='account-tabs',id='orders-tab',checked)
+          input.tab-radio(type='radio',name='account-tabs',id='orders-tab')
           .orders
             div(if='{ !hasOrders }')
               h2 Orders
