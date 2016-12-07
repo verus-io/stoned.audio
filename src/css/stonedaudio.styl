@@ -112,9 +112,15 @@ menu
   overflow: scroll
   font-weight: 400
 
-  +below(400px)
+  +below(500px)
     ul
-      padding: 26px 50px
+      padding: 26px 50px 150px
+
+    .menu-close
+      position: absolute
+      top: 24px
+      right: 30px
+      cursor: pointer
 
   a, a:visited
     color: #000
@@ -137,10 +143,11 @@ menu
   ul
     min-height: 550px
     height: 100vh
-    padding: 48px 50px 100px
+    padding: 48px 50px 150px
     margin: 0
     position: relative
     display: table
+    width: 100%
 
   .menu-close
     position: absolute

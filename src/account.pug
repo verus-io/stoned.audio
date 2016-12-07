@@ -42,7 +42,7 @@ block content
             label(for='referrals-tab')
               h2 REFERRALS
           li
-            h2 LOGOUT
+            h2.logout-button LOGOUT
         .page
           // h2 Hello, { data.get('user.firstName') }.
           input.tab-radio(type='radio',name='account-tabs',id='profile-tab',checked)
@@ -86,7 +86,7 @@ block content
                     .label.product-name { data.get('productName') }
                     .label.product-description(if="{ data.get('description') }") { data.get('description') }
                   .label.product-quantity-container
-                    span.x X
+                    span.x &#10005;
                     | { data.get('quantity') }
                   .product-price-container
                     .currency.product-price

@@ -44,6 +44,9 @@ if location.pathname.indexOf('account') >= 0
     m.on 'profile-load-success', (data)->
       setupReferral 'https://stoned.audio/#' + data.referrers[0].id
 
+      store = require 'shop.js/src/utils/store'
+      store.set 'register', true
+
       $('.ref-text').css 'opacity', 1
 
       points = data?.balances?.points
@@ -59,7 +62,7 @@ if location.pathname.indexOf('account') >= 0
         step: ->
           $('#page-account .points').html Math.round(@points)
 
-      $('a.logout').on 'click', ->
+      $('.logout-button').on 'click', ->
         window.client.account.logout()
         window.location.replace '/'
 
