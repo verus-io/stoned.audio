@@ -63,13 +63,27 @@ if location.pathname.indexOf('account') >= 0
         window.client.account.logout()
         window.location.replace '/'
 
+      requestAnimationFrame ->
+        $('shippingaddress button').on 'click', (e)->
+          $el = $(e.target)
+          requestAnimationFrame ->
+            $el.prop('disabled', true).text 'Updating...'
+
+          return true
+
     $button = $('#page-account button[type=submit]')
     m.on 'profile-update', (data)->
-      $button.prop('disabled', true).find('span').text('Updating...')
+      $button.prop('disabled', true).find('span').text 'Updating...'
 
     m.on 'profile-update-success', (data)->
-      $button.prop('disabled', false).find('span').text('Updated!')
+      $button.prop('disabled', false).find('span').text 'Updated!'
 
     m.on 'profile-update-failed', (err)->
-      $button.prop('disabled', false).find('span').text('Failed, Try Again.')
+      $button.prop('disabled', false).find('span').text 'Failed, Try Again.'
+
+    m.on 'shipping-address-update-success', ->
+      $('shippingaddress button').prop('disabled', false).text 'Updated!'
+
+    m.on 'shipping-address-update-failed', ->
+      $('shippingaddress button').prop('disabled', false).text 'Failed, Try Again.'
 
