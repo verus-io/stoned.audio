@@ -13,27 +13,25 @@ $(document).ready ->
     if offset.top > $(window).height() + $(window).scrollTop()
       return
 
-    percent = $progress.attr('data-percent')
+    value = $progress.attr('data-value')
+    units = $progress.attr('data-units')
 
-    if percent == ''
-      percent = '0%'
+    if value == ''
+      value = 0
 
-    percentNumber = parseFloat percent
-    percentString = percent
-    if percentNumber < 10
-      percent = "10"
-
-    if percent.indexOf('%') < 0
-      percent += '%'
+    valueNumber = parseFloat value
+    valueString = '' + value
+    if valueNumber < 10
+      value = 10
 
     $style.html("""
       .progress .bar:before {
-        content: '#{percentString} RESERVED';
-        width: #{percent};
+        content: '#{valueString}#{units}';
+        width: #{value};
       }
 
       .progress .bar:after {
-        left: #{percent};
+        left: #{value};
       }""")
 
     $(window).off 'scroll touchmove mousewheel', fn
@@ -42,33 +40,36 @@ $(document).ready ->
     requestTick progressFn
   $(window).on 'scroll touchmove mousewheel', fn
 
-  $.ajax(
-    url: 'https://api.crowdstart.com/campaign/earphones/progress?token=' + 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzIsImp0aSI6ImZBcnVLbXhLUXE0Iiwic3ViIjoiNE5UeFhsUXJ0YiJ9.fOUs-H-ALpW2LtZfwT7D1sAn3Ipq7NYvnTclRZGXwRK7XvIBBovQgjB8xmezllH65LYR6hl_Wz8tr6wREJV_OQ'
-  ).done (data)->
-    nowPercent = parseInt(data.progress * 10, 10) / 10
-    $progress.attr 'data-percent', '' + nowPercent + '%'
-    fn()
+  $progress.each ->
+    this.progress = fn
+
+  # $.ajax(
+  #   url: 'https://api.crowdstart.com/campaign/earphones/progress?token=' + 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzIsImp0aSI6ImZBcnVLbXhLUXE0Iiwic3ViIjoiNE5UeFhsUXJ0YiJ9.fOUs-H-ALpW2LtZfwT7D1sAn3Ipq7NYvnTclRZGXwRK7XvIBBovQgjB8xmezllH65LYR6hl_Wz8tr6wREJV_OQ'
+  # ).done (data)->
+  #   nowvalue = parseInt(data.progress * 10, 10) / 10
+  #   $progress.attr 'data-value', nowvalue
+  #   fn()
 
   fn()
 
-  # deltaPercent = parseFloat(percent) / 100
+  # deltavalue = parseFloat(value) / 100
 
   # i = 0
 
   # counterFn = ->
   #   if i <= 100
-  #     sumPercent = (parseInt (deltaPercent * i) * 10, 10) / 10
+  #     sumvalue = (parseInt (deltavalue * i) * 10, 10) / 10
   #     i++
 
   #     $style.html("""
   #       <style>
   #         .progress .bar:before {
-  #           content: '#{sumPercent}% RESERVED';
-  #           width: #{percent};
+  #           content: '#{sumvalue}% RESERVED';
+  #           width: #{value};
   #         }
 
   #         .progress .bar:after {
-  #           left: #{percent};
+  #           left: #{value};
   #         }
   #       </style>""")
   #     requestAnimationFrame counterFn

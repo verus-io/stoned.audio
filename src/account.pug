@@ -1,25 +1,52 @@
 extends _layout.pug
 
+block account-menu-side
+  li
+    label(for='profile-tab') INFORMATION
+  li
+    label(for='orders-tab') ORDERS
+  li
+    label(for='referrals-tab') REFERRALS
+  li.logout-button
+    | LOGOUT
+
+block account-menu-bottom
+  li
+    label(for='profile-tab') INFORMATION
+  li
+    label(for='orders-tab') ORDERS
+  li
+    label(for='referrals-tab') REFERRALS
+  li.logout-button
+    | LOGOUT
+
 block content
-  #page-account.page
-    section.hero.short
+  profile#page-account.page
+    section.hero.shorter
       .content
         h1
-          | Stoned
+          | Account
 
     include _progress.pug
 
     section.body
-      .content
+     .content
         ul.menu
           li
-            h2 ACCOUNT
+            label(for='profile-tab')
+              h2 INFORMATION
           li
-            h2 ORDERS
+            label(for='orders-tab')
+              h2 ORDERS
           li
-            h2 REFERRALS
+            label(for='referrals-tab')
+              h2 REFERRALS
+          li
+            h2 LOGOUT
         .page
-          profile
+          // h2 Hello, { data.get('user.firstName') }.
+          input.tab-radio(type='radio',name='account-tabs',id='profile-tab')
+          .profile
             div
               h2 Contact Information
               user-email(placeholder='Email')
@@ -35,28 +62,112 @@ block content
               .error(if='{ errorMessage }')
                 | { errorMessage }
 
-          h2 Orders
-          p You will your orders when we get close to shipping
+          input.tab-radio(type='radio',name='account-tabs',id='orders-tab',checked)
+          .orders
+            div(if='{ !hasOrders }')
+              h2 Orders
+              p You will your orders when we get close to shipping
+            orders(if='{ hasOrders }')
+              .order-information
+                .order-number-container
+                  h2.label.order-number-label Order Number:
+                  h2.value.order-number { data.get('number') }
+                .order-date-container
+                  .label.order-date-label Purchase Date:
+                  .value.order-date { renderDate(data.get('createdAt'), 'LL') }
+                .order-shipping-date-container
+                  .label.order-date-label Shipping Date:
+                  .value.order-date December 19, 2016
+                .order-status-date-container
+                  // .label.order-date-label Status:
+                  // .value.order-date { data.get('status') == 'open' ? 'reserved' : data.get('status') }
+                lineitems(if='{ !isEmpty() }')
+                  .product-text-container
+                    .label.product-name { data.get('productName') }
+                    .label.product-description(if="{ data.get('description') }") { data.get('description') }
+                  .label.product-quantity-container
+                    span.x X
+                    | { data.get('quantity') }
+                  .product-price-container
+                    .currency.product-price
+                      | { renderCurrency(parentData.get('currency'), data.get().price * data.get().quantity) }
+                      .label.product-currency { parentData.get('currency').toUpperCase() }
+                .currency-container.discount-container(if="{ data.get('discount') > 0 }")
+                  .label.discount-label Discount:
+                  .currency.discount { renderCurrency(data.get('currency'), data.get('discount'))}
+                .currency-container.subtotal-container
+                  .label.subtotal-label Subtotal:
+                  .currency.subtotal { renderCurrency(data.get('currency'), data.get('subtotal'))}
+                .currency-container.shipping-container
+                  .label.shipping-label Shipping:
+                  .currency.shipping { renderCurrency(data.get('currency'), data.get('shipping'))}
+                .currency-container.tax-container
+                  .label.tax-label Tax({ data.get('tax') / data.get('subtotal') * 100 }%):
+                  .currency.tax { renderCurrency(data.get('currency'), data.get('tax'))}
+                .currency-container.total-container
+                  .label.total-label Total:
+                  .currency.total
+                    | { renderCurrency(data.get('currency'), data.get('total'))}&nbsp;{ data.get('currency').toUpperCase() }
+              .address-information
+                // .map { JSON.stringify(data.get('shippingAddress')) }
+                h2.label.address-label Shipping Address:
+                shippingaddress.ui.form
+                  .field
+                    shippingaddress-line1.ui.input(placeholder='Address')
+                  .field
+                    shippingaddress-line2.ui.input(placeholder='Suite')
+                  .field
+                    shippingaddress-city.ui.input(placeholder='City')
+                  .field
+                    shippingaddress-postalcode.ui.input(placeholder='Postal Code')
+                  .field
+                    shippingaddress-state.ui.input(placeholder='State')
+                  .field
+                    shippingaddress-country.ui.input(placeholder='Country', <='', shippingaddress-country='')
+                  button#shipping-address-update-button.ui.field.fluid.large.submit.button(type='submit') Save Address
+                  .ui.negative.message(if='{ errorMessage }')
+                    ul.list
+                      li { errorMessage }
 
-          h2 Referral Program
-          p
-            | You have&nbsp;
-            strong.points 0
-            | &nbsp;Points.
+          input.tab-radio(type='radio',name='account-tabs',id='referrals-tab')
+          .referrals
+            h2 Referral Program
 
-          p Help get your friends Stoned by using your unique referral link:
-          .share-field
-            span.ref-text.ref-link Loading...
-            span.copied Copied!
+            p Help get your friends Stoned by using your unique referral link:
+            .share-field
+              span.ref-text.ref-link Loading...
+              span.copied Copied!
 
-          ul
-            li Gain
-              strong &nbsp;10&nbsp;
-              | points for everyone who signs up for the referral program.
-            li Gain
-              strong &nbsp;420&nbsp;
-              | for every
-              strong &nbsp;Stoned Earphone&nbsp;
-              | sold.
+            ul
+              li Gain
+                strong &nbsp;10&nbsp;
+                | points for everyone who signs up for the referral program.
+              li Gain
+                strong &nbsp;420&nbsp;
+                | for every
+                strong &nbsp;Stoned Earphone&nbsp;
+                | sold.
 
-  block signup
+            p.points-counter
+              | You have&nbsp;
+              strong.points 0
+              | &nbsp;Points.
+
+            ul.points-tracker
+              li
+                h3 840 Points
+                p Priority Shipping and Hoodie Raffle
+              li
+                h3 1680 Points
+                p 20% Coupon
+              li
+                h3 2520 Points
+                p Free 3-month Spotify Membership
+              li
+                h3 3360 Points
+                p Swag Bag with Special Hat and Shirt
+              li
+                h3 4200 Points
+                p Free Pair of Stoned Earphones
+
+block signup

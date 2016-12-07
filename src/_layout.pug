@@ -79,6 +79,7 @@ html(lang='en')
           hr
         li
           a(href='signup') ACCOUNT
+        block account-menu-side
         li
           hr
         li
@@ -88,7 +89,8 @@ html(lang='en')
         li
           a(href='terms') TERMS
         li.logo
-          img(src='./img/diamond-logo.svg')
+          a(href='/')
+            img(src='./img/diamond-logo.svg')
         li
           label.menu-close(for='open')
             | &#10005;
@@ -142,6 +144,7 @@ html(lang='en')
           li |
           li
             a(href='signup') ACCOUNT
+          block account-menu-bottom
           li |
           li
             a(href='contact') CONTACT US

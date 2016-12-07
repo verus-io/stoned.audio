@@ -1,6 +1,105 @@
 #page-account
   .body
     .content
+      input[type=text]
+      button
+      textarea
+        color: #000
+        height: 32px
+        line-height: 1em
+        font-size: 16px
+
+      input,
+      select,
+      button,
+      select > input[type="button"],
+      textarea
+        -moz-appearance: none !important
+        line-height: 1em !important
+        vertical-align: middle
+        color: #000 !important
+
+      .selectize-input.focus
+      input:focus
+        border-color: #3DF2B6
+
+      .selectize-input.full
+        min-height: 0 !important
+
+      .selectize-input
+        border: 2px solid #c9c9c9
+
+        &:focus
+          outline-width: 0
+
+      input[type=text]
+      textarea
+        width: 100%
+
+      textarea
+        height: 96px
+
+      button
+        font-size: 1em
+        color: #FFF !important
+        height: 32px
+        line-height: 1em
+        width: 100%
+        margin: 0 auto
+        font-size: 16px !important
+        padding: 22px
+        line-height: 0px !important
+        letter-spacing: .05rem
+        margin: 16px 0
+        background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0))
+        background-color: #3df2b6
+        border: 0
+        text-transform: uppercase
+
+        &:hover
+          animation: ripple-green 1.5s infinite
+
+
+      input
+        padding: 0
+        border-radius: 0
+        border-width: 0 !important
+        border-bottom: 2px solid #000 !important
+        transition: color 420ms ease-in, border-color 420ms ease-in
+
+        &.invalid
+          color: #F22469 !important
+          border-color: #F22469 !important
+
+        // &.valid
+        //   // color: #3DF2B6 !important
+        //   border-color: #3DF2B6 !important
+
+        &:-moz-placeholder
+          color: #333
+
+        &::-moz-placeholder
+          color: #333
+
+        &:-ms-input-placeholder
+          color: #333
+
+        &::-webkit-input-placeholder
+          color: #333
+
+      .error
+      .promo-message
+        color: #F22469
+        font-size: 14px
+        padding: 8px 0
+        line-height: 1em
+        text-align: left
+        width: 100%
+
+      .field > *
+        display: block
+        margin-bottom: 20px
+
       ul.menu
         column 1/5 2 60px
 
@@ -8,11 +107,43 @@
           list-style-type: none
           margin-bottom: 1em
 
+          & > *
+            cursor: pointer
+
+            &:hover
+              font-weight: bold
+
+        +below(600px)
+          display: none
+
       .page
         column 4/5 2 60px
+        min-height: 300px
+        position: relative
+        overflow: hidden
 
-        profile
-          & > form > div
+        +below(600px)
+          width: 100% !important
+
+        .tab-radio
+          display: none
+
+          & + *
+            opacity: 0
+            position: absolute
+            top: 0
+            left: 0
+            transition opacity 420ms ease-in
+            width: 100%
+            pointer-events: none
+
+          &:checked + *
+            opacity: 1
+            position: relative
+            pointer-events: auto
+
+        .profile
+          & > div
             column 1/2 2 60px
 
           .button-container
@@ -77,36 +208,16 @@
             text-align: left
             width: 100%
 
-
-          button[type=submit]
-            height: 32px
-            line-height: 1em
-            font-size: 16px
-            width: 100%
-            margin: 0 auto
-            font-size: 16px !important
-            padding: 22px
-            line-height: 0px !important
-            letter-spacing: .05rem
-            margin: 16px 0
-            background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0))
-            background-color: #3df2b6
-            border: 0
-            text-transform: uppercase
-
-            &:hover
-              animation: ripple-green 1.5s infinite
-
         p
           margin-bottom: 0
 
         .share-field
           height: 32px
           font-size: 16px
-          padding: 0 15px
+          padding: 2px 15px
           border-radius: 22px
           background-color: transparent
-          border: 4px solid #000
+          border: 2px solid #000
           outline: 0
           margin: 16px 0
 
@@ -119,6 +230,135 @@
             opacity: 0
             transition: opacity 420ms ease-in-out
             color: #F22469
+
+        .points-counter
+          margin-top: 20px
+
+        .points-tracker
+          padding: 0
+          margin: 20px 0
+          display: table
+
+          li
+            column 1/5 5 0
+            list-style-type: none
+            text-align: center
+            padding: 20px 30px
+            border: 2px solid #000
+            height: 160px
+            position: relative
+
+            &:not(:first-child)
+              border-left: 0
+
+            &:not(:last-child)
+              border-right: 0
+
+              h3
+                font-size: 1em
+
+              &:after
+                content: ''
+                height: 72px
+                width: 72px
+                position: absolute
+                border-top: 3px solid #000
+                border-right: 3px solid #000
+                top: 42px
+                right: -35px
+                transform: rotate(45deg) skew(30deg, 30deg)
+                z-index: 100
+
+            &:last-child
+              h3
+                font-size: 1.2em
+
+              &:after
+                content: ''
+                top: -2px;
+                left: -2px;
+                width: 100%;
+                height: calc(100% + 4px);
+                position: absolute;
+                border-top: 2px solid #000;
+                border-bottom: 2px solid #000;
+                background: transparent !important
+
+            p
+              font-size: .8em
+              text-align: center
+
+            &.completed
+              background-color: #11f1b6
+
+              &:after
+                background-color: #11f1b6
+
+          +below(900px)
+            width: 100%
+
+            li
+              width: 100%
+              column 1 1 0
+              border: 2px solid #000
+              border-right: 2px solid #000 !important
+              border-left: 2px solid #000 !important
+              height: 120px
+
+              &:after
+                display: none
+
+              &:not(:last-child)
+                border-bottom: 0
+
+        orders
+          order
+            display: table
+            width: 100%
+            padding: 7px 0 20px 0
+            border-bottom: 1px solid black
+            margin-bottom: 20px
+
+            .order-information
+            .address-information
+              column 1/2 2 60px
+
+              +below(900px)
+                width: 100%
+
+            .order-information
+              & > div
+                display: table
+                width: 100%
+
+                & > *:first-child
+                  column 2/5 2 20px
+
+                & > *:last-child
+                  column 3/5 2 20px
+
+              lineitems
+                display: table
+                padding: 20px 0
+                width: 100%
+
+                lineitem
+                  & > *
+                    column 1/8 3 0px
+                  & > *:last-child
+                    column 3/8 3 0px
+                  & > *:first-child
+                    column 1/2 3 0px
+
+                  .product-price-container
+                    text-align: right
+
+              .currency-container
+                & > *:last-child
+                  text-align: right
+
+              .label.product-currency
+                display: inline
 
     +below(900px)
       .content

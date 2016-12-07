@@ -10,11 +10,22 @@ body
     li
     menuitem
       // text-align: center
-      padding: 0 0 20px 0
+      margin: 0 0 20px 0
       list-style-type: none
+      cursor: pointer
 
-      a
-        // transition: all 420ms ease-in-out
+      // transition: all 420ms ease-in-out
+
+      &:hover
+        color: #fff
+        // color: #25d2b1
+
+      &.active
+        font-weight: bold
+        // color: #3df2b6
+
+      & > *
+        cursor: pointer
 
         &:hover
           color: #fff

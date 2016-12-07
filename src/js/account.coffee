@@ -49,6 +49,11 @@ if location.pathname.indexOf('account') >= 0
       points = data?.balances?.points
       points = 0 if !points
 
+      $('.points-tracker li').each (i)->
+        $el = $(this)
+        if i * 840 <= points
+          $el.addClass 'completed'
+
       $({points: 0}).animate {points: points},
         duration: 1000,
         step: ->
