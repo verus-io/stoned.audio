@@ -20,5 +20,5 @@ require './shop'
 
 require './stonedaudio'
 require './checkout'
-require './signup'
+require './signup-reset-password'
 require './account'

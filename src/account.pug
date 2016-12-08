@@ -64,10 +64,10 @@ block content
 
           input.tab-radio(type='radio',name='account-tabs',id='orders-tab')
           .orders
-            div(if='{ !hasOrders }')
-              h2 Orders
-              p You will your orders when we get close to shipping
-            orders(if='{ hasOrders }')
+            h2 Orders
+            div(if='{ !hasOrders() }')
+              p You don't have any orders yet.
+            orders(if='{ hasOrders() }')
               .order-information
                 .order-number-container
                   h2.label.order-number-label Order Number:

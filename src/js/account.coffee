@@ -2,6 +2,9 @@ if location.pathname.indexOf('account') >= 0
   Clipboard = require 'clipboard'
 
   $(document).ready ->
+    if !window.client.client.customerToken
+      window.location.replace 'signup'
+
     isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
     displayCopied = ->
@@ -30,9 +33,6 @@ if location.pathname.indexOf('account') >= 0
       # $('#twLink').attr 'href', 'https://twitter.com/intent/tweet?text=' + message + '&amp;url=' + url
       setupClipboard()
       return
-
-    if !window.client.client.customerToken
-      window.location.replace 'signup'
 
     m.on 'profile-load-failed', (err)->
       console.log err.stack
