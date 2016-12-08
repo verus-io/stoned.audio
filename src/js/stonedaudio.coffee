@@ -48,3 +48,6 @@ $(document).ready ->
 
   if window.client.client.customerToken
     $('[href=signup]').attr 'href', 'account'
+  else
+    $('[href=signup]').html 'LOG IN'
+
