@@ -34,7 +34,7 @@ block content
         ul.menu
           li
             label(for='profile-tab')
-              h2 INFORMATION
+              h2 PROFILE
           li
             label(for='orders-tab')
               h2 ORDERS
@@ -49,10 +49,13 @@ block content
           .profile
             div
               h2 Contact Information
+              p Update your email and name.
               user-email(placeholder='Email')
               user-name(placeholder='Name')
+              small *We do not share this information with anyone.
             div
               h2 Change Password
+              p Update your password. Minimum 6 characters.
               user-current-password(placeholder='Current Password')
               user-password(placeholder='Password')
               user-password-confirm(placeholder='Confirm Password')
@@ -64,7 +67,7 @@ block content
 
           input.tab-radio(type='radio',name='account-tabs',id='orders-tab')
           .orders
-            h2 Orders
+            h2 Your Orders
             div(if='{ !hasOrders() }')
               p You don't have any orders yet.
             orders(if='{ hasOrders() }')
@@ -131,43 +134,55 @@ block content
 
           input.tab-radio(type='radio',name='account-tabs',id='referrals-tab')
           .referrals
-            h2 Referral Program
+            h2 Tell your friends to get Stoned!
 
-            p Help get your friends Stoned by using your unique referral link:
             .share-field
               span.ref-text.ref-link Loading...
               span.copied Copied!
 
             ul
-              li Gain
-                strong &nbsp;10&nbsp;
-                | points for everyone who signs up for the referral program.
-              li Gain
+              li You earn
                 strong &nbsp;420&nbsp;
-                | for every
+                | points for every
                 strong &nbsp;Stoned Earphone&nbsp;
-                | sold.
+                | sold through your link.
+              li You earn
+                strong &nbsp;10&nbsp;
+                | for every friend who signs up as a referrer.
 
             p.points-counter
-              | You have&nbsp;
               strong.points 0
-              | &nbsp;Points.
+              strong /4200
 
             ul.points-tracker
               li
                 h3 840 Points
-                p Priority Shipping and Hoodie Raffle
+                p PRIORITY SHIPPING
+                p HOODIE RAFFLE
               li
                 h3 1680 Points
-                p 20% Coupon
+                p 20% COUPON
               li
                 h3 2520 Points
-                p Free 3-month Spotify Membership
+                p SPOTIFY MEMBERSHIP
               li
                 h3 3360 Points
-                p Swag Bag with Special Hat and Shirt
+                p SWAG BAG
               li
                 h3 4200 Points
-                p Free Pair of Stoned Earphones
+                p FREE EARPHONES
+
+            ul.points-tracker-description
+              li
+                p PRIORITY SHIPPING
+                p HOODIE RAFFLE
+              li
+                p 20% COUPON
+              li
+                p SPOTIFY MEMBERSHIP
+              li
+                p SWAG BAG
+              li
+                p FREE EARPHONES
 
 block signup

@@ -145,6 +145,13 @@
           & > div
             column 1/2 2 60px
 
+            +below(600px)
+              width: 100%
+              padding-bottom: 20px
+
+            p
+              padding-bottom: 10px
+
           .button-container
             width: 100% !important
             text-align: center
@@ -232,66 +239,81 @@
 
         .points-counter
           margin-top: 20px
+          text-align: center
 
         .points-tracker
           padding: 0
-          margin: 20px 0
+          width: 100%
           display: table
+          position: relative
+          overflow: hidden
+          border-radius: 90px
+
+          &:before
+            content: ''
+            width: 0%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            transition: width 420ms ease-in-out
+            background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0))
+            background-color: #11f1b6
 
           li
             column 1/5 5 0
             list-style-type: none
             text-align: center
             padding: 20px 30px
+            height: 90px
             border: 2px solid #000
-            height: 160px
             position: relative
+
+            &:first-child
+              border-top-left-radius: 45px
+              border-bottom-left-radius: 45px
+
+              h3
+                left: 6px
 
             &:not(:first-child)
               border-left: 0
 
             &:not(:last-child)
-              border-right: 0
-
               h3
                 font-size: 1em
+                margin-bottom: 0.5em
+                position: relative
+                top: 3px
 
-              &:after
-                content: ''
-                height: 72px
-                width: 72px
-                position: absolute
-                border-top: 3px solid #000
-                border-right: 3px solid #000
-                top: 42px
-                right: -35px
-                transform: rotate(45deg) skew(30deg, 30deg)
-                z-index: 100
+              // &:after
+              //   content: ''
+              //   height: 46px
+              //   width: 46px
+              //   position: absolute
+              //   border-top: 2px solid #000
+              //   border-right: 2px solid #000
+              //   top: 20px
+              //   right: -23px
+              //   -webkit-transform: rotate(45deg) skew(30deg, 30deg)
+              //   transform: rotate(45deg) skew(20deg, 20deg)
+              //   z-index: 100
+              //   background-color: #eee
 
             &:last-child
+              border-top-right-radius: 45px
+              border-bottom-right-radius: 45px
+              position: relative
+              left: -2px
+
               h3
                 font-size: 1.2em
-
-              &:after
-                content: ''
-                top: -2px;
-                left: -2px;
-                width: 100%;
-                height: calc(100% + 4px);
-                position: absolute;
-                border-top: 2px solid #000;
-                border-bottom: 2px solid #000;
-                background: transparent !important
+                left: -6px
 
             p
               font-size: .8em
               text-align: center
-
-            &.completed
-              background-color: #11f1b6
-
-              &:after
-                background-color: #11f1b6
+              display: none
 
           +below(900px)
             width: 100%
@@ -309,6 +331,21 @@
 
               &:not(:last-child)
                 border-bottom: 0
+
+        .points-tracker-description
+          padding: 10px 10px 10px 20px
+          display: table
+          width: 100%
+
+          li
+            column 1/5 5 10px
+            list-style-type: none
+            position: relative
+
+            p
+              text-align: center
+              font-weight: bold
+              font-size: .8em
 
         orders
           order
