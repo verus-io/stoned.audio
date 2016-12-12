@@ -28,9 +28,9 @@ if location.pathname.indexOf('account') >= 0
     setupReferral = (url) ->
       $('#page-account .ref-text').html url
       url = encodeURIComponent(url)
-      # $('#fbLink').attr 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url
-      # message = encodeURIComponent('Excited for the @JoinLudela launch! The world\'s first smartphone-controlled, real-flame candle is coming!')
-      # $('#twLink').attr 'href', 'https://twitter.com/intent/tweet?text=' + message + '&amp;url=' + url
+      $('.share-facebook').attr 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url
+      message = encodeURIComponent 'Get Stoned With Me!'
+      $('.share-twitter').attr 'href', 'https://twitter.com/intent/tweet?text=' + message + '&amp;url=' + url
       setupClipboard()
       return
 
