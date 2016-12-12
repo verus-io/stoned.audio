@@ -7,16 +7,8 @@ block account-menu-side
     label(for='orders-tab') ORDERS
   li
     label(for='referrals-tab') REFERRALS
-  li.logout-button
-    | LOGOUT
-
-block account-menu-bottom
   li
-    label(for='profile-tab') INFORMATION
-  li
-    label(for='orders-tab') ORDERS
-  li
-    label(for='referrals-tab') REFERRALS
+    hr
   li.logout-button
     | LOGOUT
 
@@ -41,6 +33,8 @@ block content
           li
             label(for='referrals-tab')
               h2 REFERRALS
+          li
+            hr
           li
             h2.logout-button LOGOUT
         .page
@@ -140,15 +134,14 @@ block content
               span.ref-text.ref-link Loading...
               span.copied Copied!
 
-            ul
-              li You earn
-                strong &nbsp;420&nbsp;
-                | points for every
-                strong &nbsp;Stoned Earphone&nbsp;
-                | sold through your link.
-              li You earn
-                strong &nbsp;10&nbsp;
-                | for every friend who signs up as a referrer.
+            p You earn
+              strong &nbsp;420&nbsp;
+              | points for every
+              strong &nbsp;Stoned Earphone&nbsp;
+              | sold through your link.
+            p You earn
+              strong &nbsp;10&nbsp;
+              | for every friend who signs up as a referrer.
 
             p.points-counter
               strong.points 0
