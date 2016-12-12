@@ -6,8 +6,7 @@
 
     i
       position: absolute
-      transform: translate(-6px , 0)
-      margin-top: 4px
+      transform: translate(-20px, 4px);
       right: 0
 
       &:before , &:after
@@ -15,14 +14,14 @@
         transition: all 0.25s ease-in-out
         position: absolute
         background-color: #55CDAA
-        width: 3px
-        height: 9px
+        width: 6px
+        height: 18px
 
       &:before
-        transform: translate( -2px , 0 ) rotate( 45deg )
+        transform: translate( -4px , 0 ) rotate( 45deg )
 
       &:after
-        transform: translate( 2px , 0 ) rotate( -45deg )
+        transform: translate( 4px , 0 ) rotate( -45deg )
 
   .accordion-content
     transition: all 0.25s ease-in-out
@@ -43,7 +42,7 @@
 
       &~.accordion-toggle i
         &:before
-          transform: translate( 2px , 0 ) rotate( 45deg )
+          transform: translate( 4px , 0 ) rotate( 45deg )
 
         &:after
-          transform: translate( -2px , 0 ) rotate( -45deg )
+          transform: translate( -4px , 0 ) rotate( -45deg )
