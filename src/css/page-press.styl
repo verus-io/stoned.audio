@@ -13,6 +13,8 @@
           padding: 10px
           background-color: #DDD
           position: relative
+          display: table
+          width: 100%
 
           .download-icon
             font-size: 40px
@@ -41,6 +43,16 @@
             top: 12px
             left: 0
             float: right
+
+          +below(600px)
+            .download-icon
+            .download-link
+              width:100%
+              text-align: center
+
+            img
+              margin: 0 auto
+
 
       ul.social
         li
