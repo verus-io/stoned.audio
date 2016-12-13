@@ -136,11 +136,14 @@ block content
 
             ul.share-links
               li
-                a.share-facebook(href='https://www.facebook.com/StonedHQ', target='_blank')
+                a(href=social.facebook.shareLink, target='_blank')
                   i.fa.fa-facebook-square
               li
-                a.share-twitter(href='https://twitter.com/StonedHQ', target='_blank')
+                a(href=social.twitter.shareLink, target='_blank')
                   i.fa.fa-twitter
+              li
+                a(href=social.email.shareLink)
+                  i.fa.fa-envelope
 
             p.
               Earn #[strong 420] points for every Stoned Earphone your friends
