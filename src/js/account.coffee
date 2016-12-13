@@ -1,6 +1,8 @@
 if location.pathname.indexOf('account') >= 0
   Clipboard = require 'clipboard'
 
+  msg = encodeURIComponent 'Get Stoned With Me!'
+
   $(document).ready ->
     if !window.client.client.customerToken
       window.location.replace 'signup'
@@ -29,7 +31,7 @@ if location.pathname.indexOf('account') >= 0
       $('#page-account .ref-text').html url
       url = encodeURIComponent(url)
       $('.share-facebook').attr 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url
-      message = encodeURIComponent 'Get Stoned With Me!'
+      message = msg
       $('.share-twitter').attr 'href', 'https://twitter.com/intent/tweet?text=' + message + '&amp;url=' + url
       setupClipboard()
       return
@@ -60,10 +62,7 @@ if location.pathname.indexOf('account') >= 0
         }
       """
 
-      $({points: 0}).animate {points: points},
-        duration: 1000,
-        step: ->
-          $('#page-account .points').html Math.round(@points)
+      $('#page-account .points').html Math.ceil points
 
       $('.logout-button').on 'click', ->
         window.client.account.logout()
