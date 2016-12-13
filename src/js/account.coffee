@@ -33,6 +33,7 @@ if location.pathname.indexOf('account') >= 0
       $('.share-facebook').attr 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url
       message = msg
       $('.share-twitter').attr 'href', 'https://twitter.com/intent/tweet?text=' + message + '&amp;url=' + url
+      $('.share-email').attr 'href', 'mailto:?body=' + message + ' ' + url
       setupClipboard()
       return
 
