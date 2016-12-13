@@ -28,21 +28,84 @@ block content
      .content
         ul.menu
           li
+            label(for='referrals-tab')
+              h2 REFERRALS
+          li
             label(for='profile-tab')
               h2 PROFILE
           li
             label(for='orders-tab')
               h2 ORDERS
           li
-            label(for='referrals-tab')
-              h2 REFERRALS
-          li
             hr
           li
             h2.logout-button LOGOUT
         .page
           // h2 Hello, { data.get('user.firstName') }.
-          input.tab-radio(type='radio',name='account-tabs',id='profile-tab',checked)
+          //
+          input.tab-radio(type='radio',name='account-tabs',id='referrals-tab', checked)
+          .referrals
+            h2 Tell your friends to get Stoned!
+
+            p
+              | Share your unique link with your friends and family.
+
+            .share-field
+              span.ref-text.ref-link Loading...
+              span.copied Copied!
+
+            ul.share-links
+              li
+                a.share-facebook(target='_blank')
+                  i.fa.fa-facebook-square
+              li
+                a.share-twitter(target='_blank')
+                  i.fa.fa-twitter
+              li
+                a.share-email
+                  i.fa.fa-envelope
+            p
+              | Earn #[strong 420] points for every Stoned Earphone your friends
+              | purchase.
+
+            p
+              | Earn #[strong 10] points for every friend who creates an account.
+
+            p.points-counter
+              strong.points 0
+              strong /4200
+
+            ul.points-tracker
+              li
+                h3 840 Points
+                p HOODIE RAFFLE
+              li
+                h3 1680 Points
+                p 20% COUPON
+              li
+                h3 2520 Points
+                p SPOTIFY MEMBERSHIP
+              li
+                h3 3360 Points
+                p SWAG BAG
+              li
+                h3 4200 Points
+                p FREE EARPHONES
+
+            ul.points-tracker-description
+              li
+                // p PRIORITY SHIPPING
+                p HOODIE RAFFLE
+              li
+                p 20% COUPON
+              li
+                p SPOTIFY MEMBERSHIP
+              li
+                p SWAG BAG
+              li
+                p FREE EARPHONES
+
+          input.tab-radio(type='radio',name='account-tabs',id='profile-tab')
           .profile
             div
               h2 Contact Information
@@ -129,64 +192,5 @@ block content
                     ul.list
                       li { errorMessage }
 
-          input.tab-radio(type='radio',name='account-tabs',id='referrals-tab')
-          .referrals
-            h2 Tell your friends to get Stoned!
-
-            .share-field
-              span.ref-text.ref-link Loading...
-              span.copied Copied!
-
-            ul.share-links
-              li
-                a.share-facebook(target='_blank')
-                  i.fa.fa-facebook-square
-              li
-                a.share-twitter(target='_blank')
-                  i.fa.fa-twitter
-              li
-                a.share-email
-                  i.fa.fa-envelope
-            p.
-              Earn #[strong 420] points for every Stoned Earphone your friends
-              purchase.
-
-            p.
-              Earn #[strong 10] points for every friend who creates an account
-              or signs up for our newsletter.
-
-            p.points-counter
-              strong.points 0
-              strong /4200
-
-            ul.points-tracker
-              li
-                h3 840 Points
-                p HOODIE RAFFLE
-              li
-                h3 1680 Points
-                p 20% COUPON
-              li
-                h3 2520 Points
-                p SPOTIFY MEMBERSHIP
-              li
-                h3 3360 Points
-                p SWAG BAG
-              li
-                h3 4200 Points
-                p FREE EARPHONES
-
-            ul.points-tracker-description
-              li
-                // p PRIORITY SHIPPING
-                p HOODIE RAFFLE
-              li
-                p 20% COUPON
-              li
-                p SPOTIFY MEMBERSHIP
-              li
-                p SWAG BAG
-              li
-                p FREE EARPHONES
 
 block signup

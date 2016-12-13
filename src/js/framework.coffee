@@ -20,10 +20,14 @@ $document.ready ->
       $modal = $(modalSelector).first()
       $('body').addClass 'modal-lock'
       $modal.removeClass 'hidden'
+
     .on 'click', '.modal-close', (e) ->
       $modal = $(this).closest('.modal')
+      if !$modal[0]
+        $modal = $('.modal')
       $('body').removeClass 'modal-lock'
       $modal.addClass 'hidden'
+      return false
 
   # Next Section
     .on 'click', '.next-section', (e) ->

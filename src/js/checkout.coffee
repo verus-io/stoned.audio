@@ -9,14 +9,14 @@ $document.ready ->
   Shop.setItem('earphone', 1)
 
   $modal = $('.checkout-modal.modal')
-  $checkoutContainer = $('checkout-container')
+  $checkoutContainer = $('.checkout-container')
 
   window.openCheckout = (e) ->
     $modal.addClass 'is-open'
     $modal.removeClass 'hidden'
     Shop.initCart()
-    $('.checkout-container').css 'opacity', 1
-    $('.checkout-container').css 'top', $(window).scrollTop() + 50
+    $checkoutContainer.css 'opacity', 1
+    $checkoutContainer.css 'top', $(window).scrollTop() + 50
     Shop.analytics.track 'Viewed Checkout Step', step: 1
     Shop.analytics.track 'Completed Checkout Step', step: 1
     Shop.analytics.track 'Viewed Checkout Step', step: 2
@@ -24,14 +24,16 @@ $document.ready ->
     $('#general cart').addClass 'hide'
     false
 
-  $modal.find('.modal-close').on 'click', (e) ->
-    $closestModal = $(this).closest('.modal')
-    $closestModal.removeClass 'hidden'
-    $closestModal.removeClass 'is-open'
-    $('.checkout-container').css 'top', ''
-    false
-
   $document
+    .on 'click', '.checkout-modal.modal .modal-close, .checkout-container .modal-close', (e) ->
+      $closestModal = $(this).closest('.modal')
+      if !$closestModal[0]
+        $closestModal = $('.modal')
+      $closestModal.removeClass 'hidden'
+      $closestModal.removeClass 'is-open'
+      $checkoutContainer.css 'top', ''
+      false
+
     .on 'click', '.pre-order-button', window.openCheckout
 
     .on 'click', '.checkout button[type=submit]', ->
@@ -81,7 +83,7 @@ $document.ready ->
         return false
       $modal.removeClass 'hidden'
       $modal.removeClass 'is-open'
-      $('.checkout-container').css 'top', ''
+      $checkoutContainer.css 'top', ''
       false
 
     .on 'keypress', 'promocode input', (e)->
@@ -97,5 +99,5 @@ $document.ready ->
 
     Shop.analytics.track 'Completed Checkout Step', step: 3
 
-    $('.modal-close').on 'click', (e) ->
+    $document.on 'click', '.modal-close', (e) ->
       window.location.reload()

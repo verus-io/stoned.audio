@@ -92,7 +92,9 @@
               strong
                 | .
 
-            p(style='text-align:center') Tell your friends to get Stoned!
+            p
+              | Tell your friends to get Stoned!
+
             ul.social
               li
                 a(href=social.facebook.shareLink, target='_blank')
@@ -105,12 +107,16 @@
                   i.fa.fa-envelope
 
           register(if='{ !userExists }', data='{ data }', immediate-login='true')
-            p Enter a password to save your account.
-            user-password.input(placeholder='Password')
-            button(type='submit')
-              | Save
+            p
+              | Finish creating your account to learn how to get another
+              strong &nbsp;FREE PAIR.&nbsp;
+              | Enter a password to save your account.
+            .password-row
+              user-password.input(placeholder='Password')
+              button(type='submit')
+                | Save
 
-          a(href='#').modal-close.link
+          a(href='#', if='{ !userExists }').modal-close.link
             | No, I don't want my free pair of earphones.
 
       button(class='{ loading: loading || checkedOut }', __disabled='{ loading || checkedOut }', type='submit')

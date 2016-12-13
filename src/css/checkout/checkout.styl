@@ -19,6 +19,7 @@
     transform: translateX(-50%)
     background-color: #FFF
     color: #000
+    overflow:hidden
 
     h1
       letter-spacing: 0.0375em
@@ -567,6 +568,17 @@
   cart
     line-height: 1.8em
     background-color: #EEE
+    position: relative
+
+    &:after
+      content: ''
+      background-color: #EEE
+      height: 1000px
+      bottom: -1000px
+      width: 100%
+      display: block
+      position: absolute
+      left: 0
 
   shippingaddress-line1
     width: 55% !important
@@ -801,12 +813,15 @@
   .thankyou
     text-align: center
 
+    p
+      text-align: center
+
     strong
       font-weight: 700
 
     ul.social
       width: 300px
-      margin: 16px auto
+      margin: 8px auto
       display: table
 
       li
@@ -823,35 +838,39 @@
       margin-bottom: 1em
       text-align: center
 
-    user-password.input
-      width: 75%
-      float: left
+    .password-row
+      display: table
+      width: 100%
 
-      input
-        border-right: 0
-        border-radius: 22px 0 0 22px
-        background-color: transparent
-        border-width: 2px !important
-        padding: 0 15px
-        height: 32px
-        border-color: #000
-        width: 100%
+      user-password.input
+        width: 75%
+        float: left
 
-      .error
-        width: 133%
+        input
+          border-right: 0
+          border-radius: 22px 0 0 22px
+          background-color: transparent
+          border-width: 2px !important
+          padding: 0 15px
+          height: 32px
+          border-color: #000
+          width: 100%
 
-    button[type=submit]
-      float: left
-      width: 25%
-      border-radius: 0 22px 22px 0
-      background: none
-      background-color: #000
-      border-width: 0
-      padding: 0
-      margin: 1px 0 0 0
+        .error
+          width: 133%
 
-      &:hover
-        animation: ripple-black 1.5s infinite
+      button[type=submit]
+        float: left
+        width: 25%
+        border-radius: 0 22px 22px 0
+        background: none
+        background-color: #000
+        border-width: 0
+        padding: 0
+        margin: 1px 0 0 0
+
+        &:hover
+          animation: ripple-black 1.5s infinite
 
   .modal-close.link
     text-align: center

@@ -11,19 +11,3 @@ if location.pathname.indexOf('signup') >= 0 || location.pathname.indexOf('reset'
     # m.on 'change', (k, v) ->
     #   if k == 'user.password'
     #     @data.set 'user.passwordConfirm', @data.get 'user.password'
-
-    $resetPasswordCompleteButton = $('reset-password button[type=submit]')
-    m.on 'reset-password-complete', ->
-      $resetPasswordCompleteButton.prop('disabled', true).text 'Resetting...'
-
-    m.on 'reset-password-complete-success', ->
-      window.location.replace 'account'
-      $resetPasswordCompleteButton.prop('disabled', false).text 'Reset!'
-
-    m.on 'reset-password-complete-failed', ->
-      $resetPasswordCompleteButton.prop('disabled', false).text 'Failed, Try Again'
-
-    m.on 'reset-password-success', ->
-      window.location.href = 'reset-password-pending'
-
-

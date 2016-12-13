@@ -56,12 +56,28 @@ $(document).ready ->
   m = window.m = Shop.start(settings)
   window.client = Shop.client
 
+  $registerButton = $('register button[type=submit]')
+
+  m.on 'register', ->
+    $registerButton.prop('disabled', true)
+
   m.on 'register-success', ->
-    store.set 'register', true
     window.location.replace 'account'
+
+  m.on 'register-failed', ->
+    $registerButton.prop('disabled', false)
+
+
+  $loginButton = $('login button[type=submit]')
+
+  m.on 'login', ->
+    $loginButton.prop('disabled', true)
 
   m.on 'login-success', ->
     window.location.replace 'account'
+
+  m.on 'login-failed', ->
+    $loginButton.prop('disabled', false)
 
   m.on 'change', (k, v) ->
     if k == 'user.name'
@@ -82,4 +98,20 @@ $(document).ready ->
     requestAnimationFrame ->
       Shop.cart.invoice()
       Shop.riot.update()
+
+  $resetPasswordCompleteButton = $('reset-password button[type=submit]')
+  m.on 'reset-password-complete', ->
+    $resetPasswordCompleteButton.prop('disabled', true).text 'Resetting...'
+
+  m.on 'reset-password-complete-success', ->
+    window.location.replace 'account'
+    $resetPasswordCompleteButton.prop('disabled', false).text 'Reset!'
+
+  m.on 'reset-password-complete-failed', ->
+    $resetPasswordCompleteButton.prop('disabled', false).text 'Failed, Try Again'
+
+  m.on 'reset-password-success', ->
+    window.location.href = 'reset-password-pending'
+
+
 
