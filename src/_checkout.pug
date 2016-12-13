@@ -91,6 +91,9 @@
               | Your order number is&nbsp;
               strong
               | .
+            p
+              a(href='signup', if='{ !client.client.customerToken')
+                | Create Your Account
             p(style='text-align:center') Tell your friends to get Stoned!
             ul.social
               li

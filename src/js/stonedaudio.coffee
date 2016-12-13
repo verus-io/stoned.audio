@@ -47,7 +47,7 @@ $(document).ready ->
     return false
 
   if window.client.client.customerToken
-    $('[href=signup]').attr 'href', 'account'
+    $('nav [href=signup]').attr 'href', 'account'
   else
-    $('[href=signup]').html 'LOG IN'
+    $('nav [href=signup]').html 'LOG IN'
 
