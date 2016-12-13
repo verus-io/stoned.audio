@@ -8,16 +8,9 @@ if location.pathname.indexOf('signup') >= 0 || location.pathname.indexOf('reset'
     if location.pathname.indexOf('signup') >= 0 && window.client.client.customerToken
       window.location.replace 'account'
 
-    m.on 'change', (k, v) ->
-      if k == 'user.password'
-        @data.set 'user.passwordConfirm', @data.get 'user.password'
-
-    m.on 'register-success', ->
-      store.set 'register', true
-      window.location.replace 'account'
-
-    m.on 'login-success', ->
-      window.location.replace 'account'
+    # m.on 'change', (k, v) ->
+    #   if k == 'user.password'
+    #     @data.set 'user.passwordConfirm', @data.get 'user.password'
 
     $resetPasswordCompleteButton = $('reset-password button[type=submit]')
     m.on 'reset-password-complete', ->

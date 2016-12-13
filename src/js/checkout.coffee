@@ -1,4 +1,6 @@
-$(document).ready ->
+$document = $(document)
+
+$document.ready ->
   window.Shop = Shop = require 'shop.js'
   window.selectize = require 'selectize'
 
@@ -29,69 +31,63 @@ $(document).ready ->
     $('.checkout-container').css 'top', ''
     false
 
-  $('.pre-order-button').on 'click', window.openCheckout
+  $document
+    .on 'click', '.pre-order-button', window.openCheckout
 
-  $('.checkout button[type=submit]').on 'click', ->
-    if step == 2
-      return true
-    $inputs = $('user-name, user-email, card-number, card-expiry, card-cvc')
-    inputCount = $inputs.length
-    i = 0
+    .on 'click', '.checkout button[type=submit]', ->
+      if step == 2
+        return true
+      $inputs = $('user-name, user-email, card-number, card-expiry, card-cvc')
+      inputCount = $inputs.length
+      i = 0
 
-    validateFn = ->
-      input = $inputs[i]
-      if input
-        pRef = {}
-        input._tag.input.trigger 'validate', pRef
-        pRef.p.then(->
-          i++
-          if i == inputCount
-            step = 2
-            Shop.analytics.track 'Completed Checkout Step', step: 2
-            Shop.analytics.track 'Viewed Checkout Step', step: 3
-            $('.checkout').addClass 'step-2'
-          else
-            validateFn()
-          return
-        ).catch (e) ->
-          console.log e
-          return
-      return
+      window.userExists = false
 
-    validateFn()
-    false
+      validateFn = ->
+        input = $inputs[i]
+        if input
+          pRef = {}
+          input._tag.input.trigger 'validate', pRef
 
-  $('.continue-shopping').on 'click', (e) ->
-    if step == 2
-      step = 1
-      $('.checkout').removeClass 'step-2'
-      return false
-    $modal.removeClass 'hidden'
-    $modal.removeClass 'is-open'
-    $('.checkout-container').css 'top', ''
-    false
+          if input._tag.lookup == 'user.email'
+            pRef.p.then(window.client.account.exists(input._tag.value()).then (data)->
+              window.userExists = data.exists
+            )
 
-  m.on 'change', (k, v) ->
-    if k == 'user.name'
-      if !@data.get 'payment.account.name'
-        @data.set 'payment.account.name', v
-      if !@data.get 'order.shippingAddress.name'
-        @data.set 'order.shippingAddress.name', v
+          pRef.p.then(->
+            i++
 
-    if k == 'order.shippingAddress.country'
-      if v == 'us'
-        $('.tax-notice').hide()
-      else
-        $('.tax-notice').show()
+            if i == inputCount
+              step = 2
+              Shop.analytics.track 'Completed Checkout Step', step: 2
+              Shop.analytics.track 'Viewed Checkout Step', step: 3
+              $('.checkout').addClass 'step-2'
+            else
+              validateFn()
+            return
+          ).catch (e) ->
+            console.log e
+            return
 
-    requestAnimationFrame ->
-      Shop.cart.invoice()
-      Shop.riot.update()
+        return
 
-  $('promocode input').keypress (e)->
-    if e.which == 13
-      requestAnimationFrame ->
-        $('.promo-row button').click()
+      validateFn()
+      false
+
+    .on 'click', '.continue-shopping', (e) ->
+      if step == 2
+        step = 1
+        $('.checkout').removeClass 'step-2'
+        return false
+      $modal.removeClass 'hidden'
+      $modal.removeClass 'is-open'
+      $('.checkout-container').css 'top', ''
+      false
+
+    .on 'keypress', 'promocode input', (e)->
+      if e.which == 13
+        requestAnimationFrame ->
+          $('.promo-row button').click()
 
   m.on 'submit-success', ->
     $('.checkout').removeClass 'step-2'

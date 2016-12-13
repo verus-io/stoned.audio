@@ -1,7 +1,7 @@
 if location.pathname.indexOf('account') >= 0
   Clipboard = require 'clipboard'
 
-  msg = encodeURIComponent 'Get Stoned With Me!'
+  message = encodeURIComponent 'Get Stoned With Me!'
 
   $(document).ready ->
     if !window.client.client.customerToken
@@ -31,7 +31,6 @@ if location.pathname.indexOf('account') >= 0
       $('#page-account .ref-text').html url
       url = encodeURIComponent(url)
       $('.share-facebook').attr 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url
-      message = msg
       $('.share-twitter').attr 'href', 'https://twitter.com/intent/tweet?text=' + message + '&amp;url=' + url
       $('.share-email').attr 'href', 'mailto:?body=' + message + ' ' + url
       setupClipboard()

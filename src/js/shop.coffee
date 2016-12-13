@@ -1,6 +1,7 @@
 $(document).ready ->
   window.Shop = Shop = require 'shop.js'
   window.selectize = require 'selectize'
+  store = require 'shop.js/src/utils/store'
 
   settings =
     # prod live
@@ -54,4 +55,31 @@ $(document).ready ->
   Shop.use Controls: Error: '' + '<div class="error" if="{ errorMessage }">' + '  { errorMessage }' + '</div>'
   m = window.m = Shop.start(settings)
   window.client = Shop.client
+
+  m.on 'register-success', ->
+    store.set 'register', true
+    window.location.replace 'account'
+
+  m.on 'login-success', ->
+    window.location.replace 'account'
+
+  m.on 'change', (k, v) ->
+    if k == 'user.name'
+      if !@data.get 'payment.account.name'
+        @data.set 'payment.account.name', v
+      if !@data.get 'order.shippingAddress.name'
+        @data.set 'order.shippingAddress.name', v
+
+    else if k == 'user.password'
+      @data.set 'user.passwordConfirm', @data.get 'user.password'
+
+    else if k == 'order.shippingAddress.country'
+      if v == 'us'
+        $('.tax-notice').hide()
+      else
+        $('.tax-notice').show()
+
+    requestAnimationFrame ->
+      Shop.cart.invoice()
+      Shop.riot.update()
 

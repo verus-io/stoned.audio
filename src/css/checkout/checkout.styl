@@ -180,11 +180,13 @@
             & > *
               display: block
 
-      button[type=submit]
-      .error
-      .legal
-      .promo
-        display: none
+      checkout
+        & > form
+          & > button[type=submit]
+          & > .error
+          & > .legal
+          & > .promo
+            display: none
 
   .parts
     display: table
@@ -812,6 +814,47 @@
         list-style: none
         text-align: center
         font-size: 3rem
+
+  register
+    max-width: 300px
+    margin: 0 auto
+
+    p
+      margin-bottom: 1em
+      text-align: center
+
+    user-password.input
+      width: 75%
+      float: left
+
+      input
+        border-right: 0
+        border-radius: 22px 0 0 22px
+        background-color: transparent
+        border-width: 2px !important
+        padding: 0 15px
+        height: 32px
+        border-color: #000
+        width: 100%
+
+      .error
+        width: 133%
+
+    button[type=submit]
+      float: left
+      width: 25%
+      border-radius: 0 22px 22px 0
+      background: none
+      background-color: #000
+      border-width: 0
+      padding: 0
+      margin: 1px 0 0 0
+
+      &:hover
+        animation: ripple-black 1.5s infinite
+
+  .modal-close.link
+    text-align: center
 
   .notes
     position: absolute

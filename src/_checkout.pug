@@ -90,10 +90,8 @@
             p
               | Your order number is&nbsp;
               strong
-              | .
-            p
-              a(href='signup', if='{ !client.client.customerToken')
-                | Create Your Account
+                | .
+
             p(style='text-align:center') Tell your friends to get Stoned!
             ul.social
               li
@@ -105,6 +103,15 @@
               li
                 a(href=social.email.shareLink)
                   i.fa.fa-envelope
+
+          register(if='{ !userExists }', data='{ data }', immediate-login='true')
+            p Enter a password to save your account.
+            user-password.input(placeholder='Password')
+            button(type='submit')
+              | Save
+
+          a(href='#').modal-close.link
+            | No, I don't want my free pair of earphones.
 
       button(class='{ loading: loading || checkedOut }', __disabled='{ loading || checkedOut }', type='submit')
         span Continue &#8594;
