@@ -1,38 +1,38 @@
 extends _layout.pug
 
 block title
-  | #{site.title} - Privacy Policy
+  | #{site.title} - Referral Program
 
 block content
   #page-privacy.page
     section.hero.short
       .content
-        h1 #{site.title} Referral Program
+        h1 Referral Program
 
     include _progress.pug
 
     section.body
       .content
-        span.date Last Update: December 2016
-        h2 Help get everyone Stoned
-        p.
-          When you refer people to us, that's the most love you can possibly
-          give us. The referral program lets us show some love right back. So
-          here's how it works.
+        p(style="font-size: 1.3em").
+          Want to show us love and snag some cool gear too? Here's how our
+          referral program works.
 
-        h2 What you do
-        p.
-          After you sign up for an account (if you've bought, we've already set
-          one up for you), you can use your unique link to spread the word,
-          through your social media pages, blogs, etc. Please don't post your
-          link to sites or forums that don't belong to you (that's spamming!),
-          and don't try to run paid ads with your referral link. When you put
-          your referral link out there, people who show up at the website can
-          earn you points.
-
-        h2 What they do
+        h2 What you should do
         p
-          | When people click your referral link, they can:
+          ol
+            li.
+              #[a(href="/signup") Sign up] for an account. If you've already bought earphones, just
+              login with the email you used to place your order.
+            li.
+              Use #[a(href="/account") your unique link] to spread the word through social media,
+              email, etc. Please don't post your link to sites or forums that
+              don't belong to you (that's spamming!), and don't try to run paid
+              ads with your referral link. When you put your referral link out
+              there, people who show up at the website can earn you points.
+
+        h2 What your friends do
+        p
+          | When friends click your referral link, they can:
           ul
             li.
               Get Stoned - for everyone who purchases after clicking your
