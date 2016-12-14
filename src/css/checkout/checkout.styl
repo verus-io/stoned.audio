@@ -21,43 +21,6 @@
     color: #000
     overflow:hidden
 
-    h1
-      letter-spacing: 0.0375em
-
-    h1:first-child
-      // border-bottom: 2px solid #c9c9c9
-      width: 100%
-      line-height: 2em
-      color: #000
-
-    input[type=text]
-    button
-    textarea
-      color: #000
-      height: 32px
-      line-height: 1em
-      font-size: 16px
-
-    input[type=text]
-    textarea
-      width: 100%
-
-    textarea
-      height: 96px
-
-    button
-      font-size: 1em
-      color: white !important
-
-    .error
-    .promo-message
-      color: #F22469
-      font-size: 14px
-      padding: 8px 0
-      line-height: 1em
-      text-align: left
-      width: 100%
-
     // Step Counter
     ul.steps
       width: 100%
@@ -213,54 +176,57 @@
   h1
     margin: 0
     font-weight: 900
+    font-size: 20px
+    text-align: left
+    text-shadow: none
+    letter-spacing: 0.0375em
 
     .modal-open
       margin-top: 10px
 
-  input,
-  select,
-  button,
-  select > input[type="button"],
-  textarea
-    -moz-appearance: none !important
-    line-height: 1em !important
-    vertical-align: middle
-    color: #000 !important
+    .invoice-amount
+      display: none !important
 
-  .selectize-input.focus
-  input:focus
-    border-color: #3DF2B6
-
-  .selectize-input.full
-    min-height: 0 !important
-
-  input,
-  select,
-  button,
-  select > input[type="button"],
-  textarea,
-  .selectize-input
-    border: 2px solid #c9c9c9
-
-    &:focus
-      outline-width: 0
+    &:first-child
+      // border-bottom: 2px solid #c9c9c9
+      width: 100%
+      line-height: 2em
+      color: #000
 
   a
     color: #25d2b1
     text-decoration: underline
 
-  h1
-    font-size: 20px
-    text-align: left
-    text-shadow: none
-
-    .invoice-amount
-      display: none !important
-
   #cart-collapsed
     display: none !important
 
   cart
+  checkout
+    position: relative
+    display: block
+    float: right
+    width: 50%
+    // width: 100%
+    padding: 30px
+    min-height: 470px
+
+  // checkout
+    // margin-right: 4%
+
+  cart
+    line-height: 1.8em
+    background-color: #EEE
+
+    &:after
+      content: ''
+      background-color: #EEE
+      height: 1000px
+      bottom: -1000px
+      width: 100%
+      display: block
+      position: absolute
+      left: 0
+
     h1
       .expand-summary
         display: block;
@@ -272,36 +238,15 @@
         height: 16px;
         display: none
 
-
   checkout
     overflow: hidden
 
-    input
-      padding: 0
-      border-radius: 0
-      border-width: 0 !important
-      border-bottom: 2px solid #000 !important
-      transition: color 420ms ease-in, border-color 420ms ease-in
+    .fields
+      width: 100%
+      display: table
 
-      &.invalid
-        color: #F22469 !important
-        border-color: #F22469 !important
-
-      // &.valid
-      //   // color: #3DF2B6 !important
-      //   border-color: #3DF2B6 !important
-
-      &:-moz-placeholder
-        color: #333
-
-      &::-moz-placeholder
-        color: #333
-
-      &:-ms-input-placeholder
-        color: #333
-
-      &::-webkit-input-placeholder
-        color: #333
+      & > *
+        float: left
 
     button[type=submit]
       span:first-child
@@ -309,16 +254,14 @@
       span:last-child
         display: none
 
-  cart
-  checkout
   lineitems
   lineitem
+    width: 100%
     position: relative
     display: block
 
   lineitems
-  lineitem
-    width: 100%
+    padding-bottom: 20px
 
   lineitem
     display: inline
@@ -326,11 +269,16 @@
     & > div
       width: 100%
 
+    & > *
+      float: left;
+
+      & > *
+        float: left;
+
   quantity-select-control
   .promo
   .promo-row
   .invoice-line
-  .input
     width: 100%
     display: table
     position: relative
@@ -338,49 +286,6 @@
   quantity-select-control
     .selectize-input
       max-width: 60px
-
-  .promo-row
-    input
-      transition: border-color 420ms ease-in-out, color 420ms ease-in-out
-
-    button
-      padding: 0
-      transition: background-color 420ms ease-in-out
-
-      span:last-child
-        display: none
-
-    &.green
-      input
-        border-color: #25d2b1 !important
-        color: #25d2b1 !important
-
-      button
-        background-color: #25d2b1 !important
-
-    &.red
-      input
-        border-color: #F22469 !important
-        color: #F22469 !important
-
-      button
-        background-color: #F22469 !important
-
-        span:first-child
-          display: none
-
-        span:last-child
-          display: block
-
-  .promo-message
-    text-align: right !important
-
-    &.green
-      color: #3DF2B6
-
-  lineitem
-    & > * > *
-      float: left;
 
   .product-quantity-container
     width: 45px !important
@@ -462,13 +367,6 @@
   .product-list-price
     text-decoration: line-through;
 
-  lineitems
-    padding-bottom: 20px
-
-  lineitem
-    & > *
-      float: left;
-
   .promo
     height: 40px
 
@@ -495,15 +393,56 @@
           border-radius: 22px 0 0 22px
           background-color: transparent
           border-color: #000
+          border-width: 2px
+          padding: 0 15px
+          transition: border-color 420ms ease-in-out, color 420ms ease-in-out
 
       button
+        position: relative
         width: 25%
         border-radius: 0 22px 22px 0
         background-color: #000
         border-width: 0
+        font-size: 1em
+        padding: 0
+        transition: background-color 420ms ease-in-out
+        top: 1px
+
+        span:last-child
+          display: none
 
         &.notify
           animation: ripple-black 1.5s infinite
+
+      &.green
+        promocode
+          input
+            border-color: #25d2b1 !important
+            color: #25d2b1 !important
+
+        button
+          background-color: #25d2b1 !important
+
+      &.red
+        promocode
+          input
+            border-color: #F22469 !important
+            color: #F22469 !important
+
+        button
+          background-color: #F22469 !important
+
+          span:first-child
+            display: none
+
+          span:last-child
+            display: block
+
+    .promo-message
+      text-align: right !important
+
+      &.green
+        color: #3DF2B6
 
   .invoice-line
     height: 40px
@@ -538,25 +477,12 @@
     text-align: right
     font-weight: bold
 
-  checkout
-    .input
-      padding-bottom: 16px
-      line-height: 2em
-
-    .fields
-      width: 100%
-      display: table
-
-      & > *
-        float: left
-
   .contact-information
   .shipping-information
   .thankyou
   .payment-information
   .confirmation
   .gift-options
-  cart
     position: relative
     // border: 2px solid #C9C9C9
 
@@ -564,21 +490,6 @@
   .payment-information
     .fields:last-child
       margin-bottom: -15px
-
-  cart
-    line-height: 1.8em
-    background-color: #EEE
-    position: relative
-
-    &:after
-      content: ''
-      background-color: #EEE
-      height: 1000px
-      bottom: -1000px
-      width: 100%
-      display: block
-      position: absolute
-      left: 0
 
   shippingaddress-line1
     width: 55% !important
@@ -605,6 +516,9 @@
     width: 52% !important
     margin-right: 4%
 
+    .card-logo
+      top: 8px
+
   card-expiry
     width: 23% !important
     margin-right: 4%
@@ -614,17 +528,6 @@
 
   gift-message
     width: 100%
-
-  cart
-  checkout
-    float: right
-    width: 50%
-    // width: 100%
-    padding: 30px
-    min-height: 470px
-
-  // checkout
-    // margin-right: 4%
 
   .lock-icon
     width: 18px
@@ -648,7 +551,6 @@
     position: absolute;
     height: 16px;
     margin-left: -30px;
-    margin-top: 8px;
 
   .card-logo
     opacity: 0
@@ -674,7 +576,6 @@
       opacity: 1
       position: relative
       height: 20px
-      top: 4px
       margin-left: 0px
       margin-right: 8px
 
@@ -684,9 +585,8 @@
     .stripe-logo
       width: 90px
       height: 20px
-      margin: 4px 0px -4px 0px
+      margin: 0px 0px -4px 0px
       position: relative
-      top: 8px
       margin-bottom: 2px
 
   .special-offer
@@ -781,21 +681,6 @@
     label:hover:before {
       border: 2px solid #3df2b6 !important;
     }
-
-  button[type=submit]
-    width: 100%;
-    font-size: 16px !important;
-    padding: 22px;
-    line-height: 0px !important;
-    letter-spacing: .05rem;
-    margin: 16px 0;
-    background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0));
-    background-color: #3df2b6;
-    border: 0
-    text-transform: uppercase
-
-    &:hover
-      animation: ripple-green 1.5s infinite
 
   .legal
     font-size: .7em
@@ -1041,59 +926,6 @@
 
     .product-quantity-container
       width: 15%
-
-// Selectize
-.selectize-input
-  background-color: transparent !important
-  font-weight: bold !important
-  color: #000 !important
-  font-size: 1rem !important
-  line-height: 1rem !important
-  padding: 8px 0 !important
-  box-shadow: none !important
-  border: 0 !important
-  border-bottom: 2px solid #000 !important
-  max-width: 100%
-  border-radius: 0 !important
-  height: 32px !important
-
-  &:after
-    border-color: #000 transparent transparent !important
-    top: 12px
-    right: 8px
-    margin-top: 0px
-
-  input
-    position: absolute !important
-    width: 100% !important
-    margin-top: -6px !important
-    left: 0
-    height: 32px !important
-    top: 1px !important
-
-  .item
-    position: absolute !important
-    font-size: 16px
-
-  .dropdown-active::before
-    display: none
-
-.selectize-dropdown.single
-  border-radius: 0 !important
-  z-index: 100001
-
-  .selectize-dropdown-content
-    font-weight: bold !important
-    color: #000 !important
-    font-size: 1rem !important
-    line-height: 1rem !important
-
-  .option.active
-    background-color: #3df2b6 !important
-    color: #FFF !important
-
-.selectize-control
-  height: 32px
 
 // Generic Modal Effects
 .checkout-modal
