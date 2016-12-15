@@ -1,16 +1,19 @@
 extends _layout.pug
 
+block title
+  | #{site.title} - Signup
+
 block content
   #page-signup.page
     section.body(data-lazy='img/comfy.jpg')
       .content
         div
-          input(type='radio',name='mode',id='register',checked)
           input(type='radio',name='mode',id='login')
+          input(type='radio',name='mode',id='register', checked)
           h1
-            label(for='register') Register
-            span &nbsp;|&nbsp;
             label(for='login') Login
+            span &nbsp;|&nbsp;
+            label(for='register') Register
           register(immediate-login='true')
             user-name(placeholder='Name')
             user-email(placeholder='Email')
@@ -28,6 +31,6 @@ block content
 
             button(type='submit')
               | Login
-          a(href='reset-password') Forgot Password?
+          a(href='reset-password') Reset Password?
 
 block signup
