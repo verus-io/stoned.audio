@@ -6,7 +6,7 @@ if location.pathname.indexOf('account') >= 0
 
   $(document).ready ->
     if !window.client.client.customerToken
-      window.location.replace 'signup'
+      window.location.replace 'login'
 
     isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
