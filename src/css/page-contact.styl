@@ -1,10 +1,76 @@
 #page-contact
   .body
-    .content
-      width: 400px
-      margin: 80px auto
+    background-color: #FFF
+    padding-bottom: 0
+
+    & > .content
+      width: 600px
       display: table
 
-      & > *
-        column 1/2 2 100px
+      [data-reamaze-embed]
+        margin: 10px -10px -40px -10px
+
+      &:first-child
+        margin-top: 40px
+
+      &:not(:first-child)
+        margin-bottom: 80px
+
+        & > *
+          column 1/2 2 100px
+
+          p
+          h2
+            text-align: center
+
+    .map-container
+      width: 100%
+      height: 105vh
+      position: relative
+
+      .map
+        width: 100%
+        height: 100%
+
+      .map-pointer
+        position: absolute
+        top: 0
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -120%)
+        width: 400px
+        background-color: #FFF
+
+        .header
+          background: radial-gradient(at top left, rgba(0, 212, 255,.50), rgba(0,212,255,0))
+          background-color: #3DF2B6
+          padding: 20px 20px
+          color: #FFF
+
+          h2
+            font-size: 1.8em
+            margin: 0
+            padding-left: 25px
+
+        .content
+          width: 100%
+          margin: 0
+          padding: 20px 20px 30px
+
+          .content-row
+            width: 100%
+            display: table
+
+            &:not(:last-child)
+              margin-bottom: 10px
+
+            i
+              float: left
+              position: relative
+              top: 2px
+
+            p
+              line-height: 1.7em
+              float: left
+              margin-left: 10px
 

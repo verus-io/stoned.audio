@@ -1,5 +1,6 @@
 if location.pathname.indexOf('account') >= 0
   Clipboard = require 'clipboard'
+  GMaps = require 'gmaps'
 
   message = encodeURIComponent 'Get Stoned With Me!'
 
@@ -76,6 +77,62 @@ if location.pathname.indexOf('account') >= 0
 
           return true
 
+        $maps = $('.map')
+        for mapEl in $maps
+          do (mapEl) ->
+            try
+              mapJson = JSON.parse $(mapEl).html()
+
+              mapJson.line1 ?= ''
+              mapJson.line2 ?= ''
+              mapJson.city ?= ''
+              mapJson.state ?= ''
+              mapJson.postalCode ?= ''
+              mapJson.country ?= ''
+
+              address = mapJson.line1 + ' ' +
+                mapJson.line2 + ' ' +
+                mapJson.city + ' ' +
+                mapJson.state + ' ' +
+                mapJson.postalCode + ' ' +
+                mapJson.country
+
+              GMaps.geocode
+                address: address
+                callback: (results, status) ->
+                  if status == 'OK'
+                    map = new GMaps
+                      div: mapEl
+                      lat: 21.3280681
+                      lng: -157.798970564
+                      zoom: 12
+                      disableDefaultUI: true
+
+                    latlng = results[0].geometry.location
+                    map.removeMarkers()
+                    map.addMarker
+                      lat: latlng.lat()
+                      lng: latlng.lng()
+
+                    #terrible
+                    $map = $(mapEl)
+                    lastWidth = $map.width()
+
+                    setInterval ->
+                      map.setCenter latlng.lat(), latlng.lng()
+
+                      width = $map.width()
+                      if width == lastWidth
+                        return
+
+                      lastWidth = width
+                      map.refresh()
+                      map.setCenter latlng.lat(), latlng.lng()
+                    , 500
+
+            catch err
+              console.log err
+
     $button = $('#page-account button[type=submit]')
     m.on 'profile-update', (data)->
       $button.prop('disabled', true).find('span').text 'Updating...'
@@ -91,4 +148,3 @@ if location.pathname.indexOf('account') >= 0
 
     m.on 'shipping-address-update-failed', ->
       $('shippingaddress button').prop('disabled', false).text 'Failed, Try Again.'
-
