@@ -4,104 +4,6 @@
       h2
         font-size: 1em
 
-      input[type=text]
-      button
-      textarea
-        color: #000
-        height: 32px
-        line-height: 1em
-        font-size: 16px
-
-      input,
-      select,
-      button,
-      select > input[type="button"],
-      textarea
-        -moz-appearance: none !important
-        line-height: 1em !important
-        vertical-align: middle
-        color: #000 !important
-
-      .selectize-input.focus
-      input:focus
-        border-color: #3DF2B6
-
-      .selectize-input.full
-        min-height: 0 !important
-
-      .selectize-input
-        border: 2px solid #c9c9c9
-
-        &:focus
-          outline-width: 0
-
-      input[type=text]
-      textarea
-        width: 100%
-
-      textarea
-        height: 96px
-
-      button
-        font-size: 1em
-        color: #FFF !important
-        height: 32px
-        line-height: 1em
-        width: 100%
-        margin: 0 auto
-        font-size: 16px !important
-        padding: 22px
-        line-height: 0px !important
-        letter-spacing: .05rem
-        margin: 16px 0
-        background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0))
-        background-color: #3df2b6
-        border: 0
-        text-transform: uppercase
-
-        &:hover
-          animation: ripple-green 1.5s infinite
-
-      input
-        padding: 0
-        border-radius: 0
-        border-width: 0 !important
-        border-bottom: 2px solid #000 !important
-        transition: color 420ms ease-in, border-color 420ms ease-in
-
-        &.invalid
-          color: #F22469 !important
-          border-color: #F22469 !important
-
-        // &.valid
-        //   // color: #3DF2B6 !important
-        //   border-color: #3DF2B6 !important
-
-        &:-moz-placeholder
-          color: #333
-
-        &::-moz-placeholder
-          color: #333
-
-        &:-ms-input-placeholder
-          color: #333
-
-        &::-webkit-input-placeholder
-          color: #333
-
-      .error
-      .promo-message
-        color: #F22469
-        font-size: 14px
-        padding: 8px 0
-        line-height: 1em
-        text-align: left
-        width: 100%
-
-      .field > *
-        display: block
-        margin-bottom: 20px
-
       ul.menu
         column 1/5 2 60px
         padding: 0 10px
@@ -377,8 +279,10 @@
             display: table
             width: 100%
             padding: 7px 0 20px 0
-            border-bottom: 1px solid black
-            margin-bottom: 20px
+
+            &:not(:last-child)
+              border-bottom: 2px solid black
+              margin-bottom: 20px
 
             .order-information
             .address-information
