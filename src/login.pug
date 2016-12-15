@@ -1,15 +1,15 @@
 extends _layout.pug
 
 block title
-  | #{site.title} - Signup
+  | #{site.title} - Login
 
 block content
   #page-signup.page
     section.body(data-lazy='img/comfy.jpg')
       .content
         div
-          input(type='radio',name='mode',id='login')
-          input(type='radio',name='mode',id='register', checked)
+          input(type='radio',name='mode',id='login', checked)
+          input(type='radio',name='mode',id='register')
           h1
             label(for='login') Login
             span &nbsp;|&nbsp;
