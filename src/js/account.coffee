@@ -81,7 +81,7 @@ if location.pathname.indexOf('account') >= 0
         for mapEl in $maps
           do (mapEl) ->
             try
-              mapJson = JSON.parse $(mapEl).html()
+              mapJson = JSON.parse $(mapEl).attr 'data-address'
 
               mapJson.line1 ?= ''
               mapJson.line2 ?= ''

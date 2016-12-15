@@ -173,7 +173,7 @@ block content
                     | { renderCurrency(data.get('currency'), data.get('total'))}&nbsp;{ data.get('currency').toUpperCase() }
               .address-information
                 h2.label.address-label Shipping Address:
-                .map { JSON.stringify(data.get('shippingAddress')) }
+                .map(data-address="{ JSON.stringify(data.get('shippingAddress')) }")
                 shippingaddress.ui.form
                   .field
                     shippingaddress-line1.ui.input(placeholder='Address')
