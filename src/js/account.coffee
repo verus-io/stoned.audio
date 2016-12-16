@@ -45,7 +45,7 @@ if location.pathname.indexOf('account') >= 0
     # m.on 'profile-load', ->
 
     m.on 'profile-load-success', (data)->
-      setupReferral 'https://stoned.audio/#' + data.referrers[0].id
+      setupReferral 'https://stoned.audio/$/' + data.referrers[0].id
 
       store = require 'shop.js/src/utils/store'
       store.set 'register', true
