@@ -44,8 +44,10 @@ html(lang='en')
 
     block style
 
+    block headscript
+
     <!--[if lt IE 10]>
-    script(src='js/polyfill/html5-shiv.js')
+    script(src='/js/polyfill/html5-shiv.js')
     <![endif]-->
 
   body(style='overflow:hidden')
@@ -64,7 +66,7 @@ html(lang='en')
         //     a(href='#') Specs
         // |
         a#home(href='/')
-          img.logo(src='./img/logo.png', alt=site.name)
+          img.logo(src='/img/logo.png', alt=site.name)
         a#preorder.button.pre-order-button(href='#cta')
           | GET STONED
         label.menu-button(for='open')
@@ -75,27 +77,27 @@ html(lang='en')
         li
           a(href='/') HOME
         li
-          a(href='faq') FAQ
+          a(href='/faq') FAQ
         li
-          a(href='press') PRESS
+          a(href='/press') PRESS
         li
-          a(href='referral') REFERRAL PROGRAM
+          a(href='/referral') REFERRAL PROGRAM
         li
-          a(href='returns') RETURNS & WARRANTY
+          a(href='/returns') RETURNS & WARRANTY
         li
-          a(href='contact') CONTACT US
+          a(href='/contact') CONTACT US
         li
-          a(href='privacy') PRIVACY
+          a(href='/privacy') PRIVACY
         li
-          a(href='terms') TERMS
+          a(href='/terms') TERMS
         li
           hr
         li
-          a(href='login') LOG IN
+          a(href='/login') LOG IN
         block account-menu-side
         li.logo
           a(href='/')
-            img(src='./img/diamond-logo.svg')
+            img(src='/img/diamond-logo.svg')
         li
           label.menu-close(for='open')
             | &#10005;
@@ -104,7 +106,7 @@ html(lang='en')
       block content
 
     block signup
-      section#getnews(data-lazy='img/lovethemlow.jpg')
+      section#getnews(data-lazy='/img/lovethemlow.jpg')
         .content
           // h1 Get the latest news.
           // p Sign up for our newsletter to stay up to date.
@@ -139,29 +141,29 @@ html(lang='en')
       nav
         ul
           // li
-          //   a(href='about') ABOUT
+          //   a(href='/about') ABOUT
           // li
-          //   a(href='press') PRESS
+          //   a(href='/press') PRESS
           // li
-          //   a(href='faq') FAQ
+          //   a(href='/faq') FAQ
           li
             a(href='/') HOME
           li
-            a(href='faq') FAQ
+            a(href='/faq') FAQ
           li
-            a(href='press') PRESS
+            a(href='/press') PRESS
           li
-            a(href='referral') REFERRAL PROGRAM
+            a(href='/referral') REFERRAL PROGRAM
           li
-            a(href='returns') RETURNS & WARRANTY
+            a(href='/returns') RETURNS & WARRANTY
           li
-            a(href='contact') CONTACT US
+            a(href='/contact') CONTACT US
           li
-            a(href='privacy') PRIVACY
+            a(href='/privacy') PRIVACY
           li
-            a(href='terms') TERMS
+            a(href='/terms') TERMS
       a(href='#')
-        img.logo(src='./img/logo.png', alt=site.name)
+        img.logo(src='/img/logo.png', alt=site.name)
       small.copyright= site.copyright
     // .loader
 
@@ -178,20 +180,20 @@ html(lang='en')
     <!--[if lt IE 10]>
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     script.
-      window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\\/script>')
-    script(src='js/polyfill/ie-love.js')
+      window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.4.min.js"><\\/script>')
+    script(src='/js/polyfill/ie-love.js')
     <![endif]-->
 
     <!--[if gt IE 9]><!-->
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
     script.
-      window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\\/script>')
+      window.jQuery || document.write('<script src="/js/vendor/jquery-3.1.0.min.js"><\\/script>')
     <!--<![endif]-->
 
     block script
 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js')
-    script(src='js/app.js')
+    script(src='/js/app.js')
 
     script(type="text/javascript", src="//cdn.reamaze.com/assets/reamaze.js")
     script(type="text/javascript").

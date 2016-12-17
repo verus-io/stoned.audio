@@ -3,4 +3,33 @@ extends _layout.pug
 block title
   | #{site.title} - Referred
 
+block headscript
+  script.
+    if(location.pathname.indexOf('$') >= 0) {
+      tokens = window.location.pathname.replace(/\/$/,'').split('/')
+      path = tokens[tokens.length - 1]
+      window.location.replace('/#' + path)
+    }
+
 block content
+  #page-404.page
+    section.hero.shorter
+      .content
+        h1 Page Not Found
+
+    include _progress.pug
+
+    section.body
+      .content
+        h2
+          | This page does not exist.  You will be redirected to
+          a(href='/') &nbsp;stoned.audio&nbsp;
+          | in 3 seconds.
+
+block signup
+
+block script
+  script.
+    setTimeout(function() {
+      window.location.href = '/'
+    }, 3000)
