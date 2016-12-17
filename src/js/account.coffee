@@ -26,10 +26,9 @@ if location.pathname.indexOf('account') >= 0
           displayCopied()
         $('.ref-link')[0]
     )
-      return
 
     setupReferral = (url) ->
-      $('#page-account .ref-text').html url
+      $('.ref-text').html url
       url = encodeURIComponent(url)
       $('.share-facebook').attr 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url
       $('.share-twitter').attr 'href', 'https://twitter.com/intent/tweet?text=' + message + '&amp;url=' + url

@@ -95,15 +95,19 @@
             p
               | Tell your friends to get Stoned!
 
+            .share-field
+              span.ref-text.ref-link Loading...
+              span.copied Copied!
+
             ul.social
               li
-                a(href=social.facebook.shareLink, target='_blank')
+                a.share-facebook(href=social.facebook.shareLink, target='_blank')
                   i.fa.fa-facebook-square
               li
-                a(href=social.twitter.shareLink, target='_blank')
+                a.share-twitter(href=social.twitter.shareLink, target='_blank')
                   i.fa.fa-twitter
               li
-                a(href=social.email.shareLink)
+                a.share-email(href=social.email.shareLink)
                   i.fa.fa-envelope
 
           register(if='{ !userExists }', data='{ data }', immediate-login='true')

@@ -1,15 +1,41 @@
 $document = $(document)
 
 $document.ready ->
+  Clipboard = require 'clipboard'
   window.Shop = Shop = require 'shop.js'
   window.selectize = require 'selectize'
 
   step = 1
+  message = encodeURIComponent 'Get Stoned With Me!'
+  isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
   Shop.setItem('earphone', 1)
 
   $modal = $('.checkout-modal.modal')
   $checkoutContainer = $('.checkout-container')
+
+  displayCopied = ->
+    setTimeout (->
+      $('.copied').css 'opacity', 1
+      setTimeout (->
+        $('.copied').css 'opacity', 0
+      ), 1000
+    ), 250
+
+  setupClipboard = ->
+    new Clipboard('.ref-link', target: (trigger) ->
+      if !isSafari
+        displayCopied()
+      $('.ref-link')[0]
+  )
+
+  setupReferral = (url) ->
+    $('.ref-text').html url
+    url = encodeURIComponent(url)
+    $('.share-facebook').attr 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url
+    $('.share-twitter').attr 'href', 'https://twitter.com/intent/tweet?text=' + message + '&amp;url=' + url
+    $('.share-email').attr 'href', 'mailto:?body=' + message + ' ' + url
+    setupClipboard()
 
   window.openCheckout = (e) ->
     $modal.addClass 'is-open'
@@ -66,6 +92,7 @@ $document.ready ->
               $('.checkout').addClass 'step-2'
             else
               validateFn()
+
             return
           ).catch (e) ->
             console.log e
@@ -91,13 +118,16 @@ $document.ready ->
         requestAnimationFrame ->
           $('.promo-row button').click()
 
-  m.on 'submit-success', ->
+  m.on 'submit-success', (data)->
     $('.checkout').removeClass 'step-2'
     $('.checkout').addClass 'step-3'
     $('.thankyou strong').text @data.get('order.number')
     $('quantity-select-control .items').prop('disabled', true)
 
     Shop.analytics.track 'Completed Checkout Step', step: 3
+
+    setupReferral 'https://stoned.audio/$/' + @data.get('referrerId')
+    $('.ref-text').css 'opacity', 1
 
     $document.on 'click', '.modal-close', (e) ->
       window.location.reload()
