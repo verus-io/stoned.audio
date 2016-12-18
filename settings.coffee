@@ -10,8 +10,6 @@ email =
     Stoned Earphones – Huge sound, noise isolation, in-ear mic, on the go
     charging, single button control and secure, customizable fit. Zero wires.
 
-    Only $99 for a limited time: https://stoned.audio
-
     I'm getting Stoned. Are you?"""
 
 twitter =
