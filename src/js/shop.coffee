@@ -44,11 +44,7 @@ $(document).ready ->
       }
     ]
     shippingRates: [
-      {
-        shippingRate: 0
-        country: 'us'
-      }
-      { shippingRate: 1500 }
+      { shippingRate: 0 }
     ]
     config: hashReferrer: true
 
