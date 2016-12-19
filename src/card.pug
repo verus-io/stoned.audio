@@ -1,0 +1,38 @@
+extends _layout.pug
+
+block title
+  | #{site.title} - Get Ready To Get Stoned!
+
+block content
+  #page-card.page
+    section.hero.short
+      .content
+        h1
+          | Get Your Card
+
+    section.body
+      .content
+        h2
+          | I want to print my card.
+        .holiday-card
+          img(src='/img/holiday/2016card-back.png')
+          canvas#card-canvas(width='320', height='490.5')
+          div.your-name
+
+        .options
+          .preview
+            input#123(type='checkbox')
+            label Preview
+          .download.
+            Download
+
+        .mail
+          h2
+            | I want to send my card through the mail.
+          p
+            | Fill out
+            a(href='form') &nbsp;this form
+            | to send your card by mail.
+
+block signup
+

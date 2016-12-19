@@ -18,8 +18,13 @@ require './contentfill'
 # Project
 require './shop'
 
+# Every Page
 require './stonedaudio'
 require './checkout'
-require './signup-reset-password'
+
+# Single/Some Pages
 require './account'
+require './card'
 require './contact'
+require './signup-reset-password'
+
