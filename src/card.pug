@@ -8,30 +8,35 @@ block content
     section.hero.short
       .content
         h1
-          | Get Your Card
+          | Get Your Holiday Card
 
     section.body
       .content
         h2
           | I want to print my card.
         .holiday-card
+          .canvas
+            canvas#card-canvas(width='320', height='490')
           img(src='/img/holiday/2016card-back.png')
-          canvas#card-canvas(width='320', height='490.5')
-          div.your-name
+          .your-name
+          canvas#render-canvas(width='1280', height='981')
 
         .options
-          .preview
-            input#123(type='checkbox')
-            label Preview
-          .download.
-            Download
+          p
+            | Enter your name below or leave it blank to fill it out after
+            | printing.
 
+          input#card-name(type='text', placeholder='Your Name')
+
+          a.download.button(href='/img/holiday/2016card.png',download='holiday-card-2016.png')
+            | Download
+
+        h2
+          | I want to send my card through the mail.
         .mail
-          h2
-            | I want to send my card through the mail.
           p
             | Fill out
-            a(href='form') &nbsp;this form
+            a(href='https://stonedhq.typeform.com/to/BgxaOd', target='_blank') &nbsp;this form&nbsp;
             | to send your card by mail.
 
 block signup

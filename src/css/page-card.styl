@@ -1,11 +1,60 @@
 #page-card
-  .holiday-card
-    display: table
-    margin: 0 auto
+  .content
+    h2
+    p
+      text-align: center
 
-    canvas
-    img
-      width: 320px
-      height: 490.5px
+    .holiday-card
+      display: table
+      margin: 0 auto
+
+      .canvas
+      img
+        width: 320px
+        height: 490px
+        display: block
+        float: right
+
+      .canvas
+        background-image: url(/img/holiday/2016card-front.png)
+        background-size: contain
+        image-rendering: optimizeSpeed
+        image-rendering: -moz-crisp-edges
+        image-rendering: -webkit-optimize-contrast
+        image-rendering: optimize-contrast
+        image-rendering: pixelated
+        -ms-interpolation-mode: nearest-neighbor
+
+      #render-canvas
+        display: none
+
+    .holiday-card
+    input
+    .button
+    h2
+      margin-bottom: 20px
+      margin-left: auto
+      margin-right: auto
+
+    input
+      width: 200px
       display: block
-      float: left
+      text-align: center
+
+    input
+      display: block
+
+    .button
+      display: table
+      padding: 6px 30px
+
+    .options
+      margin-bottom: 40px
+
+      .download
+        color: #000 !important
+        border-color: #000
+
+        &:hover
+          animation: ripple-black 1.5s infinitei
+

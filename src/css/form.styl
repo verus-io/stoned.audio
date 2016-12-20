@@ -36,26 +36,28 @@ button
 
 .page
 .checkout.checkout
-  input,
-  select,
-  button,
-  select > input[type="button"],
+  input
+  select
+  button
+  .button
+  select > input[type="button"]
   textarea
     line-height: 1em !important
     vertical-align: middle
 
-  input,
-  select,
-  select > input[type="button"],
+  input
+  select
+  select > input[type="button"]
   textarea
     -moz-appearance: none !important
     color: #000 !important
 
-  input,
-  select,
-  button,
-  select > input[type="button"],
-  textarea,
+  input
+  select
+  button
+  .button
+  select > input[type="button"]
+  textarea
   .selectize-input
     border: 2px solid #c9c9c9
 
@@ -65,10 +67,24 @@ button
   input[type=text]
   input[type=password]
   button
+  .button
   textarea
     height: 32px
     line-height: 1em
     font-size: 16px
+
+  input[type=text]
+  input[type=password]
+    -moz-appearance: none !important
+    line-height: 1em !important
+    vertical-align: middle
+    color: #000 !important
+
+    padding: 0
+    border-radius: 0
+    border-width: 0 !important
+    border-bottom: 2px solid #000 !important
+    transition: color 420ms ease-in, border-color 420ms ease-in
 
   input[type=text]
   input[type=password]
@@ -105,9 +121,11 @@ button
     height: 96px
 
   button
+  .button
     color: white !important
 
   button[type=submit]
+  .button.submit
     width: 100%;
     font-size: 16px !important;
     padding: 22px;
