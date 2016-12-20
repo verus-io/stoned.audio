@@ -715,6 +715,18 @@
         text-align: center
         font-size: 3rem
 
+    .share-field
+      text-align: centered
+
+      .ref-link
+      .copied
+        display: block
+        width: 100%
+        text-align: center
+
+      +below(600px)
+        font-size: .5em
+
   register
     max-width: 300px
     margin: 0 auto
@@ -728,7 +740,7 @@
       width: 100%
 
       user-password.input
-        width: 75%
+        width: 75% !important
         float: left
 
         input

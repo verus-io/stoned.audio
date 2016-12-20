@@ -1,22 +1,77 @@
 #page-account
   .body
     .content
+      padding: 0
+      margin: 80px auto
+      background-color: #FFF
+
+      +below(600px)
+        margin: 0 auto
+
+      .tab-radio
+        display: none
+
+        &#referrals-tab ~ .page .referrals
+        &#profile-tab ~ .page .profile
+        &#orders-tab ~ .page .orders
+          opacity: 0
+          position: absolute
+          top: 0
+          left: 0
+          transition opacity 420ms ease-in
+          width: 100%
+          pointer-events: none
+          display: table
+          margin-top: 40px
+
+        &#referrals-tab:checked ~ .page .referrals
+        &#profile-tab:checked ~ .page .profile
+        &#orders-tab:checked ~ .page .orders
+          opacity: 1
+          position: relative
+          pointer-events: auto
+
+        &#referrals-tab:checked ~ .menu .referrals-tab
+        &#profile-tab:checked ~ .menu .profile-tab
+        &#orders-tab:checked ~ .menu .orders-tab
+          border-bottom: 4px solid #3CF3B6
+
       h2
         font-size: 1em
 
       ul.menu
-        column 1/5 2 60px
-        padding: 0 10px
+        background-color: #F8F8F8
+        width: 100vw
+        padding: 0
+        display: table
+        max-width: 900px
+
+        +below(600px)
+          font-size:.8em
 
         li
           list-style-type: none
-          margin-bottom: 1em
+          padding: 0 2em
+          max-width: 80px
+          vertical-align: middle
+          float: left
+          display: table
 
-          hr
-            height: 0
-            border: 0
-            border-bottom: 2px solid #000
-            max-width: 30px
+          &:nth-child(4)
+            max-width: 100%
+
+          &:last-child
+            text-align: right
+            float: right
+
+          label
+            margin: 0
+            display: table
+            padding: 12px 0
+
+            h2
+              position:relative
+              top: 4px
 
           & > *
             cursor: pointer
@@ -24,34 +79,18 @@
             &:hover
               font-weight: bold
 
-        +below(600px)
-          display: none
-
       .page
-        column 4/5 2 60px
         min-height: 300px
+        max-width: 550px
         position: relative
         overflow: hidden
+        padding: 0 0 80px
+        margin: 0 auto
 
-        +below(600px)
-          width: 100% !important
-
-        .tab-radio
-          display: none
-
-          & + *
-            opacity: 0
-            position: absolute
-            top: 0
-            left: 0
-            transition opacity 420ms ease-in
-            width: 100%
-            pointer-events: none
-
-          &:checked + *
-            opacity: 1
-            position: relative
-            pointer-events: auto
+        & > *
+          +below(600px)
+            padding: 0 20px
+            max-width: 100vw
 
         .profile
           & > div
@@ -80,6 +119,21 @@
 
         p
           margin-bottom: 0
+
+        .share-field
+          text-align: centered
+
+          .copied
+            display: block
+
+          +below(600px)
+            font-size: .8em
+
+            .ref-link
+            .copied
+              display: block
+              width: 100%
+              text-align: center
 
         ul.share-links
           display: table
@@ -266,16 +320,3 @@
               width: 100%
               height: 200px
               margin 10px 0 20px
-
-    +below(900px)
-      .content
-        ul.menu
-          column 1/3 2 60px
-
-          li
-            list-style-type: none
-            margin-bottom: 1em
-
-        .page
-          column 2/3 2 60px
-

@@ -25,34 +25,41 @@ block content
     include _progress.pug
 
     section.body
-     .content
+      .content
+        input.tab-radio(type='radio',name='account-tabs',id='referrals-tab', checked)
+        input.tab-radio(type='radio',name='account-tabs',id='profile-tab')
+        input.tab-radio(type='radio',name='account-tabs',id='orders-tab')
+
         ul.menu
-          li
+          li.referrals-tab
             label(for='referrals-tab')
               h2 REFERRALS
-          li
+          li.profile-tab
             label(for='profile-tab')
               h2 PROFILE
-          li
+          li.orders-tab
             label(for='orders-tab')
               h2 ORDERS
           li
-            hr
           li
-            h2.logout-button LOGOUT
+            label
+              h2.logout-button LOGOUT
         .page
           // h2 Hello, { data.get('user.firstName') }.
           //
-          input.tab-radio(type='radio',name='account-tabs',id='referrals-tab', checked)
           .referrals
-            h2 Tell your friends to get Stoned!
+            h1 Referrals
 
             p
-              | Share your unique link with your friends and family.
+              | It is easy to help your friends and family get Stoned. Just
+              | send them your unique link.
 
             .share-field
               span.ref-text.ref-link Loading...
               span.copied Copied!
+
+            p
+              | Share your link on social media.
 
             ul.share-links
               li
@@ -105,7 +112,6 @@ block content
               li
                 p FREE EARPHONES
 
-          input.tab-radio(type='radio',name='account-tabs',id='profile-tab')
           .profile
             div
               h2 Contact Information
@@ -125,7 +131,6 @@ block content
               .error(if='{ errorMessage }')
                 | { errorMessage }
 
-          input.tab-radio(type='radio',name='account-tabs',id='orders-tab')
           .orders
             h2 Your Orders
             div(if='{ !hasOrders() }')
