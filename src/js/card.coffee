@@ -22,6 +22,12 @@ if location.pathname.indexOf('card') >= 0
   cardFull = new Image()
   cardFull.src = '/img/holiday/2016card.png'
 
+  z =
+    readyFn: ->
+      requestAnimationFrame z.readyFn
+
+  cardFull.onload = z.readyFn
+
   $document = $(document)
 
   $document.ready ->
@@ -33,12 +39,16 @@ if location.pathname.indexOf('card') >= 0
         cardCtx.clearRect 0, 0, cardCanvas.width, cardCanvas.height
         cardCtx.font = '900 16px Lato'
         cardCtx.fillStyle = '#46BBA5'
-        cardCtx.fillText name.toUpperCase(), 124, 378.5
+        cardCtx.fillText 'GET READY TO', 58, 326.5
+        cardCtx.fillText 'GET STONED!', 68, 352.5
+        cardCtx.fillText 'LOVE, ' + name.toUpperCase(), 78, 378.5
 
         renderCtx.drawImage cardFull, 0, 0, 1280, 981
         renderCtx.font = '900 32px Lato'
         renderCtx.fillStyle = '#46BBA5'
-        renderCtx.fillText name.toUpperCase(), 892, 758
+        renderCtx.fillText 'GET READY TO', 756, 653
+        renderCtx.fillText 'GET STONED!', 776, 705
+        renderCtx.fillText 'LOVE, ' + name.toUpperCase(), 796, 757
 
     $downloadButton = $('a.download.button')
 
@@ -46,8 +56,10 @@ if location.pathname.indexOf('card') >= 0
       dataURL = renderCanvas.toDataURL 'image/png'
       $downloadButton.attr 'href', dataURL.replace('image/png', 'application/octet-stream')
 
-    cardFull.onload = ->
+    z.readyFn = ->
       updateCardName()
+      updateRender()
+    updateCardName()
     $cardName.on 'keyup', updateCardName
     $cardName.on 'change', updateRender
     $downloadButton.on 'click', updateRender
