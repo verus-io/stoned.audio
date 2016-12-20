@@ -26,7 +26,7 @@ module.exports =
 
     shipping:
       prelaunch2016december:
-        date: 'December 19, 2016'
+        date: 'End of December'
 
     meta:
       description: description
