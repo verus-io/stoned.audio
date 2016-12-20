@@ -72,7 +72,11 @@ if location.pathname.indexOf('card') >= 0
       w = window.open '', 'w'
       w.document.write """
         <html>
-          <head></head>
+          <head>
+          <style type="text/css" media="print">
+            @page { size: landscape; }
+          </style>
+          </head>
           <body>
             <img src="#{dataUrl.replace('application/octet-stream', 'image/png')}">
           </body>
