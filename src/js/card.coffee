@@ -51,6 +51,7 @@ if location.pathname.indexOf('card') >= 0
         renderCtx.fillText 'LOVE, ' + name.toUpperCase(), 796, 757
 
     $downloadButton = $('a.download.button')
+    $printButton = $('.print')
 
     updateRender = ->
       dataURL = renderCanvas.toDataURL 'image/png'
@@ -59,7 +60,21 @@ if location.pathname.indexOf('card') >= 0
     z.readyFn = ->
       updateCardName()
       updateRender()
+
     updateCardName()
+
     $cardName.on 'keyup', updateCardName
     $cardName.on 'change', updateRender
     $downloadButton.on 'click', updateRender
+
+    $printButton.on 'click', ->
+      dataUrl = $downloadButton.attr 'href'
+      w = window.open '', 'w'
+      w.document.write """
+        <html>
+          <head></head>
+          <body>
+            <img src="#{dataUrl.replace('application/octet-stream', 'image/png')}">
+          </body>
+        </html>"""
+      w.window.print()
