@@ -134,7 +134,7 @@ block content
                   .label.order-date-label Purchase Date:
                   .value.order-date { renderDate(data.get('createdAt'), 'LL') }
                 .order-shipping-date-container
-                  .label.order-date-label Shipping Date:
+                  .label.order-date-label Estimated Delivery:
                   .value.order-date(if="{ data.get('metadata.batch') == 'preorder' }" )  #{ shipping.prelaunch2016december.date }
                 .order-status-date-container
                   .label.order-date-label Status:
