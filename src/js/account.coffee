@@ -54,13 +54,17 @@ if location.pathname.indexOf('account') >= 0
       points = data?.balances?.points
       points = 0 if !points
 
-      $style = $('<style></style>')
-      $('profile').append $style
-      $style.html """
-        .points-tracker:before {
-          width: #{ points / 42 }% !important;
-        }
-      """
+      # $style = $('<style></style>')
+      # $('profile').append $style
+      # $style.html """
+      #   .points-tracker:before {
+      #     width: #{ points / 42 }% !important;
+      #   }
+      # """
+
+      $('.point-tracker li').each (i)->
+        if i * 840 <= points
+          $(this).addClass('active')
 
       $('#page-account .points').html Math.ceil points
 

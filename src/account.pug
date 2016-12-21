@@ -33,17 +33,17 @@ block content
         ul.menu
           li.referrals-tab
             label(for='referrals-tab')
-              h2 REFERRALS
+              | REFERRALS
           li.profile-tab
             label(for='profile-tab')
-              h2 PROFILE
+              | PROFILE
           li.orders-tab
             label(for='orders-tab')
-              h2 ORDERS
+              | ORDERS
           li
           li
-            label
-              h2.logout-button LOGOUT
+            label.logout-button
+              | LOGOUT
         .page
           // h2 Hello, { data.get('user.firstName') }.
           //
@@ -79,38 +79,28 @@ block content
               | Earn #[strong 10] points for every friend who creates an account.
 
             p.points-counter
+              | Your have earned&nbsp;
               strong.points 0
-              strong /4200
+              strong /4200&nbsp;
+              | points.
 
             ul.points-tracker
               li
-                h3 840 Points
-                p HOODIE RAFFLE
+                h2 840 Points
+                p Hoodie raffle
               li
-                h3 1680 Points
-                p 20% COUPON
+                h2 1680 Points
+                p 20% Coupon
               li
-                h3 2520 Points
-                p SPOTIFY MEMBERSHIP
+                h2 2520 Points
+                p Free 3-month Spotify Premium membership
               li
-                h3 3360 Points
-                p SWAG BAG
+                h2 3360 Points
+                p Swag bag with special hat and shirt
               li
-                h3 4200 Points
-                p FREE EARPHONES
-
-            ul.points-tracker-description
-              li
-                // p PRIORITY SHIPPING
-                p HOODIE RAFFLE
-              li
-                p 20% COUPON
-              li
-                p SPOTIFY MEMBERSHIP
-              li
-                p SWAG BAG
-              li
-                p FREE EARPHONES
+                h2 4200 Points
+                p Free pair of
+                  strong &nbsp;Stoned Earphones
 
           .profile
             div
@@ -132,13 +122,13 @@ block content
                 | { errorMessage }
 
           .orders
-            h2 Your Orders
+            h1 Your Orders
             div(if='{ !hasOrders() }')
               p You don't have any orders yet.
             orders(if='{ hasOrders() }')
               .order-information
                 .order-number-container
-                  h2.label.order-number-label Order Number:
+                  h2.label.order-number-label Order#:
                   h2.value.order-number { data.get('number') }
                 .order-date-container
                   .label.order-date-label Purchase Date:

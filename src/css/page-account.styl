@@ -21,7 +21,7 @@
           transition opacity 420ms ease-in
           width: 100%
           pointer-events: none
-          display: table
+          display: block
           margin-top: 40px
 
         &#referrals-tab:checked ~ .page .referrals
@@ -35,9 +35,6 @@
         &#profile-tab:checked ~ .menu .profile-tab
         &#orders-tab:checked ~ .menu .orders-tab
           border-bottom: 4px solid #3CF3B6
-
-      h2
-        font-size: 1em
 
       ul.menu
         background-color: #F8F8F8
@@ -68,10 +65,9 @@
             margin: 0
             display: table
             padding: 12px 0
-
-            h2
-              position:relative
-              top: 4px
+            position:relative
+            top: 4px
+            font-weight: bold
 
           & > *
             cursor: pointer
@@ -152,7 +148,6 @@
 
         .points-counter
           margin-top: 20px
-          text-align: center
 
         .points-tracker
           padding: 0
@@ -160,113 +155,56 @@
           display: table
           position: relative
           overflow: hidden
-          border-radius: 90px
-
-          &:before
-            content: ''
-            width: 0%
-            height: 100%
-            position: absolute
-            top: 0
-            left: 0
-            transition: width 420ms ease-in-out
-            background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0))
-            background-color: #11f1b6
-            border-top-left-radius: 50px
-            border-bottom-left-radius: 50px
 
           li
-            column 1/5 5 0
             list-style-type: none
-            text-align: center
-            padding: 20px 30px
-            height: 90px
-            border: 2px solid #000
             position: relative
+            margin-left: 60px
 
-            &:first-child
-              border-top-left-radius: 45px
-              border-bottom-left-radius: 45px
-
-              h3
-                left: 6px
-
-            &:not(:first-child)
-              border-left: 0
-
-            &:not(:last-child)
-              h3
-                font-size: 1em
-                margin-bottom: 0.5em
-                position: relative
-                top: 3px
-
-              // &:after
-              //   content: ''
-              //   height: 46px
-              //   width: 46px
-              //   position: absolute
-              //   border-top: 2px solid #000
-              //   border-right: 2px solid #000
-              //   top: 20px
-              //   right: -23px
-              //   -webkit-transform: rotate(45deg) skew(30deg, 30deg)
-              //   transform: rotate(45deg) skew(20deg, 20deg)
-              //   z-index: 100
-              //   background-color: #eee
-
-            &:last-child
-              border-top-right-radius: 45px
-              border-bottom-right-radius: 45px
+            h2
+              letter-spacing: initial
+              margin: 0.5em 0
+              font-size: 1.4rem
               position: relative
-              left: -2px
+              top: 4px
 
-              h3
-                font-size: 1.2em
-                left: -6px
 
-            p
-              font-size: .8em
-              text-align: center
-              display: none
+            &.active
+              h2
+                &:before
+                  content: ''
+                  display: block
+                  width: 40px
+                  height: 40px
+                  border-radius: 40px
+                  background-color: #3CF3B6
+                  position: absolute
+                  left: -60px
+                  top: -4px
 
-          +below(900px)
-            width: 100%
+                &:after
+                  content: ''
+                  display: block
+                  width: 24px
+                  height: 18px
+                  position: absolute
+                  left: -52px
+                  top: 8px
+                  background-image: url(/img/referral-checkmark.png)
+                  background-size: contain
+                  background-repeat: no-repeat
 
-            li
-              width: 100%
-              column 1 1 0
-              border: 2px solid #000
-              border-right: 2px solid #000 !important
-              border-left: 2px solid #000 !important
-              height: 120px
-
-              &:after
-                display: none
-
-              &:not(:last-child)
-                border-bottom: 0
-
-        .points-tracker-description
-          padding: 10px 10px 10px 20px
-          display: table
-          width: 100%
-
-          li
-            column 1/5 5 10px
-            list-style-type: none
-            position: relative
-
-            p
-              text-align: center
-              font-weight: bold
-              font-size: .8em
+            // p
+            //   font-size: .8em
 
         orders
           order
             display: table
             width: 100%
             padding: 7px 0 20px 0
+
+            h2
+              font-size: 1em
 
             &:not(:last-child)
               border-bottom: 2px solid black
