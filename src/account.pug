@@ -141,7 +141,7 @@ block content
                 .order-shipping-date-container
                   .label.order-date-label Estimated Delivery:
                   .value.order-date(if="{ data.get('metadata.batch') == 'preorder' }" )  #{ shipping.prelaunch2016december.date }
-                  .value.order-date(if="{ data.get('metadata.batch') == '2' }" )  #{ shipping.2.date }
+                  .value.order-date(if="{ data.get('metadata.batch') == '2' }")  #{ shipping['2'].date }
                 .order-status-date-container
                   .label.order-date-label Status:
                   .value.order-date { data.get('status') ? data.get('status') : 'reserved' }
