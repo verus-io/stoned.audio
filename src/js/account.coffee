@@ -62,7 +62,7 @@ if location.pathname.indexOf('account') >= 0
       #   }
       # """
 
-      $('.point-tracker li').each (i)->
+      $('.points-tracker li').each (i)->
         if i * 840 <= points
           $(this).addClass('active')
 
