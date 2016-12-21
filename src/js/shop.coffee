@@ -14,7 +14,7 @@ $(document).ready ->
     # key: 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzYsImp0aSI6IkJCMG56aTk4bVJFIiwic3ViIjoiNE5UeFhsUXJ0YiJ9.Ml2O8gHmL9jZ_LFRC_x-GRHFxd1xTyfRvWAnQgEkHk67RFDaR6v6bFOahmTG9G_nyu8d9_Y2qLqcFjjqm0HMzw'
     # endpoint: 'https://api.staging.crowdstart.com'
     order:
-      metadata: batch: 'preorder'
+      metadata: batch: '2'
       # shippingRate: 500
     terms: true
     referralProgram:
