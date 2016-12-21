@@ -63,8 +63,24 @@ if location.pathname.indexOf('account') >= 0
       # """
 
       $('.points-tracker li').each (i)->
-        if i * 840 <= points
-          $(this).addClass('active')
+        if (i + 1) * 840 <= points
+          $el = $(this)
+          do ($el)->
+            setTimeout ->
+              $el.addClass 'active'
+            , i * 1000
+
+      $('.points-tracker .points-bar-fill').each (i)->
+        $el = $(this)
+        do ($el)->
+          if (i + 2) * 840 <= points
+            setTimeout ->
+              $el.css 'height', '100%'
+            , i * 1000
+          else
+            setTimeout ->
+              $el.css 'height', '' + ((points - 840 * (i+1)) / 840 * 100) + '%'
+            , i * 1000
 
       $('#page-account .points').html Math.ceil points
 

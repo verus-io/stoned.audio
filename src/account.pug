@@ -88,15 +88,23 @@ block content
               li
                 h2 840 Points
                 p Hoodie raffle
+                .points-bar
+                  .points-bar-fill
               li
                 h2 1680 Points
                 p 20% Coupon
+                .points-bar
+                  .points-bar-fill
               li
                 h2 2520 Points
                 p Free 3-month Spotify Premium membership
+                .points-bar
+                  .points-bar-fill
               li
                 h2 3360 Points
                 p Swag bag with special hat and shirt
+                .points-bar
+                  .points-bar-fill
               li
                 h2 4200 Points
                 p Free pair of
@@ -104,22 +112,23 @@ block content
 
           .profile
             div
-              h2 Contact Information
+              h1 Profile
               p Update your email and name.
               user-email(placeholder='Email')
               user-name(placeholder='Name')
               small *We do not share this information with anyone.
+
             div
-              h2 Change Password
+              h1 Change Password
               p Update your password. Minimum 6 characters.
               user-current-password(placeholder='Current Password')
               user-password(placeholder='Password')
               user-password-confirm(placeholder='Confirm Password')
-            div.button-container
-              button(type='submit')
-                span Update
-              .error(if='{ errorMessage }')
-                | { errorMessage }
+              div.button-container
+                button(type='submit')
+                  span Update
+                .error(if='{ errorMessage }')
+                  | { errorMessage }
 
           .orders
             h1 Your Orders
