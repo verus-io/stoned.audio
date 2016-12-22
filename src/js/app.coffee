@@ -23,8 +23,9 @@ require './stonedaudio'
 require './checkout'
 
 # Single/Some Pages
-require './account'
-require './card'
-require './contact'
-require './signup-reset-password'
+require './page-account'
+require './page-card'
+require './page-contact'
+require './page-referral'
+require './page-signup-reset-password'
 
