@@ -26,7 +26,7 @@ module.exports =
 
     shipping:
       prelaunch2016december:
-        date: 'End of December'
+        date: 'January'
       '2':
         date: 'Febuary'
 
