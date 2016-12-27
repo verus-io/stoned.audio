@@ -179,21 +179,16 @@ block content
               .address-information
                 h2.label.address-label Shipping Address:
                 .map(data-address="{ JSON.stringify(data.get('shippingAddress')) }")
-                shippingaddress.ui.form
-                  .field
-                    shippingaddress-line1.ui.input(placeholder='Address')
-                  .field
-                    shippingaddress-line2.ui.input(placeholder='Suite')
-                  .field
-                    shippingaddress-city.ui.input(placeholder='City')
-                  .field
-                    shippingaddress-postalcode.ui.input(placeholder='Postal Code')
-                  .field
-                    shippingaddress-state.ui.input(placeholder='State')
-                  .field
-                    shippingaddress-country.ui.input(placeholder='Country', <='', shippingaddress-country='')
-                  button#shipping-address-update-button.ui.field.fluid.large.submit.button(type='submit') Save Address
-                  .ui.negative.message(if='{ errorMessage }')
+                shippingaddress
+                  shippingaddress-name.input(placeholder='Name')
+                  shippingaddress-line1.input(placeholder='Address')
+                  shippingaddress-line2.input(placeholder='Suite')
+                  shippingaddress-city.input(placeholder='City')
+                  shippingaddress-postalcode.input(placeholder='Postal Code')
+                  shippingaddress-state.input(placeholder='State')
+                  shippingaddress-country.input(placeholder='Country', <='', shippingaddress-country='')
+                  button#shipping-address-update-button.field.fluid.large.submit.button(type='submit') Save Address
+                  .negative.message(if='{ errorMessage }')
                     ul.list
                       li { errorMessage }
 
