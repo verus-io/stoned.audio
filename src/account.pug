@@ -47,7 +47,65 @@ block content
         .page
           // h2 Hello, { data.get('user.firstName') }.
           //
-          .referrals
+          .referrals.ambassador
+            h1 Referrals
+
+            .ambassador-connect
+              p
+                | Share your personal link and get&nbsp;
+                span.emphasis(if="{ data.get('user.affiliate.commission.percent') }")
+                  | { data.get('user.affiliate.commission.percent') * 100}% of a sale&nbsp;
+                span(if="{ data.get('user.affiliate.commission.percent') && data.get('user.affiliate.commission.flat') }")
+                  | and&nbsp;
+                span.emphasis(if="{ data.get('user.affiliate.commission.flat') }")
+                  | { renderCurrency('usd', data.get('user.affiliate.commission.flat')) } USD per sale.
+
+              .share-field
+                span.ref-text.ref-link Loading...
+                span.copied Copied!
+
+              p
+                | Share your link on social media.
+
+              ul.share-links
+                li
+                  a.share-facebook(target='_blank')
+                    i.fa.fa-facebook-square
+                li
+                  a.share-twitter(target='_blank')
+                    i.fa.fa-twitter
+                li
+                  a.share-email
+                    i.fa.fa-envelope
+
+              br
+              h2.next-transfer
+                span
+                  | Next transfer:&nbsp;
+                span.transfer-number
+                  | $0.00 USD
+
+              .connection-status
+                p.connect(if="{ !data.get('user.affiliate.connected') }")
+                  | Connect your
+                  a(href='https://dashboard.stripe.com/register')
+                    | &nbsp;Stripe account&nbsp;
+                  | to receive funds.
+                p.reconnect(if="{ data.get('user.affiliate.connected') }")
+                  | Your Stripe account is:&nbsp;
+                  span.emphasis
+                    | CONNECTED
+                  br
+                  | You should receive your payment by the end of the month.
+                  br
+                  | Reconnect your
+                  a(href='https://dashboard.stripe.com/register')
+                    | &nbsp;Stripe account
+                  | .
+                a.button.submit(href="{ client.client.endpoint +'/affiliate/' + data.get('user.affiliate.id') + '/connect?token=' + client.client.customerToken }")
+                  | Connect
+
+          .referrals.normal
             h1 Referrals
 
             p

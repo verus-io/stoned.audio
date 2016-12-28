@@ -44,7 +44,26 @@ if location.pathname.indexOf('account') >= 0
     # m.on 'profile-load', ->
 
     m.on 'profile-load-success', (data)->
-      setupReferral 'https://stoned.audio/$/' + data.referrers[0].id
+      if data.affiliateId && data.affiliate.enabled
+        $('.referrals.ambassador').addClass('show')
+
+        for referrer in data.referrers
+          if referrer.affiliateId == data.affiliateId
+            setupReferral 'https://stoned.audio/$/' + data.referrers[0].id
+            $('#affiliateReferralLink').val 'https://stoned.audio/$/' + referrer.id
+            break
+
+        if data.pendingFees?
+          nextTransfer = 0
+          for fee in data.pendingFees
+            nextTransfer += fee.amount
+
+          nextTransferStr = window.Shop.CrowdControl.Views.View.prototype.renderCurrency 'usd', nextTransfer
+
+          $('.transfer-number').html nextTransferStr + ' USD'
+      else
+        $('.referrals.normal').addClass('show')
+        setupReferral 'https://stoned.audio/$/' + data.referrers[0].id
 
       store = require 'shop.js/src/utils/store'
       store.set 'register', true
