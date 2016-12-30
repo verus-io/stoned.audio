@@ -65,6 +65,19 @@ block content
                 span.copied Copied!
 
               p
+                | Show people your QR code.
+
+              .qrcode
+                canvas(width='512', height='512')
+                img
+                .options
+                  a.download.button.submit(href='',download='stoned-qrcode.png')
+                    | Save
+
+                  button.print(type='submit',href='#')
+                    | Print
+
+              p
                 | Share your link on social media.
 
               ul.share-links
@@ -116,6 +129,20 @@ block content
             .share-field
               span.ref-text.ref-link Loading...
               span.copied Copied!
+
+            p
+              | Show people your QR code.
+
+            .qrcode
+              canvas(width='512', height='512')
+              img
+
+              .options
+                a.download.button.submit(href='',download='stoned-qrcode.png')
+                  | Download
+
+                button.print(type='submit',href='#')
+                  | Print
 
             p
               | Share your link on social media.

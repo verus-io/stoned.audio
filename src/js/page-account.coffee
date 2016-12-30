@@ -1,6 +1,8 @@
 if location.pathname.indexOf('account') >= 0
   Clipboard = require 'clipboard'
   GMaps = require 'gmaps'
+  QRCode = require 'qrcode'
+  QRCodeDraw = new QRCode.QRCodeDraw()
 
   message = encodeURIComponent 'Get Stoned With Me!'
 
@@ -28,6 +30,35 @@ if location.pathname.indexOf('account') >= 0
     )
 
     setupReferral = (url) ->
+      $canvas = $('.qrcode canvas')
+      canvas = $canvas[0]
+
+      if canvas?
+        ctx = canvas.getContext '2d'
+        ctx.imageSmoothingEnabled = false
+        QRCodeDraw.draw canvas, url, (error, canvas) ->
+          if error
+            console.error error
+
+          dataUrl = canvas.toDataURL 'image/png'
+          $('.qrcode img').attr 'src', dataUrl
+
+          $('.qrcode .options .download').attr 'href', dataUrl.replace('image/png', 'application/octet-stream')
+          $('.qrcode .options .print').on 'click', ->
+            w = window.open '', 'w'
+            w.document.write """
+              <html>
+                <head>
+                <style type="text/css" media="print">
+                  @page { size: landscape; }
+                </style>
+                </head>
+                <body>
+                  <img src="#{dataUrl}">
+                </body>
+              </html>"""
+            w.window.print()
+
       $('.ref-text').html url
       url = encodeURIComponent(url)
       $('.share-facebook').attr 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url
