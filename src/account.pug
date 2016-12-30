@@ -91,6 +91,7 @@ block content
                   a(href='https://dashboard.stripe.com/register')
                     | &nbsp;Stripe account&nbsp;
                   | to receive funds.
+
                 p.reconnect(if="{ data.get('user.affiliate.connected') }")
                   | Your Stripe account is:&nbsp;
                   span.emphasis
@@ -98,7 +99,7 @@ block content
                   br
                   | You should receive your payment by the end of the month.
                   br
-                  | Reconnect your
+                  | Did you want to change your account?  Connect a different
                   a(href='https://dashboard.stripe.com/register')
                     | &nbsp;Stripe account
                   | .
