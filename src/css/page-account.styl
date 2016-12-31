@@ -83,6 +83,27 @@
         padding: 0 0 80px
         margin: 0 auto
 
+        .referrals
+          height: 0px
+          opacity: 0
+          overflow: hidden
+
+          &.show
+            height: inherit
+            opacity: 1
+
+        .ambassador
+          .next-transfer
+            .transfer-number
+              font-weight: bold
+
+          .ambassador-connect
+            .emphasis
+              font-weight: bold
+
+              span
+                font-weight: normal
+
         & > *
           +below(600px)
             padding: 0 20px
@@ -148,6 +169,19 @@
             font-size: 2em
             i
               color: #000
+
+        .qrcode
+          text-align: center
+
+          canvas
+            display: none
+
+          .options
+            max-width: 300px
+            margin: 0 auto
+
+            & > *
+              column 1/2 2 20px
 
         orders
           order
