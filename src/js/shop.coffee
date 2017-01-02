@@ -15,7 +15,7 @@ $(document).ready ->
     # endpoint: 'https://api.staging.crowdstart.com'
     order:
       metadata: batch: '2'
-      # shippingRate: 500
+      shippingRate: 500
     terms: true
     referralProgram:
       id: 'Vm4tdRX5uO'
@@ -44,7 +44,13 @@ $(document).ready ->
       }
     ]
     shippingRates: [
-      { shippingRate: 0 }
+        shippingRate: 500
+        country: 'us'
+      ,
+        shippingRate: 500
+        country: 'ca'
+      ,
+        shippingRate: 1500
     ]
     config: hashReferrer: true
 
