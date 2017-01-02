@@ -4,25 +4,12 @@ block title
   | #{site.title} - Login
 
 block content
-  #page-signup.page
+  #page-login.page
     section.body(data-lazy='img/comfy.jpg')
       .content
         div
-          input(type='radio',name='mode',id='login', checked)
-          input(type='radio',name='mode',id='register')
           h1
-            label(for='login') Login
-            span &nbsp;|&nbsp;
-            label(for='register') Register
-          register(immediate-login='true')
-            user-name(placeholder='Name')
-            user-email(placeholder='Email')
-            user-password(placeholder='Password')
-            .error(if='{ errorMessage }')
-              | { errorMessage }
-
-            button(type='submit')
-              | Register
+            label Login
           login
             user-email(placeholder='Email')
             user-password(placeholder='Password')
@@ -31,6 +18,7 @@ block content
 
             button(type='submit')
               | Login
-          a(href='reset-password') Reset Password?
+          a(href='reset-password') Reset password?
+          a(href='register') Create your account?
 
 block signup

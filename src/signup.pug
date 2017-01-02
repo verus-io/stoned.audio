@@ -8,11 +8,7 @@ block content
     section.body(data-lazy='img/comfy.jpg')
       .content
         div
-          input(type='radio',name='mode',id='login')
-          input(type='radio',name='mode',id='register', checked)
           h1
-            label(for='login') Login
-            span &nbsp;|&nbsp;
             label(for='register') Register
           register(immediate-login='true')
             user-name(placeholder='Name')
@@ -23,14 +19,6 @@ block content
 
             button(type='submit')
               | Register
-          login
-            user-email(placeholder='Email')
-            user-password(placeholder='Password')
-            .error(if='{ errorMessage }')
-              | { errorMessage }
-
-            button(type='submit')
-              | Login
-          a(href='reset-password') Reset Password?
+          a(href='login') Already have an account?
 
 block signup
