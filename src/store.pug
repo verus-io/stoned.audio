@@ -1,0 +1,75 @@
+extends _layout.pug
+
+block title
+  | #{site.title} - Referral Program
+
+block preheader
+  input.tab-radio(type='radio',name='store-tabs',id='store-featured-tab', checked)
+  input.tab-radio(type='radio',name='store-tabs',id='store-products-tab')
+  input.tab-radio(type='radio',name='store-tabs',id='store-apparel-tab')
+  input.tab-radio(type='radio',name='store-tabs',id='store-other-tab')
+
+block header
+  header.store
+    nav
+      a#home(href='/')
+        img.logo(src='/img/logo.png', alt=site.name)
+      label.menu-button(for='open')
+        | &#8801;
+
+      .store-links
+        label.featured.store-link(for='store-featured-tab')
+          h2
+            | FEATURED
+        label.products.store-link(for='store-products-tab')
+          h2
+            | PRODUCTS
+        label.apparel.store-link(for='store-apparel-tab')
+          h2
+            | APPAREL
+        label.other.store-link(for='store-other-tab')
+          h2
+            | OTHER
+
+block content
+  #page-store.page
+    section.body
+      .store-tab.store-featured
+        .store-header.content
+          h1 FEATURED
+          p Checkout our latest and greatest gadgets and apparel.
+        .store-content
+      .store-tab.store-products
+        .store-header.content
+          h1 PRODUCTS
+          p Audiophile quality, high fidelity, bluetooth earbuds.
+        .store-content
+      .store-tab.store-apparel
+        .store-header.content
+          h1 APPAREL
+          p Show everyone how much you love Stoned.
+        .store-menu
+          ul
+            li
+              strong ALL
+            li
+              strong MEN'S
+            li
+              strong WOMEN'S
+        .store-content
+      .store-tab.store-other
+        .store-header.content
+          h1 REPLACEMENT PARTS
+          p
+            | Get back up and running after unfortunate accidents.
+            br
+            | Free overnight shipping is included to get them to you ASAP.
+        .store-menu
+          ul
+            li
+              strong ALL
+            li
+              strong PARTS
+        .store-content
+
+block signup
