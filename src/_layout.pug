@@ -53,25 +53,26 @@ html(lang='en')
   body(style='overflow:hidden')
     // Header
     input#open.menu-open(type='checkbox')
-    header
-      nav
-        // ul
-        //   li
-        //     a(href='#') Product
-        //   li
-        //     a(href='#') Our Story
-        //   li
-        //     a(href='#') User Stories
-        //   li
-        //     a(href='#') Specs
-        // |
-        a#home(href='/')
-          img.logo(src='/img/logo.png', alt=site.name)
-        a#preorder.button.pre-order-button(href='#cta')
-          // span BUY NOW
-          span GET STONED
-        label.menu-button(for='open')
-          | &#8801;
+    block header
+      header
+        nav
+          // ul
+          //   li
+          //     a(href='#') Product
+          //   li
+          //     a(href='#') Our Story
+          //   li
+          //     a(href='#') User Stories
+          //   li
+          //     a(href='#') Specs
+          // |
+          a#home(href='/')
+            img.logo(src='/img/logo.png', alt=site.name)
+          a#preorder.button.pre-order-button(href='#cta')
+            // span BUY NOW
+            span GET STONED
+          label.menu-button(for='open')
+            | &#8801;
 
     menu
       ul
