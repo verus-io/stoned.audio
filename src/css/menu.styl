@@ -3,9 +3,9 @@ body
     width: 300px
     position: fixed
     top: 0
-    right: -300px
+    left: -300px
     z-index: 1000
-    transition: background-color 420ms ease-in-out, right 420ms ease-in-out
+    transition: background-color 420ms ease-in-out, left 420ms ease-in-out
 
     li
     menuitem
@@ -50,14 +50,9 @@ body
 
     &:checked
       & ~ menu
-        right: 0
-      & ~ header
-        width: calc(100vw - 300px)
+        left: 0
 
-        +below(800px)
-          left: -300px
-          width: 100vw
+      & ~ *:not(menu)
+        left: 300px
+        width: 100vw
 
-      & ~ main
-      & ~ footer
-        left: -300px
