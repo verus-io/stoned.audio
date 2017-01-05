@@ -54,10 +54,27 @@ html(lang='en')
     // Header
     block preheader
 
-    input#open.menu-open(type='checkbox')
+    input#menu-open.menu-open(type='checkbox')
     block header
       header
         nav
+          label.menu-button.header-menu-item(for='menu-open')
+            | &#8801;
+          a#home.header-menu-item(href='/')
+            img.logo(src='/img/logo.png', alt=site.name)
+          label.cart-button.header-menu-item(for='cart-open')
+            span
+              i.fa.fa-shopping-cart
+              | &nbsp;&nbsp;CART(0)
+          label.header-menu-item(tabindex='0')
+            span ACCOUNT
+          label.header-menu-item(tabindex='0')
+            span ABOUT US
+          label.header-menu-item(tabindex='0')
+            span SUPPORT
+          label.header-menu-item(tabindex='0')
+            span PRODUCTS
+
           // ul
           //   li
           //     a(href='#') Product
@@ -68,13 +85,9 @@ html(lang='en')
           //   li
           //     a(href='#') Specs
           // |
-          a#home(href='/')
-            img.logo(src='/img/logo.png', alt=site.name)
-          a#preorder.button.pre-order-button(href='#cta')
-            // span BUY NOW
-            span GET STONED
-          label.menu-button(for='open')
-            | &#8801;
+          // a#preorder.button.pre-order-button(href='#cta')
+          //   // span BUY NOW
+          //   span GET STONED
 
     menu
       ul
