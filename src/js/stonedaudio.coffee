@@ -48,4 +48,3 @@ $(document).ready ->
 
   if window.client.client.customerToken
     $('nav [href="/login"], menu [href="/login"]').attr('href', '/account').html 'ACCOUNT'
-

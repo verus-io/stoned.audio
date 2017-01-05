@@ -26,6 +26,7 @@ require './checkout'
 require './page-account'
 require './page-card'
 require './page-contact'
+require './page-index'
 require './page-referral'
 require './page-signup-reset-password'
 
