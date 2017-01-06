@@ -12,8 +12,8 @@ block content
     .watch
       .pre-order-button.button
         h3 BUY NOW
-      .call-to-action.button
-        h3 SAVE $5
+      .share-coupon-button.modal-open.button(data-modal-selector='.share-coupon-modal')
+        h3 SAVE $5 MORE
     // .call-to-action.watch.button
       // a.play(href='#')
       // h3 WATCH&nbsp;VIDEO
@@ -27,6 +27,29 @@ block content
     //   iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen)
     //   .modal-close.modal-close-position
     //     | &#10005;
+
+  .share-coupon-modal.modal.hidden
+    .modal-close
+      h1 &#10005;
+
+    .share-coupon
+      .share-coupon-image(data-lazy='/img/onpage-coupon.jpeg')
+      .share-coupon-text
+        h2 Tell your friends to get Stoned.
+        p
+          | Share why you are getting Stoned today and receive an additional
+          strong &nbsp;$5&nbsp;
+          | off Stoned Earphones.
+        strong Share with your friends:
+        .share-coupon-buttons
+          a(href='')
+            span Share on Facebook
+          a(href='')
+            span Share on Twitter
+          a(href='')
+            span Share on Instagram
+          a(href='')
+            span Share on Pinterest
 
   include _progress.pug
 
