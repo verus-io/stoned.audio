@@ -24,7 +24,7 @@ module.exports =
       url:       url
       copyright: '© Stoned Audio 2016'
 
-    shipDate: '5 weeks'
+    shipDate: 'February'
     shipping:
       prelaunch2016december:
         date: 'January'
