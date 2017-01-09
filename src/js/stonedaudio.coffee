@@ -50,8 +50,8 @@ $document.ready ->
   if window.client.client.customerToken
     $('nav [href="/login"], menu [href="/login"]').attr('href', '/account').html 'ACCOUNT'
 
-  $document.on 'click', '.share-coupon-button', (e) ->
+  $document.on 'click', '.share-coupon-button-for', (e) ->
     setTimeout ->
       $('.share-coupon-text').hide()
-      $('.share-coupon-finished-text').show()
-    , 2000
+      $('.share-coupon-text.finished').show()
+    , 1000

@@ -28,39 +28,41 @@ block content
     //   .modal-close.modal-close-position
     //     | &#10005;
 
-  .share-coupon-modal.modal.hidden
-    .modal-close
-      h1 &#10005;
+    .share-coupon-modal.modal.hidden
+      .modal-close
+        h1 &#10005;
 
-    .share-coupon
-      .share-coupon-image(data-lazy='/img/onpage-coupon.jpeg')
-      .share-coupon-text
-        h2 Tell your friends to get Stoned.
-        p
-          | Share why you are getting Stoned today and receive a
-          strong &nbsp;$5 coupon&nbsp;
-          | for next pair of Stoned Earphones.
-        .share-coupon-buttons
-          a.share-coupon-button.facebook(href=social.facebook.shareLink, target='_blank')
-            i.fa.fa-facebook
-            span Share on Facebook
-          a.share-coupon-button.twitter(href=social.twitter.shareLink, target='_blank')
-            i.fa.fa-twitter
-            span Share on Twitter
-          a.share-coupon-button.googleplus(href=social.googlePlus.shareLink, target='_blank')
-            i.fa.fa-google-plus
-            span Share on Google+
-          a.share-coupon-button.pinterest(href=social.pinterest.shareLink, target='_blank')
-            i.fa.fa-pinterest-p
-            span Share on Pinterest
-      .share-coupon-finished-text
-        h2 Thanks for doing that!
-        p
-          | Use the coupon
-          strong &nbsp;SHAREWITHFRIENDS&nbsp;
-          | to save
-          strong &nbsp;$5&nbsp;
-          | on your next pair of Stoned Earphones.
+      .share-coupon
+        .share-coupon-image(data-lazy='/img/onpage-coupon.jpeg')
+        .share-coupon-text
+          h2 Tell your friends to get Stoned.
+          p
+            | Share why you are getting Stoned today and receive a
+            strong &nbsp;$5 coupon&nbsp;
+            | for next pair of Stoned Earphones.
+          .share-coupon-buttons
+            a.share-coupon-button-for.facebook(href=social.facebook.shareLink, target='_blank')
+              i.fa.fa-facebook
+              span Share on Facebook
+            a.share-coupon-button-for.twitter(href=social.twitter.shareLink, target='_blank')
+              i.fa.fa-twitter
+              span Share on Twitter
+            a.share-coupon-button-for.googleplus(href=social.googlePlus.shareLink, target='_blank')
+              i.fa.fa-google-plus
+              span Share on Google+
+            a.share-coupon-button-for.pinterest(href=social.pinterest.shareLink, target='_blank')
+              i.fa.fa-pinterest-p
+              span Share on Pinterest
+        .share-coupon-text.finished
+          h2 Thanks for doing that!
+          p
+            | Use the coupon
+            strong &nbsp;SHAREWITHFRIENDS&nbsp;
+            | to save
+            strong &nbsp;$5&nbsp;
+            | on your next pair of Stoned Earphones.
+          .pre-order-button.button
+            h3 GET STONED
 
   include _progress.pug
 
