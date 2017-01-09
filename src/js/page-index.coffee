@@ -31,27 +31,37 @@ if location.pathname == '/'
 
   Instafeed = require 'instafeed.js'
 
-  feed = new Instafeed
-    get:            'user'
-    userId:         '4001555412'
-    accessToken:    '4001555412.5b2157e.acc6aa26ad4c4eecb3ed4ce7b6e7d6d8'
-    resolution:     'standard_resolution'
-    limit:          12
-    after:          ->
-      imgs = $('#instafeed img')
-      i = 0
-      if imgs[i]
-        cb = (graySrc)->
-          grayImg = new Image()
-          grayImg.src = graySrc
+  $document = $(document)
+  threshold = $document.height() / 2
+  $document.ready ->
+    $window = $(window)
+    fn = ->
+      if $window.scrollTop() >  threshold
+        $window.off 'scroll touchmove mousewheel', fn
 
-          $(imgs[i]).parent().append grayImg
+        feed = new Instafeed
+          get:            'user'
+          userId:         '4001555412'
+          accessToken:    '4001555412.5b2157e.acc6aa26ad4c4eecb3ed4ce7b6e7d6d8'
+          resolution:     'standard_resolution'
+          limit:          12
+          after:          ->
+            imgs = $('#instafeed img')
+            i = 0
+            if imgs[i]
+              cb = (graySrc)->
+                grayImg = new Image()
+                grayImg.src = graySrc
 
-          i++
+                $(imgs[i]).parent().append grayImg
 
-          if imgs[i]
-            grayScale imgs[i].src, cb
+                i++
 
-        grayScale imgs[i].src, cb
+                if imgs[i]
+                  grayScale imgs[i].src, cb
 
-  feed.run()
+              grayScale imgs[i].src, cb
+
+        feed.run()
+    $window.on 'scroll touchmove mousewheel', fn
+    fn()

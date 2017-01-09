@@ -53,5 +53,5 @@ $document.ready ->
   $document.on 'click', '.share-coupon-button-for', (e) ->
     setTimeout ->
       $('.share-coupon-text').hide()
-      $('.share-coupon-text.finished').show()
+      $('.share-coupon-text.finished').show().css 'display', 'table'
     , 1000

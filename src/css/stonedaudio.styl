@@ -34,7 +34,6 @@ a, a:visited
     &:hover
       animation: none !important
 
-
 +below(500px)
   .logo
     height: 18px
@@ -204,7 +203,7 @@ section
       letter-spacing: .1em
       color: #FFF
 
-      +below(400px)
+      +below(500px)
         line-height: 1em
 
     &:hover
@@ -248,10 +247,15 @@ section
     border: 4px solid #FFF
     margin-top: 0
     position: relative
-    top: 2px
 
     h3
       line-height: 2em
+
+    +below(500px)
+      top: 2px
+
+      h3
+        line-height: .5em
 
     &:hover
       animation: ripple-white 1.5s infinite
@@ -271,9 +275,10 @@ section
 
   .watch
     position: absolute
-    top: 75vh
-    left: 50vw
-    transform: translate(-50%,-50%)
+    top: 72.5vh
+    left: 0
+    right: 0
+    margin: 0 auto
     padding-right: 40px
     // padding-left: 80px
     padding-left: 40px
@@ -320,6 +325,7 @@ section
     margin-top: 55vh
     transform: translateY(-50%)
 
+
   +below(400px)
     height: 110vh
 
@@ -327,16 +333,19 @@ section
       margin-top: 45vh
 
     .summary-down.summary-down
-      top: 70vh
+      top: 80vh
 
     .call-to-action
     .pre-order-button
       top: 62.5vh
+      margin-right: 0
+      margin-bottom: 10px
 
     .watch
       // padding-left: 60px
       padding-left: 20px
       padding-right: 20px
+      top: 62.5vh
 
       .play
         width: 32px
@@ -371,10 +380,17 @@ section
     background-size: cover
     background-position: center
 
+    +below(500px)
+      height: 200px
+
   .share-coupon-text
     color: #000
     padding: 20px
     background-color: #EEE
+    display: table
+
+    +below(600px)
+      height: 200px
 
     p
       padding-bottom: 1em
@@ -390,6 +406,10 @@ section
       height: 32px
       line-height: 2em
       margin-bottom: 1em
+
+      +below(500px)
+        column 1 1 0
+        line-height: 2.5em
 
       i
         margin: 0 10px

@@ -13,7 +13,7 @@ block content
       .pre-order-button.button
         h3 BUY NOW
       .share-coupon-button.modal-open.button(data-modal-selector='.share-coupon-modal')
-        h3 SAVE $5 MORE
+        h3 SAVE $5
     // .call-to-action.watch.button
       // a.play(href='#')
       // h3 WATCH&nbsp;VIDEO
@@ -28,18 +28,18 @@ block content
     //   .modal-close.modal-close-position
     //     | &#10005;
 
-    .share-coupon-modal.modal.hidden
+    .share-coupon-modal.modal.hidden.scrolling-modal
       .modal-close
         h1 &#10005;
 
       .share-coupon
         .share-coupon-image(data-lazy='/img/onpage-coupon.jpeg')
         .share-coupon-text
-          h2 Tell your friends to get Stoned.
-          p
-            | Share why you are getting Stoned today and receive a
-            strong &nbsp;$5 coupon&nbsp;
-            | for next pair of Stoned Earphones.
+          h2 Tell your friends to get Stoned
+          p.
+            Share why you are getting Stoned today and receive a
+            <strong> $5 coupon </strong>
+            for next pair of Stoned Earphones.
           .share-coupon-buttons
             a.share-coupon-button-for.facebook(href=social.facebook.shareLink, target='_blank')
               i.fa.fa-facebook
@@ -55,12 +55,12 @@ block content
               span Share on Pinterest
         .share-coupon-text.finished
           h2 Thanks for doing that!
-          p
-            | Use the coupon
-            strong &nbsp;SHAREWITHFRIENDS&nbsp;
-            | to save
-            strong &nbsp;$5&nbsp;
-            | on your next pair of Stoned Earphones.
+          p.
+            Use the coupon
+            <strong> SHAREWITHFRIENDS </strong>
+            to save
+            <strong> $5 </strong>
+            on your next pair of Stoned Earphones.
           .pre-order-button.button
             h3 GET STONED
 
