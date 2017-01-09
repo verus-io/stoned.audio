@@ -17,6 +17,9 @@ twitter =
   hashtags: 'stoned,getstoned,stonedlife'
   text:     "I'm getting Stoned. Are you?"
 
+pinterest =
+  text: 'Stoned Earphones – Huge sound, noise isolation, in-ear mic, on the go charging, single button control and secure, customizable fit. Zero wires.'
+
 module.exports =
     site:
       title:     'Stoned Audio'
@@ -54,6 +57,10 @@ module.exports =
       facebook:
         username:  'StonedHQ'
         shareLink: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent url
+      googlePlus:
+        shareLink: 'https://plus.google.com/share?url=' + encodeURIComponent url
+      pinterest:
+        shareLink: 'http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) + '&media=' + encodeURIComponent(url + '/img/fbshare.jpg') + '&description=' + encodeURIComponent pinterest.text
 
     legal:
       email:   'legal@stoned.audio'

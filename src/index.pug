@@ -8,7 +8,7 @@ block content
     // (data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
     .foreground.product(data-ratio='-60')
       div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
-        .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
+    .foreground(style='background-image: url(img/hero-overlay.png)' data-ratio='-60')
     .watch
       .pre-order-button.button
         h3 BUY NOW
@@ -37,19 +37,30 @@ block content
       .share-coupon-text
         h2 Tell your friends to get Stoned.
         p
-          | Share why you are getting Stoned today and receive an additional
-          strong &nbsp;$5&nbsp;
-          | off Stoned Earphones.
-        strong Share with your friends:
+          | Share why you are getting Stoned today and receive a
+          strong &nbsp;$5 coupon&nbsp;
+          | for next pair of Stoned Earphones.
         .share-coupon-buttons
-          a(href='')
+          a.share-coupon-button.facebook(href=social.facebook.shareLink, target='_blank')
+            i.fa.fa-facebook
             span Share on Facebook
-          a(href='')
+          a.share-coupon-button.twitter(href=social.twitter.shareLink, target='_blank')
+            i.fa.fa-twitter
             span Share on Twitter
-          a(href='')
-            span Share on Instagram
-          a(href='')
+          a.share-coupon-button.googleplus(href=social.googlePlus.shareLink, target='_blank')
+            i.fa.fa-google-plus
+            span Share on Google+
+          a.share-coupon-button.pinterest(href=social.pinterest.shareLink, target='_blank')
+            i.fa.fa-pinterest-p
             span Share on Pinterest
+      .share-coupon-finished-text
+        h2 Thanks for doing that!
+        p
+          | Use the coupon
+          strong &nbsp;SHAREWITHFRIENDS&nbsp;
+          | to save
+          strong &nbsp;$5&nbsp;
+          | on your next pair of Stoned Earphones.
 
   include _progress.pug
 

@@ -1,6 +1,7 @@
 {requestTick} = require './utils'
 
-$(document).ready ->
+$document = $(document)
+$document.ready ->
   emailRe = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
 
   setTimeout ->
@@ -48,3 +49,9 @@ $(document).ready ->
 
   if window.client.client.customerToken
     $('nav [href="/login"], menu [href="/login"]').attr('href', '/account').html 'ACCOUNT'
+
+  $document.on 'click', '.share-coupon-button', (e) ->
+    setTimeout ->
+      $('.share-coupon-text').hide()
+      $('.share-coupon-finished-text').show()
+    , 2000

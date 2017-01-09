@@ -361,19 +361,53 @@ section
 
 .share-coupon
   width: 500px
+  max-width: 100%
   margin: 0 auto
 
   .share-coupon-image
     width: 500px
     height: 400px
+    max-width: 100%
     background-size: cover
     background-position: center
 
   .share-coupon-text
     color: #000
     padding: 20px
-    background-color: #FFF
+    background-color: #EEE
 
+    p
+      padding-bottom: 1em
+
+  .share-coupon-buttons
+    display: table
+    width: 100%
+
+    & > *
+      column 1/2 2 20px
+      display: block
+      height: 32px
+      line-height: 2em
+      margin-bottom: 1em
+
+      i
+        margin: 0 10px
+
+    .share-coupon-button
+      &.facebook
+        background-color: #3b5998
+      &.twitter
+        background-color: #00aced
+      &.googleplus
+        background-color: #d34836
+      &.pinterest
+        background-color: #C92228
+
+  .share-coupon-finished-text
+    color: #000
+    padding: 20px
+    background-color: #EEE
+    display: none
 
 .progress
   // margin-top: calc(-20vh - 40px)
