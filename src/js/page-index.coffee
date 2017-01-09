@@ -38,11 +38,20 @@ if location.pathname == '/'
     resolution:     'standard_resolution'
     limit:          12
     after:          ->
-      $('#instafeed img').each (i, img)->
-        grayScale img.src, (graySrc)->
+      imgs = $('#instafeed img')
+      i = 0
+      if imgs[i]
+        cb = (graySrc)->
           grayImg = new Image()
           grayImg.src = graySrc
 
-          $(img).parent().append grayImg
+          $(imgs[i]).parent().append grayImg
+
+          i++
+
+          if imgs[i]
+            grayScale imgs[i].src, cb
+
+        grayScale imgs[i].src, cb
 
   feed.run()
