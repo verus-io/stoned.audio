@@ -54,7 +54,8 @@ html(lang='en')
     // Header
     block preheader
 
-    input#open.menu-open(type='checkbox')
+    input#open-menu.menu-state(type='checkbox')
+    input#open-cart.menu-state(type='checkbox')
     block header
       header
         nav
@@ -70,16 +71,20 @@ html(lang='en')
           // |
           a#home(href='/')
             img.logo(src='/img/logo.png', alt=site.name)
-          a#preorder.button.pre-order-button(href='#cta')
+          a#preorder.button.pre-order-button(href='/store')
             // span BUY NOW
-            span GET STONED
-          label.menu-button(for='open')
+            span SHOP
+          label.menu-button(for='open-menu')
             | &#8801;
+          label.cart-button(for='open-cart')
+            img(src='/img/cart-icon.svg')
 
     menu
       ul
         li
           a(href='/') HOME
+        li
+          a(href='/store') STORE
         li
           a(href='/faq') FAQ
         li
@@ -105,7 +110,7 @@ html(lang='en')
           a(href='/')
             img(src='/img/diamond-logo.svg')
         li
-          label.menu-close(for='open')
+          label.menu-close(for='open-menu')
             | &#10005;
 
     main

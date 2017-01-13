@@ -60,7 +60,7 @@ $document.ready ->
       $checkoutContainer.css 'top', ''
       false
 
-    .on 'click', '.pre-order-button', window.openCheckout
+    # .on 'click', '.pre-order-button', window.openCheckout
 
     .on 'click', '.checkout button[type=submit]', ->
       if step == 2

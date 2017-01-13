@@ -49,3 +49,11 @@ $(document).ready ->
   if window.client.client.customerToken
     $('nav [href="/login"], menu [href="/login"]').attr('href', '/account').html 'ACCOUNT'
 
+  # figure out the page state/menu state
+  $menuState = $('.menu-state')
+  $menuState.on 'change', ->
+    $el = $(this)
+    val = $el.prop 'checked'
+    $menuState.prop 'checked', false
+    $el.prop 'checked', val
+

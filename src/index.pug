@@ -9,7 +9,7 @@ block content
     .foreground.product(data-ratio='-60')
       div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
     .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
-    .pre-order-button.watch.button
+    a.pre-order-button.watch.button(href='/store')
       h3 GET STONED
     // .call-to-action.watch.button
       // a.play(href='#')
@@ -195,7 +195,7 @@ block content
     .content
       h2 The era of wires is over
       h1 Get Stoned
-      #call-to-action.pre-order-button.button
+      a#call-to-action.pre-order-button.button(href='/store')
         h3 BUY NOW FOR $99
 
   section#refer
