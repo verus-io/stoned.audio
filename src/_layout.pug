@@ -76,9 +76,7 @@ html(lang='en')
             span SHOP
           label.menu-button(for='open-menu')
             | &#8801;
-          label.cart-button(for='open-cart')
-            img(src='/img/cart-icon.svg')
-
+          label.cart-button(for='open-cart', style='background-image: url(/img/cart-icon.svg)')
     menu
       ul
         li
@@ -109,9 +107,78 @@ html(lang='en')
         li.logo
           a(href='/')
             img(src='/img/diamond-logo.svg')
-        li
-          label.menu-close(for='open-menu')
-            | &#10005;
+      label.close-menu(for='open-menu')
+        | &#10005;
+
+    cart
+      h1(if='{ !isEmpty() }')
+        | Your Cart
+      h1(if='{ isEmpty() }')
+        | Your Cart Is Empty
+      label.close-cart(for='open-cart')
+        | &#10005;
+      lineitems(if='{ !isEmpty() }')
+        .animated.slideInRight
+          .product-image-container
+            img(src="img/products/earphone.jpg", alt="{ data.get('productName') }")
+          // .product-image-container(if="{ data.get('productSlug').indexOf('SC') != 0 }")
+          //   img(src="/images/products/kits/{data.get('productSlug')}.png", alt="{ data.get('productName') }")
+          // .product-image-container(if="{ data.get('productSlug').indexOf('SC') == 0 }")
+          //   img(src="/images/products/scent-backgrounds/{data.get('productSlug').replace('-S','')}-bg.png", alt="{ data.get('productName') }")
+          //   img(src="/images/products/scent-candles/{data.get('productSlug').replace('-S','')}.png", alt="{ data.get('productName') }")
+          .product-text-container
+            span.product-description
+              span.product-name { data.get('productName') }
+              p { data.get('description') }
+          span.product-quantity-container.locked(if="{ data.get('locked') }")
+            | { data.get('quantity') }
+          span.product-quantity-container(if="{ !data.get('locked') }")
+            quantity-select-control
+          .product-price-container.invoice-amount
+            .product-price
+              | { renderCurrency(parentData.get('currency'), data.get().price * data.get().quantity) } { parentData.get('currency').toUpperCase() }
+            .product-list-price.invoice-amount(if='{ data.get().listPrice > data.get().price }')
+              | { renderCurrency(parentData.get('currency'), data.get().listPrice * data.get().quantity) } { parentData.get('currency').toUpperCase() }
+      .promo
+        .promo-label
+          | Coupon
+        .promo-row(class='{ green: promoMessage.indexOf("Applied") >= 0, red: promoMessage && promoMessage.indexOf("Applied") < 0 }')
+          promocode.input(placeholder='Coupon')
+          button(class='{ loading: applying, notify: !applying && data.get("order.promoCode") && !promoMessage }', onclick='{ applyPromoCode }')
+            span &#10003;
+            span &#10005;
+      // .promo-message(if="{ data.get('order.promoCode') && !promoMessage && !applying }")
+      //   | Don't forget to apply your code!
+      // .promo-message(if='{ promoMessage }', class='{ green: promoMessage.indexOf("Applied") >= 0 }')
+      //   | { promoMessage }
+      .invoice-discount.invoice-line.animated.fadeInUp(if="{ data.get('order.discount') > 0 }")
+        .invoice-label
+          | Discount
+        .invoice-amount
+          | { renderCurrency(data.get('order.currency'), data.get('order.discount'))} { data.get('order.currency').toUpperCase() }
+      .invoice-line
+        .invoice-label
+          | Subtotal
+        .invoice-amount
+          | { renderCurrency(data.get('order.currency'), data.get('order.subtotal'))} { data.get('order.currency').toUpperCase() }
+      .invoice-line
+        .invoice-label
+          | Shipping
+        .invoice-amount.not-bold
+          | { data.get('order.shipping') == 0 ? 'FREE' : renderCurrency(data.get('order.currency'), data.get('order.shipping'))}&nbsp;{ data.get('order.shipping') == 0 ? '' : data.get('order.currency').toUpperCase() }
+      .invoice-line
+        .invoice-label
+          | Tax ({ data.get('order.taxRate') * 100 }%)
+        .invoice-amount
+          | { renderCurrency(data.get('order.currency'), data.get('order.tax'))} { data.get('order.currency').toUpperCase() }
+      .invoice-line.invoice-total
+        .invoice-label
+          | Total
+        .invoice-amount
+          | { renderCurrency(data.get('order.currency'), data.get('order.total'))} { data.get('order.currency').toUpperCase() }
+
+      a.button.submit(onclick='{ openCheckout }')
+        | Checkout
 
     main
       block content

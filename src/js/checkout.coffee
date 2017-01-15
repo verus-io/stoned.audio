@@ -48,6 +48,7 @@ $document.ready ->
     Shop.analytics.track 'Viewed Checkout Step', step: 2
     $('#general cart').removeClass 'show'
     $('#general cart').addClass 'hide'
+    $('#open-cart').prop 'checked', false
     false
 
   $document

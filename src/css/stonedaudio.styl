@@ -4,6 +4,16 @@ footer
   color: #FFF
   background-color: #000
 
+body
+  & >
+    & header
+      width: 100vw
+      transition: all 420ms ease-in-out
+    & main
+    & footer
+      position: relative
+      transition: all 420ms ease-in-out
+
 section.full
   height: 110vh
 
@@ -58,7 +68,7 @@ header
   .call-to-action
   .pre-order-button
     position: absolute
-    right: 24px
+    right: 88px
     top: 32px
     border: 4px solid #FFF
     border-radius: 28px
@@ -82,6 +92,20 @@ header
     &:hover
       color: #3df2b6
 
+  .cart-button
+    position: absolute
+    right: 24px
+    top: 40px
+    color: #fff
+    cursor: pointer
+    height: 40px
+    width:  40px
+    background-size: contain
+    background-repeat: no-repeat
+
+    &:hover
+      background-image: url(/img/cart-icon-selected.svg) !important
+
   +below(600px)
     .logo
       left: 62px
@@ -104,7 +128,7 @@ header
       font-size: 1.2em
       line-height: 9px
       top: 14px
-      right: 12px
+      right: 52px
       height: 40px
 
     .menu-button
@@ -113,6 +137,12 @@ header
       position: absolute
       font-size: 2em
       cursor: pointer
+
+    .cart-button
+      top: 18px
+      right: 12px
+      img
+        height: 32px
 
   // .pre-order-button
   //   span
@@ -144,7 +174,7 @@ menu
     ul
       padding: 26px 50px 150px
 
-    .menu-close
+    .close-menu
       position: absolute
       top: 24px
       right: 30px
@@ -177,11 +207,75 @@ menu
     display: table
     width: 100%
 
-  .menu-close
+  .close-menu
     position: absolute
     top: 46px
     right: 30px
     cursor: pointer
+
+// Cart stuff
+body
+  & > cart
+    color: #000
+    padding: 48px 20px
+    overflow: auto
+    height: 100vh
+
+    &:after
+      content: none
+
+    h1
+      font-size: 2em
+      text-align: center
+
+    .close-cart
+      position: absolute
+      top: 46px
+      cursor: pointer
+
+    .promo.promo
+      & > div
+        &:first-child
+          width: 45%
+        &:last-child
+          width: 55%
+
+      .promo-row
+        promocode
+          padding-bottom: 0
+
+      & > div
+        &:first-child
+          width:40%
+
+      &:last-child
+        width: 60%
+
+    +below(500px)
+      .promo.promo
+        .promo-row
+          button
+            top: 0
+
+        & > div
+          &:first-child
+            width:25%
+
+        &:last-child
+          width: 75%
+
+    .product-text-container.product-text-container
+      width: 65%
+
+    .product-price-container.product-price-container
+      display:table
+      margin-right: 0
+
+    +below(500px)
+      padding-top: 26px
+
+      .close-cart
+        top: 24px
 
 input#open-menu
   &:checked
@@ -192,6 +286,12 @@ input#open-menu
     & ~ menu
       // background-color: #88f6d2
       background-color: #11F1B6
+
+input#open-cart
+  &:checked
+    & ~ header
+      .cart-button
+        background-image: url(/img/cart-icon-selected.svg) !important
 
 footer
   .logo

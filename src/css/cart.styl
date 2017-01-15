@@ -1,4 +1,21 @@
 body
+  & > cart
+    width: 300px
+    position: fixed
+    top: 0
+    left: initial !important
+    right: -300px !important
+    z-index: 1000
+    transition: background-color 420ms ease-in-out, right 420ms ease-in-out
+
   input#open-cart
     display: none
+
+    &:checked
+      & ~ cart
+        right: 0 !important
+
+      & ~ *:not(cart)
+        left: -300px
+
 

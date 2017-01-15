@@ -3,7 +3,7 @@ body
     width: 300px
     position: fixed
     top: 0
-    left: -300px
+    left: -300px !important
     z-index: 1000
     transition: background-color 420ms ease-in-out, left 420ms ease-in-out
 
@@ -36,23 +36,17 @@ body
           // color: #3df2b6
 
   & >
-    & header
-      width: 100vw
-      transition: all 420ms ease-in-out
     & main
     & footer
-      position: relative
       left: 0
-      transition: all 420ms ease-in-out
 
   input#open-menu
     display: none
 
     &:checked
       & ~ menu
-        left: 0
+        left: 0 !important
 
       & ~ *:not(menu)
         left: 300px
-        width: 100vw
 
