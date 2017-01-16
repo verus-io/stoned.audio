@@ -42,7 +42,7 @@ if location.pathname == '/'
         feed = new Instafeed
           get:            'user'
           userId:         '4001555412'
-          accessToken:    '4001555412.5b2157e.acc6aa26ad4c4eecb3ed4ce7b6e7d6d8'
+          accessToken:    '4001555412.5b2157e.d7052eaa602049648f5f3bf96c8d67bd'
           resolution:     'standard_resolution'
           limit:          12
           after:          ->
