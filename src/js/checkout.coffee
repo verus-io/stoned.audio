@@ -9,7 +9,7 @@ $document.ready ->
   message = encodeURIComponent 'Get Stoned With Me!'
   isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
-  Shop.setItem('earphone', 1)
+  # Shop.setItem('earphone', 1)
 
   $modal = $('.checkout-modal.modal')
   $checkoutContainer = $('.checkout-container')
