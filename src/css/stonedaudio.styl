@@ -232,36 +232,11 @@ body
       top: 46px
       cursor: pointer
 
-    .promo.promo
-      & > div
-        &:first-child
-          width: 45%
-        &:last-child
-          width: 55%
+    .product-description.product-description
+      font-size: 1em !important
 
-      .promo-row
-        promocode
-          padding-bottom: 0
-
-      & > div
-        &:first-child
-          width:40%
-
-      &:last-child
-        width: 60%
-
-    +below(500px)
-      .promo.promo
-        .promo-row
-          button
-            top: 0
-
-        & > div
-          &:first-child
-            width:25%
-
-        &:last-child
-          width: 75%
+      &> *:last-child
+        font-size: 0.9em !important
 
     .product-text-container.product-text-container
       width: 65%

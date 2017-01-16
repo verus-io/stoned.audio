@@ -28,5 +28,6 @@ require './page-account'
 require './page-card'
 require './page-contact'
 require './page-referral'
+require './page-store'
 require './page-signup-reset-password'
 
