@@ -14,6 +14,7 @@ require './contentfill'
 
 # Vendorish
 # require './clock'
+require './mobile-gestures'
 
 # Project
 require './shop'
