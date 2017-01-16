@@ -8,15 +8,18 @@ block content
     // (data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
     .foreground.product(data-ratio='-60')
       div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
-    .foreground(style='background-image: url(img/hero-overlay.png)', data-ratio='-60')
-    a.pre-order-button.watch.button(href='/store')
-      h3 GET STONED
+    .foreground(style='background-image: url(img/hero-overlay.png)' data-ratio='-60')
+    .watch
+      a.pre-order-button.watch.button(href='/store')
+        h3 BUY NOW
+      .share-coupon-button.modal-open.button(data-modal-selector='.share-coupon-modal')
+        h3 SAVE $5
     // .call-to-action.watch.button
       // a.play(href='#')
       // h3 WATCH&nbsp;VIDEO
     .content
       h1 Gems for your ears
-      p Wireless Hi-Fi Earphones. Only $99 for a limited time!
+      p #[strong 33%] off with #[strong FREE] shipping worldwide for a limited time
 
     a#scroll-down.button.summary-down.next-section(href='#')
       img(src='img/down-icon.svg')
@@ -24,6 +27,42 @@ block content
     //   iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen)
     //   .modal-close.modal-close-position
     //     | &#10005;
+
+    .share-coupon-modal.modal.hidden.scrolling-modal
+      .modal-close
+        h1 &#10005;
+
+      .share-coupon
+        .share-coupon-image(data-lazy='/img/onpage-coupon.jpeg')
+        .share-coupon-text
+          h2 Tell your friends to get Stoned
+          p.
+            Share why you are getting Stoned today and receive a
+            <strong> $5 coupon </strong>
+            for next pair of Stoned Earphones.
+          .share-coupon-buttons
+            a.share-coupon-button-for.facebook(href=social.facebook.shareLink, target='_blank')
+              i.fa.fa-facebook
+              span Share on Facebook
+            a.share-coupon-button-for.twitter(href=social.twitter.shareLink, target='_blank')
+              i.fa.fa-twitter
+              span Share on Twitter
+            a.share-coupon-button-for.googleplus(href=social.googlePlus.shareLink, target='_blank')
+              i.fa.fa-google-plus
+              span Share on Google+
+            a.share-coupon-button-for.pinterest(href=social.pinterest.shareLink, target='_blank')
+              i.fa.fa-pinterest-p
+              span Share on Pinterest
+        .share-coupon-text.finished
+          h2 Thanks for doing that!
+          p.
+            Use the coupon
+            <strong> SHAREWITHFRIENDS </strong>
+            to save
+            <strong> $5 </strong>
+            on your next pair of Stoned Earphones.
+          .pre-order-button.button
+            h3 GET STONED
 
   include _progress.pug
 
@@ -196,7 +235,7 @@ block content
       h2 The era of wires is over
       h1 Get Stoned
       a#call-to-action.pre-order-button.button(href='/store')
-        h3 BUY NOW FOR $99
+        h3 BUY NOW
 
   section#refer
     .content
@@ -212,6 +251,10 @@ block content
 
       a(href='signup').button.claim-link-button
         | CLAIM YOUR LINK
+
+  section#stoned-instagram
+    h1 See how others rock.
+    #instafeed
 
   section#share
     .content

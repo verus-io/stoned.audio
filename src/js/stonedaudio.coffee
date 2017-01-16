@@ -1,6 +1,7 @@
 {requestTick} = require './utils'
 
-$(document).ready ->
+$document = $(document)
+$document.ready ->
   emailRe = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
 
   setTimeout ->
@@ -49,6 +50,12 @@ $(document).ready ->
   if window.client.client.customerToken
     $('nav [href="/login"], menu [href="/login"]').attr('href', '/account').html 'ACCOUNT'
 
+  $document.on 'click', '.share-coupon-button-for', (e) ->
+    setTimeout ->
+      $('.share-coupon-text').hide()
+      $('.share-coupon-text.finished').show().css 'display', 'table'
+    , 1000
+
   # figure out the page state/menu state
   $menuState = $('.menu-state')
   $menuState.on 'change', ->
@@ -56,4 +63,3 @@ $(document).ready ->
     val = $el.prop 'checked'
     $menuState.prop 'checked', false
     $el.prop 'checked', val
-

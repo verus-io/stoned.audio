@@ -4,7 +4,7 @@ $document = $(document)
 $document.ready ->
   # Modals
 
-  $('.modal:not(.checkout-modal)').on 'scroll touchmove mousewheel', (e) ->
+  $('.modal:not(.scrolling-modal)').on 'scroll touchmove mousewheel', (e) ->
     e.preventDefault()
     e.stopPropagation()
     false
@@ -17,6 +17,7 @@ $document.ready ->
     .on 'click', '.modal-open', (e) ->
       $modalOpen = $(this)
       modalSelector = $modalOpen.attr('data-modal-selector')
+      modalLock = $modalOpen.attr('data-modal-lock')
       $modal = $(modalSelector).first()
       $('body').addClass 'modal-lock'
       $modal.removeClass 'hidden'
