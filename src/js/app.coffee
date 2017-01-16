@@ -22,6 +22,7 @@ require './shop'
 # Every Page
 require './stonedaudio'
 require './checkout'
+require './store'
 
 # Single/Some Pages
 require './page-account'
@@ -29,6 +30,5 @@ require './page-card'
 require './page-contact'
 require './page-index'
 require './page-referral'
-require './page-store'
 require './page-signup-reset-password'
 

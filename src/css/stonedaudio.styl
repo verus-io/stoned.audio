@@ -93,17 +93,40 @@ header
 
   .cart-button
     position: absolute
-    right: 24px
-    top: 40px
+    right: 28px
+    top: 44px
     color: #fff
     cursor: pointer
-    height: 40px
-    width:  40px
+    height: 32px
+    width:  32px
     background-size: contain
     background-repeat: no-repeat
 
     &:hover
       background-image: url(/img/cart-icon-selected.svg) !important
+
+    cart
+      height: 0
+      width: 0
+      background-color: transparent
+
+      &:after
+        content: none
+
+      .cart-button-counter
+        position: absolute
+        right: -5px
+        top: 0
+        width: 20px
+        height: 20px
+        background-color: #f22469
+        line-height: 1.3em
+        border-radius: 10px
+        transform: scale(0, 0)
+        transition: transform 210ms linear
+
+        &.nonzero
+          transform: scale(1, 1)
 
   +below(600px)
     .logo
@@ -138,9 +161,15 @@ header
       cursor: pointer
 
     .cart-button
-      top: 18px
+      top: 22px
       right: 6px
-      height: 32px
+      height: 24px
+
+      cart
+        .cart-button-counter
+          width: 16px
+          height: 16px
+          right: 0
 
   // .pre-order-button
   //   span
@@ -924,7 +953,7 @@ section
     column 1/4 4 32px
     position: relative
     margin-bottom: 32px
-    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.35);
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.35)
 
     &:after
       content: ''
