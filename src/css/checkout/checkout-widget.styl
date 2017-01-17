@@ -1,0 +1,485 @@
+.checkout-container
+  position: absolute
+  width: 100vw
+  display: table;
+  top: -500vh
+  left: 0
+  transition: top 500ms ease
+  overflow-y: scroll
+  font-size: 1rem
+  z-index: 100000
+
+  .checkout
+    position: absolute
+    margin: 10vh 0 30vh 0
+    width: 90%
+    display: table
+    max-width: 960px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: #FFF
+    color: #000
+    overflow:hidden
+
+    // Step Counter
+    ul.steps
+      width: 100%
+      display: table
+      background-color: #666
+      margin: 0
+      transition: all 420ms ease-in-out
+
+      li
+        column 1/3 3 0px
+        display: table
+        height: 56px
+        background-color: #666
+        color: #AAA
+        font-size: .675rem
+        font-weight: bold
+        float: right
+        transition: all 420ms ease-in-out
+
+        & > *
+          display: table-cell
+          vertical-align: middle
+
+        .step-number
+          text-align: center
+          padding: 0 16px
+          width: 52px
+
+          .step-circle
+            width: 24px
+            height: 24px
+            border-radius: 12px
+            background-color: #AAA
+            color: #666
+            line-height: 2.3em
+            transition: all 420ms ease-in-out
+
+        .step-description
+          padding-right: 10px
+
+        &:first-child
+          color: #FFF
+          background-color: #3DF2B6
+
+          .step-circle
+            background-color: #FFF
+            color: #3DF2B6
+
+    // Continue Shopping
+    .continue-shopping
+      text-align: right
+      position: absolute
+      top: 86px
+      right: 30px
+      cursor: pointer
+      z-index: 1
+
+    &.step-2
+      ul.steps
+        li
+          &:nth-child(2)
+            color: #FFF
+            background-color: #3DF2B6
+
+            .step-circle
+              background-color: #FFF
+              color: #3DF2B6
+
+      .parts
+        transform: translateX(-1/3 * 100%)
+
+        .part
+          &:first-child
+          &:nth-child(n+3)
+            height: 1px
+
+            & > *
+              display: none
+
+          &:nth-child(2)
+            height: auto
+
+            & > *
+              display: block
+
+      button[type=submit]
+        span:first-child
+          display: none
+        span:last-child
+          display: block
+
+    &.step-3
+      ul.steps
+        background-color: #3DF2B6
+
+        li
+          &:nth-child(n+2)
+            color: #FFF
+            background-color: #3DF2B6
+
+            .step-circle
+              background-color: #FFF
+              color: #3DF2B6
+
+      .continue-shopping
+        display: none
+
+      .parts
+        transform: translateX(-2/3 * 100%)
+
+        .part
+          &:nth-child(n+1)
+            height: 1px
+
+            & > *
+              display: none
+
+          &:nth-child(3)
+            height: auto
+
+            & > *
+              display: block
+
+      checkout
+        & > form
+          & > button[type=submit]
+          & > .error
+          & > .legal
+          & > .promo
+            display: none
+
+  .parts
+    display: table
+    width: calc(300% + 90px)
+    height: 100%
+    position: relative
+    top: 0
+    left: 0
+    transition: transform 200ms ease-in, height 200ms ease-in
+
+    .part
+      width: calc(1/3 * 100% - 30px)
+      margin-right: 30px
+      float: left
+      overflow: hidden
+
+      &:nth-child(n+2)
+        height:1px
+
+        & > *
+          display: none
+
+  h1
+    margin: 0
+    font-weight: 900
+    font-size: 20px
+    text-align: left
+    text-shadow: none
+    letter-spacing: 0.0375em
+
+    .modal-open
+      margin-top: 10px
+
+    .invoice-amount
+      display: none !important
+
+    &:first-child
+      // border-bottom: 2px solid #c9c9c9
+      width: 100%
+      line-height: 2em
+      color: #000
+
+  a
+    color: #25d2b1
+    text-decoration: underline
+
+  #cart-collapsed
+    display: none !important
+
+  cart
+  checkout
+    position: relative
+    display: block
+    float: right
+    width: 50%
+    // width: 100%
+    padding: 30px
+    min-height: 470px
+
+  cart
+    background-color: #EEE
+
+  .thankyou
+    text-align: center
+
+    p
+      text-align: center
+
+    strong
+      font-weight: 700
+
+    ul.social
+      width: 300px
+      margin: 8px auto
+      display: table
+
+      li
+        column 1/3 3 20px
+        list-style: none
+        text-align: center
+        font-size: 3rem
+
+    .share-field
+      text-align: centered
+
+      .ref-link
+      .copied
+        display: block
+        width: 100%
+        text-align: center
+
+      +below(600px)
+        font-size: .5em
+
+  register
+    max-width: 300px
+    margin: 0 auto
+
+    p
+      margin-bottom: 1em
+      text-align: center
+
+    .password-row
+      display: table
+      width: 100%
+
+      user-password.input
+        width: 75% !important
+        float: left
+
+        input
+          border-right: 0
+          border-radius: 22px 0 0 22px
+          background-color: transparent
+          border-width: 2px !important
+          padding: 0 15px
+          height: 32px
+          border-color: #000
+          width: 100%
+
+        .error
+          width: 133%
+
+      button[type=submit]
+        float: left
+        width: 25%
+        border-radius: 0 22px 22px 0
+        background: none
+        background-color: #000
+        border-width: 0
+        padding: 0
+        margin: 1px 0 0 0
+
+        &:hover
+          animation: ripple-black 1.5s infinite
+
+  .modal-close.link
+    text-align: center
+
+  .notes
+    position: absolute
+    width: 100%
+    text-align: center
+    bottom: 0
+    color: #eee
+    font-size: .9em
+    transform: translateY(100%) translateY(20px)
+
+    .tax-notice
+      display: none
+
+  @media screen and (max-width: 980px)
+    cart
+    checkout
+      width: 100%
+      margin-right: 0
+      min-height: 0
+
+    cart
+      h1
+        display: inline-block
+
+        label
+          float: left
+          cursor: pointer
+
+        .invoice-amount
+          float: right
+          font-size: 1rem
+          color: #000
+
+    #cart-collapsed[type="checkbox"]:checked ~ cart
+      h1
+        .invoice-amount
+          display: inline-block !important
+
+        .expand-summary
+          display: block
+
+      lineitems
+      .invoice-discount
+      .invoice-line
+        display: block
+        height: 0
+        padding-top: 0
+        padding-bottom: 0
+        margin-top: 0
+        margin-bottom: 0
+        overflow: hidden
+        border: 0
+
+      .special-offer
+        border: 0
+
+      .promo-row
+        padding-bottom: 0
+
+  @media screen and (max-width: 600px)
+    .promo-row
+
+      .promo-message
+        width: 100%
+        padding: 5px
+
+  @media screen and (max-width: 500px)
+    .checkout
+      // .product-description
+      //   margin-top: -54px
+      //   margin-left: 55px
+
+      input,
+      select,
+      button,
+      select > input[type="button"],
+      textarea
+        font-size: 70%
+
+        // Makes iOS checkbox appear correctly but skews desktop
+      [type="checkbox"]:not(:checked) + label:after,
+      [type="checkbox"]:checked + label:after
+        top: 6px
+        left: 2px
+        font-size: 14px
+        line-height: 0.8
+
+      .product-image-container
+        width: 30%
+
+      .product-text-container
+        width: 50%
+
+      .product-description-container
+        width: 100%
+
+      .product-price-container
+        width: 100%
+
+    .input
+      width: 100% !important
+
+    .promo-row
+      .input
+        width: 75% !important
+
+    .invoice-line
+      & > *
+        float: left
+
+      div:first-child
+        width:50%
+        text-align: left
+
+      div:last-child
+        width: 50%
+        text-align: right
+
+  @media screen and (max-width: 500px)
+    .checkout
+      ul.steps
+        li
+          .step-number
+            padding: 0 0 0 13px
+
+    .product-image-container
+      width: 30%
+
+    .product-text-container
+      width: 20%
+
+    .product-quantity-container
+      width: 30%
+
+    .product-price-container
+      display: none
+
+
+  @media screen and (max-width: 400px)
+    .checkout
+      ul.steps
+        li
+          .step-number
+            padding: 0 0 0 10px
+            width: 42px
+
+          .step-description
+            font-size: .9em
+            padding: 0 10px 0 0
+
+  @media screen and (max-width: 374px)
+    .checkout
+      ul.steps
+        li
+          width: 100%
+
+      .continue-shopping
+        top: 198px
+
+    .product-image-container
+      width: 15%
+
+    .product-text-container
+      width: 70%
+
+    .product-quantity-container
+      width: 15%
+
+// Generic Modal Effects
+.checkout-modal
+  position: fixed
+  opacity: 0
+  width: 100vw
+  height: 500vh
+  top: -600vh
+  left: 0
+  z-index: 999
+  background-color: rgba(0, 0, 0, 0.75)
+  transition: opacity 500ms ease
+  z-index: 3000
+
+  &.hidden
+    display: block !important
+
+  &.is-open
+    top: 0
+    opacity: 1
+    transition: opacity 500ms ease
+
+  .modal-close
+    font-weight: 900
+    color: #FFF
+
+

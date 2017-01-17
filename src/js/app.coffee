@@ -27,6 +27,7 @@ require './store'
 # Single/Some Pages
 require './page-account'
 require './page-card'
+require './page-checkout'
 require './page-contact'
 require './page-index'
 require './page-referral'

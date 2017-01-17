@@ -66,12 +66,10 @@ header
 
   .call-to-action
   .pre-order-button
-    position: absolute
-    right: 88px
-    top: 32px
+    float: right
+    margin: 32px 28px 0 0
     border: 4px solid #FFF
     border-radius: 28px
-    margin: 0
     font-size: 1em
     font-weight: bold
     font-family: 'Lato', sans-serif
@@ -81,9 +79,8 @@ header
     transition: color 420ms ease-in-out
 
   .menu-button
-    position: absolute
-    left: 24px
-    top: 36px
+    float: left
+    margin: 36px 24px 0
     font-size: 2em
     cursor: pointer
     // transition: color 420ms ease-in-out
@@ -92,15 +89,16 @@ header
       color: #3df2b6
 
   .cart-button
-    position: absolute
-    right: 28px
-    top: 44px
+    background-image: url(/img/cart-icon.svg);
+    float: right;
+    margin: 44px 28px 0 0
     color: #fff
     cursor: pointer
     height: 32px
     width:  32px
     background-size: contain
     background-repeat: no-repeat
+    position: relative
 
     &:hover
       background-image: url(/img/cart-icon-selected.svg) !important
@@ -149,20 +147,16 @@ header
       border: 3px solid #FFF
       font-size: 1.2em
       line-height: 9px
-      top: 14px
-      right: 56px
+      margin: 14px 0
       height: 40px
 
     .menu-button
-      left: 12px
-      top: 14px
-      position: absolute
+      margin: 14px 12px 0
       font-size: 2em
       cursor: pointer
 
     .cart-button
-      top: 22px
-      right: 6px
+      margin: 22px 6px
       height: 24px
 
       cart
@@ -247,9 +241,7 @@ body
     padding: 48px 20px
     overflow: auto
     height: 100vh
-
-    &:after
-      content: none
+    background-color: #EEE
 
     h1
       font-size: 2em

@@ -72,15 +72,16 @@ html(lang='en')
           // |
           a#home(href='/')
             img.logo(src='/img/logo.png', alt=site.name)
+          label.menu-button(for='open-menu')
+            | &#8801;
+          block cart-button
+            label.cart-button(for='open-cart')
+              cart
+                .cart-button-counter(class='{ nonzero: count() > 0 }')
+                  | { count() }
           a#preorder.button.pre-order-button(href='/store')
             // span BUY NOW
             span SHOP
-          label.menu-button(for='open-menu')
-            | &#8801;
-          label.cart-button(for='open-cart', style='background-image: url(/img/cart-icon.svg)')
-            cart
-              .cart-button-counter(class='{ nonzero: count() > 0 }')
-                | { count() }
     menu
       ul
         li
@@ -152,7 +153,7 @@ html(lang='en')
           .invoice-amount
             | { renderCurrency(data.get('order.currency'), data.get('order.subtotal'))} { data.get('order.currency').toUpperCase() }
 
-        a.button.submit(onclick='{ openCheckout }')
+        a.button.submit(href='/checkout')
           | Checkout
 
       div(if='{ isEmpty() }')

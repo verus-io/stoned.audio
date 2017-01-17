@@ -104,7 +104,7 @@ $document.ready ->
       validateFn()
       false
 
-    .on 'click', '.continue-shopping', (e) ->
+    .on 'click', '.checkout .continue-shopping', (e) ->
       if step == 2
         step = 1
         $('.checkout').removeClass 'step-2'
