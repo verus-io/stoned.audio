@@ -69,8 +69,8 @@ if location.pathname.indexOf('account') >= 0
 
     m.on 'profile-load-failed', (err)->
       console.log err.stack
-      window.client.account.logout()
-      window.history.back()
+      # window.client.account.logout()
+      # window.history.back()
 
     # m.on 'profile-load', ->
 
