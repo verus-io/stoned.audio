@@ -18,10 +18,10 @@ block content
           div(if='{ isEmpty() }')
             h1
               | Wow!  We are amazed you got here.
-            p.
-              You shouldn't be able to get here with an empty cart.
-              Here, use the coupon code <strong>CHECKEDOUT</strong> to help you fill your
-              cart.
+            p
+              | You shouldn't be able to get here with an empty cart.
+              // Here, use the coupon code <strong>CHECKEDOUT</strong> to help you fill your
+              // cart.
             div
               a.button.submit(href='/store')
                 | Continue Shopping
@@ -170,6 +170,7 @@ block content
               a(href='terms', target='_blank') Terms&nbsp;of&nbsp;Service
 
         .thankyou
+          h1 Thank You!
           p
             | Your order number is&nbsp;
             strong
@@ -193,17 +194,18 @@ block content
               a.share-email(href=social.email.shareLink)
                 i.fa.fa-envelope
 
-          register(if='{ !userExists }', data='{ data }', immediate-login='true')
-            p
-              | Finish creating your account to learn how to get another
-              strong &nbsp;FREE PAIR.&nbsp;
-              | Enter a password to save your account.
-            .password-row
-              user-password.input(placeholder='Password')
-              button(type='submit')
-                | Save
+          register(immediate-login='true')
+            div(if='{ !userExists }')
+              p
+                | Finish creating your account to learn how to get another
+                strong &nbsp;FREE PAIR.&nbsp;
+                | Enter a password to save your account.
+              .password-row
+                user-password.input(placeholder='Password')
+                button(type='submit')
+                  | Save
 
-          a(href='#', if='{ !userExists }').modal-close.link
-            | No, I don't want my free pair of earphones.
+            a(href='/store')
+              | No, I don't want my free pair of earphones.
 
 block signup

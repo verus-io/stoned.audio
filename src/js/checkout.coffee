@@ -51,6 +51,7 @@ $document.ready ->
     $('#open-cart').prop 'checked', false
     false
 
+  window.userExists = true
   $document
     .on 'click', '.checkout-modal.modal .modal-close, .checkout-container .modal-close', (e) ->
       $closestModal = $(this).closest('.modal')
@@ -122,7 +123,7 @@ $document.ready ->
   m.on 'submit-success', (data)->
     $('.checkout').removeClass 'step-2'
     $('.checkout').addClass 'step-3'
-    $('.thankyou strong').text @data.get('order.number')
+    $('.thankyou > p > strong').text @data.get('order.number')
     $('quantity-select-control .items').prop('disabled', true)
 
     Shop.analytics.track 'Completed Checkout Step', step: 3

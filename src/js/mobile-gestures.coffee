@@ -19,7 +19,7 @@ bodyH.on 'panleft panright', (e)->
       if openMenuEl.checked
         openMenuEl.checked = false
         openCartEl.checked = false
-      else
+      else if location.pathname.indexOf('checkout') < 0
         openCartEl.checked = true
         openMenuEl.checked = false
       ignore = true
