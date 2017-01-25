@@ -1,22 +1,157 @@
-$document = $(document)
+if location.pathname.indexOf('store') >= 0
 
-$document.ready ->
-  addItem = (item)->
-    product = Shop.getItem(item)
+  $document = $(document)
+  $document.ready ->
+    max = 450
+    min = 350
 
-    if !product
-      quantity = 0
-    else
-      quantity = product.quantity
+    rnd = ()->
+      return Math.floor(Math.random() * (max - min)) + min
 
-    if !quantity
-      quantity = 0
+    stdSizeOptions =
+      s: 'Small'
+      m: 'Medium'
+      l: 'Large'
+      xl: 'X Large'
+      xxl: 'XX Large'
+      xxxl: 'XXX Large'
 
-    Shop.setItem item, quantity + 1
+    colorOptions =
+      black: "Black"
+      white: "White"
 
-  $document.on 'click', '.buy-earphones', ->
-    addItem 'earphone'
+    sizeIsRequired = (value)->
+      return value if !value? || (value && value != '')
 
-  .on 'click', '.buy-shirt', ->
-    addItem 'shirt-black-m'
+      throw new Error 'Select a size.'
 
+    colorIsRequired = (value)->
+      return value if !value? || (value && value != '')
+
+      throw new Error 'Select a color.'
+
+    Shop = require 'shop.js'
+
+    CrowdControl = Shop.CrowdControl
+    refer = Shop.Referential
+    client = Shop.client
+
+    class Product extends CrowdControl.Views.Form
+      tag: 'product'
+      id: 'product'
+      name: ''
+      description: ''
+      buttonText: 'Buy Now'
+
+      sizeOptions: stdSizeOptions
+      colorOptions: colorOptions
+
+      size: ''
+      color: ''
+
+      showSize: false
+      showColor: false
+
+      configs:
+        color: [colorIsRequired]
+        size: [sizeIsRequired]
+
+      imgSrc: null
+
+      loaded: false
+
+      html: '''
+        <div class="image animated fadeInUp" if="{ loaded }">
+          <img src="{ imgSrc }">
+        </div>
+        <div class="text animated fadeInUp" if="{ loaded }">
+          <h2>{ data.get('name') }</h2>
+        </div>
+        <div class="animated fadeInUp" if="{ loaded }">
+          <div class="color options" if="{ showColor }">
+            <span>
+              <select-control select-options="{ colorOptions }" lookup="color" placeholder="Select a Color...">
+              </select-control>
+            </span>
+          </div>
+          <div class="size options" if="{ showSize }">
+            <span>
+              <select-control select-options="{ sizeOptions }" lookup="size" placeholder="Select a Size...">
+              </select-control>
+            </span>
+          </div>
+          <div class="prices">
+            <div class>
+              { renderCurrency(data.get('currency'), data.get('price')) } {data.get('currency').toUpperCase()}
+            </div>
+            <div if="{ data.get('price') < data.get('listPrice') }">
+              { renderCurrency(data.get('currency'), data.get('listPrice')) } {data.get('currency').toUpperCase()}
+            </div>
+          </div>
+          <div class="button submit" onclick="{ submit }">{ buttonText }</div>
+        </div>
+      '''
+
+      getId: ()->
+        id = @id
+
+        if @data.get 'color'
+          id += '-' + @data.get 'color'
+
+        if @color
+          id += '-' + @color
+
+        if @data.get 'size'
+          return id + '-' + @data.get 'size'
+
+        if @size
+          return id + '-' + @size
+
+        return id
+
+      init: ()->
+        @data = refer {}
+
+        @showSize = !!@size
+        @showColor = !!@color
+
+        dim = rnd()
+
+        @imgSrc = "http://placekitten.com/#{dim}/#{dim}" if !@imgSrc
+
+        client.product.get(@getId()).then((res)=>
+          @loaded = true
+          @data.set res
+          @data.set 'size', if @size then '' else null
+          @data.set 'color', if @color then '' else null
+          @size = null
+          @color = null
+          @data.set('name', @name) if @name
+          @data.set('description', @description) if @description
+          @update()
+
+          requestAnimationFrame ()=>
+            @update()
+        ).catch (err)->
+          console.log err
+
+        # @on 'updated', ()->
+        #   $('.store-grid .cards').packery
+        #     itemSelector: '.card',
+        #     gutter: 10
+
+        super
+
+      _submit: ()->
+        item = Shop.getItem @getId()
+        if !item || item.quantity <= 0
+          Shop.setItem @getId(), 1
+        else
+          Shop.setItem @getId(), item.quantity + 1
+
+        Shop.riot.update()
+        return false
+
+    Product.register()
+
+    riot.mount 'product'

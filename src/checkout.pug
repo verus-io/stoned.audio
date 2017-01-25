@@ -101,12 +101,7 @@ block content
             lineitems(if='{ !isEmpty() }')
               div
                 .product-image-container
-                  img(src="img/products/earphone.jpg", alt="{ data.get('productName') }")
-                // .product-image-container(if="{ data.get('productSlug').indexOf('SC') != 0 }")
-                //   img(src="/images/products/kits/{data.get('productSlug')}.png", alt="{ data.get('productName') }")
-                // .product-image-container(if="{ data.get('productSlug').indexOf('SC') == 0 }")
-                //   img(src="/images/products/scent-backgrounds/{data.get('productSlug').replace('-S','')}-bg.png", alt="{ data.get('productName') }")
-                //   img(src="/images/products/scent-candles/{data.get('productSlug').replace('-S','')}.png", alt="{ data.get('productName') }")
+                  include _cart-images.pug
                 .product-text-container
                   span.product-description
                     span.product-name { data.get('productName') }

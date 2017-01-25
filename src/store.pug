@@ -5,13 +5,20 @@ block title
 
 block content
   #page-store.page
-    section.hero.short
+    // section.hero.short
+    //   .content
+    //     h1 Shop Stoned
+    section.hero.gallery(data-fade='true',data-autoplay='5000')
       .content
-        h1 Shop Stoned
-    section.body
-      a.button.submit.buy-earphones(href='#')
-        | + Stoned Earphones
-      a.button.submit.buy-shirt(href='#')
-        | + Black Stoned Shirt
+        h1 GET STONED
+        p
+          | Welcome to the Stoned Store
+      section.full.image1
+      section.full.image2
 
-block signup
+    section.body
+      .content
+        product(id='earphone', img-src='/img/products/earphone.jpg')
+        product(id='shirt-women', name="Women's Stoned Shirt", size='m',color='black', img-src='/img/products/shirt-female.jpg')
+        product(id='shirt-men', name="Men's Stoned Shirt", size='m',color='black', img-src='/img/products/shirt-male.jpg')
+
