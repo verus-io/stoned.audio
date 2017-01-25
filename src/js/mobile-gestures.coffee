@@ -3,7 +3,7 @@ Hammer = require 'hammerjs'
 body = document.body
 
 bodyH = new Hammer body
-bodyH.get('pan').set threshold: 30
+bodyH.get('pan').set threshold: 180
 
 openMenuEl = document.getElementById 'open-menu'
 openCartEl = document.getElementById 'open-cart'
