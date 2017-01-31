@@ -3,6 +3,9 @@ extends _layout.pug
 block title
   | #{site.title} - Signup
 
+block headscript
+  script(src='//www.google.com/recaptcha/api.js')
+
 block content
   #page-signup.page
     section.body(data-lazy='img/comfy.jpg')
@@ -16,6 +19,7 @@ block content
             user-password(placeholder='Password')
             .error(if='{ errorMessage }')
               | { errorMessage }
+            .g-recaptcha(data-sitekey='6LfX1hMUAAAAAAlNTjExftw7-GeykK2-tWjbtSUY')
 
             button(type='submit')
               | Register
