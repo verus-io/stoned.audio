@@ -4,7 +4,7 @@ block title
   | #{site.title} - Signup
 
 block headscript
-  script(src='//www.google.com/recaptcha/api.js')
+  script(src='//www.google.com/recaptcha/api.js?render=explicit')
 
 block content
   #page-signup.page
@@ -17,7 +17,7 @@ block content
             user-name(placeholder='Name')
             user-email(placeholder='Email')
             user-password(placeholder='Password')
-            .g-recaptcha(data-sitekey='6LfX1hMUAAAAAAlNTjExftw7-GeykK2-tWjbtSUY')
+            #register-recaptcha
             .error(if='{ errorMessage }')
               | { errorMessage }
 
