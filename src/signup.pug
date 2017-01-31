@@ -17,9 +17,9 @@ block content
             user-name(placeholder='Name')
             user-email(placeholder='Email')
             user-password(placeholder='Password')
+            .g-recaptcha(data-sitekey='6LfX1hMUAAAAAAlNTjExftw7-GeykK2-tWjbtSUY')
             .error(if='{ errorMessage }')
               | { errorMessage }
-            .g-recaptcha(data-sitekey='6LfX1hMUAAAAAAlNTjExftw7-GeykK2-tWjbtSUY')
 
             button(type='submit')
               | Register
