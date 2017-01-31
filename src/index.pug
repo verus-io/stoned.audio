@@ -10,7 +10,7 @@ block content
       div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
     .foreground(style='background-image: url(img/hero-overlay.png)' data-ratio='-60')
     .watch
-      .pre-order-button.button
+      a.pre-order-button.button(href='/store')
         h3 BUY NOW
       .share-coupon-button.modal-open.button(data-modal-selector='.share-coupon-modal')
         h3 SAVE $5
@@ -19,7 +19,7 @@ block content
       // h3 WATCH&nbsp;VIDEO
     .content
       h1 Gems for your ears
-      p #[strong FREE] shipping worldwide for a limited time
+      p $129 with #[strong FREE] shipping worldwide for a limited time
 
     a#scroll-down.button.summary-down.next-section(href='#')
       img(src='img/down-icon.svg')
@@ -80,11 +80,14 @@ block content
     .content
       h1 Stoned Earphones
       p.
-        Audiophile sound, noise isolation, in-ear mic, on the go charging, single
-        button control and secure, customizable fit. Zero wires.
+        Audiophile sound, noise isolation, in-ear mic, charging case, intuitive
+        controls and zero wires.
 
-      p.
-        Wireless earphones designed without compromise.
+      div(style="width: 100%; text-align: center; padding: 20px")
+        a#call-to-action.pre-order-button.button(href='/store')
+          h3 BUY NOW
+
+
 
   section#rocking.full.list.right(data-lazy='img/rockinglow.jpg')
     .image
@@ -234,7 +237,7 @@ block content
     .content
       h2 The era of wires is over
       h1 Get Stoned
-      #call-to-action.pre-order-button.button
+      a#call-to-action.pre-order-button.button(href='/store')
         h3 BUY NOW
 
   section#refer
@@ -242,7 +245,7 @@ block content
       // h1 Get the latest news.
       // p Sign up for our newsletter to stay up to date.
 
-      h1 Tell your friends, get a pair free.
+      h1 Tell your friends, get a pair free
       p
         | Get a free pair of
         strong.emphasis &nbsp;Stoned Earphones&nbsp;
@@ -253,7 +256,7 @@ block content
         | CLAIM YOUR LINK
 
   section#stoned-instagram
-    h1 See how others rock.
+    h1 See how others rock
     #instafeed
 
   section#share
