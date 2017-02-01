@@ -4,16 +4,16 @@ form
 
   input
     &:-moz-placeholder
-      color: #FFF
+      color: $genericInputPlaceholderColor
 
     &::-moz-placeholder
-      color: #FFF
+      color: $genericInputPlaceholderColor
 
     &:-ms-input-placeholder
-      color: #FFF
+      color: $genericInputPlaceholderColor
 
     &::-webkit-input-placeholder
-      color: #FFF
+      color: $genericInputPlaceholderColor
 
 input[type=text]
     -webkit-appearance: none
@@ -23,16 +23,16 @@ input[type=text]
 
 input
   padding: 0 15px
-  border: 4px solid #FFF
+  border: 4px solid $genericInputBorderColor
 
 input
 button
 .button
   height: 60px
   border-radius: 30px
-  font-size: 16px
+  font-size: $genericInputFontSize
   background-color: transparent
-  color: #FFF
+  color: $genericInputTextColor
   outline: 0
 
 button
@@ -56,7 +56,7 @@ body > cart
   select > input[type="button"]
   textarea
     -moz-appearance: none !important
-    color: #000 !important
+    color: $formInputTextColor !important
 
   input
   select
@@ -65,7 +65,7 @@ body > cart
   select > input[type="button"]
   textarea
   .selectize-input
-    border: 2px solid #c9c9c9
+    border: 2px solid $formInputBorderColor1
 
     &:focus
       outline-width: 0
@@ -75,71 +75,71 @@ body > cart
   button
   .button
   textarea
-    height: 32px
+    height: $genericInputHeight
     line-height: 1em
-    font-size: 16px
+    font-size: $genericInputFontSize
 
   input[type=text]
   input[type=password]
     -moz-appearance: none !important
     line-height: 1em !important
     vertical-align: middle
-    color: #000 !important
+    color: $formInputTextColor !important
 
     padding: 0
     border-radius: 0
     border-width: 0 !important
-    border-bottom: 2px solid #000 !important
+    border-bottom: 2px solid $formInputBorderColor2 !important
     transition: color 420ms ease-in, border-color 420ms ease-in
 
   input[type=text]
   input[type=password]
   textarea
     width: 100%
-    color: #000
+    color: $formInputTextColor
     padding: 0
     border-radius: 0
     border-width: 0
-    border-bottom: 2px solid #000 !important
     transition: color 420ms ease-in, border-color 420ms ease-in
 
     &.invalid
-      color: #F22469 !important
-      border-color: #F22469 !important
+      color: $color101 !important
+      border-color: $red1 !important
 
     // &.valid
     //   // color: #3DF2B6 !important
     //   border-color: #3DF2B6 !important
 
     &:-moz-placeholder
-      color: #888
+      color: $formInputPlaceholderColor
 
     &::-moz-placeholder
-      color: #888
+      color: $formInputPlaceholderColor
 
     &:-ms-input-placeholder
-      color: #888
+      color: $formInputPlaceholderColor
 
     &::-webkit-input-placeholder
-      color: #888
+      color: $formInputPlaceholderColor
 
   textarea
     height: 96px
+    padding: .5em
 
   button
   .button
-    color: white !important
+    color: $buttonTextColor !important
 
   button[type=submit]
   .button.submit
-    width: 100%;
-    font-size: 16px !important;
-    padding: 22px;
-    line-height: 0px !important;
-    letter-spacing: .05rem;
-    margin: 16px 0;
-    background: radial-gradient(at top left, rgba(0,212,255,0.5), rgba(0,212,255,0));
-    background-color: #3df2b6;
+    width: 100%
+    font-size: $genericInputFontSize !important
+    padding: 22px
+    line-height: 0px !important
+    letter-spacing: .05rem
+    margin: 16px 0
+    background: radial-gradient(at top left, $buttonGradientColor1, $buttonGradientColor2)
+    background-color: $color2
     border: 0
     text-transform: uppercase
     text-align: center
@@ -149,7 +149,7 @@ body > cart
 
   .error
   .promo-message
-    color: #F22469
+    color: $color101
     font-size: 14px
     padding: 8px 0
     line-height: 1em
@@ -165,14 +165,14 @@ body > cart
 
   .share-field
     border: 0
-    background-color: #F8F8F8
+    background-color: $shareFieldBGColor
     font-family: Courier New
     font-weight: bold
     padding: 1em
     display: table
     width: 100%
-    height: 32px
-    font-size: 16px
+    height: $genericInputHeight
+    font-size: $genericInputFontSize
     outline: 0
     margin: 16px 0
     text-align: left
@@ -186,7 +186,7 @@ body > cart
       float: right
       opacity: 0
       transition: opacity 420ms ease-in-out
-      color: #F22469
+      color: $color101
 
   // .selectize-input.focus
   // input:focus
@@ -196,19 +196,19 @@ body > cart
 .selectize-input
   background-color: transparent !important
   font-weight: bold !important
-  color: #000 !important
+  color: $formInputTextColor !important
   font-size: 1rem !important
   line-height: 1rem !important
   padding: 8px 0 !important
   box-shadow: none !important
   border: 0 !important
-  border-bottom: 2px solid #000 !important
+  border-bottom: 2px solid $formInputBorderColor2 !important
   max-width: 100%
   border-radius: 0 !important
-  height: 32px !important
+  height: $genericInputHeight !important
 
   &:after
-    border-color: #000 transparent transparent !important
+    border-color: $formInputBorderColor2 transparent transparent !important
     top: 12px
     right: 8px
     margin-top: 0px
@@ -218,7 +218,7 @@ body > cart
       display: none
 
     &:after
-      border-color: transparent transparent #000 !important
+      border-color: transparent transparent $formInputBorderColor2 !important
 
   &.full
     min-height: 0 !important
@@ -228,12 +228,12 @@ body > cart
     width: 100% !important
     margin-top: -6px !important
     left: 0
-    height: 32px !important
+    height: $genericInputHeight !important
     top: 1px !important
 
   .item
     position: absolute !important
-    font-size: 16px
+    font-size: $genericInputFontSize
     font-weight: 400
 
 .selectize-dropdown.single
@@ -242,15 +242,15 @@ body > cart
 
   .selectize-dropdown-content
     font-weight: 400 !important
-    color: #000 !important
+    color: $formInputTextColor !important
     font-size: 1rem !important
     line-height: 1rem !important
 
   .option.active
-    background-color: #3df2b6 !important
-    color: #FFF !important
+    background-color: $color2 !important
+    color: $formSelectOptionHighlightColor !important
 
 .selectize-control
-  height: 32px
+  height: $genericInputHeight
 
 

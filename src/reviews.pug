@@ -1,0 +1,35 @@
+extends _layout.pug
+
+block title
+  | #{site.title} - Review
+
+block headscript
+  script(src='//www.google.com/recaptcha/api.js')
+
+block content
+  #page-review.page
+    section.hero.short
+      .content
+        h1 Leave a Review
+
+    section.body
+      .content
+        input#name(type='text',placeholder='Name')
+        br
+        br
+        input#email(type='text',placeholder='Email')
+        br
+        br
+        label
+            strong Rating:
+        .ratings
+          span.gem &#128142;
+          span.gem &#128142;
+          span.gem &#128142;
+          span.gem &#128142;
+          span.gem.selected &#128142;
+        textarea#comment(placeholder='Write Comments...')
+        br
+        br
+        .g-recaptcha(data-sitekey='6LfX1hMUAAAAAAlNTjExftw7-GeykK2-tWjbtSUY')
+        button#submit(type='submit') Submit

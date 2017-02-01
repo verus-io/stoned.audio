@@ -229,7 +229,7 @@ block content
                   .label.order-date-label Purchase Date:
                   .value.order-date { renderDate(data.get('createdAt'), 'LL') }
                 .order-shipping-date-container
-                  .label.order-date-label Estimated Delivery:
+                  .label.order-date-label Ship Date:
                   .value.order-date(if="{ data.get('metadata.batch') == 'preorder' }" )  #{ shipping.prelaunch2016december.date }
                   .value.order-date(if="{ data.get('metadata.batch') == '2' }")  #{ shipping['2'].date }
                 .order-status-date-container
@@ -258,9 +258,14 @@ block content
                 .currency-container.tax-container
                   .label.tax-label Tax({ data.get('tax') / data.get('subtotal') * 100 }%):
                   .currency.tax { renderCurrency(data.get('currency'), data.get('tax'))}
+                .currency-container.discount-container(if="{ data.get('refunded') > 0 }")
+                  .label.discount-label Refunded:
+                  .currency.discount { renderCurrency(data.get('currency'), data.get('refunded'))}
                 .currency-container.total-container
                   .label.total-label Total:
-                  .currency.total
+                  .currency.total(if="{ data.get('refunded') > 0 }")
+                    | { renderCurrency(data.get('currency'), data.get('total') - data.get('refunded'))}&nbsp;{ data.get('currency').toUpperCase() }
+                  .currency.total(if="{ !data.get('refunded') }")
                     | { renderCurrency(data.get('currency'), data.get('total'))}&nbsp;{ data.get('currency').toUpperCase() }
               .address-information
                 h2.label.address-label Shipping Address:

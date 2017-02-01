@@ -1,8 +1,8 @@
 body
 section
 footer
-  color: #FFF
-  background-color: #000
+  color: $genericTextColor
+  background-color: $genericBGColor
 
 body
   & >
@@ -21,7 +21,7 @@ section.full
     height: 105vh
 
 a, a:visited
-  color: #FFF
+  color: $linkColor3
 
 .logo
   height: 32px
@@ -62,13 +62,13 @@ header
     margin: 0
 
   label
-    color: #FFF
+    color: $genericTextColor
 
   .call-to-action
   .pre-order-button
     float: right
     margin: 32px 28px 0 0
-    border: 4px solid #FFF
+    border: 4px solid $genericInputBorderColor
     border-radius: 28px
     font-size: 1em
     font-weight: bold
@@ -86,13 +86,13 @@ header
     // transition: color 420ms ease-in-out
 
     &:hover
-      color: #3df2b6
+      color: $genericHighlightColor
 
   .cart-button
     background-image: url(/img/cart-icon.svg);
     float: right;
     margin: 44px 28px 0 0
-    color: #fff
+    color: $genericTextColor
     cursor: pointer
     height: 32px
     width:  32px
@@ -117,7 +117,7 @@ header
         top: 0
         width: 20px
         height: 20px
-        background-color: #f22469
+        background-color: $color101
         line-height: 1.3em
         border-radius: 10px
         transform: scale(0, 0)
@@ -144,7 +144,7 @@ header
 
     .call-to-action
     .pre-order-button
-      border: 3px solid #FFF
+      border: 3px solid $genericInputBorderColor
       font-size: 1.2em
       line-height: 9px
       margin: 14px 0
@@ -185,8 +185,8 @@ header
   //       position: relative
   //       opacity: 1
 menu
-  background-color: #000
-  color: #000
+  background-color: $genericBGColor
+  color: $menuTextColor
   height: 100vh
   overflow: scroll
   font-weight: 400
@@ -202,12 +202,12 @@ menu
       cursor: pointer
 
   a, a:visited
-    color: #000
+    color: $menuTextColor
 
   hr
     height: 0
     border: 0
-    border-bottom: 2px solid #000
+    border-bottom: 2px solid $menuDividerColor
 
   .logo
     text-align: center
@@ -237,11 +237,11 @@ menu
 // Cart stuff
 body
   & > cart
-    color: #000
+    color: $formTextColor
     padding: 48px 20px
     overflow: auto
     height: 100vh
-    background-color: #EEE
+    background-color: $formBGColor
 
     h1
       font-size: 2em
@@ -275,11 +275,11 @@ input#open-menu
   &:checked
     & ~ header
       .menu-button
-        color: #3df2b6
+        color: $color2
 
     & ~ menu
       // background-color: #88f6d2
-      background-color: #11F1B6
+      background-color: $color3
 
 input#open-cart
   &:checked
@@ -295,14 +295,14 @@ section
   .call-to-action
   .pre-order-button
   .share-coupon-button
-    background: radial-gradient(at top left, rgba(0, 212, 255,.50), rgba(0,212,255,0))
-    background-color: #3DF2B6
+    background: radial-gradient(at top left, $buttonGradientColor1, $buttonBGGradientColor2)
+    background-color: $color2
 
     h3
       line-height: 2.3em
       font-size: .9em
       letter-spacing: .1em
-      color: #FFF
+      color: $buttonTextColor
 
       +below(500px)
         line-height: 1em
@@ -345,7 +345,7 @@ section
 
   .share-coupon-button
     background: transparent
-    border: 4px solid #FFF
+    border: 4px solid $genericInputBorderColor
     margin-top: 0
     position: relative
 
@@ -399,7 +399,7 @@ section
         left: 11px
         width: 0
         height: 18px
-        border-left: 1px solid #fff
+        border-left: 1px solid $genericInputBorderColor
 
       &:after
         content: ''
@@ -411,8 +411,8 @@ section
         left: 2px
         width: 20px
         height: 20px
-        border-top: 10px solid #fff
-        border-right: 10px solid #fff
+        border-top: 10px solid $genericInputBorderColor
+        border-right: 10px solid $genericInputBorderColor
         border-bottom: 10px solid transparent
         border-left: 10px solid transparent
 
@@ -457,7 +457,7 @@ section
           left: 8px
           width: 0
           height: 18px
-          border-left: 1px solid #fff
+          border-left: 1px solid $genericInputBorderColor
 
         &:after
           top: 6px
@@ -479,9 +479,9 @@ section
       height: 200px
 
   .share-coupon-text
-    color: #000
+    color: $formTextColor
     padding: 20px
-    background-color: #EEE
+    background-color: $formBGColor
     display: table
 
     +below(600px)
@@ -537,8 +537,8 @@ section
       // background: radial-gradient(at top left, rgba(242, 36, 105,.50), rgba(242,36,105,0))
       // background-color: #F170CD
       // background-color: #F170A7
-      background: radial-gradient(at top left, rgba(0, 212, 255,.50), rgba(0,212,255,0))
-      background-color: #3DF2B6
+      background: radial-gradient(at top left, $buttonBGGradientColor1, $buttonBGGradientColor2)
+      background-color: $color2
       text-align: right
       font-size: 0.8rem
       font-weight: bold
@@ -548,7 +548,7 @@ section
 
     &:after
       content: ''
-      background-color: #3DF2B6
+      background-color: $color2
       // background-color: #F170CD
       // background-color: #F170A7
       position: absolute
@@ -602,7 +602,7 @@ section
   +below(600px)
     margin-top: 0
     height:240px
-    background: #000
+    background: $genericBGColor
 
     .content
       & > div
@@ -893,8 +893,8 @@ section
           height: 20px
 
 #refer
-  background: radial-gradient(at top left, rgba(0, 212, 255,.50), rgba(0,212,255,0))
-  background-color: #3DF2B6
+  background: radial-gradient(at top left, $buttonBGGradientColor1, $buttonBGGradientColor2)
+  background-color: $color2
 
   .content
     margin-top: 150px
@@ -904,7 +904,7 @@ section
     text-align: center
 
     .claim-link-button
-      border: 4px solid #FFF
+      border: 4px solid $genericInputBorderColor
       border-radius: 28px
       margin: 20px 0
       font-size: 1em !important
@@ -999,7 +999,7 @@ section
       margin-bottom: 16px
 
 #share
-  background-color: #EEE
+  background-color: $formBGColor
   color: rgba(0,0,0,.9)
 
   .content
@@ -1019,7 +1019,7 @@ section
         position: relative
 
       a
-        color: #55CDAA
+        color: $color1
 
     .ambassador
       font-size: 1em !important
@@ -1067,7 +1067,7 @@ section
         border-radius: 0
         column: 2/5 0 0
         background-color: #FFF
-        color: #55CDAA
+        color: $color1
         position: relative
         height: 60px
 
@@ -1101,4 +1101,4 @@ footer
   top: 41px !important
   left: auto !important
   text-align: right
-  color: #FFF
+  color: $buttonTextColor

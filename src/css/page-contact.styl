@@ -1,6 +1,6 @@
 #page-contact
   .body
-    background-color: #FFF
+    background-color: $pageContentBGColor
     padding-bottom: 0
 
     & > .content
@@ -39,13 +39,13 @@
         top: 50%
         transform: translate(-50%, -120%)
         min-width: 220px
-        background-color: #FFF
+        background-color: $pageContentBGColor
 
         .header
-          background: radial-gradient(at top left, rgba(0, 212, 255,.50), rgba(0,212,255,0))
-          background-color: #3DF2B6
+          background: radial-gradient(at top left, $buttonBGGradientColor1, $buttonBGGradientColor2)
+          background-color: $color2
           padding: 20px 20px
-          color: #FFF
+          color: $buttonTextColor
 
           h2
             font-size: 1.8em
