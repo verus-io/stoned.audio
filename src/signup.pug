@@ -3,6 +3,9 @@ extends _layout.pug
 block title
   | #{site.title} - Signup
 
+block headscript
+  script(src='//www.google.com/recaptcha/api.js?render=explicit')
+
 block content
   #page-signup.page
     section.body(data-lazy='img/comfy.jpg')
@@ -14,6 +17,7 @@ block content
             user-name(placeholder='Name')
             user-email(placeholder='Email')
             user-password(placeholder='Password')
+            #register-recaptcha
             .error(if='{ errorMessage }')
               | { errorMessage }
 
