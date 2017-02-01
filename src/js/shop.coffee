@@ -44,13 +44,10 @@ $(document).ready ->
       }
     ]
     shippingRates: [
-        # shippingRate: 500
-        # country: 'us'
-      # ,
-        # shippingRate: 500
-        # country: 'ca'
-      # ,
-        # shippingRate: 1500
+        shippingRate: 0
+        country: 'us'
+      ,
+        shippingRate: 2500
     ]
     config: hashReferrer: true
 
