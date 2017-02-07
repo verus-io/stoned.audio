@@ -1,17 +1,24 @@
 extends _layout.pug
 
 block title
-  | #{site.title} - Frequently Asked Questions
+  | #{site.title} - FAQ and Manual
 
 block content
   #page-faq.page
     section.hero.short
       .content
-        h1 Frequently Asked Questions
+        h1 FAQ and Manual
 
     include _progress.pug
 
     section.body
+      .manual.content
+        .left
+          img.manual(src='img/manual.jpg')
+        .right
+          h2.manual
+            a(href="manual.pdf") Download our User Manual
+
       .content
         h2.contentful-loading Loading...
         .contentful(data-contentful-space='75maui21vjrq', data-contentful-model='faq', data-contentful-token='a6912c52811f23bb07e3694e0edc67f45a56177f84364d28c2982965caf4cbc0', data-contentful-order='rank')
@@ -21,8 +28,6 @@ block content
               h2(data-contentful-field='question')
                 i
             p.accordion-content(data-contentful-field='answer')
-
-        h2 <a href="manual.pdf">Manual</a>
 
 block script
   script(src='https://npmcdn.com/contentful@3.3.5/browser-dist/contentful.js')
