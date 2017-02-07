@@ -13,10 +13,13 @@ block content
 
     section.body
       .manual.content
-        .left
-          img.manual(src='img/manual.jpg')
-        .right
-          h2.manual
+        .col
+          .row
+            .cell
+              img(src='img/manual.jpg')
+
+        .col
+          h2
             a(href="manual.pdf") Download our User Manual
 
       .content

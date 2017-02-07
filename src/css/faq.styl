@@ -1,19 +1,35 @@
-.manual
-  .left
-    float: left
-    width: 50%
+.manual.content
+  .col
+    height: 231px
+    column(1/2)
 
-  .right
-    float: right
-    width: 50%
+    h2 a
+      padding-bottom: 8px
+      display: table-cell
+      height: 231px
+      vertical-align: middle
 
-  h2.manual a
-    display: block
-    position: relative
-    margin-top: 116px
-    box-sizing: border-box
+      font-size: .9em
 
-  img.manual
-    width: 242px
-    float:right
-    padding: 32px
+      +below(525px)
+        font-size: .8em
+
+      +below(450px)
+        font-size: .7em
+
+    .row
+      float: right
+      height: 100%
+
+    .cell
+      width: 100%
+      padding-bottom: 8px
+      display: table-cell
+      height: 231px
+      vertical-align: middle
+      text-align: right
+
+      img
+        width: 200px
+        padding: 16px
+        vertical-align: middle
