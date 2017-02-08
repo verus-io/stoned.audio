@@ -4,22 +4,21 @@ block title
   | #{site.title} - Get Stoned
 
 block content
-  section.hero.parallax.video
+  section#index-hero.hero.parallax.video
     // (data-src='https://www.youtube.com/embed/WeYsTmIzjkw')
     .foreground.product(data-ratio='-60')
-      div.animated.fadeInUp(style='background-image: url(img/hero-prod.png);')
-    .foreground(style='background-image: url(img/hero-overlay.png)' data-ratio='-60')
-    .watch
-      a.pre-order-button.button(href='/store')
-        h3 BUY NOW
-      .share-coupon-button.modal-open.button(data-modal-selector='.share-coupon-modal')
-        h3 SAVE $15
+      img.animated.fadeInUp(src='img/index-hero.png')
     // .call-to-action.watch.button
       // a.play(href='#')
       // h3 WATCH&nbsp;VIDEO
     .content
       h1 Gems for your ears
       p $129 with #[strong FREE] shipping worldwide for a limited time
+      br
+      a.pre-order-button.button(href='/store')
+        h3 BUY NOW
+      .share-coupon-button.modal-open.button(data-modal-selector='.share-coupon-modal')
+        h3 SAVE $15
 
     a#scroll-down.button.summary-down.next-section(href='#')
       img(src='img/down-icon.svg')
@@ -32,7 +31,7 @@ block content
       .modal-close
         h1 &#10005;
 
-      .share-coupon
+      .share-coupon.animated.fadeInUp
         .share-coupon-image(data-lazy='/img/onpage-coupon.jpeg')
         .share-coupon-text
           h2 Tell your friends to get Stoned
@@ -86,132 +85,7 @@ block content
         a#call-to-action.pre-order-button.button(href='/store')
           h3 BUY NOW
 
-
-
-  section#rocking.full.list.right(data-lazy='img/rockinglow.jpg')
-    .image
-    .info
-      h1 Audiophile sound
-      p
-        strong.emphasis Stoned Earphones
-        | have large 7mm drivers capable of producing rich sound, full dynamic
-        | range and a wide stereo image.
-      p
-        | Excellent noise isolation ensures you'll enjoy crystal clear sound
-        | whether you're listening to music or on a call.
-      ul
-        li
-          div
-            img(data-lazy='img/icons/freq-light.svg')
-          div 20-20,000&nbsp;HZ FREQUENCY
-        li
-          div
-            img(data-lazy='img/icons/speaker-light.svg')
-          div CLEAR&nbsp;TREBLE DEEP&nbsp;BASS
-        li
-          div
-            img(data-lazy='img/icons/speaker2-light.svg')
-          div NOISE ISOLATION
-        li
-          div
-            img(data-lazy='img/icons/microphone-light.svg')
-          div HD MICROPHONE
-
-  section#chargeup.full.list.bottom
-    .content
-      .image
-      .info
-        h1 Charge on the go
-        p
-          | Enjoy up to 5 hours of audio playback with a single charge and 120
-          | hours on standby. Stay charged with the included
-          strong.emphasis &nbsp;Stoned Charging Case.
-        p
-          | Charges in just one hour. Recharge on the go up to six times.
-
-        img(data-lazy='img/charging-case.png')
-
-        ul
-          li
-            div
-              img(data-lazy='img/icons/flash-dark.svg')
-            div
-              | 5&nbsp;HOUR PLAYBACK
-          li
-            div
-              img(data-lazy='img/icons/battery-dark.svg')
-            div
-              | CHARGE ON THE GO
-          li
-            div
-              img(data-lazy='img/icons/usb-dark.svg')
-            div
-              | CHARGE VIA&nbsp;USB
-          li
-            div
-              img(data-lazy='img/icons/powerbank-dark.svg')
-            div
-              | DOUBLES&nbsp;AS
-              | POWER BANK
-
-  section#comfy.full.list.right(data-lazy='img/comfylow.jpg')
-    .image
-    .info
-      h1 Perfect fit
-      p
-        strong.emphasis Stoned Earphones
-        | are designed to feel great and stay put — whether
-        | you are active or relaxing. And with three customizable silicone
-        | eartips, you'll be sure to find a perfect fit.
-      ul
-        li
-          div
-            img(data-lazy='img/icons/eartips-light.svg')
-          div CUSTOMIZABLE EARTIPS
-        li
-          div
-            img(data-lazy='img/icons/isolation-light.svg')
-          div
-            | SECURE FIT
-        li
-          div
-            img(data-lazy='img/icons/small-light.svg')
-          div COMPACT SIZE
-        li
-          div
-            img(data-lazy='img/icons/feather-light.svg')
-          div LIGHTWEIGHT
-
-  section#ditch.full.list.left(data-lazy='img/ditchlow.jpg')
-    .image
-    .info
-      h1 Works everywhere
-      p
-        strong.emphasis Stoned Earphones
-        | connect to all of your Bluetooth-enabled devices. Easily pair with
-        | your phone, tablet, laptop or watch.
-      p.
-        Bluetooth 4.2 ensures you'll experience better connectivity,
-        lower latency, and higher quality audio than ever before.
-      ul
-        li
-          div
-            img(data-lazy='img/icons/bluetooth-light.svg')
-          div BLUETOOTH 4.2
-        li
-          div
-            img(data-lazy='img/icons/apple-light.svg')
-          div IOS
-        li
-          div
-            img(data-lazy='img/icons/android-light.svg')
-          div ANDROID
-        li
-          div
-            img(data-lazy='img/icons/range2-light.svg')
-          div 10 METER RANGE
-
-  section#lovethem.full(data-lazy='img/lovethem2low.jpg')
+  section#app.full(data-lazy='img/lovethem2low.jpg')
     .content
       h1 Your phone will love them
       p
@@ -228,46 +102,7 @@ block content
           a(href='/app', target='_blank')
             img(data-lazy='img/androidstore.png')
 
-  // section#othersrock.full(data-lazy='img/othersrocklow.jpg')
-  //   h1 See how others rock.
-
-  section#getstoned.full.parallax(data-lazy='img/getstoned-bglow.jpg')
-    .foreground(data-lazy='img/getstoned-fg.png', data-ratio='-60')
-    .content
-      h2 The era of wires is over
-      h1 Get Stoned
-      a#call-to-action.pre-order-button.button(href='/store')
-        h3 BUY NOW
-
-  section#refer
-    .content
-      // h1 Get the latest news.
-      // p Sign up for our newsletter to stay up to date.
-
-      h1 Tell your friends, get a pair free
-      p
-        | Get a free pair of
-        strong.emphasis &nbsp;Stoned Earphones&nbsp;
-        | by referring your friends.  If 10 of them purchase a pair
-        | using your unique link, we send you a free pair.  You also get other great rewards along the way.
-
-      a(href='signup').button.claim-link-button
-        | CLAIM YOUR LINK
-
   section#stoned-instagram
     h1 See how others rock
     #instafeed
 
-  section#share
-    .content
-      h1 Show us love
-      ul.shares
-        li
-          a#social-facebook(href=social.facebook.shareLink, target='_blank')
-            i.fa.fa-facebook-square
-        li
-          a#social-twitter(href=social.twitter.shareLink, target='_blank')
-            i.fa.fa-twitter
-        li
-          a#social-email(href=social.email.shareLink)
-            i.fa.fa-envelope

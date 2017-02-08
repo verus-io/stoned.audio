@@ -1,4 +1,4 @@
-if location.pathname == '/'
+if location.pathname == '/' || location.pathname.indexOf('tech') >= 0
   # http://solemone.de/code/code-examples/demos-grayscale-hover-effect-with-html5-canvas-and-jquery/
   grayScale = (src, cb)->
     supportsCanvas = !!document.createElement('canvas').getContext
@@ -45,22 +45,27 @@ if location.pathname == '/'
           accessToken:    '4001555412.5b2157e.d7052eaa602049648f5f3bf96c8d67bd'
           resolution:     'standard_resolution'
           limit:          12
-          after:          ->
-            imgs = $('#instafeed img')
-            i = 0
-            if imgs[i]
-              cb = (graySrc)->
-                grayImg = new Image()
-                grayImg.src = graySrc
+          filter: (image)->
+            console.log image
+            # filter images here
+            return true
 
-                $(imgs[i]).parent().append grayImg
+          # after:          ->
+          #   imgs = $('#instafeed img')
+          #   i = 0
+          #   if imgs[i]
+          #     cb = (graySrc)->
+          #       grayImg = new Image()
+          #       grayImg.src = graySrc
 
-                i++
+          #       $(imgs[i]).parent().append grayImg
 
-                if imgs[i]
-                  grayScale imgs[i].src, cb
+          #       i++
 
-              grayScale imgs[i].src, cb
+          #       if imgs[i]
+          #         grayScale imgs[i].src, cb
+
+          #     grayScale imgs[i].src, cb
 
         feed.run()
     $window.on 'scroll touchmove mousewheel', fn
