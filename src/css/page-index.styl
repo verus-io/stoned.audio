@@ -16,6 +16,44 @@
     +below(600px)
       width: 100vw !important
 
+#earphones
+  background: radial-gradient(52% 142%, #595959 50%, #393939 100%)
+
+  h2
+    top: 8vh
+    transform: translateY(-50%)
+    position: absolute
+    width: 100%
+    font-weight: 400
+    color: $genericTextColor
+    letter-spacing: .5em
+
+  .image
+    background-image: url(img/charging-case2.png)
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+
+  .info
+    padding-top: 25vh
+
+    & > *
+      text-align: left
+
+  +below(800px)
+    .info > *
+      text-align: center
+    .image
+      display: block
+      min-height: 400px
+      max-height: 400px
+      margin-bottom: -20vh
+      margin-top: 10vh
+
+  +below(400px)
+    .info
+      padding-top: 15vh
+
 #app
   background-position: 50% 0%
   height: 130vh
