@@ -5,6 +5,9 @@ block title
 
 block cart-button
 
+block headscript
+  script(src='//www.google.com/recaptcha/api.js?render=explicit')
+
 block content
   #page-checkout.page
     section.hero.short
@@ -197,6 +200,10 @@ block content
                 | Enter a password to save your account.
               .password-row
                 user-password.input(placeholder='Password')
+                #register-recaptcha
+                .error(if='{ errorMessage }')
+                  | { errorMessage }
+
                 button(type='submit')
                   | Save
 
