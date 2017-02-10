@@ -130,8 +130,8 @@ if true
         client.product.get(@getId()).then((res)=>
           @loaded = true
           @data.set res
-          @data.set 'size', if @size then '' else null
-          @data.set 'color', if @color then '' else null
+          @data.set 'size', if @size then @size else null
+          @data.set 'color', if @color then @color else null
           @size = null
           @color = null
           @data.set('name', @name) if @name
