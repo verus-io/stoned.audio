@@ -29,6 +29,10 @@ if location.pathname == '/' || location.pathname.indexOf('tech') >= 0
     else
       cb img.src
 
+  images = [
+    'https://www.instagram.com/p/BQTE_bfjXdT/'
+  ]
+
   Instafeed = require 'instafeed.js'
 
   $document = $(document)
@@ -44,11 +48,11 @@ if location.pathname == '/' || location.pathname.indexOf('tech') >= 0
           userId:         '4001555412'
           accessToken:    '4001555412.5b2157e.d7052eaa602049648f5f3bf96c8d67bd'
           resolution:     'standard_resolution'
-          limit:          12
+          limit:          100
           filter: (image)->
             console.log image
             # filter images here
-            return true
+            return image.link in images
 
           # after:          ->
           #   imgs = $('#instafeed img')
