@@ -1,4 +1,5 @@
-if location.pathname.indexOf('store') >= 0
+# if location.pathname.indexOf('store') >= 0
+if true
 
   $document = $(document)
   $document.ready ->
@@ -41,7 +42,7 @@ if location.pathname.indexOf('store') >= 0
       id: 'product'
       name: ''
       description: ''
-      buttonText: 'Buy Now'
+      buttonText: 'BUY NOW'
 
       sizeOptions: stdSizeOptions
       colorOptions: colorOptions
@@ -61,10 +62,10 @@ if location.pathname.indexOf('store') >= 0
       loaded: false
 
       html: '''
-        <div class="image animated fadeIn" if="{ loaded }">
+        <div class="image animated fadeIn" if="{ loaded && imgSrc }">
           <img src="{ imgSrc }">
         </div>
-        <div class="text animated fadeIn" if="{ loaded }">
+        <div class="text animated fadeIn" if="{ loaded && !hideName }">
           <h2>{ data.get('name') }</h2>
         </div>
         <div class="animated fadeIn" if="{ loaded }">
@@ -93,7 +94,9 @@ if location.pathname.indexOf('store') >= 0
               { renderCurrency(data.get('currency'), data.get('listPrice')) } {data.get('currency').toUpperCase()}
             </div>
           </div>
-          <div class="button submit" onclick="{ submit }">{ buttonText }</div>
+          <div class="pre-order-button button cart-peek" onclick="{ submit }">
+            <h3>{ buttonText }</h3>
+          </div>
         </div>
       '''
 
@@ -122,7 +125,7 @@ if location.pathname.indexOf('store') >= 0
 
         dim = rnd()
 
-        @imgSrc = "http://placekitten.com/#{dim}/#{dim}" if !@imgSrc
+        # @imgSrc = "http://placekitten.com/#{dim}/#{dim}" if !@imgSrc
 
         client.product.get(@getId()).then((res)=>
           @loaded = true

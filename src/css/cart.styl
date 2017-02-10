@@ -8,14 +8,15 @@ body
     z-index: 1000
     transition: background-color 420ms ease-in-out, right 420ms ease-in-out
 
+    &:hover
+      right: 0 !important
+
+    &.close:hover
+      right: -300px !important
+
   input#open-cart
     display: none
 
     &:checked
       & ~ cart
         right: 0 !important
-
-      & ~ *:not(cart)
-        left: -300px
-
-

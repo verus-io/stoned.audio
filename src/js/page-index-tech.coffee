@@ -74,3 +74,15 @@ if location.pathname == '/' || location.pathname.indexOf('tech') >= 0
         feed.run()
     $window.on 'scroll touchmove mousewheel', fn
     fn()
+
+    $document.on 'click', '.pre-order-button[href="#"]', ->
+      item = Shop.getItem 'earphone'
+      if !item || item.quantity <= 0
+        Shop.setItem 'earphone', 1
+      else
+        Shop.setItem 'earphone', item.quantity + 1
+
+      Shop.riot.update()
+      return false
+
+

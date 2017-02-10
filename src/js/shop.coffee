@@ -1,4 +1,5 @@
-$(document).ready ->
+$document = $(document)
+$document.ready ->
   window.Shop = Shop = require 'shop.js'
   window.selectize = require 'selectize'
   store = require 'shop.js/src/utils/store'
@@ -114,5 +115,17 @@ $(document).ready ->
   m.on 'reset-password-success', ->
     window.location.href = 'reset-password-pending'
 
+  $document.on 'mousedown', '.cart-peek, .pre-order-button[href="#"]', ->
+    $('#open-cart').prop 'checked', true
+    $('#open-menu').prop 'checked', false
+    setTimeout ->
+      $('#open-cart').prop 'checked', false
+    , 2000
+    return false
 
+  $document.on 'click', '.close-cart', ->
+    $('cart').addClass 'close'
+    setTimeout ->
+      $('cart').removeClass 'close'
+    , 1000
 

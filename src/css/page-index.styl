@@ -61,9 +61,9 @@
     .text
       height: 38vh
       width: 100%
-      padding: 40px 80px 0
-      min-height: 200px
+      padding: 40px 80px
       text-align: left
+      display: table
 
       *
         text-align: left
@@ -71,7 +71,7 @@
     .image
       height: 72vh
       width: 100%
-      padding: 40px
+      padding: 80px
       min-height: 400px
 
       .bounded-image
@@ -88,6 +88,12 @@
     &:last-child
       color: #FFF
       background-color: #000
+
+      .selectize-input.selectize-input.selectize-input
+        border-color: #FFF !important
+
+        .item
+          color: #FFF
 
     +below(800px)
       width: 100%
