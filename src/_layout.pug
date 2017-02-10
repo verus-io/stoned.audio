@@ -78,17 +78,14 @@ html(lang='en')
               cart
                 .cart-button-counter(class='{ nonzero: count() > 0 }')
                   | { count() }
-          a#preorder.button.pre-order-button(href='/store')
-            // span BUY NOW
-            span SHOP
+          a.pre-order-button.button(href='#')
+            span GET STONED
     menu
       ul
         li
           a(href='/') HOME
         li
           a(href='/tech') EARPHONES
-        li
-          a(href='/store') STORE
         li
           a(href='/faq') FAQ
         li
@@ -153,7 +150,7 @@ html(lang='en')
           | Checkout
 
       div(if='{ isEmpty() }')
-        a.button.submit(href='/store')
+        a.button.submit(href='/')
           | Continue Shopping
 
     main
@@ -207,8 +204,6 @@ html(lang='en')
             a(href='/') HOME
           li
             a(href='/tech') EARPHONES
-          li
-            a(href='/store') STORE
           li
             a(href='/faq') FAQ
           li

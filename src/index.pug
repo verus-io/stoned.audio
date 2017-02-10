@@ -97,6 +97,9 @@ block content
           div
             img(data-lazy='img/icons/bluetooth-light.svg')
           div BLUETOOTH 4.2
+      a.pre-order-button.button(href='#')
+        h3 BUY NOW
+      | &nbsp;&nbsp;&nbsp;&nbsp;
       a.pre-order-button.button(href='/tech')
         h3 DISCOVER STONED
 
@@ -104,7 +107,7 @@ block content
     .shirt
       .text
         h1 Men's Tee
-        p Add words, zach
+        // p Add words, zach
         product(id='shirt-men', name="Men's Stoned Shirt", size='m', color='black', hide-name='true')
       .image.animated.fadeInUp
         .bounded-image(data-lazy='img/products/shirt-men-black.png')
@@ -113,7 +116,7 @@ block content
         .bounded-image(data-lazy='img/products/shirt-women-white.png')
       .text
         h1 Women's Tee
-        p Add more words, zach
+        // p Add more words, zach
         product(id='shirt-women', name="Women's Stoned Shirt", size='m', color='white', hide-name='true')
 
   section#app.full(data-lazy='img/lovethem2low.jpg')
@@ -136,3 +139,18 @@ block content
   section#stoned-instagram
     h1 See how others rock
     #instafeed
+
+  section#refer
+    .content
+      // h1 Get the latest news.
+      // p Sign up for our newsletter to stay up to date.
+
+      h1 Tell your friends, get a pair free
+      p
+        | Get a free pair of
+        strong.emphasis &nbsp;Stoned Earphones&nbsp;
+        | by referring your friends.  If 10 of them purchase a pair
+        | using your unique link, we send you a free pair.  You also get other great rewards along the way.
+
+      a(href='signup').button.claim-link-button
+        | CLAIM YOUR LINK
