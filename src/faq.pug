@@ -1,18 +1,31 @@
 extends _layout.pug
 
 block title
-  | #{site.title} - Frequently Asked Questions
+  | #{site.title} - FAQ and Manual
 
 block content
   #page-faq.page
     section.hero.short
       .content
-        h1 Frequently Asked Questions
+        h1 FAQ and Manual
 
     include _progress.pug
 
     section.body
-      .content
+      .manual.content
+        .col
+          .row
+            .cell
+              img(src='img/manual.jpg')
+
+        .col
+          h2
+            a(href="manual.pdf") Download User Manual
+
+      .content.faq
+        h1
+          | Frequently Asked Questions
+
         h2.contentful-loading Loading...
         .contentful(data-contentful-space='75maui21vjrq', data-contentful-model='faq', data-contentful-token='a6912c52811f23bb07e3694e0edc67f45a56177f84364d28c2982965caf4cbc0', data-contentful-order='rank')
           .accordion.animated.fadeInUp

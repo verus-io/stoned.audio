@@ -11,3 +11,53 @@
 
       & ~ *
         display: none
+
+    .content.manual
+      margin-bottom: 0px
+
+      .col
+        height: 231px
+        column(1/2)
+
+        h2 a
+          display: table-cell
+          height: 231px
+          padding-bottom: 16px
+          vertical-align: middle
+
+          font-size: .9em
+
+          +below(525px)
+            font-size: .8em
+
+          +below(450px)
+            font-size: .7em
+
+        .row
+          float: right
+          height: 100%
+
+        .cell
+          display: table-cell
+          height: 231px
+          padding-bottom: 8px
+          text-align: right
+          vertical-align: middle
+          width: 100%
+
+          img
+            width: 200px
+            padding: 16px
+            vertical-align: middle
+
+    .content.faq
+      margin-top: 0px
+
+      h1
+        text-align: left
+        font-size: 1.8em
+        letter-spacing: 0.1px
+        padding-bottom: 16px
+
+      h2
+        font-weight: 400
