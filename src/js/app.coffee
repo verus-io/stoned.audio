@@ -25,6 +25,9 @@ require './stonedaudio'
 require './checkout'
 require './store'
 
+# After Every Page Stuff
+require './captcha'
+
 # Single/Some Pages
 require './page-account'
 require './page-card'
