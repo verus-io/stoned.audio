@@ -71,8 +71,6 @@ if true
         <div class="animated fadeIn" if="{ loaded }">
           <div class="description" if="{ !showColor && !showSize }">
             { data.get('description') }
-            <br>
-            <br>
           </div>
           <div class="color options" if="{ showColor }">
             <span>
