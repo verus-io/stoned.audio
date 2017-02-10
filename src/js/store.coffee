@@ -61,13 +61,18 @@ if location.pathname.indexOf('store') >= 0
       loaded: false
 
       html: '''
-        <div class="image animated fadeInUp" if="{ loaded }">
+        <div class="image animated fadeIn" if="{ loaded }">
           <img src="{ imgSrc }">
         </div>
-        <div class="text animated fadeInUp" if="{ loaded }">
+        <div class="text animated fadeIn" if="{ loaded }">
           <h2>{ data.get('name') }</h2>
         </div>
-        <div class="animated fadeInUp" if="{ loaded }">
+        <div class="animated fadeIn" if="{ loaded }">
+          <div class="description" if="{ !showColor && !showSize }">
+            { data.get('description') }
+            <br>
+            <br>
+          </div>
           <div class="color options" if="{ showColor }">
             <span>
               <select-control select-options="{ colorOptions }" lookup="color" placeholder="Select a Color...">
