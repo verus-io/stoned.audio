@@ -1,3 +1,5 @@
+{images} = (require '../../settings').instafeed
+
 if location.pathname == '/' || location.pathname.indexOf('tech') >= 0
   # http://solemone.de/code/code-examples/demos-grayscale-hover-effect-with-html5-canvas-and-jquery/
   grayScale = (src, cb)->
@@ -29,10 +31,6 @@ if location.pathname == '/' || location.pathname.indexOf('tech') >= 0
     else
       cb img.src
 
-  images = [
-    'https://www.instagram.com/p/BQTE_bfjXdT/'
-  ]
-
   Instafeed = require 'instafeed.js'
 
   $document = $(document)
@@ -49,7 +47,8 @@ if location.pathname == '/' || location.pathname.indexOf('tech') >= 0
           accessToken:    '4001555412.5b2157e.d7052eaa602049648f5f3bf96c8d67bd'
           resolution:     'standard_resolution'
           limit:          100
-          filter: (image)->
+          filter: (image) ->
+            console.log image
             console.log image
             # filter images here
             return image.link in images
