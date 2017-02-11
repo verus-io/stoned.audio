@@ -81,6 +81,7 @@ module.exports =
 
   instafeed:
     images: [
+      'https://www.instagram.com/p/BQWXKFGDTmd/'
       'https://www.instagram.com/p/BNs0TbFjFdy/'
       'https://www.instagram.com/p/BQMhde7jpIh/'
       'https://www.instagram.com/p/BPiyHbED1-x/'
