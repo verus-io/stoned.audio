@@ -44,11 +44,17 @@
   .discover-stoned
     background: transparent
     border: 4px solid #fff
-    margin-left: 16px
+    margin-left: 8px
+
     h3
-      margin-top: 3px
+      line-height: 2.3em
       font-size: .9em
-      letter-spacing: 0.1em
+      letter-spacing: .1em
+      color: $buttonTextColor
+      margin-top: -4px
+
+      +below(500px)
+        line-height: 1em
 
   +below(800px)
     .info > *
