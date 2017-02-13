@@ -1,7 +1,7 @@
 if location.pathname.indexOf('signup') >= 0 || location.pathname.indexOf('checkout') >= 0
   $(document).ready ->
     readyCaptcha = (data)->
-      requestAnimationFrame ->
+      requestAnimationFrame =>
         grecaptcha.render 'register-recaptcha',
           sitekey: '6LfX1hMUAAAAAAlNTjExftw7-GeykK2-tWjbtSUY'
           theme: 'dark'
