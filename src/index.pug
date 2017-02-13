@@ -64,7 +64,7 @@ block content
 
   include _progress.pug
 
-  section.press-strip(data-skip='true')
+  section#index-press-strip.press-strip(data-skip='true')
     .content
       div(style='background-image: url(img/press-strip/kcstar.png)')
       div(style='background-image: url(img/press-strip/abc.png)')
@@ -104,7 +104,7 @@ block content
       a.pre-order-button.button(href='#')
         h3 BUY NOW
       a.discover-stoned.button(href='/tech')
-        h3 DISCOVER
+        h3 LEARN MORE
 
   section#refer
     .content
@@ -125,7 +125,11 @@ block content
     .shirt
       .text
         h1 Men's T-shirt
-        // p Add words, zach
+        p
+          | Expertly printed by
+          | <a href="https://www.odditiesprints.com" style="color:black;font-weight: bold">Oddities Prints</a>,
+          | our 100% cotton, premium shirts will only shrink slightly and
+          | have a "unisex" fit, neither slim nor baggy.
         product(id='shirt-men', name="Men's Stoned Shirt", size='m', color='black', hide-name='true')
       .image.animated.fadeInUp
         .bounded-image(data-lazy='img/products/shirt-men-black.png')
@@ -134,7 +138,9 @@ block content
         .bounded-image(data-lazy='img/products/shirt-women-white.png')
       .text
         h1 Women's T-shirt
-        // p Add more words, zach
+        p
+          | Locally sourced with the same premium feel and quality but with a
+          | more feminine cut and sizes that run smaller.
         product(id='shirt-women', name="Women's Stoned Shirt", size='m', color='white', hide-name='true')
 
   // section#app.full(data-lazy='img/lovethem2low.jpg')
