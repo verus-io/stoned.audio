@@ -462,12 +462,12 @@ section
           top: 6px
           left: -2px
 
-.share-coupon
+.popup
   width: 500px
   max-width: 100%
   margin: 0 auto
 
-  .share-coupon-image
+  .popup-image
     width: 500px
     height: 400px
     max-width: 100%
@@ -477,10 +477,8 @@ section
     +below(500px)
       height: 200px
 
-  .share-coupon-text
-    color: $formTextColor
+  .popup-text
     padding: 20px
-    background-color: $formBGColor
     display: table
 
     +below(600px)
@@ -489,6 +487,11 @@ section
     p
       padding-bottom: 1em
       font-size: 1em
+
+.share-coupon
+  .popup-text
+    color: $formTextColor
+    background-color: $formBGColor
 
   .share-coupon-buttons
     display: table
@@ -518,7 +521,7 @@ section
       &.pinterest
         background-color: #C92228
 
-  .share-coupon-text.finished
+  .popup-text.finished
     display: none
 
 .progress
@@ -763,36 +766,40 @@ section
         padding: 0px 2px 0 8px
         top: 2px
 
-    form
-      text-align: center
+.email-form
+  text-align: center
 
-      input
-        column: 3/5 0 0
-        border-radius: 0
-        border-right: 0
+  input
+    column: 3/5 0 0
+    border-radius: 0
+    border-right: 0
 
-      button
-        border-radius: 0
-        column: 2/5 0 0
-        background-color: #FFF
-        color: $color1
-        position: relative
-        height: 60px
+  button
+    border-radius: 0
+    column: 2/5 0 0
+    background-color: #FFF
+    color: $color1
+    position: relative
+    height: 60px
 
   +below(400px)
-    .content
-      form
-        input
-          padding-left: 10px
-          padding-right: 10px
+    input
+      padding-left: 10px
+      padding-right: 10px
 
-      h1
-        img
-          height: 20px
-          position: relative
-          padding-left: 4px
-          padding-right: 5px
-          top: 2px
+    h1
+      img
+        height: 20px
+        position: relative
+        padding-left: 4px
+        padding-right: 5px
+        top: 2px
+
+.backordered
+  .popup-image
+    background-color: #EEE
+  .popup-text
+    background-color: #55CDAA
 
 footer
   background-color: #333

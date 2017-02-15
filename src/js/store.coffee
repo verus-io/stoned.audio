@@ -44,6 +44,7 @@ if true
       description: ''
       buttonText: 'BUY NOW'
 
+      backordered: false
       sizeOptions: stdSizeOptions
       colorOptions: colorOptions
 
@@ -92,7 +93,10 @@ if true
               { renderCurrency(data.get('currency'), data.get('listPrice')) } {data.get('currency').toUpperCase()}
             </div>
           </div>
-          <div class="pre-order-button button cart-peek" onclick="{ submit }">
+          <div class="pre-order-button button" if="{ backordered }">
+            <h3>SOLD OUT</h3>
+          </div>
+          <div class="pre-order-button button cart-peek" onclick="{ submit }" if="{ !backordered }">
             <h3>{ buttonText }</h3>
           </div>
         </div>

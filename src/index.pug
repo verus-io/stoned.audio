@@ -31,9 +31,9 @@ block content
       .modal-close
         h1 &#10005;
 
-      .share-coupon.animated.fadeInUp
-        .share-coupon-image(data-lazy='/img/onpage-coupon.jpeg')
-        .share-coupon-text
+      .share-coupon.popup.animated.fadeInUp
+        .popup-image(data-lazy='/img/onpage-coupon.jpeg')
+        .popup-text
           h2 Tell your friends to get Stoned
           p.
             Share why you are getting Stoned today and receive a <strong> $15
@@ -51,7 +51,7 @@ block content
             a.share-coupon-button-for.pinterest(href=social.pinterest.shareLink, target='_blank')
               i.fa.fa-pinterest-p
               span Share on Pinterest
-        .share-coupon-text.finished
+        .popup-text.finished
           h2 Thanks for doing that!
           p.
             Use the coupon
@@ -59,7 +59,7 @@ block content
             to save
             <strong> $15 </strong>
             on your next pair of Stoned Earphones.
-          .pre-order-button.button
+          a.pre-order-button.button(href='#')
             h3 GET STONED
 
   include _progress.pug

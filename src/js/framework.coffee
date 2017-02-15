@@ -19,7 +19,8 @@ $document.ready ->
       modalSelector = $modalOpen.attr('data-modal-selector')
       modalLock = $modalOpen.attr('data-modal-lock')
       $modal = $(modalSelector).first()
-      $('body').addClass 'modal-lock'
+      if modalLock != 'false'
+        $('body').addClass 'modal-lock'
       $modal.removeClass 'hidden'
 
     .on 'click', '.modal-close', (e) ->

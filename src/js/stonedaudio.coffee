@@ -52,8 +52,8 @@ $document.ready ->
 
   $document.on 'click', '.share-coupon-button-for', (e) ->
     setTimeout ->
-      $('.share-coupon-text').hide()
-      $('.share-coupon-text.finished').show().css 'display', 'table'
+      $('.share-coupon .popup-text').hide()
+      $('.share-coupon .popup-text.finished').show().css 'display', 'table'
     , 1000
 
   # figure out the page state/menu state
