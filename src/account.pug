@@ -232,10 +232,15 @@ block content
                   .label.order-date-label Ship Date:
                   .value.order-date(if="{ data.get('metadata.batch') == 'preorder' }" )  #{ shipping.prelaunch2016december.date }
                   .value.order-date(if="{ data.get('metadata.batch') == '2' }")  #{ shipping['2'].date }
-                .order-status-date-container
-                  .label.order-date-label Status:
-                  .value.order-date { data.get('status') ? data.get('status') : 'reserved' }
-                lineitems(if='{ !isEmpty() }')
+                .order-status-container
+                  .label.order-status-label Status:
+                  .value.order-status(if="{ data.get('fulfillmentStatus') == 'pending' || !data.get('fulfillmentStatus') }") { data.get('status') ? data.get('status') : 'reserved' }
+                  .value.order-status(if="{ data.get('fulfillmentStatus') != 'pending' && data.get('fulfillmentStatus') }") { data.get('fulfillmentStatus') }
+                .order-tracking-container(if="{ data.get('fulfillment.trackings.0') }")
+                  .label.order-tracking-label Tracking Number:
+                  .value.order-tracking
+                    a(href="{ data.get('fulfillment.trackings.0.url') }", target="_blank") { data.get('fulfillment.trackings.0.number') }
+                lineitems
                   .product-text-container
                     .label.product-name { data.get('productName') }
                     .label.product-description(if="{ data.get('description') }") { data.get('description') }
