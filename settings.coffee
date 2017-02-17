@@ -24,14 +24,16 @@ module.exports =
     title:     'Stoned Audio'
     name:      'stoned.audio'
     url:       url
-    copyright: '© Stoned Audio 2016'
+    copyright: '© Stoned Audio 2017'
 
-  shipDate: 'May 2017'
+  shipDate: 'June 2017'
   shipping:
     prelaunch2016december:
-      date: 'January'
+      date: 'January 2017'
     2:
-      date: 'Febuary'
+      date: 'Febuary 2017'
+    3:
+      date: 'June 2017'
 
   meta:
     description: description

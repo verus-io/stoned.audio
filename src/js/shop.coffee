@@ -15,7 +15,7 @@ $document.ready ->
     # key: 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJiaXQiOjQ1MDM2MTcwNzU2NzUxNzYsImp0aSI6IkJCMG56aTk4bVJFIiwic3ViIjoiNE5UeFhsUXJ0YiJ9.Ml2O8gHmL9jZ_LFRC_x-GRHFxd1xTyfRvWAnQgEkHk67RFDaR6v6bFOahmTG9G_nyu8d9_Y2qLqcFjjqm0HMzw'
     # endpoint: 'https://api.staging.crowdstart.com'
     order:
-      metadata: batch: '2'
+      metadata: batch: '3'
       shippingRate: 0
     terms: true
     referralProgram:
@@ -117,8 +117,8 @@ $document.ready ->
   m.on 'reset-password-success', ->
     window.location.href = 'reset-password-pending'
 
-  # $document.on 'mousedown', '.cart-peek, .pre-order-button[href="#"]', ->
-  $document.on 'mousedown', '.cart-peek', ->
+  $document.on 'mousedown', '.cart-peek, .pre-order-button[href="#"]', ->
+  # $document.on 'mousedown', '.cart-peek', ->
     $('#open-cart').prop 'checked', true
     $('#open-menu').prop 'checked', false
     setTimeout ->
@@ -133,16 +133,16 @@ $document.ready ->
     , 1000
 
   $document.on 'click', '.pre-order-button[href="#"]', ->
-    $modal = $('.backordered-modal').first()
-    $('body').addClass 'modal-lock'
-    $modal.removeClass 'hidden'
+    # $modal = $('.backordered-modal').first()
+    # $('body').addClass 'modal-lock'
+    # $modal.removeClass 'hidden'
 
-    # item = Shop.getItem 'earphone'
-    # if !item || item.quantity <= 0
-    #   Shop.setItem 'earphone', 1
-    # else
-    #   Shop.setItem 'earphone', item.quantity + 1
+    item = Shop.getItem 'earphone'
+    if !item || item.quantity <= 0
+      Shop.setItem 'earphone', 1
+    else
+      Shop.setItem 'earphone', item.quantity + 1
 
-    # Shop.riot.update()
+    Shop.riot.update()
     return false
 
