@@ -17,7 +17,7 @@ twitter =
   text:     "I'm getting Stoned. Are you?"
 
 pinterest =
-  text: "Stoned Earphones – #{description}"
+  text: "Stoned Earbuds – #{description}"
 
 module.exports =
   site:
