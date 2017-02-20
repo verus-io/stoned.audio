@@ -17,7 +17,7 @@ twitter =
   text:     "I'm getting Stoned. Are you?"
 
 pinterest =
-  text: "Stoned Earphones – #{description}"
+  text: "Stoned Earbuds – #{description}"
 
 module.exports =
   site:
@@ -26,7 +26,7 @@ module.exports =
     url:       url
     copyright: '© Stoned Audio 2017'
 
-  shipDate: 'June 2017'
+  shipDate: 'May 2017'
   shipping:
     prelaunch2016december:
       date: 'January 2017'
