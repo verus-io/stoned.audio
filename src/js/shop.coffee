@@ -132,11 +132,12 @@ $document.ready ->
       $('cart').removeClass 'close'
     , 1000
 
-  $document.on 'click', '.pre-order-button[href="#"]', ->
-    # $modal = $('.backordered-modal').first()
-    # $('body').addClass 'modal-lock'
-    # $modal.removeClass 'hidden'
+  $document.on 'click', 'product#shirt-men .pre-order-button, product#shirt-women .pre-order-button', ->
+    $modal = $('.backordered-modal.shirts').first()
+    $('body').addClass 'modal-lock'
+    $modal.removeClass 'hidden'
 
+  $document.on 'click', '.pre-order-button[href="#"]', ->
     item = Shop.getItem 'earphone'
     if !item || item.quantity <= 0
       Shop.setItem 'earphone', 1

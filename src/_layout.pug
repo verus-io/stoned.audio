@@ -183,7 +183,22 @@ html(lang='en')
           h2 Due to high demand, Stoned Earphones are backordered.
           p
             | Sign up to get notified when they are available again.
-          br
+          form.email-form
+            script(src='//api.crowdstart.com/mailinglist/zAuKWJGhqreW1/js')
+            input(id='email', name='email', placeholder='YOUR E-MAIL')
+            button(type='submit') SIGN&nbsp;UP
+            .error
+
+    .backordered-modal.modal.hidden.scrolling-modal.shirts
+      .modal-close
+        h1 &#10005;
+
+      .backordered.popup.animated.fadeInUp
+        .popup-image(data-lazy='/img/products/shirt-male.jpg')
+        .popup-text
+          h2 Due to high demand, Stoned Shirts are backordered.
+          p
+            | Sign up to get notified when they are available again.
           form.email-form
             script(src='//api.crowdstart.com/mailinglist/zAuKWJGhqreW1/js')
             input(id='email', name='email', placeholder='YOUR E-MAIL')
