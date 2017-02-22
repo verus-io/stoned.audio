@@ -8,6 +8,9 @@
   <loc>https://stoned.audio/</loc>
 </url>
 <url>
+  <loc>https://stoned.audio/ambassadors</loc>
+</url>
+<url>
   <loc>https://stoned.audio/app</loc>
 </url>
 <url>
@@ -17,6 +20,12 @@
   <loc>https://stoned.audio/returns</loc>
 </url>
 <url>
+  <loc>https://stoned.audio/reviews</loc>
+</url>
+<url>
+  <loc>https://stoned.audio/referral</loc>
+</url>
+<url>
   <loc>https://stoned.audio/contact</loc>
 </url>
 <url>
@@ -24,5 +33,8 @@
 </url>
 <url>
   <loc>https://stoned.audio/terms</loc>
+</url>
+<url>
+  <loc>https://stoned.audio/tech</loc>
 </url>
 </urlset>
