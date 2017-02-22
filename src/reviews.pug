@@ -1,7 +1,7 @@
 extends _layout.pug
 
 block title
-  | #{site.title} - Review
+  | #{site.title} - Reviews
 
 block headscript
   script(src='//www.google.com/recaptcha/api.js')
@@ -10,14 +10,74 @@ block content
   #page-review.page
     section.hero.short
       .content
-        h1 Leave a Review
+        h1 Stoned Earphones Reviews
+    // section.hero.short
+    //   .content
+    //     h1 Leave a Review
 
     section.body
       .content
+        h2 See what people are saying on social media!
+        blockquote
+          | My surprise Christmas present finally showed up thanks to my
+          | amazing fiance Mikaila Hayes and also thanks Stoned Audio for the
+          | best pair of headphones I've ever owned&nbsp;
+          a(href='https://www.instagram.com/stonedhq/', target='_blank') #stoned
+          a.attribution(href='https://www.facebook.com/photo.php?fbid=1332346686811325&set=o.1098749990193907&type=3&theater', target='_blank')
+            | By
+            img(src='https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-1/c0.0.100.100/p100x100/16265922_1320997231279604_454453279165484220_n.jpg?oh=c4608033ecda0cafbb658e1bfe279c53&oe=59480E7D')
+            | Christian, Febuary 8th 2017
+        hr
+
+        blockquote
+          | Received my Stoned earbuds yesterday and so far I am impressed. Wore one only for a bike ride this morning and it worked flawlessly, as well as staying secure in my ear. Great job, Stoned!
+          a.attribution(href='https://www.facebook.com/StonedHQ/posts/1227564730645765', target='_blank')
+            | By
+            img(src='https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-1/p100x100/16266220_1606290402720877_3856405450659520958_n.jpg?oh=89a38a65df45f77ca9f90d28496262bb&oe=592A1A1F')
+            | Chad, Febuary 8th 2017
+
+        hr
+        blockquote
+          | All I can say is wow. Surprisingly GREAT sound. Paired extremely easy and looking forward to running with them. That will be the true test. But for now, I'm impressed.
+          a.attribution(href='https://www.facebook.com/photo.php?fbid=10102043040138286&set=o.1098749990193907&type=3&theater', target='_blank')
+            | By
+            img(src='https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-1/p100x100/16114214_10102007448234746_2129489543560125752_n.jpg?oh=8472791f0c0d6fcd36f66c8f36eb90ac&oe=593241CB')
+            | Javy, Febuary 7th 2017
+
+      .content.longer
+        h2 Looking for more indepth reviews?
+
+        .columns
+          blockquote
+            strong Zero detectable lag on video.
+            br
+            | That surprised me. I've used some Bluetooth 'phones before, and even the slightest lag can be super-annoying.
+            br
+            br
+            | The fit (I used the largest of three provided plugs) is great. I could headbang like a muhfug with these things and they wouldn't budge. I've been wearing them for about an hour and they're barely noticeable.
+            a.attribution(href='https://www.facebook.com/Aaronkirscht/posts/10154413504956733', target='_blank')
+              | By
+              img(src='https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-1/p100x100/13265877_10153706749356733_3168800689831289287_n.jpg?oh=81c96e357fff6f36865682586ff47059&oe=592B5093')
+              | Aaron, Febuary 7th 2017
+
+          blockquote
+            |The Earphones are easy to pair. To pair them to each other and your phone, you press the button and hold it — the round silver piece on them — it will say “power on” and then say “pairing.” You can then press the button on the other, and they’ll beep a few times and sync to each other. Then you go to your phone’s Bluetooth section and select the Earphones.
+            br
+            strong It is very simple.
+            a.attribution(href='https://medium.com/@chrismartinez/review-stoned-earphones-5829e24bd398#.lh2xfj8be', target='_blank')
+              | By
+              img(src='https://cdn-images-1.medium.com/fit/c/60/60/1*Pj05tS1hFlojd4VQdYTAug.jpeg')
+              | Chris, Febuary 7th 2017
+
+      .content.submitreview
+        h2 Submit a review!
         input#name(type='text',placeholder='Name')
         br
         br
         input#email(type='text',placeholder='Email')
+        br
+        br
+        input#device(type='text',placeholder='Device (Iphone 7, Google Pixel, etc...)')
         br
         br
         label
