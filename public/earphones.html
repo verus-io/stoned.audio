@@ -1,1 +1,621 @@
-earbuds.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Stoned Audio - Stoned Earphones
+    </title>
+    <meta name="description" content="Huge sound, noise isolation, in-ear mic, charging case, intuitive controls and zero wires.">
+    <!-- Facebook-->
+    <meta property="og:title" content="Get Stoned">
+    <meta property="og:description" content="Huge sound, noise isolation, in-ear mic, charging case, intuitive controls and zero wires.">
+    <meta property="og:site_name" content="stoned.audio">
+    <meta property="og:url" content="https://stoned.audio">
+    <meta property="og:type" content="product">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://stoned.audio/img/fbshare.jpg">
+    <meta property="fb:app_id" content="1648878842071733">
+    <!-- Twitter-->
+    <meta name="twitter:title" content="Get Stoned">
+    <meta name="twitter:description" content="Huge sound, noise isolation, in-ear mic, charging case, intuitive controls and zero wires.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StonedHQ">
+    <meta name="twitter:image" content="https://stoned.audio/img/twittershare.jpg">
+    <meta name="twitter:url" content="https://stoned.audio">
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,300,100,100italic,300italic,400italic,700,700italic,900" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.min.css" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#33edc1">
+    <meta name="theme-color" content="#ffffff"><!--[if lt IE 10]>
+    <script src="/js/polyfill/html5-shiv.js"></script><![endif]-->
+  </head>
+  <body style="overflow:hidden">
+    <!-- Header-->
+    <input class="menu-state" id="open-menu" type="checkbox">
+    <input class="menu-state" id="open-cart" type="checkbox">
+    <header>
+      <nav>
+        <!-- ul-->
+        <!--   li-->
+        <!--     a(href='#') Product-->
+        <!--   li-->
+        <!--     a(href='#') Our Story-->
+        <!--   li-->
+        <!--     a(href='#') User Stories-->
+        <!--   li-->
+        <!--     a(href='#') Specs-->
+        <!-- |--><a id="home" href="/"><img class="logo" src="/img/logo.png" alt="stoned.audio"></a>
+        <label class="menu-button" for="open-menu">&#8801;</label>
+        <label class="cart-button" for="open-cart">
+          <cart>
+            <div class="cart-button-counter { nonzero: count() &gt; 0 }">{ count() }</div>
+          </cart>
+        </label><a class="pre-order-button button" href="#"><span>GET STONED</span></a>
+      </nav>
+    </header>
+    <menu>
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/earbuds">EARBUDS</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/press">PRESS</a></li>
+        <li><a href="/referral">REFERRAL PROGRAM</a></li>
+        <li><a href="/returns">RETURNS & WARRANTY</a></li>
+        <li><a href="/reviews">REVIEWS</a></li>
+        <li><a href="/contact">CONTACT US</a></li>
+        <li><a href="/privacy">PRIVACY</a></li>
+        <li><a href="/terms">TERMS</a></li>
+        <li>
+          <hr>
+        </li>
+        <li><a href="/login">LOG IN</a></li>
+        <li><a href="/signup">SIGN UP</a></li>
+        <li class="logo"><a href="/"><img src="/img/diamond-logo.svg"></a></li>
+      </ul>
+      <label class="close-menu" for="open-menu">&#10005;</label>
+    </menu>
+    <cart>
+      <h1 if="{ !isEmpty() }">Your Cart</h1>
+      <h1 if="{ isEmpty() }">Your Cart Is Empty</h1>
+      <label class="close-cart" for="open-cart">&#10005;</label>
+      <lineitems if="{ !isEmpty() }">
+        <div class="animated slideInRight">
+          <div class="product-image-container"><img src="img/products/earphone.jpg" alt="{ data.get('productName') }" if="{ data.get('productSlug') &amp;&amp; data.get('productSlug').indexOf('earphone') &gt;= 0 }"><img src="img/products/shirt-male.jpg" alt="{ data.get('productName') }" if="{ data.get('productSlug') &amp;&amp; data.get('productSlug').indexOf('shirt-men') &gt;= 0 }"><img src="img/products/shirt-female.jpg" alt="{ data.get('productName') }" if="{ data.get('productSlug') &amp;&amp; data.get('productSlug').indexOf('shirt-women') &gt;= 0 }"></div>
+          <div class="product-text-container"><span class="product-description"><span class="product-name">{ data.get('productName') }</span>
+              <p>{ data.get('description') }</p></span></div><span class="product-quantity-container locked" if="{ data.get('locked') }">{ data.get('quantity') }</span><span class="product-quantity-container" if="{ !data.get('locked') }">
+            <quantity-select-control></quantity-select-control></span>
+          <div class="product-delete" onclick="{ delete }">Remove</div>
+          <div class="product-price-container invoice-amount">
+            <div class="product-price">{ renderCurrency(parentData.get('currency'), data.get().price * data.get().quantity) } { parentData.get('currency').toUpperCase() }</div>
+            <div class="product-list-price invoice-amount" if="{ data.get().listPrice &gt; data.get().price }">{ renderCurrency(parentData.get('currency'), data.get().listPrice * data.get().quantity) } { parentData.get('currency').toUpperCase() }</div>
+          </div>
+        </div>
+      </lineitems>
+      <div if="{ !isEmpty() }">
+        <div class="invoice-line invoice-total">
+          <div class="invoice-label">Subtotal</div>
+          <div class="invoice-amount">{ renderCurrency(data.get('order.currency'), data.get('order.subtotal'))} { data.get('order.currency').toUpperCase() }</div>
+        </div><a class="button submit" href="/checkout">Checkout</a>
+      </div>
+      <div if="{ isEmpty() }"><a class="button submit" href="/">Continue Shopping</a></div>
+    </cart>
+    <main>
+      <section class="hero parallax video" id="tech-hero">
+        <!-- (data-src='https://www.youtube.com/embed/WeYsTmIzjkw')-->
+        <div class="foreground product" data-ratio="-60">
+          <div class="animated fadeInUp" style="background-image: url(img/hero-prod.png)"></div>
+        </div>
+        <div class="foreground" style="background-image: url(img/hero-overlay.png)" data-ratio="-60"></div>
+        <div class="watch"></div>
+        <!-- .call-to-action.watch.button
+        // a.play(href='#')
+        // h3 WATCH&nbsp;VIDEO
+        -->
+        <div class="content">
+          <h1>Stoned Earbuds</h1><a class="pre-order-button button" href="#">
+            <h3>PRE-ORDER</h3></a><span>$119 with <strong>FREE</strong> shipping</span>
+        </div><a class="button summary-down next-section" id="scroll-down" href="#"><img src="img/down-icon.svg"></a>
+        <!-- .video-modal.modal.hidden-->
+        <!--   iframe(width='100%', height='100%', src='', frameborder='0', allowfullscreen)-->
+        <!--   .modal-close.modal-close-position-->
+        <!--     | &#10005;-->
+        <div class="share-coupon-modal modal hidden scrolling-modal">
+          <div class="modal-close">
+            <h1>&#10005;</h1>
+          </div>
+          <div class="share-coupon">
+            <div class="share-coupon-image" data-lazy="/img/onpage-coupon.jpeg"></div>
+            <div class="share-coupon-text">
+              <h2>Tell your friends to get Stoned</h2>
+              <p>
+                Share why you are getting Stoned today and receive a <strong> $15
+                coupon </strong> for your next pair of Stoned Earbuds.
+              </p>
+              <div class="share-coupon-buttons"><a class="share-coupon-button-for facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstoned.audio" target="_blank"><i class="fa fa-facebook"></i><span>Share on Facebook</span></a><a class="share-coupon-button-for twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fstoned.audio&amp;text=I'm%20getting%20Stoned.%20Are%20you%3F&amp;hashtags=stoned,getstoned,stonedlife&amp;via=StonedHQ&amp;original_referer=https%3A%2F%2Fstoned.audio" target="_blank"><i class="fa fa-twitter"></i><span>Share on Twitter</span></a><a class="share-coupon-button-for googleplus" href="https://plus.google.com/share?url=https%3A%2F%2Fstoned.audio" target="_blank"><i class="fa fa-google-plus"></i><span>Share on Google+</span></a><a class="share-coupon-button-for pinterest" href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fstoned.audio&amp;media=https%3A%2F%2Fstoned.audio%2Fimg%2Ffbshare.jpg&amp;description=Stoned%20Earbuds%20%E2%80%93%20Huge%20sound%2C%20noise%20isolation%2C%20in-ear%20mic%2C%20charging%20case%2C%20intuitive%20controls%20and%20zero%20wires." target="_blank"><i class="fa fa-pinterest-p"></i><span>Share on Pinterest</span></a></div>
+            </div>
+            <div class="share-coupon-text finished">
+              <h2>Thanks for doing that!</h2>
+              <p>
+                Use the coupon
+                <strong> STONEDFRIENDS </strong>
+                to save
+                <strong> $15 </strong>
+                on your next pair of Stoned Earbuds.
+              </p>
+              <div class="pre-order-button button">
+                <h3>GET STONED</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section.progress(data-percent="1%", data-skip="true")-->
+      <!--   .bar-->
+      <section class="press-strip" data-skip="true">
+        <div class="content">
+          <div style="background-image: url(img/press-strip/kcstar.png)"></div>
+          <div style="background-image: url(img/press-strip/abc.png)"></div>
+          <div style="background-image: url(img/press-strip/cbs.png)"></div>
+          <div style="background-image: url(img/press-strip/fox.png); height: 50px; margin-top: 35px"></div>
+          <div style="background-image: url(img/press-strip/nbc.png); height: 56px; margin-top: 32px"></div>
+          <div style="background-image: url(img/press-strip/yahoofinance.png)"></div>
+        </div>
+      </section>
+      <section class="full list right" id="rocking" data-lazy="img/rockinglow.jpg">
+        <div class="image"></div>
+        <div class="info">
+          <h1>Audiophile sound</h1>
+          <p><strong class="emphasis">Stoned Earbuds</strong>
+            have large 7mm drivers capable of producing rich sound, full dynamic
+            range and a wide stereo image.
+          </p>
+          <p>
+            Excellent noise isolation ensures you'll enjoy crystal clear sound
+            whether you're listening to music or on a call.
+          </p>
+          <ul>
+            <li>
+              <div><img data-lazy="img/icons/freq-light.svg"></div>
+              <div>20-20,000&nbsp;HZ FREQUENCY</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/speaker-light.svg"></div>
+              <div>CLEAR&nbsp;TREBLE DEEP&nbsp;BASS</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/speaker2-light.svg"></div>
+              <div>NOISE ISOLATION</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/microphone-light.svg"></div>
+              <div>HD MICROPHONE</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="full list bottom" id="chargeup">
+        <div class="content">
+          <div class="image"></div>
+          <div class="info">
+            <h1>Charge on the go</h1>
+            <p>
+              Enjoy up to 5 hours of audio playback with a single charge and 120
+              hours on standby. Stay charged with the included<strong class="emphasis">&nbsp;Stoned Charging Case.</strong>
+            </p>
+            <p>Charges in just one hour. Recharge on the go up to six times.</p><img data-lazy="img/charging-case.png">
+            <ul>
+              <li>
+                <div><img data-lazy="img/icons/flash-dark.svg"></div>
+                <div>5&nbsp;HOUR PLAYBACK</div>
+              </li>
+              <li>
+                <div><img data-lazy="img/icons/battery-dark.svg"></div>
+                <div>CHARGE ON THE GO</div>
+              </li>
+              <li>
+                <div><img data-lazy="img/icons/usb-dark.svg"></div>
+                <div>CHARGE VIA&nbsp;USB</div>
+              </li>
+              <li>
+                <div><img data-lazy="img/icons/powerbank-dark.svg"></div>
+                <div>
+                  DOUBLES&nbsp;AS
+                  POWER BANK
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="full list right" id="comfy" data-lazy="img/comfylow.jpg">
+        <div class="image"></div>
+        <div class="info">
+          <h1>Perfect fit</h1>
+          <p><strong class="emphasis">Stoned Earbuds</strong>
+            are designed to feel great and stay put — whether
+            you are active or relaxing. And with three customizable silicone
+            eartips, you'll be sure to find a perfect fit.
+          </p>
+          <ul>
+            <li>
+              <div><img data-lazy="img/icons/eartips-light.svg"></div>
+              <div>CUSTOMIZABLE EARTIPS</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/isolation-light.svg"></div>
+              <div>SECURE FIT</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/small-light.svg"></div>
+              <div>COMPACT SIZE</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/feather-light.svg"></div>
+              <div>LIGHTWEIGHT</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="full list left" id="ditch" data-lazy="img/ditchlow.jpg">
+        <div class="image"></div>
+        <div class="info">
+          <h1>Works everywhere</h1>
+          <p><strong class="emphasis">Stoned Earbuds</strong>
+            connect to all of your Bluetooth-enabled devices. Easily pair with
+            your phone, tablet, laptop or watch.
+          </p>
+          <p>
+            Bluetooth 4.2 ensures you'll experience better connectivity,
+            lower latency, and higher quality audio than ever before.
+          </p>
+          <ul>
+            <li>
+              <div><img data-lazy="img/icons/bluetooth-light.svg"></div>
+              <div>BLUETOOTH 4.2</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/apple-light.svg"></div>
+              <div>IOS</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/android-light.svg"></div>
+              <div>ANDROID</div>
+            </li>
+            <li>
+              <div><img data-lazy="img/icons/range2-light.svg"></div>
+              <div>10 METER RANGE</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="full" id="lovethem" data-lazy="img/lovethem2low.jpg">
+        <div class="content">
+          <h1>Your phone will love them</h1>
+          <p>
+            The built-in HD microphone and active noise cancellation ensures
+            you'll be heard loud and clear on calls.
+          </p>
+          <p>
+            And with our iOS and Android app, you'll be able to configure EQ,
+            bass boost and more. <strong>Coming soon!</strong>
+          </p>
+          <ul class="applinks">
+            <li><a href="/app" target="_blank"><img data-lazy="img/appstore.png"></a></li>
+            <li><a href="/app" target="_blank"><img data-lazy="img/androidstore.png"></a></li>
+          </ul>
+        </div>
+      </section>
+      <!-- section#othersrock.full(data-lazy='img/othersrocklow.jpg')-->
+      <!--   h1 See how others rock.-->
+      <section class="full parallax" id="getstoned" data-lazy="img/getstoned-bglow.jpg">
+        <div class="foreground" data-lazy="img/getstoned-fg.png" data-ratio="-60"></div>
+        <div class="content">
+          <h2>The era of wires is over</h2>
+          <h1>Get Stoned</h1><a class="pre-order-button button" id="call-to-action" href="#">
+            <h3>PRE-ORDER</h3></a>
+        </div>
+      </section>
+    </main>
+    <section id="getnews" data-lazy="/img/lovethemlow.jpg">
+      <div class="content">
+        <!-- h1 Get the latest news.-->
+        <!-- p Sign up for our newsletter to stay up to date.-->
+        <h1>Stay Stoned</h1>
+        <p>Stay in the loop with the latest updates, discounts and
+          <exclusive>offers.</exclusive>
+        </p>
+        <form class="email-form" id="call-to-action">
+          <script src="//api.hanzo.io/mailinglist/zAuKWJGhqreW1/js"></script>
+          <input id="email" name="email" placeholder="YOUR E-MAIL">
+          <button type="submit">SIGN&nbsp;UP</button>
+          <div class="error"></div>
+        </form>
+      </div>
+    </section>
+    <div class="backordered-modal modal hidden scrolling-modal">
+      <div class="modal-close">
+        <h1>&#10005;</h1>
+      </div>
+      <div class="backordered popup animated fadeInUp">
+        <div class="popup-image" data-lazy="/img/charging-case.png"></div>
+        <div class="popup-text">
+          <h2>Due to high demand, Stoned Earbuds are backordered.</h2>
+          <p>Sign up to get notified when they are available again.</p>
+          <form class="email-form">
+            <script src="//api.hanzo.io/mailinglist/zAuKWJGhqreW1/js"></script>
+            <input id="email" name="email" placeholder="YOUR E-MAIL">
+            <button type="submit">SIGN&nbsp;UP</button>
+            <div class="error"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="backordered-modal modal hidden scrolling-modal shirts">
+      <div class="modal-close">
+        <h1>&#10005;</h1>
+      </div>
+      <div class="backordered popup animated fadeInUp">
+        <div class="popup-image" data-lazy="/img/products/shirt-male.jpg"></div>
+        <div class="popup-text">
+          <h2>Due to high demand, Stoned Shirts are backordered.</h2>
+          <p>Sign up to get notified when they are available again.</p>
+          <form class="email-form">
+            <script src="//api.hanzo.io/mailinglist/zAuKWJGhqreW1/js"></script>
+            <input id="email" name="email" placeholder="YOUR E-MAIL">
+            <button type="submit">SIGN&nbsp;UP</button>
+            <div class="error"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <nav class="links">
+        <ul>
+          <!-- li-->
+          <!--   a(href='/about') ABOUT-->
+          <!-- li-->
+          <!--   a(href='/press') PRESS-->
+          <!-- li-->
+          <!--   a(href='/faq') FAQ-->
+          <li><strong>About Us</strong></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/earbuds">Earbuds</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/press">Press</a></li>
+          <li><a href="/referral">Referral Program</a></li>
+        </ul>
+        <ul>
+          <li><strong>Help</strong></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/returns">Returns & Warranty</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <ul>
+          <li><strong>Account</strong></li>
+          <li><a href="/login">Log In</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        </ul>
+      </nav>
+      <nav class="social">
+        <ul>
+          <li><a id="social-facebook" href="https://www.facebook.com/StonedHQ" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+          <li><a id="social-twitter" href="https://twitter.com/StonedHQ" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a id="social-instagram" href="http://instagram.com/StonedHQ/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <li><a id="social-medium" href="https://medium.com/@stonedhq" target="_blank"><i class="fa fa-medium"></i></a></li>
+          <li><a id="social-soundcloud" href="https://soundcloud.com/stonedhq" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
+        </ul>
+      </nav><a href="#"><img class="logo" src="/img/logo.png" alt="stoned.audio"></a><small class="copyright">© Stoned Audio 2017</small>
+    </footer>
+    <!-- .loader-->
+    <!-- Checkout Modal-->
+    <div class="checkout-modal modal scrolling-modal">
+      <div class="modal-close">
+        <h1>&#10005;</h1>
+      </div>
+    </div>
+    <!-- Checkout widget-->
+    <div class="checkout-container">
+      <div class="checkout">
+        <input id="cart-collapsed" type="checkbox">
+        <ul class="steps">
+          <li>
+            <div class="step-number">
+              <div class="step-circle">1</div>
+            </div>
+            <div class="step-description">PAYMENT INFO</div>
+          </li>
+          <li>
+            <div class="step-number">
+              <div class="step-circle">2</div>
+            </div>
+            <div class="step-description">SHIPPING INFO</div>
+          </li>
+          <li>
+            <div class="step-number">
+              <div class="step-circle">3</div>
+            </div>
+            <div class="step-description">COMPLETED</div>
+          </li>
+        </ul>
+        <div class="continue-shopping">
+          <h1>&#10005;</h1>
+        </div>
+        <checkout>
+          <div class="parts">
+            <div class="part">
+              <div class="contact-information">
+                <h1>Contact</h1>
+                <div class="fields">
+                  <user-name class="input" placeholder="Name"></user-name>
+                  <user-email class="input" placeholder="Email"></user-email>
+                </div>
+              </div>
+              <div class="payment-information">
+                <h1>Payment<span class="secured-text">SSL Secure<span>Checkout</span><img class="lock-icon" src="img/lock-icon.svg"></span></h1>
+                <div class="fields">
+                  <card-name class="input" placeholder="Name on Card"></card-name>
+                  <card-number class="input" name="number" placeholder="Card Number"><img class="card-logo amex-logo" src="img/card-logos/amex.svg"><img class="card-logo discover-logo" src="img/card-logos/discover.svg"><img class="card-logo jcb-logo" src="img/card-logos/jcb.svg">
+                    <!-- img.card-logo.maestro-logo(src='img/card-logos/maestro.svg')--><img class="card-logo mastercard-logo" src="img/card-logos/mastercard.svg"><img class="card-logo visa-logo" src="img/card-logos/visa.svg">
+                  </card-number>
+                  <card-expiry class="input" name="expiry" placeholder="MM / YY"></card-expiry>
+                  <card-cvc class="input" name="cvc" placeholder="CVC"></card-cvc>
+                </div>
+                <p class="cards-accepted">
+                  <!-- img.card-logo.maestro-logo(src='img/card-logos/maestro.svg')--><img class="card-logo visa-logo" src="img/card-logos/visa.svg"><img class="card-logo mastercard-logo" src="img/card-logos/mastercard.svg"><img class="card-logo discover-logo" src="img/card-logos/discover.svg"><img class="card-logo amex-logo" src="img/card-logos/amex.svg">
+                  <!-- img.card-logo.jcb-logo(src='img/card-logos/jcb.svg')--><a class="stripe-link" href="//www.stripe.com" target="_blank"><img class="stripe-logo" src="img/stripelogo.png"></a>
+                </p>
+                <!-- p.legal-->
+                <!--   | Transactions are always encrypted.  Credit card information is never stored.-->
+              </div>
+              <!-- img.security-code(src='img/card-logos/security-code.svg')-->
+              <!-- <div class="confirmation">-->
+              <!-- <h1>-->
+              <!-- Almost Done-->
+              <!-- </h1>-->
+            </div>
+            <div class="part">
+              <div class="shipping-information">
+                <h1>Shipping</h1>
+                <div class="fields">
+                  <shippingaddress-name class="input" placeholder="Recipient"></shippingaddress-name>
+                  <shippingaddress-line1 class="input" placeholder="Address"></shippingaddress-line1>
+                  <shippingaddress-line2 class="input" placeholder="Suite"></shippingaddress-line2>
+                </div>
+                <div class="fields">
+                  <shippingaddress-city class="input" placeholder="City"></shippingaddress-city>
+                  <shippingaddress-postalcode class="input" placeholder="Postal Code"></shippingaddress-postalcode>
+                </div>
+                <div class="fields">
+                  <shippingaddress-state class="input" placeholder="State"></shippingaddress-state>
+                  <shippingaddress-country class="input" placeholder="Country"></shippingaddress-country>
+                </div>
+              </div>
+              <terms>
+                <label for="terms">I have read and accept the&nbsp;<a href="terms" target="_blank">terms and conditions</a></label>
+              </terms>
+            </div>
+            <div class="part">
+              <div class="thankyou">
+                <p>Your order number is&nbsp;<strong>.</strong></p>
+                <p>Tell your friends to get Stoned!</p>
+                <div class="share-field"><span class="ref-text ref-link">Loading...</span><span class="copied">Copied!</span></div>
+                <ul class="social">
+                  <li><a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstoned.audio" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+                  <li><a class="share-twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fstoned.audio&amp;text=I'm%20getting%20Stoned.%20Are%20you%3F&amp;hashtags=stoned,getstoned,stonedlife&amp;via=StonedHQ&amp;original_referer=https%3A%2F%2Fstoned.audio" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="share-email" href="mailto:?subject=You%20need%20to%20get%20Stoned&amp;body=Huge%20sound%2C%20noise%20isolation%2C%20in-ear%20mic%2C%20charging%20case%2C%20intuitive%20controls%20and%20zero%20wires.%0A%0AI'm%20getting%20Stoned.%20Are%20you%3F"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+              </div>
+              <register if="{ !userExists }" data="{ data }" immediate-login="true">
+                <p>Finish creating your account to learn how to get another<strong>&nbsp;FREE PAIR.&nbsp;</strong>Enter a password to save your account.</p>
+                <div class="password-row">
+                  <user-password class="input" placeholder="Password"></user-password>
+                  <button type="submit">Save</button>
+                </div>
+              </register><a class="modal-close link" href="#" if="{ !userExists }">No, I don't want my free pair of earphones.</a>
+            </div>
+          </div>
+          <button class="{ loading: loading || checkedOut }" __disabled="{ loading || checkedOut }" type="submit"><span>Continue &#8594;</span><span>Checkout</span></button>
+          <div class="error" if="{ errorMessage }">{ errorMessage }</div><br>
+          <p class="legal"><a href="returns" target="_blank">Return&nbsp;Policy</a><a href="privacy" target="_blank">Privacy&nbsp;Policy</a><a href="terms" target="_blank">Terms&nbsp;of&nbsp;Service</a></p>
+        </checkout>
+        <cart>
+          <h1>
+            <label for="cart-collapsed">Details</label>
+            <label class="expand-summary" for="cart-collapsed"><img src="img/info-black.svg"></label>
+            <div class="invoice-amount">{ renderCurrency(data.get('order.currency'), data.get('order.total'))} { data.get('order.currency').toUpperCase() }</div>
+          </h1>
+          <lineitems if="{ !isEmpty() }">
+            <div class="animated slideInRight">
+              <div class="product-image-container"><img src="img/products/earphone.jpg" alt="{ data.get('productName') }" if="{ data.get('productSlug') &amp;&amp; data.get('productSlug').indexOf('earphone') &gt;= 0 }"><img src="img/products/shirt-male.jpg" alt="{ data.get('productName') }" if="{ data.get('productSlug') &amp;&amp; data.get('productSlug').indexOf('shirt-men') &gt;= 0 }"><img src="img/products/shirt-female.jpg" alt="{ data.get('productName') }" if="{ data.get('productSlug') &amp;&amp; data.get('productSlug').indexOf('shirt-women') &gt;= 0 }"></div>
+              <div class="product-text-container"><span class="product-description"><span class="product-name">{ data.get('productName') }</span>
+                  <p>{ data.get('description') }</p></span></div><span class="product-quantity-container locked" if="{ data.get('locked') }">{ data.get('quantity') }</span><span class="product-quantity-container" if="{ !data.get('locked') }">
+                <quantity-select-control></quantity-select-control></span>
+              <div class="product-price-container invoice-amount">
+                <div class="product-price">{ renderCurrency(parentData.get('currency'), data.get().price * data.get().quantity) } { parentData.get('currency').toUpperCase() }</div>
+                <div class="product-list-price invoice-amount" if="{ data.get().listPrice &gt; data.get().price }">{ renderCurrency(parentData.get('currency'), data.get().listPrice * data.get().quantity) } { parentData.get('currency').toUpperCase() }</div>
+              </div>
+            </div>
+          </lineitems>
+          <div class="promo">
+            <div class="promo-label">Coupon</div>
+            <div class="promo-row { green: promoMessage.indexOf(&quot;Applied&quot;) &gt;= 0, red: promoMessage &amp;&amp; promoMessage.indexOf(&quot;Applied&quot;) &lt; 0 }">
+              <promocode class="input" placeholder="Coupon"></promocode>
+              <button class="{ loading: applying, notify: !applying &amp;&amp; data.get(&quot;order.promoCode&quot;) &amp;&amp; !promoMessage }" onclick="{ applyPromoCode }"><span>&#10003;</span><span>&#10005;</span></button>
+            </div>
+          </div>
+          <!-- .promo-message(if="{ data.get('order.promoCode') && !promoMessage && !applying }")-->
+          <!--   | Don't forget to apply your code!-->
+          <!-- .promo-message(if='{ promoMessage }', class='{ green: promoMessage.indexOf("Applied") >= 0 }')-->
+          <!--   | { promoMessage }-->
+          <div class="invoice-discount invoice-line animated fadeInUp" if="{ data.get('order.discount') &gt; 0 }">
+            <div class="invoice-label">Discount</div>
+            <div class="invoice-amount">{ renderCurrency(data.get('order.currency'), data.get('order.discount'))} { data.get('order.currency').toUpperCase() }</div>
+          </div>
+          <div class="invoice-line">
+            <div class="invoice-label">Subtotal</div>
+            <div class="invoice-amount">{ renderCurrency(data.get('order.currency'), data.get('order.subtotal'))} { data.get('order.currency').toUpperCase() }</div>
+          </div>
+          <div class="invoice-line">
+            <div class="invoice-label">Shipping</div>
+            <div class="invoice-amount not-bold">{ data.get('order.shipping') == 0 ? 'FREE' : renderCurrency(data.get('order.currency'), data.get('order.shipping'))}&nbsp;{ data.get('order.shipping') == 0 ? '' : data.get('order.currency').toUpperCase() }</div>
+          </div>
+          <div class="invoice-line">
+            <div class="invoice-label">Tax ({ data.get('order.taxRate') * 100 }%)</div>
+            <div class="invoice-amount">{ renderCurrency(data.get('order.currency'), data.get('order.tax'))} { data.get('order.currency').toUpperCase() }</div>
+          </div>
+          <div class="invoice-line invoice-total">
+            <div class="invoice-label">Total</div>
+            <div class="invoice-amount">{ renderCurrency(data.get('order.currency'), data.get('order.total'))} { data.get('order.currency').toUpperCase() }</div>
+          </div>
+          <div class="invoice-line estimated-delivery">
+            <div class="invoice-label">Ships</div>
+            <div class="invoice-amount">May 2017</div>
+          </div>
+        </cart><span class="notes">
+          <p><span class="tax-notice">Customers will be responsible for any VAT or customs and import duties.</span></p></span>
+      </div>
+    </div><!--[if IE]>
+    <div class="browserupgrade"></div>
+    <p>
+      You are using an strong outdated  browser. Please
+      a(href='http://browsehappy.com/') upgrade your browser to improve
+      your experience and security.
+    </p><![endif]-->
+<!--[if lt IE 10]>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.4.min.js"><\\/script>')</script>
+    <script src="/js/polyfill/ie-love.js"></script><![endif]-->
+<!--[if gt IE 9]><!-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.1.0.min.js"><\\/script>')</script><!--<![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script type="text/javascript" src="//cdn.reamaze.com/assets/reamaze.js"></script>
+    <script src="/js/reamaze.js"></script>
+    <script type="text/javascript">
+      var _support = _support || { 'ui': {}, 'user': {} };
+      _support['account'] = 'stoned';
+      _support['ui']['widget'] = {
+        color: 'rgb(60, 243, 182)',
+        icon: 'help',
+        size: 40,
+        label: {
+          text: 'Ask us anything',
+          delay: 3,
+          duration: 30,
+        }
+      };
+      
+    </script>
+  </body>
+</html>
