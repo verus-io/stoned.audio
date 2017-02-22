@@ -11,9 +11,6 @@ block content
     section.hero.short
       .content
         h1 Stoned Reviews
-    // section.hero.short
-    //   .content
-    //     h1 Leave a Review
 
     section.body
       .content
@@ -68,8 +65,88 @@ block content
               | By
               img(src='https://cdn-images-1.medium.com/fit/c/60/60/1*Pj05tS1hFlojd4VQdYTAug.jpeg')
               | Chris, Febuary 7th 2017
+        hr
 
-      .content.submitreview
+      .content.customer-reviews
+        h2(itemscope, itemtype='http://schema.org/Thing') Top Customer Reviews
+          span(itemprop='name', style='display:none') Stoned Earphone
+          span(itemprop='description', style='display:none')=description
+          .ratings(itemprop='aggregateRating',itemscope,itemtype='http://schema.org/AggregateRating')
+            span.gem &#128142;
+            span.gem &#128142;
+            span.gem &#128142;
+            span.gem.selected &#128142;
+            span.gem &#128142;
+          span
+            | (
+            span(itemprop='ratingValue') 4
+            | /
+            span(itemprop='bestRating') 5
+            | )
+            span(itemprop='ratingCount', style='display:none') 3
+
+        .review(itemscope,itemtype='http://schema.org/Review')
+          span(itemprop='name', style='display:none') Stoned Earphone
+          span
+            .ratings
+              span.gem &#128142;
+              span.gem &#128142;
+              span.gem &#128142;
+              span.gem &#128142;
+              span.gem.selected &#128142;
+              span(itemprop='reviewRating',itemscope,itemtype='http://schema.org/Rating')
+                span(itemprop='ratingValue') 5
+                | /
+                span(itemprop='bestRating') 5
+                | &nbsp;
+              strong I can say these were definitely worth the wait.
+            span(itemprop='author',itemscope,itemtype='http://schema.org/Person')
+              | By <strong itemprop='name'>Michael lopez</strong> on Febuary 7th 2017
+          p
+            | I can say these were definitely worth the wait. I was one of the people extremely eager to finally get these in my ears. Now i don't professionally rate earbuds for a living but i have definitely had more than a few in my life time. For awhile now my routine when getting new earbuds/headphones is to immediately play 'Follow Me' by Muse. It goes through a wide spectrum of sound and i think it gives me a great idea of what the headphones have to offer. I played the song and i felt like i was there, absolutely amazing. I felt like Matt Bellamy was singing in my face. Thank you so much for the work you guys did. I know you guys took alot of beating over the last month over social media and probably over the phone lol. But you did what you needed to and you put out an amazing product. Thank you again. Now  if you don't mind I'm gonna go to the gym and get STONED!
+        .review
+          span(itemprop='name', style='display:none') Stoned Earphone
+          span
+            .ratings
+              span.gem &#128142;
+              span.gem &#128142;
+              span.gem.selected &#128142;
+              span.gem &#128142;
+              span.gem &#128142;
+              span(itemprop='reviewRating',itemscope,itemtype='http://schema.org/Rating')
+                span(itemprop='ratingValue') 3
+                | /
+                span(itemprop='bestRating') 5
+                | &nbsp;
+              strong The sound on these are great... or at least on the one that works.
+            span(itemprop='author',itemscope,itemtype='http://schema.org/Person')
+              | By <strong itemprop='name'>Chad Hilts</strong> on Febuary 9th 2017
+            .verified
+              | Verified Purchase
+          p
+            | The sound on these are great... or at least on the one that works.  The button on the left earpiece is hard to press and i can't tell if the two are synced.  Plus it took me forever to figure out how to get them to pair with my Android.  I have no sound coming out of the left at all.  I pushed both for 10 seconds like the directions stated until they both flashed blue once.  Then i pressed the left to pair, the right to power on and it's hit or miss on when or if they'll connect.  Also, the sound seems to be cutting in and out now.  I let them charge for an hour upon receiving them. I'll let them charge over night amd see if that fixes it
+        .review
+          span(itemprop='name', style='display:none') Stoned Earphone
+          span
+            .ratings
+              span.gem &#128142;
+              span.gem &#128142;
+              span.gem &#128142;
+              span.gem.selected &#128142;
+              span.gem &#128142;
+              span(itemprop='reviewRating',itemscope,itemtype='http://schema.org/Rating')
+                span(itemprop='ratingValue') 4
+                | /
+                span(itemprop='bestRating') 5
+                | &nbsp;
+              strong These headphones are above par.
+            | By <strong itemprop='name'>Michael Acosta</strong> on Febuary 7th 2017
+            .verified
+              | Verified Purchase
+          p
+            | These headphones are above par. It took a while to pair them and link them but after that the sound was amazing. Charging case is small and durable, plus I love the soft color. Great product, takes some time to master but it's a great pay out.
+
+      .content.submit-review
         h2 Leave us a review
         input#name(type='text',placeholder='Name')
         br

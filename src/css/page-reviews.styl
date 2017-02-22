@@ -18,6 +18,8 @@
 
   .longer
     .columns
+      display: table
+
       blockquote
         +above(800px)
           column 1/2 2 20px
@@ -26,14 +28,26 @@
       display: block
       width: 100%
 
-  .submitreview
-    max-width: 600px
+  .customer-reviews
+    h2
+      margin-bottom: 40px
+
+    .review
+      font-size: .9em
+      .verified
+        color: $color1
+        font-weight: bold
+
+      margin-bottom: 20px
+
+  .submit-review
+    .gem
+      cursor: pointer
 
   .ratings
     .gem
-      font-size: 2em
-      padding-right: 10px
-      cursor: pointer
+      font-size: 1.5em
+      padding-right: 5px
 
-      &.selected ~ *
+      &.selected ~ .gem
         opacity: .3
