@@ -1,7 +1,7 @@
 if location.pathname.indexOf('review') >= 0
   $document = $(document)
   $document.ready ->
-    $document.on 'click', '.gem', ->
+    $document.on 'click', '.submit-review .gem', ->
       $el = $(this)
       $el.parent().children().removeClass 'selected'
       $el.addClass 'selected'
