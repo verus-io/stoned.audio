@@ -1,6 +1,6 @@
 {images} = (require '../../settings').instafeed
 
-if location.pathname == '/' || location.pathname.indexOf('tech') >= 0
+if location.pathname == '/' || location.pathname.indexOf('earbuds') >= 0
   # http://solemone.de/code/code-examples/demos-grayscale-hover-effect-with-html5-canvas-and-jquery/
   grayScale = (src, cb)->
     supportsCanvas = !!document.createElement('canvas').getContext
