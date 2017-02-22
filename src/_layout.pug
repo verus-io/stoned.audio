@@ -208,7 +208,47 @@ html(lang='en')
             .error
 
     footer
-      nav
+      nav.links
+        ul
+          // li
+          //   a(href='/about') ABOUT
+          // li
+          //   a(href='/press') PRESS
+          // li
+          //   a(href='/faq') FAQ
+          li
+            strong About Us
+          li
+            a(href='/') Home
+          li
+            a(href='/tech') Earbuds
+          li
+            a(href='/reviews') Reviews
+          li
+            a(href='/press') Press
+          li
+            a(href='/referral') Referral Program
+        ul
+          li
+            strong Help
+          li
+            a(href='/faq') FAQ
+          li
+            a(href='/returns') Returns & Warranty
+          li
+            a(href='/privacy') Privacy
+          li
+            a(href='/terms') Terms
+          li
+            a(href='/contact') Contact Us
+        ul
+          li
+            strong Account
+          li
+            a(href='/login') Log In
+          li
+            a(href='/signup') Sign Up
+      nav.social
         ul
           li
             a#social-facebook(href='https://www.facebook.com/StonedHQ', target='_blank')
@@ -226,38 +266,6 @@ html(lang='en')
             a#social-soundcloud(href='https://soundcloud.com/stonedhq', target='_blank')
               i.fa.fa-soundcloud
 
-      nav
-        ul
-          // li
-          //   a(href='/about') ABOUT
-          // li
-          //   a(href='/press') PRESS
-          // li
-          //   a(href='/faq') FAQ
-          li
-            a(href='/') HOME
-          li
-            a(href='/tech') EARBUDS
-          li
-            a(href='/faq') FAQ
-          li
-            a(href='/press') PRESS
-          li
-            a(href='/referral') REFERRAL PROGRAM
-          li
-            a(href='/returns') RETURNS & WARRANTY
-          li
-            a(href='/reviews') REVIEWS
-          li
-            a(href='/contact') CONTACT US
-          li
-            a(href='/privacy') PRIVACY
-          li
-            a(href='/terms') TERMS
-          li
-            a(href='/login') LOG IN
-          li
-            a(href='/signup') SIGN UP
       a(href='#')
         img.logo(src='/img/logo.png', alt=site.name)
       small.copyright= site.copyright
