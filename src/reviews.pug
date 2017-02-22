@@ -69,7 +69,7 @@ block content
 
       .content.customer-reviews
         h2(itemscope, itemtype='http://schema.org/Thing') Top Customer Reviews for
-          span(itemprop='name') Stoned Earphones
+          span(itemprop='name') &nbsp;Stoned Earphones
           span(itemprop='description', style='display:none')
             | #{ meta.description }
           .ratings(itemprop='aggregateRating',itemscope,itemtype='http://schema.org/AggregateRating')
@@ -103,6 +103,8 @@ block content
               strong I can say these were definitely worth the wait.
             span(itemprop='author',itemscope,itemtype='http://schema.org/Person')
               | By <strong itemprop='name'>Michael lopez</strong> on Febuary 7th 2017
+            .verified
+              | Verified Purchase
           p
             | I can say these were definitely worth the wait. I was one of the people extremely eager to finally get these in my ears. Now i don't professionally rate earbuds for a living but i have definitely had more than a few in my life time. For awhile now my routine when getting new earbuds/headphones is to immediately play 'Follow Me' by Muse. It goes through a wide spectrum of sound and i think it gives me a great idea of what the headphones have to offer. I played the song and i felt like i was there, absolutely amazing. I felt like Matt Bellamy was singing in my face. Thank you so much for the work you guys did. I know you guys took alot of beating over the last month over social media and probably over the phone lol. But you did what you needed to and you put out an amazing product. Thank you again. Now  if you don't mind I'm gonna go to the gym and get STONED!
         .review
@@ -141,7 +143,8 @@ block content
                 span(itemprop='bestRating') 5
                 | &nbsp;
               strong These headphones are above par.
-            | By <strong itemprop='name'>Michael Acosta</strong> on Febuary 7th 2017
+            span(itemprop='author',itemscope,itemtype='http://schema.org/Person')
+              | By <strong itemprop='name'>Michael Acosta</strong> on Febuary 7th 2017
             .verified
               | Verified Purchase
           p
