@@ -68,30 +68,29 @@ block content
               | By
               img(src='https://cdn-images-1.medium.com/fit/c/60/60/1*Pj05tS1hFlojd4VQdYTAug.jpeg')
               | Chris, Febuary 7th 2017
+        hr
 
-      .content.video
-        h2 Video reviews
-        h1 Coming Soon...
-
-
-    // section.body
-    //   .content
-    //     input#name(type='text',placeholder='Name')
-    //     br
-    //     br
-    //     input#email(type='text',placeholder='Email')
-    //     br
-    //     br
-    //     label
-    //         strong Rating:
-    //     .ratings
-    //       span.gem &#128142;
-    //       span.gem &#128142;
-    //       span.gem &#128142;
-    //       span.gem &#128142;
-    //       span.gem.selected &#128142;
-    //     textarea#comment(placeholder='Write Comments...')
-    //     br
-    //     br
-    //     .g-recaptcha(data-sitekey='6LfX1hMUAAAAAAlNTjExftw7-GeykK2-tWjbtSUY')
-    //     button#submit(type='submit') Submit
+      .content.submitreview
+        h2 Submit a review!
+        input#name(type='text',placeholder='Name')
+        br
+        br
+        input#email(type='text',placeholder='Email')
+        br
+        br
+        input#device(type='text',placeholder='Device (Iphone 7, Google Pixel, etc...)')
+        br
+        br
+        label
+            strong Rating:
+        .ratings
+          span.gem &#128142;
+          span.gem &#128142;
+          span.gem &#128142;
+          span.gem &#128142;
+          span.gem.selected &#128142;
+        textarea#comment(placeholder='Write Comments...')
+        br
+        br
+        .g-recaptcha(data-sitekey='6LfX1hMUAAAAAAlNTjExftw7-GeykK2-tWjbtSUY')
+        button#submit(type='submit') Submit

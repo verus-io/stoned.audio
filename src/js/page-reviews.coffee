@@ -10,6 +10,7 @@ if location.pathname.indexOf('review') >= 0
       opts =
         userId:     $('#email').val()
         name:       $('#name').val()
+        device:     $('#device').val()
         comment:    $('#comment').val()
         rating:     $('.gem.selected').index() + 1
 
