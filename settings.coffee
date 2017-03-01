@@ -31,9 +31,9 @@ module.exports =
     prelaunch2016december:
       date: 'January 2017'
     2:
-      date: 'Febuary 2017'
+      date: 'April 2017'
     3:
-      date: 'June 2017'
+      date: 'May 2017'
 
   meta:
     description: description
