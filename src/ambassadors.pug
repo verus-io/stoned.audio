@@ -39,3 +39,16 @@ block content
         p.
           You can look up all the nitty-gritty on the <a
           href="/ambassador-terms">ambassador terms</a> page.
+
+        h1
+          label Sign Up
+        register(immediate-login='true')
+          user-name(placeholder='Name')
+          user-email(placeholder='Email')
+          user-password(placeholder='Password')
+          #register-recaptcha
+          .error(if='{ errorMessage }')
+            | { errorMessage }
+
+          button(type='submit')
+            | Register
