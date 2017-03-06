@@ -3,6 +3,9 @@ extends _layout.pug
 block title
   | #{site.title} - Ambassador Program
 
+block headscript
+  script(src='//www.google.com/recaptcha/api.js?render=explicit')
+
 block content
   #page-ambassadors.page
     section.hero.short
