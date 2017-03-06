@@ -36,12 +36,12 @@
     "qrcode": "0.5.0",
     "raf": "3.3.0",
     "reeeset": "0.0.7",
-    "requisite": "1.19.1",
+    "requisite": "1.19.12",
     "rucksack-css": "0.8.6",
     "rupture": "0.6.2",
     "selectize": "0.12.4",
     "shop.js": "1.1.21",
-    "shortcake": "1.1.18",
+    "shortcake": "1.2.5",
     "stylus": "0.54.5"
   }
 }
