@@ -118,8 +118,8 @@ $document.ready ->
   m.on 'reset-password-success', ->
     window.location.href = 'reset-password-pending'
 
-  $document.on 'mousedown', '.cart-peek, .pre-order-button[href="#"]', ->
-  # $document.on 'mousedown', '.cart-peek', ->
+  # $document.on 'mousedown', '.cart-peek, .pre-order-button[href="#"]', ->
+  $document.on 'mousedown', '.cart-peek', ->
     $('#open-cart').prop 'checked', true
     $('#open-menu').prop 'checked', false
     setTimeout ->
@@ -139,12 +139,15 @@ $document.ready ->
     $modal.removeClass 'hidden'
 
   $document.on 'click', '.pre-order-button[href="#"]', ->
-    item = Shop.getItem 'earphone'
-    if !item || item.quantity <= 0
-      Shop.setItem 'earphone', 1
-    else
-      Shop.setItem 'earphone', item.quantity + 1
+    $modal = $('.backordered-modal.earbuds').first()
+    $('body').addClass 'modal-lock'
+    $modal.removeClass 'hidden'
+    # item = Shop.getItem 'earphone'
+    # if !item || item.quantity <= 0
+    #   Shop.setItem 'earphone', 1
+    # else
+    #   Shop.setItem 'earphone', item.quantity + 1
 
-    Shop.riot.update()
+    # Shop.riot.update()
     return false
 
