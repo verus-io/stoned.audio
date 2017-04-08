@@ -7,6 +7,7 @@
   "dependencies": {
     "autoprefixer": "6.7.7",
     "bebop": "1.12.1",
+    "cake-outdated": "0.1.18",
     "cake-publish": "0.1.10",
     "cake-test": "0.1.0",
     "cake-version": "0.1.15",
@@ -36,15 +37,11 @@
     "qrcode": "0.8.1",
     "raf": "3.3.0",
     "reeeset": "0.0.8",
-    "requisite": "1.19.15",
     "rucksack-css": "0.9.1",
     "rupture": "0.6.2",
     "selectize": "0.12.4",
     "shop.js": "2.0.17",
     "shortcake": "1.2.8",
     "stylus": "0.54.5"
-  },
-  "devDependencies": {
-    "cake-outdated": "0.1.18"
   }
 }

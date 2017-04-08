@@ -29,25 +29,21 @@ compilePug = (src, dst) ->
   true
 
 compileCoffee = ->
-  requisite  = require 'requisite'
-
-  src = 'src/js/app.coffee'
-  dst = 'public/js/app.js'
+  handroll  = require 'handroll'
 
   opts =
-    entry:             src
-    externalSourceMap: true
-    sourceMapURL:      (path.basename dst) + '.map'
+    entry:  'src/js/app.coffee'
+    dest:   'public/js/app.js'
+    format: 'web'
+    es3:    false
+    compilers:
+      coffee:
+        version: 1
 
   if process.env.PRODUCTION
-    opts.minify   = true
-    opts.minifier = 'esmangle'
+    opts.minify = true
 
-  requisite.bundle opts, (err, bundle) ->
-    return console.error err if err?
-    {code, map} = bundle.toString opts
-    writeFile dst, code
-    writeFile dst + '.map', map
+  handroll.write opts
 
   true
 
