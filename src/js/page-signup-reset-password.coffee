@@ -1,6 +1,6 @@
-if location.pathname.indexOf('login') >= 0 || location.pathname.indexOf('reset') >= 0
-  store = require 'shop.js/src/utils/store'
+import store from 'akasha'
 
+if location.pathname.indexOf('login') >= 0 || location.pathname.indexOf('reset') >= 0
   if store.get 'register'
     document.getElementById('login')?.checked=true
 

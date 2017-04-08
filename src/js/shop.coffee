@@ -1,8 +1,8 @@
+import Shop      from 'shop.js'
+import selectize from 'es-selectize'
+
 $document = $(document)
 $document.ready ->
-  window.Shop = Shop = require 'shop.js'
-  window.selectize = require 'selectize'
-  store = require 'shop.js/src/utils/store'
 
   settings =
     # prod live

@@ -1,9 +1,10 @@
+import Clipboard from 'clipboard'
+import Shop      from 'shop.js'
+import selectize from 'es-selectize'
+
 $document = $(document)
 
 $document.ready ->
-  Clipboard = require 'clipboard'
-  window.Shop = Shop = require 'shop.js'
-  window.selectize = require 'selectize'
 
   step = 1
   message = encodeURIComponent 'Get Stoned With Me!'

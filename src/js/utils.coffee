@@ -1,4 +1,4 @@
-exports.requestTick = do ->
+export requestTick = do ->
   ticking = false
   (cb) ->
     return if ticking

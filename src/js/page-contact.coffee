@@ -1,5 +1,6 @@
+import GMaps from 'gmaps'
+
 if location.pathname.indexOf('contact') >= 0
-  GMaps = require 'gmaps'
 
   address = '405 Southwest Boulevard Suite 200 Kansas City, MO 64108 United States of America'
 

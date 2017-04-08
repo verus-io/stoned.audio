@@ -1,4 +1,6 @@
-{images} = (require '../../settings').instafeed
+import Instafeed   from 'instafeed.js'
+import {instafeed} from '../../settings'
+
 
 if location.pathname == '/' || location.pathname.indexOf('earbuds') >= 0
   # http://solemone.de/code/code-examples/demos-grayscale-hover-effect-with-html5-canvas-and-jquery/
@@ -31,8 +33,6 @@ if location.pathname == '/' || location.pathname.indexOf('earbuds') >= 0
     else
       cb img.src
 
-  Instafeed = require 'instafeed.js'
-
   $document = $(document)
   threshold = $document.height() / 2
   $document.ready ->
@@ -51,7 +51,7 @@ if location.pathname == '/' || location.pathname.indexOf('earbuds') >= 0
             console.log image
             console.log image
             # filter images here
-            return image.link in images
+            return image.link in instafeed.images
 
           # after:          ->
           #   imgs = $('#instafeed img')

@@ -1,7 +1,9 @@
+import Clipboard from 'clipboard'
+import GMaps     from 'gmaps'
+import QRCode    from 'qrcode'
+import store     from 'akasha'
+
 if location.pathname.indexOf('account') >= 0
-  Clipboard = require 'clipboard'
-  GMaps = require 'gmaps'
-  QRCode = require 'qrcode'
   QRCodeDraw = new QRCode.QRCodeDraw()
 
   message = encodeURIComponent 'Get Stoned With Me!'
@@ -96,7 +98,6 @@ if location.pathname.indexOf('account') >= 0
         $('.referrals.normal').addClass('show')
         setupReferral 'https://stoned.audio/$/' + data.referrers[0].id
 
-      store = require 'shop.js/src/utils/store'
       store.set 'register', true
 
       $('.ref-text').css 'opacity', 1

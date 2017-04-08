@@ -1,4 +1,4 @@
-{requestTick} = require './utils'
+import {requestTick} from './utils'
 
 $(document).ready ->
   $progress = $('.progress')

@@ -1,5 +1,6 @@
+import FontFaceObserver from 'fontfaceobserver'
+
 if location.pathname.indexOf('card') >= 0
-  FontFaceObserver = require 'fontfaceobserver'
   font = new FontFaceObserver 'Lato',
     weight: 900
 

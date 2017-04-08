@@ -1,3 +1,5 @@
+import Shop from 'shop.js'
+
 # if location.pathname.indexOf('store') >= 0
 if true
 
@@ -30,8 +32,6 @@ if true
       return value if !value? || (value && value != '')
 
       throw new Error 'Select a color.'
-
-    Shop = require 'shop.js'
 
     CrowdControl = Shop.CrowdControl
     refer = Shop.Referential
