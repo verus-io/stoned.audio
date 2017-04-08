@@ -23,7 +23,7 @@
     "gmaps": "0.4.24",
     "hammerjs": "2.0.8",
     "handroll": "0.13.1",
-    "hanzo.js": "2.3.11",
+    "hanzo.js": "2.3.12",
     "ie-love": "0.0.3",
     "instafeed.js": "1.4.1",
     "jquery": "3.2.1",
@@ -41,7 +41,7 @@
     "referential": "0.5.15",
     "rucksack-css": "0.9.1",
     "rupture": "0.6.2",
-    "shop.js": "2.0.22",
+    "shop.js": "2.0.23",
     "shortcake": "1.2.8",
     "stylus": "0.54.5"
   }
