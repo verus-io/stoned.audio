@@ -32,10 +32,12 @@ compileCoffee = ->
   handroll  = require 'handroll'
 
   opts =
-    entry:  'src/js/app.coffee'
-    dest:   'public/js/app.js'
-    format: 'web'
-    es3:    false
+    entry:    'src/js/app.coffee'
+    dest:     'public/js/app.js'
+    format:   'iife'
+    commonjs: true
+    es3:      false
+    browser:  false
     compilers:
       coffee:
         version: 1

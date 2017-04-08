@@ -1,5 +1,5 @@
-import Instafeed   from 'instafeed.js'
-import {instafeed} from '../../settings'
+import Instafeed from 'instafeed.js'
+import settings  from '../../settings'
 
 
 if location.pathname == '/' || location.pathname.indexOf('earbuds') >= 0
@@ -51,7 +51,7 @@ if location.pathname == '/' || location.pathname.indexOf('earbuds') >= 0
             console.log image
             console.log image
             # filter images here
-            return image.link in instafeed.images
+            return image.link in settings.instafeed.images
 
           # after:          ->
           #   imgs = $('#instafeed img')
