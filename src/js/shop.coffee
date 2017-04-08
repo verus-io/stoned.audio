@@ -102,7 +102,7 @@ $document.ready ->
 
     requestAnimationFrame ->
       Shop.cart.invoice()
-      Shop.riot.update()
+      Shop.El.scheduleUpdate()
 
   $resetPasswordCompleteButton = $('reset-password button[type=submit]')
   m.on 'reset-password-complete', ->
