@@ -6,7 +6,7 @@
   "author": "Verus Media LLC",
   "dependencies": {
     "autoprefixer": "6.7.7",
-    "bebop": "1.12.1",
+    "bebop": "1.12.2",
     "cake-outdated": "0.1.18",
     "cake-publish": "0.1.10",
     "cake-test": "0.1.0",
