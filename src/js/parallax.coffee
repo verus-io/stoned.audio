@@ -1,4 +1,4 @@
-{requestTick} = require './utils'
+import {requestTick} from './utils'
 
 translateY = ($el, val) ->
   translate = "translate3d(0px, #{val}px, 0)"

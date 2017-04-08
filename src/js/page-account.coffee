@@ -1,10 +1,10 @@
 import Clipboard from 'clipboard'
 import GMaps     from 'gmaps'
-import QRCode    from 'qrcode'
+# import QRCode    from 'qrcode'
 import store     from 'akasha'
 
 if location.pathname.indexOf('account') >= 0
-  QRCodeDraw = new QRCode.QRCodeDraw()
+  # QRCodeDraw = new QRCode.QRCodeDraw()
 
   message = encodeURIComponent 'Get Stoned With Me!'
 
@@ -38,28 +38,28 @@ if location.pathname.indexOf('account') >= 0
       if canvas?
         ctx = canvas.getContext '2d'
         ctx.imageSmoothingEnabled = false
-        QRCodeDraw.draw canvas, url, (error, canvas) ->
-          if error
-            console.error error
+        # QRCodeDraw.draw canvas, url, (error, canvas) ->
+        #   if error
+        #     console.error error
 
-          dataUrl = canvas.toDataURL 'image/png'
-          $('.qrcode img').attr 'src', dataUrl
+        #   dataUrl = canvas.toDataURL 'image/png'
+        #   $('.qrcode img').attr 'src', dataUrl
 
-          $('.qrcode .options .download').attr 'href', dataUrl.replace('image/png', 'application/octet-stream')
-          $('.qrcode .options .print').on 'click', ->
-            w = window.open '', 'w'
-            w.document.write """
-              <html>
-                <head>
-                <style type="text/css" media="print">
-                  @page { size: landscape; }
-                </style>
-                </head>
-                <body>
-                  <img src="#{dataUrl}">
-                </body>
-              </html>"""
-            w.window.print()
+        #   $('.qrcode .options .download').attr 'href', dataUrl.replace('image/png', 'application/octet-stream')
+        #   $('.qrcode .options .print').on 'click', ->
+        #     w = window.open '', 'w'
+        #     w.document.write """
+        #       <html>
+        #         <head>
+        #         <style type="text/css" media="print">
+        #           @page { size: landscape; }
+        #         </style>
+        #         </head>
+        #         <body>
+        #           <img src="#{dataUrl}">
+        #         </body>
+        #       </html>"""
+        #     w.window.print()
 
       $('.ref-text').html url
       url = encodeURIComponent(url)
