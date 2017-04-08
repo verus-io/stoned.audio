@@ -35,11 +35,11 @@
     "poststylus": "0.2.3",
     "pug": "2.0.0-beta11",
     "qrcode": "0.8.1",
-    "es-raf": "3.3.0",
+    "es-raf": "3.3.1",
     "reeeset": "0.0.8",
     "rucksack-css": "0.9.1",
     "rupture": "0.6.2",
-    "es-selectize": "0.12.4",
+    "es-selectize": "0.12.8",
     "shop.js": "2.0.17",
     "shortcake": "1.2.8",
     "stylus": "0.54.5"
