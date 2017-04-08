@@ -1,5 +1,6 @@
-import Shop from 'shop.js'
+import Shop  from 'shop.js'
 import refer from 'referential'
+import riot  from 'riot/lib/riot'
 
 # if location.pathname.indexOf('store') >= 0
 if true
@@ -29,15 +30,15 @@ if true
 
       throw new Error 'Select a size.'
 
-    colorIsRequired = (value)->
+    colorIsRequired = (value) ->
       return value if !value? || (value && value != '')
 
       throw new Error 'Select a color.'
 
-    El = Shop.El
+    El     = Shop.El
     client = Shop.client
 
-    class Product extends El.Form
+    class Product extends El.Views.Form
       tag: 'product'
       id: 'product'
       name: ''
@@ -102,7 +103,7 @@ if true
         </div>
       '''
 
-      getId: ()->
+      getId: ->
         id = @id
 
         if @data.get 'color'
@@ -119,7 +120,7 @@ if true
 
         return id
 
-      init: ()->
+      init: ->
         @data = refer {}
 
         @showSize = !!@size
@@ -147,9 +148,9 @@ if true
         #     itemSelector: '.card',
         #     gutter: 10
 
-        super
+        super()
 
-      _submit: ()->
+      _submit: ->
         item = Shop.getItem @getId()
         if !item || item.quantity <= 0
           Shop.setItem @getId(), 1
