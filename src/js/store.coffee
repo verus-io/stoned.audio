@@ -1,4 +1,5 @@
 import Shop from 'shop.js'
+import refer from 'referential'
 
 # if location.pathname.indexOf('store') >= 0
 if true
@@ -33,11 +34,10 @@ if true
 
       throw new Error 'Select a color.'
 
-    CrowdControl = Shop.CrowdControl
-    refer = Shop.Referential
+    El = Shop.El
     client = Shop.client
 
-    class Product extends CrowdControl.Views.Form
+    class Product extends El.Form
       tag: 'product'
       id: 'product'
       name: ''
@@ -138,10 +138,7 @@ if true
           @color = null
           @data.set('name', @name) if @name
           @data.set('description', @description) if @description
-          @update()
-
-          requestAnimationFrame ()=>
-            @update()
+          @scheduleUpdate()
         ).catch (err)->
           console.log err
 
@@ -159,9 +156,9 @@ if true
         else
           Shop.setItem @getId(), item.quantity + 1
 
-        Shop.riot.update()
+        El.scheduleUpdate()
         return false
 
     Product.register()
 
-    riot.mount 'product'
+    El.mount 'product'

@@ -91,7 +91,7 @@ if location.pathname.indexOf('account') >= 0
           for fee in data.pendingFees
             nextTransfer += fee.amount
 
-          nextTransferStr = window.Shop.CrowdControl.Views.View.prototype.renderCurrency 'usd', nextTransfer
+          nextTransferStr = El.View.prototype.renderCurrency 'usd', nextTransfer
 
           $('.transfer-number').html nextTransferStr + ' USD'
       else

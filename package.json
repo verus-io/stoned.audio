@@ -16,6 +16,8 @@
     "coffee-script": "1.12.4",
     "css-mqpacker": "5.0.1",
     "debounce": "1.0.0",
+    "es-raf": "3.3.1",
+    "es-selectize": "0.12.8",
     "flipclock": "0.7.8",
     "fontfaceobserver": "2.0.9",
     "gmaps": "0.4.24",
@@ -35,12 +37,11 @@
     "poststylus": "0.2.3",
     "pug": "2.0.0-beta11",
     "qrcode": "0.8.1",
-    "es-raf": "3.3.1",
     "reeeset": "0.0.8",
+    "referential": "0.5.15",
     "rucksack-css": "0.9.1",
     "rupture": "0.6.2",
-    "es-selectize": "0.12.8",
-    "shop.js": "2.0.17",
+    "shop.js": "2.0.22",
     "shortcake": "1.2.8",
     "stylus": "0.54.5"
   }
