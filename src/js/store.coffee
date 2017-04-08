@@ -28,16 +28,16 @@ if true
 
       throw new Error 'Select a size.'
 
-    colorIsRequired = (value)->
+    colorIsRequired = (value) ->
       return value if !value? || (value && value != '')
 
       throw new Error 'Select a color.'
 
-    CrowdControl = Shop.CrowdControl
-    refer = Shop.Referential
+    El     = Shop.El
+    refer  = Shop.Referential
     client = Shop.client
 
-    class Product extends CrowdControl.Views.Form
+    class Product extends El.Views.Form
       tag: 'product'
       id: 'product'
       name: ''
@@ -102,7 +102,7 @@ if true
         </div>
       '''
 
-      getId: ()->
+      getId: ->
         id = @id
 
         if @data.get 'color'
@@ -119,7 +119,7 @@ if true
 
         return id
 
-      init: ()->
+      init: ->
         @data = refer {}
 
         @showSize = !!@size
@@ -150,9 +150,9 @@ if true
         #     itemSelector: '.card',
         #     gutter: 10
 
-        super
+        super()
 
-      _submit: ()->
+      _submit: ->
         item = Shop.getItem @getId()
         if !item || item.quantity <= 0
           Shop.setItem @getId(), 1
