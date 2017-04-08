@@ -1,5 +1,6 @@
-import Shop from 'shop.js'
-import riot from 'riot/lib/riot'
+import Shop  from 'shop.js'
+import refer from 'referential'
+import riot  from 'riot/lib/riot'
 
 # if location.pathname.indexOf('store') >= 0
 if true
@@ -35,7 +36,6 @@ if true
       throw new Error 'Select a color.'
 
     El     = Shop.El
-    refer  = Shop.Referential
     client = Shop.client
 
     class Product extends El.Views.Form
@@ -139,10 +139,7 @@ if true
           @color = null
           @data.set('name', @name) if @name
           @data.set('description', @description) if @description
-          @update()
-
-          requestAnimationFrame ()=>
-            @update()
+          @scheduleUpdate()
         ).catch (err)->
           console.log err
 
@@ -160,9 +157,9 @@ if true
         else
           Shop.setItem @getId(), item.quantity + 1
 
-        riot.update()
+        El.scheduleUpdate()
         return false
 
     Product.register()
 
-    riot.mount 'product'
+    El.mount 'product'
