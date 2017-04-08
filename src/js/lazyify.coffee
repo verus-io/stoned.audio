@@ -1,3 +1,5 @@
+import Layzr from 'layzk.js'
+
 $(document).ready ->
   instance = Layzr
     normal: 'data-lazy'
