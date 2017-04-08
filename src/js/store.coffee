@@ -164,4 +164,4 @@ if true
 
     Product.register()
 
-    riot.mount 'product'
+    Shop.riot.mount 'product'
