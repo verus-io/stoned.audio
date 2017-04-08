@@ -267,7 +267,7 @@ html(lang='en')
       small.copyright= site.copyright
     // .loader
 
-    include _checkout.pug
+    // include _checkout.pug
 
     <!--[if IE]>
     .browserupgrade
@@ -291,8 +291,6 @@ html(lang='en')
     <!--<![endif]-->
 
     block script
-
-    script(src='/js/app.js')
 
     // script(type="text/javascript", src="//cdn.reamaze.com/assets/reamaze.js")
     // script(type="text/javascript").
@@ -321,3 +319,6 @@ html(lang='en')
       // script(src='//cdn.ravenjs.com/3.8.1/raven.min.js')
       // script.
       //   Raven.config('//837350fb355a433ca68a1f6a298e70af@sentry.io/116363').install()
+
+    script(src='/js/app.js')
+
