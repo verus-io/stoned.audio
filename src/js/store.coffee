@@ -1,4 +1,5 @@
 import Shop from 'shop.js'
+import riot from 'riot/lib/riot'
 
 # if location.pathname.indexOf('store') >= 0
 if true
@@ -159,9 +160,9 @@ if true
         else
           Shop.setItem @getId(), item.quantity + 1
 
-        Shop.riot.update()
+        riot.update()
         return false
 
     Product.register()
 
-    Shop.riot.mount 'product'
+    riot.mount 'product'

@@ -1,5 +1,6 @@
 import Shop      from 'shop.js'
 import selectize from 'es-selectize'
+import riot      from 'riot/lib/riot'
 
 $document = $(document)
 $document.ready ->
@@ -102,7 +103,7 @@ $document.ready ->
 
     requestAnimationFrame ->
       Shop.cart.invoice()
-      Shop.riot.update()
+      riot.update()
 
   $resetPasswordCompleteButton = $('reset-password button[type=submit]')
   m.on 'reset-password-complete', ->
