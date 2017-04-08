@@ -38,6 +38,7 @@ compileCoffee = ->
     commonjs: true
     es3:      false
     browser:  false
+    external: false
     compilers:
       coffee:
         version: 1
