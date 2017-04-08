@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "private": true,
   "description": "Website for Stoned Audio",
-  "author": "Verus Media LLC",
+  "author": "Stoned Audio, LLC",
   "dependencies": {
     "autoprefixer": "6.7.7",
     "bebop": "1.12.2",
