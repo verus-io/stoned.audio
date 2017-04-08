@@ -1,5 +1,6 @@
 require 'shortcake'
 
+use 'cake-outdated'
 use 'cake-test'
 use 'cake-version'
 use 'cake-publish',
