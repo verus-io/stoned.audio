@@ -4,6 +4,7 @@
   "private": true,
   "description": "Website for Stoned Audio",
   "author": "Stoned Audio, LLC",
+  "license": "BSD-3-Clause",
   "dependencies": {
     "autoprefixer": "6.7.7",
     "bebop": "1.12.2",
@@ -44,5 +45,11 @@
     "sake-version": "0.1.16",
     "shop.js": "2.1.2",
     "stylus": "0.54.5"
+  },
+  "scripts": {
+    "build": "sake build",
+    "prepublishOnly": "sake build",
+    "pretest": "sake build",
+    "test": "sake test"
   }
 }
