@@ -280,7 +280,7 @@ html(lang='en')
 
     block script
 
-    if production
+    // if production
       // script(src='//www.google-analytics.com/analytics.js', async)
       // script.
       //   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -301,7 +301,7 @@ html(lang='en')
       // script.
       //   Raven.config('//837350fb355a433ca68a1f6a298e70af@sentry.io/116363').install()
 
-    // script(type="text/javascript", src="//cdn.reamaze.com/assets/reamaze.js")
+    // script(type="text/javascript", src="//cdn.reamaze.com/assets/reamaze.js", async)
     // script(type="text/javascript").
     //   var _support = _support || { 'ui': {}, 'user': {} };
     //   _support['account'] = 'stoned';
@@ -316,17 +316,17 @@ html(lang='en')
     //     }
     //   };
 
-    <!--[if lt IE 10]>
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script.
-      window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.4.min.js"><\\/script>')
-    script(src='/js/polyfill/ie-love.js')
-    <![endif]-->
+    // <!--[if lt IE 10]>
+    // script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    // script.
+    //   window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.4.min.js"><\\/script>')
+    // script(src='/js/polyfill/ie-love.js')
+    // <![endif]-->
 
-    <!--[if gt IE 9]><!-->
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
-    script.
-      window.jQuery || document.write('<script src="/js/vendor/jquery-3.1.0.min.js"><\\/script>')
-    <!--<![endif]-->
+    // <!--[if gt IE 9]><!-->
+    // script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    // script.
+    //   window.jQuery || document.write('<script src="/js/vendor/jquery-3.1.0.min.js"><\\/script>')
+    // <!--<![endif]-->
 
     script(src='/js/app.js')
