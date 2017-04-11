@@ -39,6 +39,8 @@ compileCoffee = ->
     es3:      false
     browser:  false
     external: false
+    inject:
+      $: 'jquery'
     compilers:
       coffee:
         version: 1
