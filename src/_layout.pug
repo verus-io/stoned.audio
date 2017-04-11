@@ -30,8 +30,6 @@ html(lang='en')
     meta(name='twitter:image', content=meta.twitter.image)
     meta(name='twitter:url', content=site.url)
 
-    link(rel='stylesheet', href='css/app.css', type='text/css')
-
     link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
     link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
     link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
@@ -47,6 +45,8 @@ html(lang='en')
     <![endif]-->
 
   body(style='overflow:hidden')
+    link(rel='stylesheet', href='css/app.css', type='text/css')
+
     // Header
     block preheader
 
