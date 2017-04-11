@@ -1,7 +1,5 @@
 # Polyfill / Global
 import './polyfill'
-import 'jquery'
-import 'layzk.js'
 
 # Framework
 import './framework'
