@@ -1,8 +1,9 @@
-# Polyfills
+# Polyfill / Global
 import './polyfill'
+import 'jquery'
 import 'layzk.js'
 
-#Framework
+# Framework
 import './framework'
 import './hero-video'
 import './gallery'
