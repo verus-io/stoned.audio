@@ -35,15 +35,14 @@ compileCoffee = ->
     entry:    'src/js/app.coffee'
     dest:     'public/js/app.js'
     format:   'iife'
+    browser:  false
     commonjs: true
     es3:      false
-    browser:  false
     external: false
+    compilers:
+      coffee: version: 1
     inject:
       $: 'jquery'
-    compilers:
-      coffee:
-        version: 1
 
   if process.env.PRODUCTION
     opts.minify = true
