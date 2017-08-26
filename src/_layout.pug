@@ -30,14 +30,14 @@ html(lang='en')
     meta(name='twitter:image', content=meta.twitter.image)
     meta(name='twitter:url', content=site.url)
 
-    link(rel='stylesheet', href='css/app.css', type='text/css')
-
     link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
     link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
     link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
     link(rel="manifest", href="/manifest.json")
     link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#33edc1")
     meta(name="theme-color", content="#ffffff")
+
+    link(rel='stylesheet', href='css/app.css', type='text/css')
 
     block style
 
@@ -46,7 +46,7 @@ html(lang='en')
     script(src='/js/polyfill/html5-shiv.js')
     <![endif]-->
 
-  body(style='overflow:hidden')
+  body
     // Header
     block preheader
 
@@ -280,11 +280,17 @@ html(lang='en')
 
     block script
 
-    if production
-      script(src='//www.google-analytics.com/analytics.js', async)
-      script(src='//connect.facebook.net/en_US/fbevents.js', async)
-      script.
-        !function(t,e,a){var r,n,c,i,o,s,l,u;if(null==t.analytics){for(r=[],r.methods=["ab","alias","group","identify","off","on","once","page","pageview","ready","track","trackClick","trackForm","trackLink","trackSubmit"],l=r.methods,c=function(t){r[t]=function(){var e;return e=Array.prototype.slice.call(arguments),e.unshift(t),r.push(e),r}},i=0,o=l.length;o>i;i++)s=l[i],c(s);return u=e.createElement("script"),u.async=!0,u.type="text/javascript",u.src=a,n=e.getElementsByTagName("script")[0],n.parentNode.insertBefore(u,n),t.analytics=r}}(window,document,"//cdn.hanzo.io/a/4NTxXlQrtb.js");
+    // if production
+      // script(src='//www.google-analytics.com/analytics.js', async)
+      // script.
+      //   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      //   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      //   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      //   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      //   document,'script','//connect.facebook.net/en_US/fbevents.js');
+      // script.
+      //   !function(t,e,a){var r,n,c,i,o,s,l,u;if(null==t.analytics){for(r=[],r.methods=["ab","alias","group","identify","off","on","once","page","pageview","ready","track","trackClick","trackForm","trackLink","trackSubmit"],l=r.methods,c=function(t){r[t]=function(){var e;return e=Array.prototype.slice.call(arguments),e.unshift(t),r.push(e),r}},i=0,o=l.length;o>i;i++)s=l[i],c(s);return u=e.createElement("script"),u.async=!0,u.type="text/javascript",u.src=a,n=e.getElementsByTagName("script")[0],n.parentNode.insertBefore(u,n),t.analytics=r}}(window,document,"/js/a.js");
+
       // script.
       //   !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
       //   },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
@@ -295,7 +301,7 @@ html(lang='en')
       // script.
       //   Raven.config('//837350fb355a433ca68a1f6a298e70af@sentry.io/116363').install()
 
-    // script(type="text/javascript", src="//cdn.reamaze.com/assets/reamaze.js")
+    // script(type="text/javascript", src="//cdn.reamaze.com/assets/reamaze.js", async)
     // script(type="text/javascript").
     //   var _support = _support || { 'ui': {}, 'user': {} };
     //   _support['account'] = 'stoned';
@@ -309,18 +315,5 @@ html(lang='en')
     //       duration: 30,
     //     }
     //   };
-
-    <!--[if lt IE 10]>
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script.
-      window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.4.min.js"><\\/script>')
-    script(src='/js/polyfill/ie-love.js')
-    <![endif]-->
-
-    <!--[if gt IE 9]><!-->
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
-    script.
-      window.jQuery || document.write('<script src="/js/vendor/jquery-3.1.0.min.js"><\\/script>')
-    <!--<![endif]-->
 
     script(src='/js/app.js')

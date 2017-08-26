@@ -1,13 +1,11 @@
-require 'shortcake'
-
-use 'cake-outdated'
-use 'cake-test'
-use 'cake-version'
-use 'cake-publish',
+use 'sake-outdated',
+  ignore: 'jquery'
+use 'sake-publish',
   deploy:
     remote:  'origin'
     refspec: 'master:master'
   npm: false
+use 'sake-version'
 
 task 'build:pre', '', ->
   exec '''
