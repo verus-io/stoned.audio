@@ -44,7 +44,7 @@ if location.pathname == '/' || location.pathname.indexOf('earbuds') >= 0
         feed = new Instafeed
           get:            'user'
           userId:         '4001555412'
-          accessToken:    '4001555412.1677ed0.54ff568a9bf14267acc49b51c8344c27'
+          clientId:       '81b5964f381f44b3b8f63032ee689b28'
           resolution:     'standard_resolution'
           limit:          100
           filter: (image) ->
