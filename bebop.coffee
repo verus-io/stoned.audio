@@ -33,7 +33,7 @@ compileCoffee = ->
 
   opts =
     entry:    'src/js/app.coffee'
-    dest:     'public/js/app.js'
+    output:     'public/js/app.js'
     format:   'iife'
     browser:  false
     commonjs: true
